@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    </head>
+    <body>
+        <header>
+<!--
+            <div class="header-wrapper">
+                <div class="header-logo">
+                    <a href="/index.html">
+                        <img src="images/logo.svg">
+                        Subliminator
+                    </a>
+                </div>
+                <div class="header-button-wrapper">
+                    <button class="btn-header">New Product</button>
+                    <button class="btn-header">Orders</button>
+                    <button class="btn-header btn-header-dropdown">Account</button>
+                    <button class="btn-header btn-header-blue">Help</button>
+                </div>
+            </div>
+-->
+        </header>
+<!--
+        <div class="side-menu">
+            <nav>
+                <ul>
+                    <li>
+                       <div class="nav-link-wrapper">
+                            <div class="nav-svg-wrapper">
+                                <a href=""><img src="images/"></a>
+                            </div>
+                            <a href="" class="nav-link">Home</a>
+                        </div>
+                    </li>
+                    <li>
+                       <div class="nav-link-wrapper">
+                            <div class="nav-svg-wrapper">
+                                <a href=""><img src="images/"></a>
+                            </div>
+                            <a href="" class="nav-link">Orders</a>
+                        </div>
+                    </li>
+                    <li>
+                       <div class="nav-link-wrapper">
+                            <div class="nav-svg-wrapper">
+                                <a href=""><img src="images/"></a>
+                            </div>
+                            <a href="" class="nav-link">Products</a>
+                        </div>
+                    </li>
+                    <li>
+                       <div class="nav-link-wrapper">
+                            <div class="nav-svg-wrapper">
+                                <a href=""><img src="images/"></a>
+                            </div>
+                            <a href="" class="nav-link">Customers</a>
+                        </div>
+                    </li>
+                    <li>
+                       <div class="nav-link-wrapper">
+                            <div class="nav-svg-wrapper">
+                                <a href=""><img src="images/"></a>
+                            </div>
+                            <a href="" class="nav-link">Reports</a>
+                        </div>
+                    </li>
+                    <li>
+                       <div class="nav-link-wrapper">
+                            <div class="nav-svg-wrapper">
+                                <a href=""><img src="images/"></a>
+                            </div>
+                            <a href="" class="nav-link">Discounts</a>
+                        </div>
+                    </li>
+                    <li>
+                       <div class="nav-link-wrapper">
+                            <div class="nav-svg-wrapper">
+                                <a href=""><img src="images/"></a>
+                            </div>
+                            <a href="" class="nav-link">Apps</a>
+                        </div>
+                    </li>
+                    <li><p class="nav-channels">Sales channels</p></li>  
+                    <li>
+                       <div class="nav-link-wrapper">
+                            <div class="nav-svg-wrapper">
+                                <a href=""><img src="images/"></a>
+                            </div>
+                            <a href="" class="nav-link nav-channel">Online store</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+-->
+        <section class="main-content-wrapper">
+           <div class="content-headline">
+               <div class="container-fluid">
+                   <div class="row justify-content-between">
+                       <div class="col">
+                           <div class="breadcrumbs">
+                                <p class="product-name">Hoodie All-Over</p>
+                                <a href="" class="link-back"><i class="material-icons">arrow_back</i>Back To Products</a>
+                            </div>
+                       </div>
+                       <div class="col vcenter" align="right">
+                           <a href="#"><button class="btn btn-lg btn-blue">Review & Publish <i class="material-icons">arrow_forward</i></button></a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+<!--
+            <div class="content-headline">
+                <div class="breadcrumbs">
+                    <p class="product-name">Hoodie All-Over</p>
+                    <a href="" class="link-back"><i class="material-icons">arrow_back</i>Back To Products</a>
+                </div>
+                <a href="#"><button class="btn btn-lg btn-blue">Review & Publish <i class="material-icons">arrow_forward</i></button></a>
+            </div>
+-->
+            <div class="container-fluid no-gutter">
+                <div class="row">
+                    <div class="col-7">
+                        <div class="template-view white-block">
+                            <div class="template-buttons">
+                                <button class="btn btn-lg btn-grey btn-grey-active">Template view</button>
+                                <button class="btn btn-lg btn-grey">Mockup view</button>
+                            </div>
+                            <div class="file-views">
+                                <ul>
+                                    <li><a href="" class="file-view-active">Frontside</a></li>
+                                    <li><a href="">Backside</a></li>
+                                    <li><a href="">Sleeves</a></li>
+                                    <li><a href="">Pocket</a></li>
+                                    <li><a href="">Hood</a></li>
+                                    <li><a href="">Inside label</a></li>
+                                </ul>
+                            </div>
+                            <canvas id="view-screen"></canvas>
+                            <div class="view-controls">
+                                <div class="range-container">
+                                    <button onclick="document.getElementById('zoom-range').stepDown(1)" class="view-zoom zoom-out"></button>
+                                    <input type="range" min="1" max="100" value="50" class="slider" id="zoom-range">
+                                    <button onclick="document.getElementById('zoom-range').stepUp(1)" class="view-zoom zoom-in"></button>
+                                </div>
+                                <button class="btn btn-grey btn-view-align" id="align-v"><i class="material-icons">vertical_align_center</i></button>
+                                <button class="btn btn-grey btn-view-align" id="align-h"><i class="material-icons">vertical_align_center</i></button>
+                                <button class="btn btn-grey" id="reset">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="hoodie-all-over white-block">
+                            <div class="product-headline">
+                                <p><span>Hoodie</span> All-Over</p>
+                                <span>$38</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="size-range">
+                                <p class="product-option-caption">Size Range</p>
+                                <div class="size-range-checkbox-wrapper">
+                                    <label class="size-range-label">
+                                        <input type="checkbox" name="size-range" value="XS" class="checkbox-size" checked>
+                                        <span>XS</span>
+                                        <span class="size-checkmark"></span>
+                                    </label>
+                                    <label class="size-range-label">
+                                        <input type="checkbox" name="size-range" value="S" class="checkbox-size" checked>
+                                        <span>S</span>
+                                        <span class="size-checkmark"></span>
+                                    </label>
+                                    <label class="size-range-label">
+                                        <input type="checkbox" name="size-range" value="M" class="checkbox-size" checked>
+                                        <span>M</span>
+                                        <span class="size-checkmark"></span>
+                                    </label>
+                                    <label class="size-range-label">
+                                        <input type="checkbox" name="size-range" value="L" class="checkbox-size" checked>
+                                        <span>L</span>
+                                        <span class="size-checkmark"></span>
+                                    </label>
+                                    <label class="size-range-label">
+                                        <input type="checkbox" name="size-range" value="XL" class="checkbox-size">
+                                        <span>XL</span>
+                                        <span class="size-checkmark"></span>
+                                    </label>
+                                    <label class="size-range-label">
+                                        <input type="checkbox" name="size-range" value="2XL" class="checkbox-size">
+                                        <span>2XL</span>
+                                        <span class="size-checkmark"></span>
+                                    </label>
+                                    <label class="size-range-label">
+                                        <input type="checkbox" name="size-range" value="3XL" class="checkbox-size">
+                                        <span>3XL</span>
+                                        <span class="size-checkmark"></span>
+                                    </label>
+                                    <label class="size-range-label">
+                                        <input type="checkbox" name="size-range" value="4XL" class="checkbox-size">
+                                        <span>4XL</span>
+                                        <span class="size-checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="divider"></div>
+                            </div>
+                            <div class="uploads">
+                                <div class="upload-file">
+                                    <p>Frontside</p>
+                                    <div class="upload-wrapper">
+                                        <div class="upload-svg-wrapper">
+                                            <img src="images/hoodie-frontside.svg">
+                                        </div>
+                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                    </div>
+                                </div>
+                                <div class="upload-file">
+                                    <p>Backside</p>
+                                    <div class="upload-wrapper">
+                                        <div class="upload-svg-wrapper">
+                                            <img src="images/hoodie-backside.svg">
+                                        </div>
+                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                    </div>
+                                </div>
+                                <div class="upload-file">
+                                    <p>Left & Right Sleeve</p>
+                                    <div class="upload-wrapper">
+                                        <div class="upload-svg-wrapper">
+                                            <img src="images/hoodie-sleeves.svg">
+                                        </div>
+                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                    </div>
+                                </div>
+                                <div class="upload-file">
+                                    <p>Pocket</p>
+                                    <div class="upload-wrapper">
+                                        <div class="upload-svg-wrapper">
+                                            <img src="images/hoodie-pocket.svg">
+                                        </div>
+                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                    </div>
+                                </div>
+                                <div class="upload-file">
+                                    <p>Hood</p>
+                                    <div class="upload-wrapper">
+                                        <div class="upload-svg-wrapper">
+                                            <img src="images/hoodie-hood.svg">
+                                        </div>
+                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                    </div>
+                                </div>
+                                <div class="upload-file">
+                                    <p>Inside Label <span>(Optional)</span></p>
+                                    <div class="upload-wrapper">
+                                        <div class="upload-svg-wrapper">
+                                            <img src="images/hoodie-label.svg">
+                                        </div>
+                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="stitching">
+                                <p class="product-option-caption">Stitching Color</p>
+                                <div class="stringcolor-wrapper">
+                                    <label>
+                                        <input type="radio" name="stitching-color" value="white" class="stringcolor-checkbox" checked>
+                                        <span>White</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stitching-color" value="black" class="stringcolor-checkbox">
+                                        <span>Black</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stitching-color" value="navy" class="stringcolor-checkbox">
+                                        <span>Navy</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="drawstring">
+                                <p class="product-option-caption">Drawstring Color</p>
+                                <div class="stringcolor-wrapper">
+                                    <label>
+                                       <input type="radio" name="drawstring-color" value="white" class="stringcolor-checkbox" checked>
+                                        <span>White</span>
+                                        <span class="checkmark"></span>
+                                        
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="drawstring-color" value="black" class="stringcolor-checkbox">
+                                        <span>Black</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="drawstring-color" value="navy" class="stringcolor-checkbox">
+                                        <span>Navy</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="print-guidelines white-block">
+                            <div class="product-headline">
+                                <p><span>Print</span> Guidelines</p>
+                            </div>
+                            <div class="divider"></div>
+                            <p>In order to print hight quality hoodies, we need high quality print files.</p>
+                            <p>So here are Subliminator's print file design guidelines.</p>
+                            <button class="btn btn-lg btn-guidelines"><i class="material-icons">info_outline</i> Design guidelines</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
