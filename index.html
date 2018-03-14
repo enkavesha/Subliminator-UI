@@ -112,7 +112,7 @@
                             </div>
                        </div>
                        <div class="col vcenter" align="right">
-                           <a href="#"><button class="btn btn-lg btn-blue">Review & Publish <i class="material-icons">arrow_forward</i></button></a>
+                           <a href="#"><button class="btn btn-lg btn-blue" id="btn-review">Review & Publish <i class="material-icons">arrow_forward</i></button></a>
                        </div>
                    </div>
                </div>
@@ -128,7 +128,7 @@
 -->
             <div class="container-fluid no-gutter">
                 <div class="row">
-                    <div class="col-7">
+                    <div class="col-7 left-panel">
                         <div class="template-view white-block">
                             <div class="template-buttons">
                                 <button class="btn btn-lg btn-grey btn-grey-active">Template view</button>
@@ -144,7 +144,21 @@
                                     <li><a href="">Inside label</a></li>
                                 </ul>
                             </div>
-                            <canvas id="view-screen"></canvas>
+                            <div class="canvas-wrapper">
+                                <div id="view-screen"></div>
+                            </div>
+<!--
+                            <div class="mockup-view-wrapper">
+                                <div class="mockup-view"></div>
+                                <div class="mockup-view"></div>
+                                <div class="mockup-view"></div>
+                                <div class="mockup-view"></div>
+                                <div class="mockup-view"></div>
+                                <div class="mockup-view"></div>
+                                <div class="mockup-view"></div>
+                                <div class="mockup-view"></div>
+                            </div>
+-->
                             <div class="view-controls">
                                 <div class="range-container">
                                     <button onclick="document.getElementById('zoom-range').stepDown(1)" class="view-zoom zoom-out"></button>
@@ -217,7 +231,7 @@
                                         <div class="upload-svg-wrapper">
                                             <img src="images/hoodie-frontside.svg">
                                         </div>
-                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                        <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
                                 </div>
                                 <div class="upload-file">
@@ -226,7 +240,7 @@
                                         <div class="upload-svg-wrapper">
                                             <img src="images/hoodie-backside.svg">
                                         </div>
-                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                        <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
                                 </div>
                                 <div class="upload-file">
@@ -235,7 +249,7 @@
                                         <div class="upload-svg-wrapper">
                                             <img src="images/hoodie-sleeves.svg">
                                         </div>
-                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                        <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
                                 </div>
                                 <div class="upload-file">
@@ -244,7 +258,7 @@
                                         <div class="upload-svg-wrapper">
                                             <img src="images/hoodie-pocket.svg">
                                         </div>
-                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                        <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
                                 </div>
                                 <div class="upload-file">
@@ -253,7 +267,7 @@
                                         <div class="upload-svg-wrapper">
                                             <img src="images/hoodie-hood.svg">
                                         </div>
-                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                        <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
                                 </div>
                                 <div class="upload-file">
@@ -262,7 +276,7 @@
                                         <div class="upload-svg-wrapper">
                                             <img src="images/hoodie-label.svg">
                                         </div>
-                                        <button class="btn btn-lg btn-upload"><i class="material-icons">file_upload</i> Choose file</button>
+                                        <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
                                 </div>
                             </div>
