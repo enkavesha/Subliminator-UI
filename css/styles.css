@@ -206,7 +206,10 @@ button:focus {
     .template-view .template-buttons button {
       padding: .3rem 1rem; }
   .template-view .file-views {
-    margin: 15px 0; }
+    margin: 15px 0 0;
+    display: none; }
+    .template-view .file-views.file-views-visible {
+      display: block; }
     .template-view .file-views ul {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -231,6 +234,7 @@ button:focus {
           border-bottom: 2px solid #0c77f8; }
   .template-view .canvas-wrapper {
     position: relative;
+    margin: 15px 0 0 0;
     width: 100%; }
   .template-view #view-screen {
     margin: 0 auto;

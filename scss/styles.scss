@@ -186,7 +186,11 @@ button{
         }
     }
     .file-views{
-        margin: 15px 0;
+        margin: 15px 0 0;
+        display: none;
+        &.file-views-visible{
+            display: block;
+        }
         ul{
             display: flex;
             justify-content: center;
@@ -213,6 +217,7 @@ button{
     }
     .canvas-wrapper{
         position: relative;
+        margin: 15px 0 0 0;
         width: 100%;
     }
     #view-screen{
