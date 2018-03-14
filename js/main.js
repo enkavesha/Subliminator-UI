@@ -13,4 +13,11 @@ $(document).ready(function(){
         $('#template-view').toggleClass('btn-grey-active');
         $('.file-views').toggleClass('file-views-visible');
 	});
+    $('#selling-price').on('input', function() { 
+        var sellingPrice= $(this).val();
+        sellingPrice=sellingPrice.replace('.',',');
+        var profitYoga= document.getElementById('product-profit-yoga');
+        profitYoga.innerHTML = sellingPrice-38;
+    });
+
 });
