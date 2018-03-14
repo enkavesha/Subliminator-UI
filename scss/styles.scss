@@ -110,6 +110,7 @@ button{
     vertical-align: middle;
     i{
         margin: 0 0 0 5px;
+        font-size: 15px!important;
     }
 }
 .btn-guidelines{
@@ -555,10 +556,13 @@ button{
     flex-flow: wrap;
     .upload-file{
         width: 47%;
-        margin: 0 0 15px;
+        margin: 0 0 10px;
         display: flex;
         flex-flow: column;
         height: auto;
+        &:nth-child(5),&:nth-child(6){
+            margin: 0;
+        }
         p{
             font-size: 15px;
             font-weight: 600;
@@ -606,7 +610,8 @@ button{
             position: relative;
             cursor: pointer;
             user-select: none;
-            font-size: 15px;
+            font-size: 12px;
+            line-height: 19px;
             padding: 0 0 0 25px;
             transition: opacity 0.2s linear;
             &:hover > span{
@@ -689,15 +694,15 @@ button{
         display: flex;
     }
     .shipping-country{
-        width: 150px;
-        height: 50px;
+        width: 130px;
+        height: 40px;
         margin: 0 0 3px 0;
         display: flex;
         align-items: center;
         border-bottom-left-radius: 2rem;
         border-top-left-radius: 2rem;
         border-right: 3px solid #fff;
-        padding: 0 10px 0 55px;
+        padding: 0 0 0 45px;
         p{
             vertical-align: middle;
             margin: 0;
@@ -712,39 +717,53 @@ button{
         border-top-right-radius: 2rem;
         display: flex;
         align-items: center;
-        padding: 0 0 0 15px;
+        padding: 0 0 0 10px;
         p{
             margin: 0;
         }
     }
     #shipping-usa{
-        background: url(../images/countries.png) no-repeat, $mediumGrey;
-        background-size: 42px 140px;
+        background: url(../images/flag-usa.svg) no-repeat, $mediumGrey;
+        background-size: 32px;
         background-position: 4px 4px;
     }
     #shipping-europe{
-        background: url(../images/countries.png) no-repeat, $mediumGrey;
-        background-size: 42px 140px;
-        background-position: 4px -45px;
+        background: url(../images/flag-europe.svg) no-repeat, $mediumGrey;
+        background-size: 32px;
+        background-position: 4px 4px;
     }
     #shipping-rotw{
-        background: url(../images/countries.png) no-repeat, $mediumGrey;
-        background-size: 42px 140px;
-        background-position: 4px -94px;
+        background: url(../images/flag-rotw.svg) no-repeat, $mediumGrey;
+        background-size: 32px;
+        background-position: 4px 4px;
     }
 }
-input[type=text], input[type=number], textarea, select{
+input[type=text], 
+input[type=tel], 
+textarea{
     border-radius: 2rem;
     outline: none;
     border: 2px solid $mediumGrey;
     padding: 8px 15px;
     width: 100%;
     font-size: 14px;
+    font-weight: 600;
     font-family: 'Montserrat', sans-serif;
+    transition: all 0.2s linear;
     &::-webkit-input-placeholder{
         color: $mediumGrey;
     }
+    &:active,&:focus{
+        border-color: $blue;
+        transition: all 0.2s linear;
+    }
 }
+//select{
+//    &:active,&:focus{
+//        background: $blue;
+//        color: #fff;
+//    }
+//}
 .calc-profit{
     text-align: left;
     font-size: 15px;
@@ -765,7 +784,7 @@ input[type=text], input[type=number], textarea, select{
 .input-margin{
     margin: 0 0 10px;
 }
-input[type=number]{
+#selling-price{
     width: 110px;
     padding: 10px 15px 10px 40px;
     position: relative;
@@ -783,4 +802,40 @@ input[type=number]{
 }
 .product-profit{
     color: $blue;
+}
+.terms{
+    label span{
+        font-size: 14px;
+    }
+}
+////////froala text editor
+.fr-box{
+    transition: all 0.2s linear;
+    margin: 0 0 10px;
+    .fr-placeholder{
+        padding: 0 0 0 10px;
+    }
+    .fr-counter,.fr-tooltip{
+        display: none!important;
+    }
+    .fr-wrapper{
+        min-height: 200px;
+        padding: 0 10px 10px 10px;
+    }
+    .fr-btn{
+        &:hover, &:active, &:focus{
+            outline: 0 !important;
+            outline-offset: 0 !important;
+            box-shadow: 0 0 0 0 rgba(0,0,0,0)!important;
+        }
+    }
+    .fr-toolbar{
+        padding: 5px 0 0 10px!important;
+    }
+}
+.fr-box:active, .fr-box:focus{
+    .fr-toolbar,.fr-wrapper{
+        border-color: $blue!important;
+        transition: all 0.2s linear;
+    }
 }

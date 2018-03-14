@@ -15,13 +15,18 @@ $(document).ready(function(){
 	});
     $('#selling-price').on('input', function() { 
         var sellingPrice= $(this).val();
-        sellingPrice=parseFloat(sellingPrice); 
+        sellingPrice=parseFloat(sellingPrice).toFixed(2); 
         var profitYoga= document.getElementById('product-profit-yoga');
-        if (isNaN(sellingPrice)) { 
-            profitYoga.innerHTML = '...'; 
+        if (isNaN(sellingPrice)|sellingPrice<38) { 
+            profitYoga.innerHTML = '0.00'; 
         } else { 
             profitYoga.innerHTML = sellingPrice-38; 
         }
     });
-
+    $(function() { $('#product-description').froalaEditor({
+        placeholderText: 'Hoodie All-Over',
+        toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'insertLink', 'insertImage', 'insertVideo', 'html', 'formatUL', 'formatOL', 'align'],
+        theme: 'custom'
+    }) });    
+    $(".chosen-select").chosen();
 });

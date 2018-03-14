@@ -5,9 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
+<!--        <link href="css/bootstrap-select.css" rel="stylesheet" type="text/css">-->
+        <link href="css/chosen.css" rel="stylesheet" type="text/css">
+
+<!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+        <!--    Text editor    -->
+        <!-- Include external CSS. -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+
+        <!-- Include Editor style. -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.6/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.6/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/themes/custom.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header>
@@ -60,7 +73,7 @@
 
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-5">
                         <div class="hoodie-all-over white-block">
                             <div class="product-headline">
                                 <p><span>Product</span> Details</p>
@@ -69,11 +82,18 @@
                             <p>Product Title</p>
                             <input type="text" placeholder="Hoodie All-Over" class="input-margin">
                             <p>Product Description</p>
-                            <textarea placeholder="Hoodie All-Over" class="input-margin"></textarea>
+                            <textarea class="input-margin btn-no-hover" id="product-description"></textarea>
                             <p>Add To Shopify Collection <span class="optional">(Optional)</span></p>
+                            <select data-placeholder="Choose a Country..." class="chosen-select" tabindex="-1">
+                              <option>Hot Dog, Fries and a Soda</option>
+                              <option>Burger, Shake and a Smile</option>
+                              <option>Sugar, Spice and all things nice</option>
+                            </select>
+<!--
                             <select class="input-margin">
                                 <option>- None -</option>
                             </select>
+-->
                             <p>Add Product Tags <span class="optional">(Optional)</span></p>
                             <input type="text" placeholder="Separate tags with commas">
                         </div>
@@ -85,7 +105,7 @@
                             <p class="semibold">Your Selling Price</p>
                             <div class="calc-profit">
                                 <span class="input-profit">
-                                    <input type="number" placeholder="49.99" id="selling-price">
+                                    <input type="tel" placeholder="49.99" id="selling-price" maxlength="6">
                                 </span> =
                                 <span class="semibold product-profit">$</span> 
                                 <span class="semibold product-profit" id="product-profit-yoga">0.00</span><span class="semibold"> Profit Per Sale</span>
@@ -94,7 +114,9 @@
                             <div class="shipping-wrapper">
                                <p class="semibold">Basecost + Shipping <i class="material-icons">local_shipping</i></p>
                                 <div class="shipping-row">
-                                    <div class="shipping-country" id="shipping-usa"><p>USA</p></div>
+                                    <div class="shipping-country" id="shipping-usa">
+                                        <p>USA</p>
+                                    </div>
                                     <div class="shipping-cost"><p>$38</p></div>
                                 </div>
                                 <div class="shipping-row">
@@ -117,6 +139,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>-->
+<!--        <script src="js/bootstrap-select.js"></script>-->
+        <!--    Text Editor    -->
+         <!-- Include external JS libs. -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+
+        <!-- Include Editor JS files. -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.6/js/froala_editor.pkgd.min.js"></script>
+        <!--      -->
+        <script src="js/chosen.jquery.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

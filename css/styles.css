@@ -137,7 +137,8 @@ button:focus {
   align-items: center;
   vertical-align: middle; }
   #btn-publish i {
-    margin: 0 0 0 5px; }
+    margin: 0 0 0 5px;
+    font-size: 15px !important; }
 
 .btn-guidelines {
   color: #fff;
@@ -535,7 +536,7 @@ button:focus {
   flex-flow: wrap; }
   .uploads .upload-file {
     width: 47%;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -544,6 +545,8 @@ button:focus {
     -ms-flex-flow: column;
     flex-flow: column;
     height: auto; }
+    .uploads .upload-file:nth-child(5), .uploads .upload-file:nth-child(6) {
+      margin: 0; }
     .uploads .upload-file p {
       font-size: 15px;
       font-weight: 600;
@@ -595,7 +598,8 @@ button:focus {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-size: 15px;
+    font-size: 12px;
+    line-height: 19px;
     padding: 0 0 0 25px;
     -webkit-transition: opacity 0.2s linear;
     -o-transition: opacity 0.2s linear;
@@ -664,8 +668,8 @@ button:focus {
     display: -ms-flexbox;
     display: flex; }
   .shipping-wrapper .shipping-country {
-    width: 150px;
-    height: 50px;
+    width: 130px;
+    height: 40px;
     margin: 0 0 3px 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -676,7 +680,7 @@ button:focus {
     border-bottom-left-radius: 2rem;
     border-top-left-radius: 2rem;
     border-right: 3px solid #fff;
-    padding: 0 10px 0 55px; }
+    padding: 0 0 0 45px; }
     .shipping-wrapper .shipping-country p {
       vertical-align: middle;
       margin: 0; }
@@ -693,32 +697,49 @@ button:focus {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: 0 0 0 15px; }
+    padding: 0 0 0 10px; }
     .shipping-wrapper .shipping-cost p {
       margin: 0; }
   .shipping-wrapper #shipping-usa {
-    background: url(../images/countries.png) no-repeat, #e2e2e2;
-    background-size: 42px 140px;
+    background: url(../images/flag-usa.svg) no-repeat, #e2e2e2;
+    background-size: 32px;
     background-position: 4px 4px; }
   .shipping-wrapper #shipping-europe {
-    background: url(../images/countries.png) no-repeat, #e2e2e2;
-    background-size: 42px 140px;
-    background-position: 4px -45px; }
+    background: url(../images/flag-europe.svg) no-repeat, #e2e2e2;
+    background-size: 32px;
+    background-position: 4px 4px; }
   .shipping-wrapper #shipping-rotw {
-    background: url(../images/countries.png) no-repeat, #e2e2e2;
-    background-size: 42px 140px;
-    background-position: 4px -94px; }
+    background: url(../images/flag-rotw.svg) no-repeat, #e2e2e2;
+    background-size: 32px;
+    background-position: 4px 4px; }
 
-input[type=text], input[type=number], textarea, select {
+input[type=text],
+input[type=tel],
+textarea {
   border-radius: 2rem;
   outline: none;
   border: 2px solid #e2e2e2;
   padding: 8px 15px;
   width: 100%;
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif; }
-  input[type=text]::-webkit-input-placeholder, input[type=number]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  input[type=text]::-webkit-input-placeholder,
+  input[type=tel]::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
     color: #e2e2e2; }
+  input[type=text]:active, input[type=text]:focus,
+  input[type=tel]:active,
+  input[type=tel]:focus,
+  textarea:active,
+  textarea:focus {
+    border-color: #0c77f8;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear; }
 
 .calc-profit {
   text-align: left;
@@ -739,17 +760,46 @@ input[type=text], input[type=number], textarea, select {
 .input-margin {
   margin: 0 0 10px; }
 
-input[type=number] {
+#selling-price {
   width: 110px;
   padding: 10px 15px 10px 40px;
   position: relative;
   color: #0c77f8;
   font-weight: 600; }
-  input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  #selling-price::-webkit-inner-spin-button, #selling-price::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
-  input[type=number]:active, input[type=number]:focus {
+  #selling-price:active, #selling-price:focus {
     border: 2px solid #0c77f8; }
 
 .product-profit {
   color: #0c77f8; }
+
+.terms label span {
+  font-size: 14px; }
+
+.fr-box {
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  margin: 0 0 10px; }
+  .fr-box .fr-placeholder {
+    padding: 0 0 0 10px; }
+  .fr-box .fr-counter, .fr-box .fr-tooltip {
+    display: none !important; }
+  .fr-box .fr-wrapper {
+    min-height: 200px;
+    padding: 0 10px 10px 10px; }
+  .fr-box .fr-btn:hover, .fr-box .fr-btn:active, .fr-box .fr-btn:focus {
+    outline: 0 !important;
+    outline-offset: 0 !important;
+    -webkit-box-shadow: 0 0 0 0 transparent !important;
+    box-shadow: 0 0 0 0 transparent !important; }
+  .fr-box .fr-toolbar {
+    padding: 5px 0 0 10px !important; }
+
+.fr-box:active .fr-toolbar, .fr-box:active .fr-wrapper, .fr-box:focus .fr-toolbar, .fr-box:focus .fr-wrapper {
+  border-color: #0c77f8 !important;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
