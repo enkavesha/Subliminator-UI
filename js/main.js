@@ -15,9 +15,13 @@ $(document).ready(function(){
 	});
     $('#selling-price').on('input', function() { 
         var sellingPrice= $(this).val();
-        sellingPrice=sellingPrice.replace('.',',');
+        sellingPrice=parseFloat(sellingPrice); 
         var profitYoga= document.getElementById('product-profit-yoga');
-        profitYoga.innerHTML = sellingPrice-38;
+        if (isNaN(sellingPrice)) { 
+            profitYoga.innerHTML = '...'; 
+        } else { 
+            profitYoga.innerHTML = sellingPrice-38; 
+        }
     });
 
 });

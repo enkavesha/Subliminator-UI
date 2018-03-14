@@ -732,6 +732,7 @@ button{
 }
 input[type=text], input[type=number], textarea, select{
     border-radius: 2rem;
+    outline: none;
     border: 2px solid $mediumGrey;
     padding: 8px 15px;
     width: 100%;

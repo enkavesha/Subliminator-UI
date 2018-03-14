@@ -703,6 +703,7 @@ button:focus {
 
 input[type=text], input[type=number], textarea, select {
   border-radius: 2rem;
+  outline: none;
   border: 2px solid #e2e2e2;
   padding: 8px 15px;
   width: 100%;
