@@ -1,0 +1,14 @@
+$(document).ready(function(){
+	$('#template-view').click(function(){
+        $('.view-controls').toggleClass('view-controls-visible');
+        $('.mockup-view-wrapper').toggleClass('mockup-view-wrapper-visible');
+        $(this).toggleClass('btn-grey-active');
+        $('#mockup-view').toggleClass('btn-grey-active');
+	});
+	$('#mockup-view').click(function(){
+        $('.view-controls').toggleClass('view-controls-visible');
+        $('.mockup-view-wrapper').toggleClass('mockup-view-wrapper-visible');
+        $(this).toggleClass('btn-grey-active');
+        $('#template-view').toggleClass('btn-grey-active');
+	});
+});

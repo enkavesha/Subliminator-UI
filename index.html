@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Subliminator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -11,96 +11,8 @@
     </head>
     <body>
         <header>
-<!--
-            <div class="header-wrapper">
-                <div class="header-logo">
-                    <a href="/index.html">
-                        <img src="images/logo.svg">
-                        Subliminator
-                    </a>
-                </div>
-                <div class="header-button-wrapper">
-                    <button class="btn-header">New Product</button>
-                    <button class="btn-header">Orders</button>
-                    <button class="btn-header btn-header-dropdown">Account</button>
-                    <button class="btn-header btn-header-blue">Help</button>
-                </div>
-            </div>
--->
+
         </header>
-<!--
-        <div class="side-menu">
-            <nav>
-                <ul>
-                    <li>
-                       <div class="nav-link-wrapper">
-                            <div class="nav-svg-wrapper">
-                                <a href=""><img src="images/"></a>
-                            </div>
-                            <a href="" class="nav-link">Home</a>
-                        </div>
-                    </li>
-                    <li>
-                       <div class="nav-link-wrapper">
-                            <div class="nav-svg-wrapper">
-                                <a href=""><img src="images/"></a>
-                            </div>
-                            <a href="" class="nav-link">Orders</a>
-                        </div>
-                    </li>
-                    <li>
-                       <div class="nav-link-wrapper">
-                            <div class="nav-svg-wrapper">
-                                <a href=""><img src="images/"></a>
-                            </div>
-                            <a href="" class="nav-link">Products</a>
-                        </div>
-                    </li>
-                    <li>
-                       <div class="nav-link-wrapper">
-                            <div class="nav-svg-wrapper">
-                                <a href=""><img src="images/"></a>
-                            </div>
-                            <a href="" class="nav-link">Customers</a>
-                        </div>
-                    </li>
-                    <li>
-                       <div class="nav-link-wrapper">
-                            <div class="nav-svg-wrapper">
-                                <a href=""><img src="images/"></a>
-                            </div>
-                            <a href="" class="nav-link">Reports</a>
-                        </div>
-                    </li>
-                    <li>
-                       <div class="nav-link-wrapper">
-                            <div class="nav-svg-wrapper">
-                                <a href=""><img src="images/"></a>
-                            </div>
-                            <a href="" class="nav-link">Discounts</a>
-                        </div>
-                    </li>
-                    <li>
-                       <div class="nav-link-wrapper">
-                            <div class="nav-svg-wrapper">
-                                <a href=""><img src="images/"></a>
-                            </div>
-                            <a href="" class="nav-link">Apps</a>
-                        </div>
-                    </li>
-                    <li><p class="nav-channels">Sales channels</p></li>  
-                    <li>
-                       <div class="nav-link-wrapper">
-                            <div class="nav-svg-wrapper">
-                                <a href=""><img src="images/"></a>
-                            </div>
-                            <a href="" class="nav-link nav-channel">Online store</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
--->
         <section class="main-content-wrapper">
            <div class="content-headline">
                <div class="container-fluid">
@@ -117,22 +29,13 @@
                    </div>
                </div>
            </div>
-<!--
-            <div class="content-headline">
-                <div class="breadcrumbs">
-                    <p class="product-name">Hoodie All-Over</p>
-                    <a href="" class="link-back"><i class="material-icons">arrow_back</i>Back To Products</a>
-                </div>
-                <a href="#"><button class="btn btn-lg btn-blue">Review & Publish <i class="material-icons">arrow_forward</i></button></a>
-            </div>
--->
             <div class="container-fluid no-gutter">
                 <div class="row">
                     <div class="col-7 left-panel">
                         <div class="template-view white-block">
                             <div class="template-buttons">
-                                <button class="btn btn-lg btn-grey btn-grey-active">Template view</button>
-                                <button class="btn btn-lg btn-grey">Mockup view</button>
+                                <button class="btn btn-lg btn-grey btn-grey-active" id="template-view">Template view</button>
+                                <button class="btn btn-lg btn-grey" id="mockup-view">Mockup view</button>
                             </div>
                             <div class="file-views">
                                 <ul>
@@ -147,7 +50,6 @@
                             <div class="canvas-wrapper">
                                 <div id="view-screen"></div>
                             </div>
-<!--
                             <div class="mockup-view-wrapper">
                                 <div class="mockup-view"></div>
                                 <div class="mockup-view"></div>
@@ -158,8 +60,7 @@
                                 <div class="mockup-view"></div>
                                 <div class="mockup-view"></div>
                             </div>
--->
-                            <div class="view-controls">
+                            <div class="view-controls view-controls-visible">
                                 <div class="range-container">
                                     <button onclick="document.getElementById('zoom-range').stepDown(1)" class="view-zoom zoom-out"></button>
                                     <input type="range" min="1" max="100" value="50" class="slider" id="zoom-range">
@@ -343,5 +244,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
