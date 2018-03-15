@@ -22,17 +22,22 @@ $(document).ready(function(){
         } else { 
             profitYoga.innerHTML = sellingPrice-38; 
         }
-    });
-    $(function() { $('#product-description').froalaEditor({
-        placeholderText: 'Hoodie All-Over',
-        toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'insertLink', 'insertImage', 'insertVideo', 'html', 'formatUL', 'formatOL', 'align'],
-        theme: 'custom'
-    }) });    
+    }); 
     $(".chosen-select").chosen();
     $('.chosen-results').click(function(){
         $('.chosen-container').removeClass('chosen-container-active');
     });
-//    $('.chosen-container').click(function(){
-//        $(this).removeClass('chosen-container-active');
-//    });
+    var editor = new Simditor({
+      textarea: $('#product-description'),
+        placeholder:'Hoodie All-Over',
+        toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
+        upload: true
+    });
+    $('.simditor-body').on('focus', function() { 
+//        $('.simditor-wrapper').style.borderColor='blue';
+    }); 
+    var input = document.getElementById("product-description");
+        input.addEventListener("focus", function () {
+        $('.simditor-wrapper').style.backgroundColor = "red";  
+    });
 });

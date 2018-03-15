@@ -715,9 +715,12 @@ button:focus {
     background-size: 32px;
     background-position: 4px 4px; }
 
-input[type=text],
-input[type=tel],
-textarea {
+input {
+  outline: none;
+  border-color: #e2e2e2;
+  font-family: 'Montserrat', sans-serif; }
+
+.input-style {
   border-radius: 2rem;
   outline: none;
   border: 2px solid #e2e2e2;
@@ -729,15 +732,9 @@ textarea {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear; }
-  input[type=text]::-webkit-input-placeholder,
-  input[type=tel]::-webkit-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  .input-style::-webkit-input-placeholder {
     color: #e2e2e2; }
-  input[type=text]:active, input[type=text]:focus,
-  input[type=tel]:active,
-  input[type=tel]:focus,
-  textarea:active,
-  textarea:focus {
+  .input-style:active, .input-style:focus {
     border-color: #0c77f8;
     -webkit-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
