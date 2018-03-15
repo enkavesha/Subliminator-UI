@@ -47,18 +47,21 @@ $(document).ready(function(){
     $(function() {
     var div = $('.upload-file');
     var width = div.width();
-    if(width>115){
-            div.css('height', width*1.3);
+    if(width>108){
+            div.css('height', width*1.25);
         }
+    var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;
+        document.getElementById('hoodie-label-svg').css('height', svgWrapperHeight);
     });
     
     window.onresize = function(event) {
         var div = $('.upload-file');
         var width = div.width();
-        if(width>115){
-            div.css('height', width*1.3);
+        if(width>108){
+            div.css('height', width*1.25);
         }
-        
+        var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;
+        document.getElementById('hoodie-label-svg').css('height', svgWrapperHeight); 
     };
 
 });

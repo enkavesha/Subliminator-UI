@@ -111,14 +111,6 @@ button:focus {
     color: #fff;
     background: #0c77f8; }
 
-.btn-upload {
-  color: #fff;
-  background: #0c77f8;
-  position: absolute;
-  -ms-flex-item-align: center;
-  align-self: center;
-  bottom: 35px; }
-
 .btn-upload, #btn-review, .btn-guidelines {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,11 +294,11 @@ button:focus {
 .template-view .canvas-wrapper {
   position: relative;
   margin: 15px auto 0;
-  max-width: 650px;
+  max-width: 1200px;
   width: 100%; }
 
 .template-view #view-screen {
-  max-width: 650px;
+  max-width: 1200px;
   background: #f5f5f5; }
   .template-view #view-screen:before {
     content: "";
@@ -546,6 +538,14 @@ button:focus {
   justify-content: space-between;
   -ms-flex-flow: wrap;
   flex-flow: wrap; }
+  .uploads .btn-upload {
+    color: #fff;
+    background: #0c77f8;
+    position: absolute;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin: 0 auto;
+    bottom: 10%; }
   .uploads .upload-file {
     width: 47%;
     margin: 0 0 10px;
@@ -586,11 +586,25 @@ button:focus {
       border: 2px dashed #e2e2e2; }
       .uploads .upload-file .upload-wrapper .upload-svg-wrapper {
         width: 100%;
-        height: auto;
-        margin: 0 0 70px; }
+        height: 100%;
+        position: absolute;
+        top: 20%;
+        margin: 0 auto; }
         .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
           width: 50%;
-          margin: 20px auto; }
+          margin: 0 auto; }
+    .uploads .upload-file .upload-inner {
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+      flex-flow: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
     .uploads .upload-file:last-child img {
       width: 40% !important; }
 
@@ -837,10 +851,14 @@ input {
     margin: 0 10px 0; }
   .btn-upload {
     font-size: 11px !important;
-    padding: 0.4rem 0.7rem !important; }
+    padding: 0.3rem 0.6rem !important;
+    bottom: 20px;
+    max-width: 150px; }
     .btn-upload i {
       font-size: 14px !important;
-      line-height: 16px !important; } }
+      line-height: 16px !important; }
+  .uploads .upload-file p {
+    font-size: 12px; } }
 
 @media screen and (max-width: 992px) {
   .btn-upload {
@@ -852,10 +870,8 @@ input {
       line-height: 14px !important; }
   .uploads .upload-file p {
     font-size: 12px; }
-  .uploads .upload-file .upload-wrapper .upload-svg-wrapper {
-    margin: 0 0 50px; }
-    .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
-      width: 70%; }
+  .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
+    width: 50%; }
   .stringcolor-wrapper label {
     margin: 0 10px 0 0; }
   .shipping-wrapper .shipping-country {
@@ -964,19 +980,18 @@ input {
     margin: 20px 0 0 0 !important; }
   .file-views li:nth-child(6) {
     border-left: 2px solid #f5f5f5 !important; }
-  .btn-upload {
-    font-size: 12px !important;
-    padding: 0.5rem 1rem !important;
-    bottom: 35px; }
-    .btn-upload i {
-      font-size: 16px !important;
-      line-height: 18px !important; }
-  .uploads .upload-file p {
-    font-size: 15px; }
-  .uploads .upload-file .upload-wrapper .upload-svg-wrapper {
-    margin: 0 0 70px; }
-    .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
-      width: 50%; }
+  .uploads {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap; }
+    .uploads .upload-file {
+      width: 100%;
+      margin: 0 0 0; }
   .stringcolor-wrapper label {
     margin: 0 20px 0 0; }
   .shipping-wrapper .shipping-country {
@@ -1041,10 +1056,8 @@ input {
       line-height: 14px !important; }
   .uploads .upload-file p {
     font-size: 12px; }
-  .uploads .upload-file .upload-wrapper .upload-svg-wrapper {
-    margin: 0 0 50px; }
-    .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
-      width: 70%; }
+  .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
+    width: 50%; }
   .calc-profit .input-profit {
     margin: 10px auto 0; }
   .calc-profit #selling-price {

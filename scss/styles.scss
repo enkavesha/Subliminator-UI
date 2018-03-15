@@ -90,12 +90,7 @@ button{
         background: $blue;
     }
 }
-.btn-upload{
-    color: #fff;
-    background: $blue;
-    position: absolute;
-    align-self: center;
-    bottom: 35px;}
+
 .btn-upload, #btn-review, .btn-guidelines{
     display: flex;
     i{
@@ -303,11 +298,11 @@ button{
     .canvas-wrapper{
         position: relative;
         margin: 15px auto 0;
-        max-width: 650px;
+        max-width: 1200px;
         width: 100%;
     }
     #view-screen{
-        max-width: 650px;
+        max-width: 1200px;
         background: $lightGrey;
         &:before{
             content: "";
@@ -559,6 +554,14 @@ button{
     display: flex;
     justify-content: space-between;
     flex-flow: wrap;
+    .btn-upload{
+        color: #fff;
+        background: $blue;
+        position: absolute;
+        align-self: center;
+        margin: 0 auto;
+        bottom: 10%;
+    }
     .upload-file{
         width: 47%;
         margin: 0 0 10px;
@@ -588,13 +591,22 @@ button{
             border: 2px dashed $mediumGrey;
             .upload-svg-wrapper{
                 width: 100%;
-                height: auto;
-                margin: 0 0 70px;
+                height: 100%;
+                position: absolute;
+                top: 20%;
+                margin: 0 auto;
                 img{
                     width: 50%;
-                    margin: 20px auto;
+                    margin: 0 auto;
                 }
             }
+        }
+        .upload-inner{
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            
         }
         &:last-child{
             img{
