@@ -302,11 +302,11 @@ button{
     }
     .canvas-wrapper{
         position: relative;
-        margin: 15px 0 0 0;
+        margin: 15px auto 0;
+        max-width: 650px;
         width: 100%;
     }
     #view-screen{
-        margin: 0 auto;
         max-width: 650px;
         background: $lightGrey;
         &:before{
@@ -353,7 +353,8 @@ button{
     }
 }
 .view-controls{
-    margin: 10px 0 0 0;
+    padding: 10px 0 0 0;
+    background: #fff;
     display: none;
     &.view-controls-visible{
         display: flex;
@@ -562,6 +563,7 @@ button{
         width: 47%;
         margin: 0 0 10px;
         display: flex;
+        flex: 0 0 auto;
         flex-flow: column;
         height: auto;
         &:nth-child(5),&:nth-child(6){

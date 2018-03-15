@@ -48,7 +48,17 @@
                                 </ul>
                             </div>
                             <div class="canvas-wrapper">
-                                <div id="view-screen"></div>
+                                    <div id="view-screen"></div>
+                                    <div class="view-controls view-controls-visible">
+                                    <div class="range-container">
+                                        <button onclick="document.getElementById('zoom-range').stepDown(1)" class="view-zoom zoom-out"></button>
+                                        <input type="range" min="1" max="100" value="50" class="slider" id="zoom-range">
+                                        <button onclick="document.getElementById('zoom-range').stepUp(1)" class="view-zoom zoom-in"></button>
+                                    </div>
+                                    <button class="btn btn-grey btn-view-align" id="align-v"><i class="material-icons">vertical_align_center</i></button>
+                                    <button class="btn btn-grey btn-view-align" id="align-h"><i class="material-icons">vertical_align_center</i></button>
+                                    <button class="btn btn-grey" id="reset">Reset</button>
+                                </div>
                             </div>
                             <div class="mockup-view-wrapper">
                                 <div class="mockup-view"></div>
@@ -59,16 +69,6 @@
                                 <div class="mockup-view"></div>
                                 <div class="mockup-view"></div>
                                 <div class="mockup-view"></div>
-                            </div>
-                            <div class="view-controls view-controls-visible">
-                                <div class="range-container">
-                                    <button onclick="document.getElementById('zoom-range').stepDown(1)" class="view-zoom zoom-out"></button>
-                                    <input type="range" min="1" max="100" value="50" class="slider" id="zoom-range">
-                                    <button onclick="document.getElementById('zoom-range').stepUp(1)" class="view-zoom zoom-in"></button>
-                                </div>
-                                <button class="btn btn-grey btn-view-align" id="align-v"><i class="material-icons">vertical_align_center</i></button>
-                                <button class="btn btn-grey btn-view-align" id="align-h"><i class="material-icons">vertical_align_center</i></button>
-                                <button class="btn btn-grey" id="reset">Reset</button>
                             </div>
                         </div>
                     </div>
@@ -127,6 +127,7 @@
                             </div>
                             <div class="uploads">
                                 <div class="upload-file">
+                                   <div class="upload-file-inner">
                                     <p>Frontside</p>
                                     <div class="upload-wrapper">
                                         <div class="upload-svg-wrapper">
@@ -134,8 +135,10 @@
                                         </div>
                                         <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
+                                    </div>
                                 </div>
                                 <div class="upload-file">
+                                   <div class="upload-file-inner">
                                     <p>Backside</p>
                                     <div class="upload-wrapper">
                                         <div class="upload-svg-wrapper">
@@ -143,8 +146,10 @@
                                         </div>
                                         <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
+                                    </div>
                                 </div>
                                 <div class="upload-file">
+                                   <div class="upload-file-inner">
                                     <p>Left & Right Sleeve</p>
                                     <div class="upload-wrapper">
                                         <div class="upload-svg-wrapper">
@@ -152,8 +157,10 @@
                                         </div>
                                         <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
+                                    </div>
                                 </div>
                                 <div class="upload-file">
+                                   <div class="upload-file-inner">
                                     <p>Pocket</p>
                                     <div class="upload-wrapper">
                                         <div class="upload-svg-wrapper">
@@ -161,8 +168,10 @@
                                         </div>
                                         <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
+                                    </div> 
                                 </div>
                                 <div class="upload-file">
+                                   <div class="upload-file-inner">
                                     <p>Hood</p>
                                     <div class="upload-wrapper">
                                         <div class="upload-svg-wrapper">
@@ -170,14 +179,17 @@
                                         </div>
                                         <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
                                     </div>
+                                    </div>
                                 </div>
                                 <div class="upload-file">
+                                   <div class="upload-file-inner">
                                     <p>Inside Label <span>(Optional)</span></p>
                                     <div class="upload-wrapper">
                                         <div class="upload-svg-wrapper">
                                             <img src="images/hoodie-label.svg">
                                         </div>
                                         <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
+                                    </div>
                                     </div>
                                 </div>
                             </div>

@@ -29,7 +29,7 @@ $(document).ready(function(){
         selectorChosen.chosen()
     }
     
-//    $(".chosen-select").chosen();
+
     $('.chosen-results').click(function(){
         $('.chosen-container').removeClass('chosen-container-active');
     });
@@ -43,5 +43,22 @@ $(document).ready(function(){
         });
     }
 
+    //////////
+    $(function() {
+    var div = $('.upload-file');
+    var width = div.width();
+    if(width>115){
+            div.css('height', width*1.3);
+        }
+    });
+    
+    window.onresize = function(event) {
+        var div = $('.upload-file');
+        var width = div.width();
+        if(width>115){
+            div.css('height', width*1.3);
+        }
+        
+    };
 
 });
