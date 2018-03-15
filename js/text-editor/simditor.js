@@ -1986,11 +1986,11 @@ Toolbar = (function(superClass) {
               return _this.wrapper.css('top', _this.opts.toolbarFloatOffset);
             }
           } else {
-            floatInitialized || (floatInitialized = initToolbarFloat());
-            _this.editor.wrapper.addClass('toolbar-floating').css('padding-top', toolbarHeight);
-            if (_this.editor.util.os.mobile) {
-              return _this.wrapper.css('top', scrollTop - topEdge + _this.opts.toolbarFloatOffset);
-            }
+//            floatInitialized || (floatInitialized = initToolbarFloat());
+//            _this.editor.wrapper.addClass('toolbar-floating').css('padding-top', toolbarHeight);
+//            if (_this.editor.util.os.mobile) {
+//              return _this.wrapper.css('top', scrollTop - topEdge + _this.opts.toolbarFloatOffset);
+//            }
           }
         };
       })(this));

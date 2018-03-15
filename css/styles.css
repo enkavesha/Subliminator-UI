@@ -256,7 +256,14 @@ button:focus {
   align-items: center; }
 
 .template-view .template-buttons {
-  text-align: center; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
   .template-view .template-buttons button:nth-child(1) {
     margin: 0 7px 0 0; }
   .template-view .template-buttons button {
@@ -271,6 +278,8 @@ button:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -500,6 +509,8 @@ button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s; }
@@ -515,7 +526,7 @@ button:focus {
   -webkit-box-direction: normal;
   -ms-flex-flow: column;
   flex-flow: column;
-  margin: 0 15px 25px 0; }
+  margin: 0 15px 35px 0; }
   .size-range .size-range-label span:nth-child(2) {
     margin: 0; }
   .size-range .size-range-label .size-checkmark {
@@ -668,7 +679,7 @@ button:focus {
     display: -ms-flexbox;
     display: flex; }
   .shipping-wrapper .shipping-country {
-    width: 130px;
+    min-width: 120px;
     height: 40px;
     margin: 0 0 3px 0;
     display: -webkit-box;
@@ -742,7 +753,15 @@ input {
 
 .calc-profit {
   text-align: left;
-  font-size: 15px; }
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .input-profit {
   position: relative; }
@@ -750,7 +769,7 @@ input {
     content: "$";
     display: block;
     position: absolute;
-    top: -1px;
+    top: 12px;
     left: 25px;
     font-weight: 600;
     font-size: 14px;
@@ -803,3 +822,210 @@ input {
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear; }
+
+@media screen and (min-width: 1200px) {
+  #selling-price {
+    margin: 0 10px 0; } }
+
+@media screen and (max-width: 1200px) {
+  #selling-price {
+    margin: 0 10px 0; }
+  .btn-upload {
+    font-size: 11px !important;
+    padding: 0.4rem 0.7rem !important; }
+    .btn-upload i {
+      font-size: 14px !important;
+      line-height: 16px !important; } }
+
+@media screen and (max-width: 992px) {
+  .btn-upload {
+    font-size: 9px !important;
+    padding: 0.3rem 0.6rem !important;
+    bottom: 20px; }
+    .btn-upload i {
+      font-size: 12px !important;
+      line-height: 14px !important; }
+  .uploads .upload-file p {
+    font-size: 12px; }
+  .uploads .upload-file .upload-wrapper .upload-svg-wrapper {
+    margin: 0 0 50px; }
+    .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
+      width: 70%; }
+  .stringcolor-wrapper label {
+    margin: 0 10px 0 0; }
+  .shipping-wrapper .shipping-country {
+    max-width: 130px; } }
+
+@media screen and (max-width: 768px) {
+  .file-views li:nth-child(6) {
+    border: none !important; }
+  .shipping-wrapper .shipping-country {
+    max-width: 110px;
+    min-width: 110px; }
+    .shipping-wrapper .shipping-country p {
+      font-size: 13px; }
+  .shipping-wrapper .shipping-cost p {
+    font-size: 13px; } }
+
+@media screen and (max-width: 576px) {
+  .left-panel {
+    padding-right: 15px; }
+  .white-block.template-view, .white-block.terms {
+    margin: 20px 0 0 0 !important; }
+  .file-views li:nth-child(6) {
+    border-left: 2px solid #f5f5f5 !important; }
+  .btn-upload {
+    font-size: 12px !important;
+    padding: 0.5rem 1rem !important;
+    bottom: 35px; }
+    .btn-upload i {
+      font-size: 16px !important;
+      line-height: 18px !important; }
+  .uploads .upload-file p {
+    font-size: 15px; }
+  .uploads .upload-file .upload-wrapper .upload-svg-wrapper {
+    margin: 0 0 70px; }
+    .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
+      width: 50%; }
+  .stringcolor-wrapper label {
+    margin: 0 20px 0 0; }
+  .shipping-wrapper .shipping-country {
+    max-width: 110px;
+    min-width: 130px; }
+    .shipping-wrapper .shipping-country p {
+      font-size: 15px; }
+  .shipping-wrapper .shipping-cost p {
+    font-size: 15px; } }
+
+@media screen and (max-width: 480px) {
+  .btn, #btn-review, #btn-publish {
+    font-size: 11px !important; }
+    .btn i, #btn-review i, #btn-publish i {
+      font-size: 12px !important; }
+  #btn-review i {
+    margin: 0; }
+  .content-headline .breadcrumbs p {
+    font-size: 15px; }
+  .file-views li:nth-child(6) {
+    border: none !important;
+    margin: 0; }
+  .file-views li:nth-child(6) {
+    margin: 0; } }
+
+@media only screen and (max-width: 426px) {
+  .file-views li:nth-child(5) {
+    border: none !important;
+    margin: 0; }
+  .file-views li:nth-child(6) {
+    border-left: 2px solid #f5f5f5 !important; } }
+
+@media only screen and (max-width: 384px) {
+  .file-views li {
+    margin: 0 0 5px; }
+    .file-views li:nth-child(5) {
+      border-left: 2px solid #f5f5f5 !important; }
+  .view-controls {
+    margin: 10px 0 0 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .view-controls.view-controls-visible {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-flow: wrap;
+      flex-flow: wrap; }
+    .view-controls .range-container {
+      width: 100%;
+      margin: 0 0 10px; }
+    .view-controls .btn-view-align {
+      margin: 0 0 0 0; }
+  .btn-upload, #btn-review, #btn-publish {
+    font-size: 10px !important;
+    padding: 0.3rem 0.6rem !important;
+    bottom: 25px; }
+    .btn-upload i, #btn-review i, #btn-publish i {
+      font-size: 12px !important;
+      line-height: 14px !important; }
+  .uploads .upload-file p {
+    font-size: 12px; }
+  .uploads .upload-file .upload-wrapper .upload-svg-wrapper {
+    margin: 0 0 50px; }
+    .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
+      width: 70%; }
+  .calc-profit .input-profit {
+    margin: 0 auto; }
+  .calc-profit #selling-price {
+    margin: 0 0 10px; }
+  .calc-profit #profit-text {
+    margin: 0 auto; } }
+
+@media only screen and (max-width: 360px) {
+  .template-view .template-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .template-view .template-buttons button:nth-child(1) {
+      margin: 0 10px 0 0; }
+    .template-view .template-buttons button, .template-view .template-buttons .btn {
+      padding: .3rem 0.7rem; } }
+
+@media only screen and (max-width: 320px) {
+  .content-headline .breadcrumbs {
+    margin: 0 0 15px; }
+  .template-view .template-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .template-view .template-buttons button:nth-child(1) {
+      margin: 0 0 10px 0; }
+    .template-view .template-buttons button, .template-view .template-buttons .btn {
+      padding: .3rem 0.7rem; }
+  .template-view .file-views ul li a {
+    font-size: 10px; }
+  .uploads {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap; }
+    .uploads .upload-file {
+      width: 100%;
+      margin: 0 0 0; }
+  .stringcolor-wrapper label {
+    margin: 0 5px 0 0; }
+  .template-view .mockup-view-wrapper {
+    display: none;
+    margin: 10px auto 0; }
+    .template-view .mockup-view-wrapper.mockup-view-wrapper-visible {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    .template-view .mockup-view-wrapper .mockup-view {
+      display: inline-block;
+      margin: 0 0 10px;
+      width: calc((100% - 10px)*1/2) !important; }
+      .template-view .mockup-view-wrapper .mockup-view:nth-child(odd) {
+        margin: 0 10px 10px 0 !important; }
+      .template-view .mockup-view-wrapper .mockup-view:nth-child(even) {
+        margin: 0 0 10px 0 !important; }
+  .shipping-wrapper .shipping-country {
+    max-width: 100px;
+    min-width: 100px; }
+    .shipping-wrapper .shipping-country p {
+      font-size: 13px; }
+  .shipping-wrapper .shipping-cost p {
+    font-size: 13px; } }

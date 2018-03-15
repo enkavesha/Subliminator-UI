@@ -259,7 +259,9 @@ button{
 }
 .template-view{
     .template-buttons{
-        text-align: center;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
         button:nth-child(1){
             margin: 0 7px 0 0;
         }
@@ -275,6 +277,7 @@ button{
         }
         ul{
             display: flex;
+            flex-flow: wrap;
             justify-content: center;
             text-transform: uppercase;
             font-weight: 600;
@@ -525,6 +528,7 @@ button{
     }
     .size-range-checkbox-wrapper{
         display: flex;
+        flex-flow: wrap;
         transition: all 0.5s;
     }
     .size-range-label{
@@ -533,7 +537,7 @@ button{
         text-align: center;
         display: flex;
         flex-flow: column;
-        margin: 0 15px 25px 0;
+        margin: 0 15px 35px 0;
         span:nth-child(2){
             margin: 0;
         }
@@ -694,7 +698,7 @@ button{
         display: flex;
     }
     .shipping-country{
-        width: 130px;
+        min-width: 120px;
         height: 40px;
         margin: 0 0 3px 0;
         display: flex;
@@ -764,15 +768,12 @@ input{
         transition: all 0.2s linear;
     }
 }
-//select{
-//    &:active,&:focus{
-//        background: $blue;
-//        color: #fff;
-//    }
-//}
 .calc-profit{
     text-align: left;
     font-size: 15px;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
 }
 .input-profit{
     position: relative;
@@ -780,7 +781,7 @@ input{
         content: "$";
         display: block;
         position: absolute;
-        top: -1px;
+        top: 12px;
         left: 25px;
         font-weight: 600;
         font-size: 14px;
@@ -846,3 +847,5 @@ input{
         transition: all 0.2s linear;
     }
 }
+
+@import "media-queries";
