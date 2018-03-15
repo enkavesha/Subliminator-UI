@@ -298,11 +298,11 @@ button{
     .canvas-wrapper{
         position: relative;
         margin: 15px auto 0;
-        max-width: 1200px;
+        max-width: 600px;
         width: 100%;
     }
     #view-screen{
-        max-width: 1200px;
+        max-width: 600px;
         background: $lightGrey;
         &:before{
             content: "";

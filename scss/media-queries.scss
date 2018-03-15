@@ -187,7 +187,7 @@
         justify-content: space-between;
         flex-flow: wrap;
         .upload-file{
-            width: 100%;
+            width: 49%;
             margin: 0 0 0;
         }
     }
@@ -248,7 +248,7 @@
         justify-content: space-between;
         flex-flow: wrap;
         .upload-file{
-            width: 100%;
+            width: 49%;
             margin: 0 0 0;
         }
     }
@@ -422,8 +422,18 @@
         justify-content: space-between;
         flex-flow: wrap;
         .upload-file{
-            width: 100%;
+            width: 49%;
             margin: 0 0 0;
+        }
+            .btn-upload{
+            font-size: 9px!important;
+            padding: .3rem 0.4rem!important;
+            max-width: 140px;
+            i{
+                font-size: 12px!important;
+                line-height: 14px!important;
+                margin: 0 2px 0 0;
+            }
         }
     }
     .stringcolor-wrapper{

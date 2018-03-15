@@ -47,7 +47,7 @@ $(document).ready(function(){
     $(function() {
     var div = $('.upload-file');
     var width = div.width();
-    if(width>108){
+    if(width>104){
             div.css('height', width*1.25);
         }
     var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;
@@ -57,7 +57,7 @@ $(document).ready(function(){
     window.onresize = function(event) {
         var div = $('.upload-file');
         var width = div.width();
-        if(width>108){
+        if(width>104){
             div.css('height', width*1.25);
         }
         var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;

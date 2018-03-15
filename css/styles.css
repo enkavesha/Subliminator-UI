@@ -294,11 +294,11 @@ button:focus {
 .template-view .canvas-wrapper {
   position: relative;
   margin: 15px auto 0;
-  max-width: 1200px;
+  max-width: 600px;
   width: 100%; }
 
 .template-view #view-screen {
-  max-width: 1200px;
+  max-width: 600px;
   background: #f5f5f5; }
   .template-view #view-screen:before {
     content: "";
@@ -953,7 +953,7 @@ input {
     -ms-flex-flow: wrap;
     flex-flow: wrap; }
     .uploads .upload-file {
-      width: 100%;
+      width: 49%;
       margin: 0 0 0; }
   .calc-profit .input-profit {
     margin: 10px auto 0; }
@@ -992,7 +992,7 @@ input {
     -ms-flex-flow: wrap;
     flex-flow: wrap; }
     .uploads .upload-file {
-      width: 100%;
+      width: 49%;
       margin: 0 0 0; }
   .stringcolor-wrapper label {
     margin: 0 20px 0 0; }
@@ -1110,8 +1110,16 @@ input {
     -ms-flex-flow: wrap;
     flex-flow: wrap; }
     .uploads .upload-file {
-      width: 100%;
+      width: 49%;
       margin: 0 0 0; }
+    .uploads .btn-upload {
+      font-size: 9px !important;
+      padding: 0.3rem 0.4rem !important;
+      max-width: 140px; }
+      .uploads .btn-upload i {
+        font-size: 12px !important;
+        line-height: 14px !important;
+        margin: 0 2px 0 0; }
   .stringcolor-wrapper label {
     margin: 0 5px 0 0; }
   .template-view .mockup-view-wrapper {
