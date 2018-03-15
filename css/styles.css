@@ -57,7 +57,15 @@ p {
   color: #e2e2e2; }
 
 .left-panel {
-  padding-right: 0; }
+  padding-right: 0;
+  max-width: 660px; }
+
+.right-panel {
+  max-width: 555px; }
+
+.row-width {
+  max-width: 1215px;
+  margin: 0 auto; }
 
 .vcenter {
   display: -webkit-box;
@@ -896,6 +904,10 @@ input {
     margin: 0 auto; } }
 
 @media screen and (max-width: 768px) {
+  .right-panel, .left-panel {
+    max-width: 100%; }
+  .left-panel {
+    padding-right: 15px; }
   .file-views li:nth-child(6) {
     border: none !important; }
   .stringcolor-wrapper label {
@@ -1068,14 +1080,6 @@ input {
     font-size: 12px; }
   .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
     width: 50%; }
-  .calc-profit .input-profit {
-    margin: 10px auto 0; }
-  .calc-profit #selling-price {
-    margin: 0 0 10px; }
-  .calc-profit #profit-text {
-    margin: 0 auto; } }
-
-@media only screen and (max-width: 360px) {
   .template-view .template-buttons {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1086,9 +1090,39 @@ input {
     -ms-flex-pack: center;
     justify-content: center; }
     .template-view .template-buttons button:nth-child(1) {
-      margin: 0 10px 0 0; }
+      margin: 0 10px 10px; }
     .template-view .template-buttons button, .template-view .template-buttons .btn {
       padding: .3rem 0.7rem; }
+  .calc-profit .input-profit {
+    margin: 10px auto 0; }
+  .calc-profit #selling-price {
+    margin: 0 0 10px; }
+  .calc-profit #profit-text {
+    margin: 0 auto; }
+  .stringcolor-wrapper label {
+    margin: 0 10px 10px 0; } }
+
+@media only screen and (max-width: 360px) {
+  .uploads {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap; }
+    .uploads .upload-file {
+      width: 49%;
+      margin: 0 0 0; }
+    .uploads .btn-upload {
+      font-size: 8px !important;
+      padding: 0.3rem 0.4rem !important;
+      max-width: 130px; }
+      .uploads .btn-upload i {
+        font-size: 10px !important;
+        line-height: 12px !important;
+        margin: 0 2px 0 0; }
   .stringcolor-wrapper label {
     margin: 0 10px 10px 0; } }
 
@@ -1121,15 +1155,15 @@ input {
       width: 49%;
       margin: 0 0 0; }
     .uploads .btn-upload {
-      font-size: 9px !important;
-      padding: 0.3rem 0.4rem !important;
+      font-size: 8px !important;
+      padding: 0.2rem 0.3rem !important;
       max-width: 140px; }
       .uploads .btn-upload i {
-        font-size: 12px !important;
-        line-height: 14px !important;
+        font-size: 10px !important;
+        line-height: 12px !important;
         margin: 0 2px 0 0; }
   .stringcolor-wrapper label {
-    margin: 0 5px 0 0; }
+    margin: 0 5px 10px 0; }
   .template-view .mockup-view-wrapper {
     display: none;
     margin: 10px auto 0; }

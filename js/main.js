@@ -12,7 +12,17 @@ $(document).ready(function(){
         $(this).toggleClass('btn-grey-active');
         $('#template-view').toggleClass('btn-grey-active');
         $('.file-views').toggleClass('file-views-visible');
-	});
+	});	
+//    $('.file-view').click(function(){
+//        $('.file-view').removeClass('file-view-active');
+//        $(this).toggleClass('file-view-active');
+//	});
+    $(".file-views a").click(function() { 
+        $(".file-views a").not($(this)).removeClass('file-view-active');
+        $(this).toggleClass('file-view-active');
+    });
+    
+    ///////////calculate profit from sale
     $('#selling-price').on('input', function() { 
         var sellingPrice= $(this).val();
         sellingPrice=parseFloat(sellingPrice).toFixed(2); 
@@ -20,19 +30,18 @@ $(document).ready(function(){
         if (isNaN(sellingPrice)|sellingPrice<38) { 
             profitYoga.innerHTML = '0.00'; 
         } else { 
-            profitYoga.innerHTML = sellingPrice-38; 
+            profitYoga.innerHTML = (sellingPrice-38).toFixed(2); 
         }
     }); 
-    
+    ///////////////chosen selector
     let selectorChosen = $(".chosen-select");
     if (selectorChosen && selectorChosen.length > 0) {
         selectorChosen.chosen()
     }
-    
-
     $('.chosen-results').click(function(){
         $('.chosen-container').removeClass('chosen-container-active');
     });
+    //////////////text editor
     let productDescription = $(document.getElementById('product-description'));
     if(productDescription && productDescription.length > 0){
         var editor = new Simditor({
@@ -43,25 +52,28 @@ $(document).ready(function(){
         });
     }
 
-    //////////
-    $(function() {
-    var div = $('.upload-file');
-    var width = div.width();
-    if(width>104){
-            div.css('height', width*1.25);
-        }
-    var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;
-        document.getElementById('hoodie-label-svg').css('height', svgWrapperHeight);
-    });
-    
-    window.onresize = function(event) {
+    //////////upload file div resize
+    if($('.upload-file')[0]){
+        $(function() {
         var div = $('.upload-file');
         var width = div.width();
         if(width>104){
-            div.css('height', width*1.25);
-        }
+                div.css('height', width*1.25);
+            }
         var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;
-        document.getElementById('hoodie-label-svg').css('height', svgWrapperHeight); 
-    };
+            document.getElementById('hoodie-label-svg').height = svgWrapperHeight;
+        });
+
+        window.onresize = function(event) {
+            var div = $('.upload-file');
+            var width = div.width();
+            if(width>104){
+                div.css('height', width*1.25);
+            }
+            var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;
+            document.getElementById('hoodie-label-svg').height = svgWrapperHeight;
+        };
+    }
+    /////////
 
 });

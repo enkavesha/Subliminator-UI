@@ -114,6 +114,12 @@
 }
 ////////
 @media screen and (max-width: 768px){
+    .right-panel, .left-panel{
+        max-width: 100%;
+    }
+    .left-panel{
+        padding-right: 15px;
+    }
     .file-views{
         li{
             &:nth-child(6){
@@ -378,6 +384,19 @@
         }
     }
     /////////generator
+    .template-view{
+        .template-buttons{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            button:nth-child(1){
+                margin: 0 10px 10px;
+            }
+            button, .btn{
+                padding: .3rem 0.7rem;
+            }
+        }
+    }
     .calc-profit{
         .input-profit{
             margin: 10px auto 0;
@@ -389,18 +408,29 @@
             margin: 0 auto;
         }
     }
+    .stringcolor-wrapper{
+        label{
+            margin: 0 10px 10px 0;
+        }
+    }
 }
 @media only screen and (max-width: 360px){
-    .template-view{
-        .template-buttons{
-            display: flex;
-            flex-flow: wrap;
-            justify-content: center;
-            button:nth-child(1){
-                margin: 0 10px 0 0;
-            }
-            button, .btn{
-                padding: .3rem 0.7rem;
+    .uploads{
+        display: flex;
+        justify-content: space-between;
+        flex-flow: wrap;
+        .upload-file{
+            width: 49%;
+            margin: 0 0 0;
+        }
+            .btn-upload{
+            font-size: 8px!important;
+            padding: .3rem 0.4rem!important;
+            max-width: 130px;
+            i{
+                font-size: 10px!important;
+                line-height: 12px!important;
+                margin: 0 2px 0 0;
             }
         }
     }
@@ -436,19 +466,19 @@
             margin: 0 0 0;
         }
             .btn-upload{
-            font-size: 9px!important;
-            padding: .3rem 0.4rem!important;
+            font-size: 8px!important;
+            padding: .2rem 0.3rem!important;
             max-width: 140px;
             i{
-                font-size: 12px!important;
-                line-height: 14px!important;
+                font-size: 10px!important;
+                line-height: 12px!important;
                 margin: 0 2px 0 0;
             }
         }
     }
     .stringcolor-wrapper{
         label{
-            margin: 0 5px 0 0;
+            margin: 0 5px 10px 0;
         }
     }
     .template-view{
