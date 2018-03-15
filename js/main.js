@@ -29,4 +29,10 @@ $(document).ready(function(){
         theme: 'custom'
     }) });    
     $(".chosen-select").chosen();
+    $('.chosen-results').click(function(){
+        $('.chosen-container').removeClass('chosen-container-active');
+    });
+//    $('.chosen-container').click(function(){
+//        $(this).removeClass('chosen-container-active');
+//    });
 });

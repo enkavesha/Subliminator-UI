@@ -720,6 +720,9 @@ button{
         padding: 0 0 0 10px;
         p{
             margin: 0;
+            i{
+                font-weight: 500;
+            }
         }
     }
     #shipping-usa{
@@ -806,6 +809,7 @@ textarea{
 .terms{
     label span{
         font-size: 14px;
+        font-weight: 500;
     }
 }
 ////////froala text editor

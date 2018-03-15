@@ -700,6 +700,8 @@ button:focus {
     padding: 0 0 0 10px; }
     .shipping-wrapper .shipping-cost p {
       margin: 0; }
+      .shipping-wrapper .shipping-cost p i {
+        font-weight: 500; }
   .shipping-wrapper #shipping-usa {
     background: url(../images/flag-usa.svg) no-repeat, #e2e2e2;
     background-size: 32px;
@@ -776,7 +778,8 @@ textarea {
   color: #0c77f8; }
 
 .terms label span {
-  font-size: 14px; }
+  font-size: 14px;
+  font-weight: 500; }
 
 .fr-box {
   -webkit-transition: all 0.2s linear;
