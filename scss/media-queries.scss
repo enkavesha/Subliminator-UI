@@ -62,12 +62,34 @@
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
+    .calc-profit{
+        .input-profit{
+            margin: 10px auto 0;
+        }
+        #selling-price{
+            margin: 0 0 10px;
+        }
+        #profit-text{
+            margin: 0 auto;
+        }
+    }
         
 }
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 2) {
+    .calc-profit{
+        .input-profit{
+            margin: 10px auto 0;
+        }
+        #selling-price{
+            margin: 0 0 10px;
+        }
+        #profit-text{
+            margin: 0 auto;
+        }
+    }
         
 }
 ////////
@@ -77,6 +99,11 @@
             &:nth-child(6){
                 border: none!important;
             }
+        }
+    }
+    .stringcolor-wrapper{
+        label{
+            margin: 0 10px 10px 0;
         }
     }
     ///////generator
@@ -95,7 +122,87 @@
 }
 ////////
 @media screen and (width: 600px)	
-    and (height: 960px){			
+    and (height: 960px){
+    .view-controls{
+        margin: 10px 0 0 0;
+        &.view-controls-visible{
+            display: flex;
+            flex-flow: wrap;
+        }
+        justify-content: center;
+        .range-container {
+            width: 100%;
+            margin: 0 0 10px;
+        }
+        .btn-view-align{
+            margin: 0 0 0 0;
+        }
+    }
+     .template-view{
+        .template-buttons{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+            button:nth-child(1){
+                margin: 0 10px 0 0;
+            }
+            button, .btn{
+                padding: .3rem 0.7rem;
+            }
+             }
+        }  
+    .file-views{
+        li{
+            &:nth-child(4){
+                border: none!important;
+                margin: 0;
+            }
+            &:nth-child(6){
+                border-left: 2px solid $lightGrey!important;
+            }
+        }
+    }
+    .uploads{
+        display: flex;
+        justify-content: space-between;
+        flex-flow: wrap;
+        .upload-file{
+            width: 100%;
+            margin: 0 0 0;
+        }
+    }
+    .calc-profit{
+        .input-profit{
+            margin: 10px auto 0;
+        }
+        #selling-price{
+            margin: 0 0 10px;
+        }
+        #profit-text{
+            margin: 0 auto;
+        }
+    }
+    .shipping-wrapper{
+        p{
+            font-size: 10px;
+        }
+        .shipping-country{
+            max-width: 90px;
+            min-width: 90px;
+            p{ font-size: 10px;}
+        }
+        .shipping-cost{
+            p{
+                font-size: 10px;
+            }
+        }
+    }
+    .btn-guidelines{
+        font-size: 11px!important;
+        i{
+            font-size: 12px!important;
+        }
+    }
     	
 }
 @media screen and (max-width: 606px){
@@ -191,6 +298,9 @@
 
 //////mobiles
 @media only screen and (max-width: 426px){
+    .content-headline .breadcrumbs{
+        margin: 0 0 15px;
+    }
     .file-views{
         li{
             &:nth-child(5){
@@ -198,17 +308,6 @@
                 margin: 0;
             }
             &:nth-child(6){
-                border-left: 2px solid $lightGrey!important;
-            }
-        }
-    }
-   
-}
-@media only screen and (max-width: 384px){
-    .file-views{
-        li{
-            margin: 0 0 5px;
-            &:nth-child(5){
                 border-left: 2px solid $lightGrey!important;
             }
         }
@@ -226,6 +325,17 @@
         }
         .btn-view-align{
             margin: 0 0 0 0;
+        }
+    }
+   
+}
+@media only screen and (max-width: 384px){
+    .file-views{
+        li{
+            margin: 0 0 5px;
+            &:nth-child(5){
+                border-left: 2px solid $lightGrey!important;
+            }
         }
     }
     .btn-upload, #btn-review, #btn-publish{
@@ -256,7 +366,7 @@
     /////////generator
     .calc-profit{
         .input-profit{
-            margin: 0 auto;
+            margin: 10px auto 0;
         }
         #selling-price{
             margin: 0 0 10px;
@@ -280,11 +390,13 @@
             }
         }
     }
+    .stringcolor-wrapper{
+        label{
+            margin: 0 10px 10px 0;
+        }
+    }
 }
 @media only screen and (max-width: 320px){
-    .content-headline .breadcrumbs{
-        margin: 0 0 15px;
-    }
     .template-view{
         .template-buttons{
             display: flex;

@@ -604,7 +604,8 @@ button{
 
 .stringcolor-wrapper{
         display: flex;
-        margin: 0 20px 0 0;
+        flex-flow: wrap;
+//        margin: 0 20px 0 0;
         transition: opacity 0.5s linear;
         label{
             margin: 0 25px 0 0;
