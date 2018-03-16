@@ -102,20 +102,15 @@ $(document).ready(function(){
         if(width>104){
                 div.css('height', width*1.25);
             }
-        var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;
-            document.getElementById('hoodie-label-svg').height = svgWrapperHeight;
-        });
-
         window.onresize = function(event) {
             var div = $('.upload-file');
             var width = div.width();
             if(width>104){
                 div.css('height', width*1.25);
             }
-            var svgWrapperHeight=document.getElementById('hoodie-svg-height').height;
-            document.getElementById('hoodie-label-svg').height = svgWrapperHeight;
         };
-    }
+    });
+    };    
     /////////
 
 });
