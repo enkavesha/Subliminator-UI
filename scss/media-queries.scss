@@ -507,6 +507,16 @@
             line-height: 16px!important;
         }
     }
+    /////////modal
+    #modalInfoIcon, #modalCheckIcon{
+        margin: 10px auto 10px;
+    }
+    .modal-body .modal-button-wrapper a{
+        width: 50%;
+        button{
+            font-size: 10px!important;
+        }
+    }
 }
 @media only screen and (max-width: 360px){
     .uploads{

@@ -112,6 +112,18 @@ $(document).ready(function(){
         };
     });
     };    
-    /////////
+    /////////modal
+   // When the user clicks the button, open the modal 
+    document.getElementById('modalSubmit').onclick = function() {
+         $('#modalPublishLoading').toggleClass('modal-body-visible');
+         $('#modalPublishRequest').toggleClass('modal-body-visible');
+        setTimeout(
+          function() 
+          {
+            $('#modalPublishLoading').toggleClass('modal-body-visible');
+            $('#modalPublishConfirmation').toggleClass('modal-body-visible');
+          }, 3000);
+    }
+
 
 });

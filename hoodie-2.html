@@ -27,7 +27,7 @@
                             </div>
                        </div>
                        <div class="col-6 right-panel vcenter">
-                           <a href="#"><button class="btn btn-lg btn-blue-white" id="btn-publish">Publish to store<i class="material-icons">launch</i></button></a>
+                           <a href="#"><button class="btn btn-lg btn-blue-white" id="btn-publish" data-toggle="modal" data-target="#modalPublish">Publish to store<i class="material-icons">launch</i></button></a>
                        </div>
                    </div>
                 <div class="row row-width">
@@ -118,7 +118,38 @@
                 </div>
             </div>
         </section>
-        
+        <div id="modalPublish" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body modal-body-visible" id="modalPublishRequest">
+                    <div id="modalInfoIcon">i</div>
+                    <p>Are you sure you want to publish these items to your Shopify store? The new items will be added to your Shopify Products.</p>
+                    <div class="modal-button-wrapper">
+                        <a href="" onclick="return false;"><button type="button" class="btn btn-lg btn-grey" data-dismiss="modal">No, I'm not done yet</button></a>
+                        <a href="" onclick="return false;"><button type="button" class="btn btn-lg btn-blue-effect btn-publish" id="modalSubmit">Yes, I am sure <i class="material-icons">thumb_up</i></button></a>
+                    </div>
+                </div>
+                <div class="modal-body" id="modalPublishLoading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                    </div>
+                    <p class="modal-title">One moment please...</p>
+                    <p>Your product is being published.</p>
+                </div>
+                <div class="modal-body" id="modalPublishConfirmation">
+                    <div id="modalCheckIcon"></div>
+                    <p class="modal-title">Congratulations!</p>
+                    <p>You have succesfully launched a new product.</p>
+                    <div class="modal-button-wrapper">
+                        <a href="product-selection.html"><button type="button" class="btn btn-lg btn-grey"><span>+</span> Add new product</button></a>
+                        <a href=""><button type="button" class="btn btn-lg btn-blue-effect btn-publish" data-dismiss="modal">View product <i class="material-icons">launch</i></button></a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
         
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
