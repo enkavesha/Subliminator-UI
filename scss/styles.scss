@@ -579,7 +579,7 @@ button{
                 width: 100%;
                 height: 100%;
                 position: absolute;
-                top: 10%;
+                top: 5%;
                 margin: 0 auto;
                 img{
                     height: 60%;
@@ -594,11 +594,11 @@ button{
             justify-content: center;
             
         }
-        &:last-child{
-            img{
-                width: 40%!important;
-            }
-        }
+//        &:last-child{
+//            img{
+//                width: 40%!important;
+//            }
+//        }
     }
 }
 

@@ -606,7 +606,7 @@ button:focus {
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 10%;
+        top: 5%;
         margin: 0 auto; }
         .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
           height: 60%;
@@ -623,8 +623,6 @@ button:focus {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-    .uploads .upload-file:last-child img {
-      width: 40% !important; }
 
 .stringcolor-wrapper {
   display: -webkit-box;
@@ -1001,8 +999,6 @@ input {
       line-height: 14px !important; }
   .uploads .upload-file p {
     font-size: 12px; }
-  .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
-    width: 50%; }
   .stringcolor-wrapper label {
     margin: 0 10px 0 0; }
   .shipping-wrapper .shipping-country {
@@ -1222,8 +1218,6 @@ input {
       line-height: 14px !important; }
   .uploads .upload-file p {
     font-size: 12px; }
-  .uploads .upload-file .upload-wrapper .upload-svg-wrapper img {
-    width: 50%; }
   .template-view .template-buttons {
     display: -webkit-box;
     display: -ms-flexbox;
