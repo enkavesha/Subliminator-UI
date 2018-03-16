@@ -373,6 +373,7 @@ button:focus {
     align-items: center; }
   .view-controls .view-zoom {
     position: relative;
+    padding: 0;
     display: inline-block;
     border-radius: 50%;
     border: 2px solid #424242;
