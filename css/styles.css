@@ -933,8 +933,7 @@ input {
       width: 18px;
       margin: 0 5px 0 0; }
     .product-select .product-select-size-wrapper .product-select-size span {
-      font-weight: 700;
-      color: #000; }
+      font-weight: 700; }
 
 .product-select-buttons-wrapper {
   display: -webkit-box;

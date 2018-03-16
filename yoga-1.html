@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subliminator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    </head>
+    <body>
+        <header>
+
+        </header>
+        <section class="main-content-wrapper">
+            <div class="container-fluid no-gutter">
+                 <div class="row content-headline row-width">
+                       <div class="col-6 left-panel">
+                           <div class="breadcrumbs">
+                                <p class="product-name">Yoga Pants All-Over</p>
+                                <a href="product-selection.html" class="link-back"><i class="material-icons">arrow_back</i>Back To Products</a>
+                            </div>
+                       </div>
+                       <div class="col-6 right-panel vcenter" align="right">
+                           <a href="yoga-2.html"><button class="btn btn-lg btn-blue-white" id="btn-review">Review & Publish <i class="material-icons">arrow_forward</i></button></a>
+                       </div>
+                   </div>
+                <div class="row row-width">
+                    <div class="col-12 col-sm-12 col-md-7 left-panel">
+                        <div class="template-view white-block">
+                            <div class="template-buttons">
+                                <button class="btn btn-lg btn-grey btn-grey-active" id="template-view">Template view</button>
+                                <button class="btn btn-lg btn-grey" id="mockup-view">Mockup view</button>
+                            </div>
+                            <div class="file-views file-views-visible">
+                                <ul>
+                                    <li><a  class="file-view-active" onclick="return false;">Left & Right leg</a></li>
+                                    <li><a href="" onclick="return false;">Front waist</a></li>
+                                    <li><a href="" onclick="return false;">Back waist</a></li>
+                                    <li><a href="" onclick="return false;">Inside label</a></li>
+                                </ul>
+                            </div>
+                            <div class="canvas-wrapper">
+                                    <div id="view-screen"></div>
+                                    <div class="view-controls view-controls-visible">
+                                    <div class="range-container">
+                                        <button onclick="document.getElementById('zoom-range').stepDown(1)" class="view-zoom zoom-out"></button>
+                                        <input type="range" min="1" max="100" value="50" class="slider" id="zoom-range">
+                                        <button onclick="document.getElementById('zoom-range').stepUp(1)" class="view-zoom zoom-in"></button>
+                                    </div>
+                                    <button class="btn btn-grey btn-view-align" id="align-v"><i class="material-icons">vertical_align_center</i></button>
+                                    <button class="btn btn-grey btn-view-align" id="align-h"><i class="material-icons">vertical_align_center</i></button>
+                                    <button class="btn btn-grey" id="reset">Reset</button>
+                                </div>
+                                <div class="mockup-view-wrapper">
+                                    <div class="mockup-view"></div>
+                                    <div class="mockup-view"></div>
+                                    <div class="mockup-view"></div>
+                                    <div class="mockup-view"></div>
+                                    <div class="mockup-view"></div>
+                                    <div class="mockup-view"></div>
+                                    <div class="mockup-view"></div>
+                                    <div class="mockup-view"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 right-panel">
+                        <div class="hoodie-all-over white-block">
+                            <div class="product-headline">
+                                <p><span>Yoga Pants</span> All-Over</p>
+                                <span>$38</span>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="size-range">
+                                <p class="product-option-caption">Size Range</p>
+                                <div class="size-range-checkbox-wrapper">
+                                    <label class="checkbox-label size-range-label">
+                                        <input type="checkbox" name="size-range" value="XS" class="checkbox-input checkbox-size" checked>
+                                        <span>XS</span>
+                                        <span class="checkbox-checkmark size-checkmark"></span>
+                                    </label>
+                                    <label class="checkbox-label size-range-label">
+                                        <input type="checkbox" name="size-range" value="S" class="checkbox-input checkbox-size" checked>
+                                        <span>S</span>
+                                        <span class="checkbox-checkmark size-checkmark"></span>
+                                    </label>
+                                    <label class="checkbox-label size-range-label">
+                                        <input type="checkbox" name="size-range" value="M" class="checkbox-input checkbox-size" checked>
+                                        <span>M</span>
+                                        <span class="checkbox-checkmark size-checkmark"></span>
+                                    </label>
+                                    <label class="checkbox-label size-range-label">
+                                        <input type="checkbox" name="size-range" value="L" class="checkbox-input checkbox-size" checked>
+                                        <span>L</span>
+                                        <span class="checkbox-checkmark size-checkmark"></span>
+                                    </label>
+                                    <label class="checkbox-label size-range-label">
+                                        <input type="checkbox" name="size-range" value="XL" class="checkbox-input checkbox-size">
+                                        <span>XL</span>
+                                        <span class="checkbox-checkmark size-checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="divider"></div>
+                            </div>
+                            <div class="uploads">
+                                <div class="upload-file">
+                                    <p>Left & Right Leg</p>
+                                    <div class="upload-wrapper">
+                                       <div class="upload-inner">
+                                            <div class="upload-svg-wrapper">
+                                                <img src="images/yoga-legs.svg">
+                                            </div>
+                                            <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="upload-file">
+                                    <p>Front Waist</p>
+                                    <div class="upload-wrapper">
+                                        <div class="upload-inner">                       <div class="upload-svg-wrapper">
+                                                <img src="images/yoga-waist.svg">
+                                            </div>
+                                            <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="upload-file">
+                                    <p>Back Waist</p>
+                                    <div class="upload-wrapper">
+                                       <div class="upload-inner">
+                                            <div class="upload-svg-wrapper">
+                                                <img src="images/yoga-waist.svg">
+                                            </div>
+                                            <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="upload-file">
+                                    <p>Inside Label <span>(Optional)</span></p>
+                                    <div class="upload-wrapper">
+                                        <div class="upload-inner">                       <div class="upload-svg-wrapper" id="hoodie-label-svg">
+                                                <img src="images/hoodie-label.svg">
+                                            </div>
+                                            <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="stitching">
+                                <p class="product-option-caption">Stitching Color</p>
+                                <div class="stringcolor-wrapper">
+                                    <label>
+                                        <input type="radio" name="stitching-color" value="white" class="stringcolor-checkbox" checked>
+                                        <span>White</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stitching-color" value="black" class="stringcolor-checkbox">
+                                        <span>Black</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stitching-color" value="navy" class="stringcolor-checkbox">
+                                        <span>Navy</span>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="print-guidelines white-block">
+                            <div class="product-headline">
+                                <p><span>Print</span> Guidelines</p>
+                            </div>
+                            <div class="divider"></div>
+                            <p>In order to print hight quality yoga pantss, we need high quality print files.</p>
+                            <p>So here are Subliminator's print file design guidelines.</p>
+                            <button class="btn btn-lg btn-guidelines btn-blue-effect"><i class="material-icons">info_outline</i> Design guidelines</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

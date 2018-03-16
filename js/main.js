@@ -23,14 +23,16 @@ $(document).ready(function(){
     });
     
     ///////////calculate profit from sale
+    var cost=$(document.getElementById('shipping-cost')).text().replace(/[^0-9]/g, '');
+    
     $('#selling-price').on('input', function() { 
         var sellingPrice= $(this).val().replace(',','.');
         sellingPrice=parseFloat(sellingPrice).toFixed(2); 
-        var profitYoga= document.getElementById('product-profit-yoga');
-        if (isNaN(sellingPrice)|sellingPrice<38) { 
-            profitYoga.innerHTML = '0.00'; 
+        var profit= document.getElementById('product-profit');
+        if (isNaN(sellingPrice)|sellingPrice<cost) { 
+            profit.innerHTML = '0.00'; 
         } else { 
-            profitYoga.innerHTML = (sellingPrice-38).toFixed(2); 
+            profit.innerHTML = (sellingPrice-cost).toFixed(2); 
         }
     }); 
     //////////////two decimal digits max
@@ -51,11 +53,42 @@ $(document).ready(function(){
         $('.chosen-container').removeClass('chosen-container-active');
     });
     //////////////text editor
-    let productDescription = $(document.getElementById('product-description'));
-    if(productDescription && productDescription.length > 0){
+    //////////////hoodie
+    let productDescriptionHoodie = $(document.getElementById('product-description-hoodie'));
+    if(productDescriptionHoodie && productDescriptionHoodie.length > 0){
         var editor = new Simditor({
-          textarea: $('#product-description'),
+          textarea: $('#product-description-hoodie'),
             placeholder:'Hoodie All-Over',
+            toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
+            upload: true
+        });
+    }    
+    //////////////leggings
+    let productDescriptionLeggings = $(document.getElementById('product-description-leggings'));
+    if(productDescriptionLeggings && productDescriptionLeggings.length > 0){
+        var editor = new Simditor({
+          textarea: $('#product-description-leggings'),
+            placeholder:'Leggings All-Over',
+            toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
+            upload: true
+        });
+    }    
+    //////////////sweatshirt
+    let productDescriptionSweatshirt = $(document.getElementById('product-description-sweatshirt'));
+    if(productDescriptionSweatshirt && productDescriptionSweatshirt.length > 0){
+        var editor = new Simditor({
+          textarea: $('#product-description-sweatshirt'),
+            placeholder:'Sweatshirt All-Over',
+            toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
+            upload: true
+        });
+    }    
+    //////////////yoga
+    let productDescriptionYoga = $(document.getElementById('product-description-yoga'));
+    if(productDescriptionYoga && productDescriptionYoga.length > 0){
+        var editor = new Simditor({
+          textarea: $('#product-description-yoga'),
+            placeholder:'Yoga Pants All-Over',
             toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
             upload: true
         });
