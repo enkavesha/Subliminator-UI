@@ -932,10 +932,14 @@ input{
     }
     .product-select-buttons-wrapper{
         display: flex;
+        a:last-of-type{
+            margin: 0 0 0 5px;
+            width: 100%;
+        }
     }
+    
     .btn-start-design{
         width: 100%;
-        flex: 1;
         i{
             font-size: 14px!important;
             line-height: 16px!important;

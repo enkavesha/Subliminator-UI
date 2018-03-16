@@ -929,11 +929,11 @@ input {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+    .product-select .product-select-buttons-wrapper a:last-of-type {
+      margin: 0 0 0 5px;
+      width: 100%; }
   .product-select .btn-start-design {
-    width: 100%;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1; }
+    width: 100%; }
     .product-select .btn-start-design i {
       font-size: 14px !important;
       line-height: 16px !important;
