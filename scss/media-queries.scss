@@ -344,17 +344,15 @@
         }
     }
         ////////product selector
-    .product-select-buttons-wrapper{
-        .btn-start-design{
-            font-size: 9px!important;
-            i{
-                font-size: 9px!important;
-                line-height: 11px!important;
-            }
-        }
-    }
     #product-selector-content .row-width{
         padding: 0 0 0 0;
+    }
+    #product-selector-content {
+        .content-headline {
+            .breadcrumbs{
+                text-align: center;
+            }
+        }
     }
 }
 
@@ -393,8 +391,7 @@
     #product-selector-content {
         .content-headline {
             .breadcrumbs{
-                  margin: 0 20% 15px 20%!important;
-                
+                margin: 0;
             }
         }
     }
@@ -402,15 +399,6 @@
         .product-select-size-wrapper {
             .product-select-size{
                 font-size: 10px!important;
-            }
-        }
-    }
-    .product-select-buttons-wrapper{
-        .btn-start-design{
-            font-size: 9px!important;
-            i{
-                font-size: 9px!important;
-                line-height: 11px!important;
             }
         }
     }
