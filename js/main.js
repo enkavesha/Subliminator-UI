@@ -24,7 +24,7 @@ $(document).ready(function(){
     
     ///////////calculate profit from sale
     $('#selling-price').on('input', function() { 
-        var sellingPrice= $(this).val();
+        var sellingPrice= $(this).val().replace(',','.');
         sellingPrice=parseFloat(sellingPrice).toFixed(2); 
         var profitYoga= document.getElementById('product-profit-yoga');
         if (isNaN(sellingPrice)|sellingPrice<38) { 
@@ -33,6 +33,15 @@ $(document).ready(function(){
             profitYoga.innerHTML = (sellingPrice-38).toFixed(2); 
         }
     }); 
+    //////////////two decimal digits max
+    $('#selling-price').on("keyup", function(){
+        var val = this.value,
+            valid = /^\d{0,3}([\,\.]\d{0,2})?$/.test(val);
+
+        if(!valid){
+            this.value = val.substring(0, val.length - 1);
+        }
+    });
     ///////////////chosen selector
     let selectorChosen = $(".chosen-select");
     if (selectorChosen && selectorChosen.length > 0) {
