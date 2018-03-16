@@ -1192,7 +1192,7 @@ input {
     -ms-flex-pack: center;
     justify-content: center; }
     .template-view .template-buttons button:nth-child(1) {
-      margin: 0 10px 10px; }
+      margin: 0 10px 0; }
     .template-view .template-buttons button, .template-view .template-buttons .btn {
       padding: .3rem 0.7rem; }
   .calc-profit .input-profit {
