@@ -24,6 +24,7 @@ $(document).ready(function(){
     
     ///////////calculate profit from sale
     var cost=$(document.getElementById('shipping-cost')).text().replace(/[^0-9]/g, '');
+    cost=parseFloat(cost);
     
     $('#selling-price').on('input', function() { 
         var sellingPrice= $(this).val().replace(',','.');
