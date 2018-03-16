@@ -1188,12 +1188,10 @@ input {
       margin: 0 0 0 0; }
   #product-selector-content .content-headline .breadcrumbs {
     margin: 0; }
-  .product-select .product-select-size-wrapper .product-select-size {
-    font-size: 10px !important; }
   .product-select-container:nth-child(n) {
     padding-left: 0; }
-  .product-select-container:not(:last-child) {
-    padding: 0 5px 0 0; }
+  .product-select-container:not(:last-child), .product-select-container:last-child {
+    padding: 0 0 0 0; }
   .product-select .product-shipping-wrapper .product-shipping-country p {
     font-size: 12px !important; } }
 
