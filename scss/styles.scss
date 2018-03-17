@@ -4,6 +4,7 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     color: $grey;
     font-size: 12px;
     background: url(../images/bg-noise.png);
@@ -27,7 +28,6 @@ a, a:hover, a:active, a:focus{
 }
 p{
     cursor: default;
-    font-weight: 600;
     font-size: 15px;
     margin: 0 0 5px;
 }
@@ -44,6 +44,12 @@ p{
 .right-panel{
     max-width: 555px;
 //    padding-right: 0;
+}
+.left-panel-half, .right-panel-half{
+    max-width: 560px;
+}
+.left-panel-half{
+    padding: 0;
 }
 .row-width{
     max-width: 1125px;
@@ -121,6 +127,9 @@ button{
         font-size: 15px!important;
     }
 }
+#btnSave{
+    padding: .5rem 2rem;
+}
 .btn-guidelines{
     color: #fff;
     background: $blue;
@@ -141,14 +150,17 @@ button{
 }
 ///////////modal
 .modal{
-    top: 10vh;
     text-align: center;
+}
+.modal.show .modal-dialog{
+//    top: 8vh;
 }
 .modal-body{
     height: 290px;
     display: none;
     flex-flow: column;
     justify-content: center;
+    font-weight: 500!important;
     &.modal-body-visible{
         display: flex;
     }
@@ -883,6 +895,7 @@ input{
     display: flex;
     flex-flow: wrap;
     align-items: center;
+    margin: 0 0 10px;
 }
 .input-profit{
     position: relative;
@@ -891,7 +904,7 @@ input{
         display: block;
         position: absolute;
         top: 12px;
-        left: 25px;
+        left: 20px;
         font-weight: 600;
         font-size: 14px;
         color: $grey;
@@ -1082,5 +1095,103 @@ input{
         }
     }
 }
+//////////////////////account
+.input-group{
+    padding: 0 0 10px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    .input-group-addon{
+        padding: 9px 0 9px 18px;
+        background: transparent;
+        border: 0;
+        position: absolute;
+        z-index: 4;
+    }
+    .form-control:not(:first-child){
+            border-top-left-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+        padding: 8px 15px 8px 40px;
+    }
+}
+.account-name-wrapper{
+    display: flex;
+    justify-content: space-between;
+    .account-name{
+        width: 49%;
+    }
+}
+.account-inactive{
+    color: $red!important;
+    font-style: italic;
+    font-weight: 600;
+}
+.account-active{
+    display: none;
+    color: $green!important;
+    font-style: italic;
+    font-weight: 600;
+}
+.account-thumb-down,
+.account-thumb-up,
+.account-credit-card,
+.acoount-paypal{
+    position: relative;
+    padding: 0 0 0 60px;
+    &:before{
+        font-family: 'Material Icons';
+        display: block;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-weight: normal;
+          font-style: normal;
+          font-size: 14px;  /* Preferred icon size */
+          display: inline-block;
+          line-height: 1;
+          text-transform: none;
+          letter-spacing: normal;
+          word-wrap: normal;
+          white-space: nowrap;
+          direction: ltr;
 
+    }
+}
+.account-thumb-up{
+    &:before{
+        content: 'thumb_up';
+    }
+}
+.account-thumb-down{
+    &:before{
+        content: 'thumb_down';
+        top: 12px;
+    }
+}
+.account-credit-card{
+    &:before{
+        content: 'credit_card';
+    }
+}
+.account-paypal{
+    &:before{
+        content: '';
+        background: url(../images/paypal.png) no-repeat;
+        background-size: cover;
+    }
+}
+.paypal-payments, .credit-payments{
+    display: none;
+    p:first-of-type{
+        margin: 0;
+    }
+    a:last-of-type{
+        width: 100%;
+        button{
+            width: 100%;
+        }
+    }
+}
 @import "media-queries";

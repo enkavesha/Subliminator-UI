@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subliminator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="css/chosen.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+        <!--    Text editor    -->
+        <link rel="stylesheet" type="text/css" href="css/simditor.css" />
+        
+    </head>
+    <body>
+        <header>
+
+        </header>
+        <section class="main-content-wrapper">
+            <div class="container-fluid no-gutter">
+                    <div class="row content-headline row-width">
+                       <div class="col-6 left-panel">
+                           <div class="breadcrumbs">
+                                <p class="product-name semibold">Account Settings</p>
+                                <a href="" class="link-back"><i class="material-icons">arrow_back</i>Back To Home</a>
+                            </div>
+                       </div>
+                       <div class="col-6 right-panel vcenter">
+                           <a href="#"><button class="btn btn-lg btn-blue-white" id="btnSave">Save</button></a>
+                       </div>
+                   </div>
+                <div class="row row-width">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 left-panel-half">
+                        <div class="terms white-block">
+                            <div class="product-headline">
+                                <p><span>Account</span> Status: 
+                                    <span class="account-inactive" id="accountInactive">Inactive <i class="material-icons">info</i></span>
+                                    <span class="account-active" id="accountActive">Active <i class="material-icons">check_circle</i></span>
+                                </p>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="account-name-wrapper">
+                                <div class="account-name">
+                                    <p class="semibold">First Name</p>
+                                    <input type="text" placeholder="First Name" class="input-margin input-style account-form">
+                                </div>
+                                <div class="account-name">
+                                    <p class="semibold">Last Name</p>
+                                    <input type="text" placeholder="Last Name" class="input-margin input-style account-form">
+                                </div>
+                            </div>
+                            <p class="semibold">E-mail Address</p>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">email</i>
+                                </span>
+                                <input type="text" placeholder="Ex: example@example.com" class="input-margin input-style form-control email account-form" id="accountEmail">
+                            </div>
+                            <p class="semibold">Contact Phone Number</p>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">phone</i>
+                                </span>
+                                <input type="text" placeholder="Ex: +00 (00) 000-00-00" class="input-margin input-style form-control mobile-phone-number account-form" data-inputmask="'mask': '+99 (99) 999-99-99'">
+                            </div>
+                            <div class="divider"></div>
+                            <p class="semibold">Primary Payment Method</p>
+                            <select data-placeholder="- Choose Payment Method" class="chosen-select-no-search" tabindex="-1" id="paymentPrimary">
+                                <option></option>
+                                <option class="account-paypal" id="account-paypal-primary">Paypal</option>
+                                <option class="account-credit-card account-credit-card-primary">Credit Card</option>
+                            </select>
+                            <div class="payments-primary">
+                                <div class="paypal-payments" id="paypalPaymentsPrimary">
+                                    <p class="semibold">PayPal Payments</p>
+                                    <p>Payments through Paypal are 
+                                        <span class="account-inactive">Disabled <i class="material-icons">info</i></span>
+                                        <span class="account-active">Enabled <i class="material-icons">check_circle</i></span>
+                                    </p>
+                                    <a href="" onclick="return false;"><button class="btn btn-lg btn-blue-effect" id="btnPaypalPrimary">Connect Paypal</button></a>
+                                </div>
+                                <div class="credit-payments" id="creditPaymentsPrimary">
+                                    <p class="semibold">Credit Card Payments</p>
+                                    <p>Payments through Credit Card are 
+                                        <span class="account-inactive">Disabled <i class="material-icons">info</i></span>
+                                        <span class="account-active">Enabled <i class="material-icons">check_circle</i></span>
+                                    </p>
+                                    <a href="" onclick="return false;"><button class="btn btn-lg btn-blue-effect" id="btnCreditPrimary">Connect Credit Card</button></a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <p class="semibold">Secondary Payment Method <span class="optional">(Optional)</span></p>
+                            <select data-placeholder="- Choose Payment Method" class="chosen-select-no-search" tabindex="-1"  id="paymentSecondary">
+                                <option></option>
+                                <option class="account-paypal account-paypal-secondary">Paypal</option>
+                                <option class="account-credit-card account-credit-card-secondary">Credit Card</option>
+                            </select>
+                            <div class="payments-secondary">
+                                <div class="paypal-payments" id="paypalPaymentsSecondary">
+                                    <p class="semibold">PayPal Payments</p>
+                                    <p>Payments through Paypal are 
+                                        <span class="account-inactive">Disabled <i class="material-icons">info</i></span>
+                                        <span class="account-active">Enabled <i class="material-icons">check_circle</i></span>
+                                    </p>
+                                    <a href="" onclick="return false;"><button class="btn btn-lg btn-blue-effect" id="btnPaypalSecondary">Connect Paypal</button></a>
+                                </div>
+                                <div class="credit-payments" id="creditPaymentsSecondary">
+                                    <p class="semibold">Credit Card Payments</p>
+                                    <p>Payments through Credit Card are 
+                                        <span class="account-inactive">Disabled <i class="material-icons">info</i></span>
+                                        <span class="account-active">Enabled <i class="material-icons">check_circle</i></span>
+                                    </p>
+                                    <a href="" onclick="return false;"><button class="btn btn-lg btn-blue-effect" id="btnCreditSecondary">Connect Credit Card</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 right-panel-half">
+                        <div class="hoodie-all-over white-block">
+                            <div class="product-headline">
+                                <p><span>Order</span> Processing</p>
+                            </div>
+                            <div class="divider"></div>
+                            <p class="semibold">Automatically Process Orders</p>
+                            <p>By default the Subliminator system will automatically batch process your orders. You can pause/stop this process by selecting "No" from the drop-down. Processing will only resume when you set the system to "Yes". Orders can only be processed automatically.</p>
+                            <select data-placeholder="" class="chosen-select-no-search" tabindex="0">
+                              <option class="account-thumb-down">No - Do not automatically batch process my orders</option>
+                              <option class="account-thumb-up">	&#128077; Yes - Automatically batch process my orders</option>
+                            </select>
+                            <p class="semibold">Daily Charge Limit</p>
+                            <p>This is the maximum amount in dollars we will charge on your card per day. The automatic processing will not go over this dollar limit in any single day. Leave the box blank for "no limit".</p>
+                            <div class="calc-profit">
+                                <span class="input-profit">
+                                    <input type="tel" placeholder="100.00" id="selling-price" maxlength="6" step=".01" class="input-style  account-form">
+                                </span>
+                            </div>
+                            <p class="semibold">Notifications</p>
+                            <p>When an order is detected, a message will be sent to your e-mail address. </p>
+                            <select data-placeholder="" class="chosen-select-no-search" tabindex="0">
+                              <option class="account-thumb-up">Yes - Notify me when an order is detected</option>
+                              <option class="account-thumb-down">No - Do not notify me when an order is detected</option>
+                            </select>
+                            <p class="semibold">Receipts</p>
+                            <p>A detailed receipt will be sent to your e-mail address when a charge is processed. </p>
+                            <select data-placeholder="" class="chosen-select-no-search" tabindex="0">
+                              <option class="account-thumb-up">Yes - Send me a detailed receipt</option>
+                              <option class="account-thumb-down">No - Do not send me a detailed receipt</option>
+                            </select>
+                            <p class="semibold">Timezone</p>
+                            <p>All orders and export data will be displayed in your local time zone.  </p>
+                            <select data-placeholder="" class="chosen-select" tabindex="0">
+                              <option>America / Los Angeles</option>
+                              <option>America / New York</option>
+                              <option>America / Chicago</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="js/chosen.jquery.js"></script>
+        <script src="js/inputmask/jquery.inputmask.bundle.js"></script>
+        <script src="js/inputmask/phone.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -2,12 +2,12 @@
 
 @media screen and (min-width: 1200px){
         #selling-price{
-            margin: 0 10px 0;
+            margin: 0 10px 0 0;
         }
 }
 @media screen and (max-width: 1200px){
     #selling-price{
-            margin: 0 10px 0;
+            margin: 0 10px 0 0;
     }
     .stringcolor-wrapper{
         label{
@@ -79,16 +79,14 @@
         max-width: 130px;
         }
     }
-    ////////product selector
-//    .product-select-buttons-wrapper{
-//        .btn-start-design{
-//            font-size: 10px!important;
-//            i{
-//                font-size: 12px!important;
-//                line-height: 14px!important;
-//            }
-//        }
-//    }
+    //////account
+    .chosen-container-single .chosen-single{
+        font-size: 13px!important;
+    }
+    .right-panel-half{
+        padding-right: 0;
+        padding-left: 15px;
+    }
 }
 /////////tablets
 //////////iPad & Kindle
@@ -98,7 +96,7 @@
   and (-webkit-min-device-pixel-ratio: 1) {
     .calc-profit{
         .input-profit{
-            margin: 10px auto 0;
+//            margin: 10px auto 0;
         }
         #selling-price{
             margin: 0 0 10px;
@@ -106,6 +104,13 @@
         #profit-text{
             margin: 0 auto;
         }
+    }
+      .right-panel-half, .left-panel-half{
+          margin: 0 auto;
+          padding: 0;
+      }
+    .right-panel-half{
+        padding-left: 15px;
     }
         
 }
@@ -115,7 +120,7 @@
   and (-webkit-min-device-pixel-ratio: 2) {
     .calc-profit{
         .input-profit{
-            margin: 10px auto 0;
+//            margin: 10px auto 0;
         }
         #selling-price{
             margin: 0 0 10px;
@@ -123,6 +128,13 @@
         #profit-text{
             margin: 0 auto;
         }
+    }
+    .right-panel-half, .left-panel-half{
+          margin: 0 auto;
+        padding: 0;
+      }
+    .right-panel-half{
+        padding-left: 15px;
     }
         
 }
@@ -133,6 +145,9 @@
     }
     .left-panel{
         padding-right: 15px;
+    }
+    .right-panel{
+        padding-left: 0;
     }
     .file-views{
         li{
@@ -172,6 +187,11 @@
             }
         }
     }
+    //////account
+    .right-panel-half, .left-panel-half{
+          margin: 0 auto;
+        padding: 0;
+      }
 }
 ////////
 @media screen and (width: 600px)	
@@ -236,7 +256,7 @@
     }
     .calc-profit{
         .input-profit{
-            margin: 10px auto 0;
+//            margin: 10px auto 0;
         }
         #selling-price{
             margin: 0 0 10px;
@@ -469,7 +489,7 @@
     }
     .calc-profit{
         .input-profit{
-            margin: 10px auto 0;
+//            margin: 10px auto 0;
         }
         #selling-price{
             margin: 0 0 10px;

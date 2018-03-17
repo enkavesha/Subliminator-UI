@@ -25,6 +25,7 @@ li {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   color: #424242;
   font-size: 12px;
   background: url(../images/bg-noise.png);
@@ -46,7 +47,6 @@ a, a:hover, a:active, a:focus {
 
 p {
   cursor: default;
-  font-weight: 600;
   font-size: 15px;
   margin: 0 0 5px; }
 
@@ -62,6 +62,12 @@ p {
 
 .right-panel {
   max-width: 555px; }
+
+.left-panel-half, .right-panel-half {
+  max-width: 560px; }
+
+.left-panel-half {
+  padding: 0; }
 
 .row-width {
   max-width: 1125px;
@@ -144,6 +150,9 @@ button:focus {
     margin: 0 0 0 5px;
     font-size: 15px !important; }
 
+#btnSave {
+  padding: .5rem 2rem; }
+
 .btn-guidelines {
   color: #fff;
   background: #0c77f8; }
@@ -164,7 +173,6 @@ button:focus {
   vertical-align: middle !important; }
 
 .modal {
-  top: 10vh;
   text-align: center; }
 
 .modal-body {
@@ -176,7 +184,8 @@ button:focus {
   flex-flow: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  font-weight: 500 !important; }
   .modal-body.modal-body-visible {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -907,7 +916,8 @@ input {
   flex-flow: wrap;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  margin: 0 0 10px; }
 
 .input-profit {
   position: relative; }
@@ -916,7 +926,7 @@ input {
     display: block;
     position: absolute;
     top: 12px;
-    left: 25px;
+    left: 20px;
     font-weight: 600;
     font-size: 14px;
     color: #424242; }
@@ -1075,13 +1085,105 @@ input {
       top: -2px;
       left: 7px; }
 
+.input-group {
+  padding: 0 0 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+  .input-group .input-group-addon {
+    padding: 9px 0 9px 18px;
+    background: transparent;
+    border: 0;
+    position: absolute;
+    z-index: 4; }
+  .input-group .form-control:not(:first-child) {
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 8px 15px 8px 40px; }
+
+.account-name-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .account-name-wrapper .account-name {
+    width: 49%; }
+
+.account-inactive {
+  color: #fc5f62 !important;
+  font-style: italic;
+  font-weight: 600; }
+
+.account-active {
+  display: none;
+  color: #4ed64a !important;
+  font-style: italic;
+  font-weight: 600; }
+
+.account-thumb-down,
+.account-thumb-up,
+.account-credit-card,
+.acoount-paypal {
+  position: relative;
+  padding: 0 0 0 60px; }
+  .account-thumb-down:before,
+  .account-thumb-up:before,
+  .account-credit-card:before,
+  .acoount-paypal:before {
+    font-family: 'Material Icons';
+    display: block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr; }
+
+.account-thumb-up:before {
+  content: 'thumb_up'; }
+
+.account-thumb-down:before {
+  content: 'thumb_down';
+  top: 12px; }
+
+.account-credit-card:before {
+  content: 'credit_card'; }
+
+.account-paypal:before {
+  content: '';
+  background: url(../images/paypal.png) no-repeat;
+  background-size: cover; }
+
+.paypal-payments, .credit-payments {
+  display: none; }
+  .paypal-payments p:first-of-type, .credit-payments p:first-of-type {
+    margin: 0; }
+  .paypal-payments a:last-of-type, .credit-payments a:last-of-type {
+    width: 100%; }
+    .paypal-payments a:last-of-type button, .credit-payments a:last-of-type button {
+      width: 100%; }
+
 @media screen and (min-width: 1200px) {
   #selling-price {
-    margin: 0 10px 0; } }
+    margin: 0 10px 0 0; } }
 
 @media screen and (max-width: 1200px) {
   #selling-price {
-    margin: 0 10px 0; }
+    margin: 0 10px 0 0; }
   .stringcolor-wrapper label {
     margin: 0 10px 0 0; }
   .btn-upload {
@@ -1113,29 +1215,42 @@ input {
   .stringcolor-wrapper label {
     margin: 0 10px 0 0; }
   .shipping-wrapper .shipping-country {
-    max-width: 130px; } }
+    max-width: 130px; }
+  .chosen-container-single .chosen-single {
+    font-size: 13px !important; }
+  .right-panel-half {
+    padding-right: 0;
+    padding-left: 15px; } }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-  .calc-profit .input-profit {
-    margin: 10px auto 0; }
   .calc-profit #selling-price {
     margin: 0 0 10px; }
   .calc-profit #profit-text {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .right-panel-half, .left-panel-half {
+    margin: 0 auto;
+    padding: 0; }
+  .right-panel-half {
+    padding-left: 15px; } }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-  .calc-profit .input-profit {
-    margin: 10px auto 0; }
   .calc-profit #selling-price {
     margin: 0 0 10px; }
   .calc-profit #profit-text {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+  .right-panel-half, .left-panel-half {
+    margin: 0 auto;
+    padding: 0; }
+  .right-panel-half {
+    padding-left: 15px; } }
 
 @media screen and (max-width: 768px) {
   .right-panel, .left-panel {
     max-width: 100%; }
   .left-panel {
     padding-right: 15px; }
+  .right-panel {
+    padding-left: 0; }
   .file-views li:nth-child(6) {
     border: none !important; }
   .stringcolor-wrapper label {
@@ -1153,7 +1268,10 @@ input {
     font-size: 12px !important; }
     .product-select-buttons-wrapper .btn-start-design i {
       font-size: 14px !important;
-      line-height: 16px !important; } }
+      line-height: 16px !important; }
+  .right-panel-half, .left-panel-half {
+    margin: 0 auto;
+    padding: 0; } }
 
 @media screen and (width: 600px) and (height: 960px) {
   .view-controls {
@@ -1210,8 +1328,6 @@ input {
         font-size: 10px !important;
         line-height: 12px !important;
         margin: 0 2px 0 0; }
-  .calc-profit .input-profit {
-    margin: 10px auto 0; }
   .calc-profit #selling-price {
     margin: 0 0 10px; }
   .calc-profit #profit-text {
@@ -1342,8 +1458,6 @@ input {
       margin: 0 10px 0; }
     .template-view .template-buttons button, .template-view .template-buttons .btn {
       padding: .3rem 0.7rem; }
-  .calc-profit .input-profit {
-    margin: 10px auto 0; }
   .calc-profit #selling-price {
     margin: 0 0 10px; }
   .calc-profit #profit-text {
