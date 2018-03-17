@@ -1229,9 +1229,7 @@ input {
     margin: 0 auto; }
   .right-panel-half, .left-panel-half {
     margin: 0 auto;
-    padding: 0; }
-  .right-panel-half {
-    padding-left: 15px; } }
+    padding: 0; } }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   .calc-profit #selling-price {
@@ -1240,9 +1238,7 @@ input {
     margin: 0 auto; }
   .right-panel-half, .left-panel-half {
     margin: 0 auto;
-    padding: 0; }
-  .right-panel-half {
-    padding-left: 15px; } }
+    padding: 0; } }
 
 @media screen and (max-width: 768px) {
   .right-panel, .left-panel {
