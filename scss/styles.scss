@@ -1270,15 +1270,19 @@ input{
 .files-wrapper{
     display: flex;
     flex-flow: wrap;
-    justify-content: space-between;
+//    justify-content: space-between;
 }
 .file-wrapper{
     border: 2px solid $mediumGrey;
     border-radius: 3px;
     width: 24%;
-    margin: 0 0 15px;
+    margin: 0 1% 15px 0;
     transition: all 0.2s linear;
     display: block;
+//    :after {
+//      content: "";
+//      flex: auto;
+//    }
     &:hover, &:hover .file-preview{
         border-color: $blue;
         transition: all 0.2s linear;
@@ -1340,6 +1344,101 @@ input{
             margin: 0;
         }
     }
-
+}
+///////////popover at file library
+.popover{
+    top: 15px!important;
+}
+.popover .arrow{
+    left: 65%!important;
+    &:after, &:before{
+        border-top-color: $grey!important;
+    }
+}
+.bs-popover-auto[x-placement^=top] .arrow::after, .bs-popover-top .arrow::after,
+.bs-popover-auto[x-placement^=top] .arrow::before, .bs-popover-top .arrow::before{
+    border-top-color: $grey!important;
+    bottom: -5px!important;
+}
+.bs-popover-auto[x-placement^=top] .arrow::after, .bs-popover-auto[x-placement^=top] .arrow::before, .bs-popover-top .arrow::after, .bs-popover-top .arrow::before {
+    border-width: 5px 5px 0;
+}
+.popover-body{
+    background: $grey;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 5px;
+}
+//////////////design preview
+.modal-dialog-design{
+    max-width: 635px;
+    height: auto;
+}
+.design-button-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    button{
+        width: 24%;
+        display: flex;
+        justify-content: center;
+    }
+}
+.file-properties{
+    display: flex;
+    >p{
+        padding: 0 15px;
+        border-left: 2px solid $lightGrey;
+    }
+    p{
+        margin: 0;
+    }
+    .file-name-wrapper{
+        display: flex;
+        padding: 0 15px 0 0;
+        vertical-align: middle;
+    }
+    i{
+        font-size: 15px!important;
+        cursor: pointer;
+    }
+    #fileNameEdit{
+        margin: 0 5px;
+        height: 22px;
+        font-weight: 600;
+        width: auto;
+        border: 0;
+        font-size: 15px;
+    }
+}
+.design-file-preview{
+    width: 100%;
+    max-width: 600px;
+    background: $mediumGrey;
+    position: relative;
+    border-radius: 4px;
+    &:before{
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+}
+/////////fulfillment orders
+.orders-wrapper{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    .orders{
+        width: calc(100%/3);
+    }
+    .orders:not(:first-child){
+        border-left: 2px solid $lightGrey;
+    }
+    .orders-number{
+        font-size: 32px;
+        margin: 0;
+    }
 }
 @import "media-queries";

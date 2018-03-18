@@ -183,7 +183,8 @@
                     </div>
                 </div>
             </div>
-        </section><div id="modalFileLibrary" class="modal fade" role="dialog">
+        </section>
+        <div id="modalFileLibrary" class="modal fade" role="dialog">
             <div class="modal-dialog modal-dialog-library">
                 <div class="modal-content modal-content-library">
                     <div class="modal-body modal-body-library modal-body-visible">
@@ -193,7 +194,8 @@
                         </div>
                         <div class="divider"></div>
                         <div class="library-header">
-                            <button class="btn btn-lg btn-upload btn-blue-effect"  id="uploadDesign"><i class="material-icons">file_upload</i> Upload new design</button>
+                            <input id="uploadDesignInput" type="file" style="display:none;">
+                            <button class="btn btn-lg btn-upload btn-blue-effect"  id="uploadDesign"  onclick="document.getElementById('uploadDesignInput').click();"><i class="material-icons">file_upload</i> Upload new design</button>
                             <div class="input-search-library"><input type="text" placeholder="Search Files" class="input-style" id="search-library"></div>
                         </div>
                         <div class="files-wrapper">
@@ -201,12 +203,11 @@
                                 <div class="file-preview">
                                     <div class="file-preview-hover">
                                         <div class="file-icons">
-                                            <i class="material-icons">remove_red_eye</i>
-                                            <i class="material-icons">file_download</i>
-                                            <i class="material-icons">delete</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Preview" data-placement="top">remove_red_eye</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Download" data-placement="top">file_download</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Remove" data-placement="top" data-toggle="popover" data-content="Remove" data-placement="top">delete</i>
                                         </div>
-                                        <input id="file1" type="file" style="display:none;">
-                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file1').click();">Choose File</button>
+                                        <button class="btn btn-lg btn-blue-effect" data-dismiss="modal">Choose File</button>
                                     </div>
                                 </div>
                                 <div class="file-info">
@@ -220,12 +221,11 @@
                                 <div class="file-preview">
                                     <div class="file-preview-hover">
                                         <div class="file-icons">
-                                            <i class="material-icons">remove_red_eye</i>
-                                            <i class="material-icons">file_download</i>
-                                            <i class="material-icons">delete</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Preview" data-placement="top">remove_red_eye</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Download" data-placement="top">file_download</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Remove" data-placement="top">delete</i>
                                         </div>
-                                        <input id="file2" type="file" style="display:none;">
-                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file2').click();">Choose File</button>
+                                        <button class="btn btn-lg btn-blue-effect" data-dismiss="modal">Choose File</button>
                                     </div>
                                 </div>
                                 <div class="file-info">
@@ -239,12 +239,11 @@
                                 <div class="file-preview">
                                     <div class="file-preview-hover">
                                         <div class="file-icons">
-                                            <i class="material-icons">remove_red_eye</i>
-                                            <i class="material-icons">file_download</i>
-                                            <i class="material-icons">delete</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Preview" data-placement="top">remove_red_eye</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Download" data-placement="top">file_download</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Remove" data-placement="top">delete</i>
                                         </div>
-                                        <input id="file3" type="file" style="display:none;">
-                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file3').click();">Choose File</button>
+                                        <button class="btn btn-lg btn-blue-effect" data-dismiss="modal">Choose File</button>
                                     </div>
                                 </div>
                                 <div class="file-info">
@@ -258,12 +257,11 @@
                                 <div class="file-preview">
                                     <div class="file-preview-hover">
                                         <div class="file-icons">
-                                            <i class="material-icons">remove_red_eye</i>
-                                            <i class="material-icons">file_download</i>
-                                            <i class="material-icons">delete</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Preview" data-placement="top">remove_red_eye</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Download" data-placement="top">file_download</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Remove" data-placement="top">delete</i>
                                         </div>
-                                        <input id="file4" type="file" style="display:none;">
-                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file4').click();">Choose File</button>
+                                        <button class="btn btn-lg btn-blue-effect" data-dismiss="modal">Choose File</button>
                                     </div>
                                 </div>
                                 <div class="file-info">
@@ -277,12 +275,11 @@
                                 <div class="file-preview">
                                     <div class="file-preview-hover">
                                         <div class="file-icons">
-                                            <i class="material-icons">remove_red_eye</i>
-                                            <i class="material-icons">file_download</i>
-                                            <i class="material-icons">delete</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Preview" data-placement="top">remove_red_eye</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Download" data-placement="top">file_download</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Remove" data-placement="top">delete</i>
                                         </div>
-                                        <input id="file5" type="file" style="display:none;">
-                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file5').click();">Choose File</button>
+                                        <button class="btn btn-lg btn-blue-effect" data-dismiss="modal">Choose File</button>
                                     </div>
                                 </div>
                                 <div class="file-info">
@@ -296,12 +293,11 @@
                                 <div class="file-preview">
                                     <div class="file-preview-hover">
                                         <div class="file-icons">
-                                            <i class="material-icons">remove_red_eye</i>
-                                            <i class="material-icons">file_download</i>
-                                            <i class="material-icons">delete</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Preview" data-placement="top">remove_red_eye</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Download" data-placement="top">file_download</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Remove" data-placement="top">delete</i>
                                         </div>
-                                        <input id="file6" type="file" style="display:none;">
-                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file6').click();">Choose File</button>
+                                        <button class="btn btn-lg btn-blue-effect" data-dismiss="modal">Choose File</button>
                                     </div>
                                 </div>
                                 <div class="file-info">
@@ -315,12 +311,11 @@
                                 <div class="file-preview">
                                     <div class="file-preview-hover">
                                         <div class="file-icons">
-                                            <i class="material-icons">remove_red_eye</i>
-                                            <i class="material-icons">file_download</i>
-                                            <i class="material-icons">delete</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Preview" data-placement="top">remove_red_eye</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Download" data-placement="top">file_download</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Remove" data-placement="top">delete</i>
                                         </div>
-                                        <input id="file7" type="file" style="display:none;">
-                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file7').click();">Choose File</button>
+                                        <button class="btn btn-lg btn-blue-effect" data-dismiss="modal">Choose File</button>
                                     </div>
                                 </div>
                                 <div class="file-info">
@@ -334,12 +329,11 @@
                                 <div class="file-preview">
                                     <div class="file-preview-hover">
                                         <div class="file-icons">
-                                            <i class="material-icons">remove_red_eye</i>
-                                            <i class="material-icons">file_download</i>
-                                            <i class="material-icons">delete</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Preview" data-placement="top">remove_red_eye</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Download" data-placement="top">file_download</i>
+                                            <i class="material-icons" data-toggle="popover" data-content="Remove" data-placement="top">delete</i>
                                         </div>
-                                        <input id="file8" type="file" style="display:none;">
-                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file8').click();">Choose File</button>
+                                        <button class="btn btn-lg btn-blue-effect" data-dismiss="modal">Choose File</button>
                                     </div>
                                 </div>
                                 <div class="file-info">
@@ -350,6 +344,37 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>       
+        <div id="modalDesignPreview" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-design">
+                <div class="modal-content modal-content-library">
+                    <div class="modal-body modal-body-library modal-body-visible">
+                        <div class="product-headline">
+                            <p><span>Design</span> Preview</p>
+                            <div class="library-close" data-content="closeDesignPreview"></div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="design-button-wrapper">
+                            <button class="btn btn-lg btn-upload btn-blue-effect" data-content="ChooseFile"><i class="material-icons">thumb_up</i> Choose file</button>
+                            <button class="btn btn-lg btn-upload grey"><i class="material-icons">file_download</i> Download file</button>
+                            <button class="btn btn-lg btn-upload grey"><i class="material-icons">fullscreen</i> View full size</button>
+                            <button class="btn btn-lg btn-upload grey"><i class="material-icons">delete</i> Delete file</button>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="file-properties">
+                            <div class="file-name-wrapper">
+                                <p>File name:</p> 
+                                <input type="text" id="fileNameEdit">
+                                <i class="material-icons" onclick="document.getElementById('fileNameEdit').focus()">mode_edit</i>
+                            </div>
+                            <p>3.4 MB</p>
+                            <p>Jan. 23 11:40am</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="design-file-preview"></div>
                     </div>
                 </div>
             </div>

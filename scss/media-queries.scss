@@ -389,6 +389,30 @@
     .file-wrapper{
         width: 49%;
     }
+    //////
+    .design-button-wrapper{
+        flex-flow: wrap;
+        button{
+            width: 48%;
+            margin: 0 auto 10px;
+        }
+    }
+    .file-properties{
+        flex-flow: wrap;
+        justify-content:center;
+        :nth-child(n){
+            margin: 0 0 10px;
+        }
+    }
+    ///fulfillment orders
+    .orders-wrapper {
+        p{
+            font-size: 12px;
+        }
+        .orders-number{
+            font-size: 25px;
+        }
+    }
 }
 
 //////mobiles
@@ -560,6 +584,15 @@
     .stringcolor-wrapper{
         label{
             margin: 0 10px 10px 0;
+        }
+    }
+    ///fulfillment orders
+    .orders-wrapper {
+        p{
+            font-size: 10px;
+        }
+        .orders-number{
+            font-size: 25px;
         }
     }
 }

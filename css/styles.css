@@ -1253,16 +1253,13 @@ input {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: wrap;
-  flex-flow: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
+  flex-flow: wrap; }
 
 .file-wrapper {
   border: 2px solid #e2e2e2;
   border-radius: 3px;
   width: 24%;
-  margin: 0 0 15px;
+  margin: 0 1% 15px 0;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -1321,6 +1318,104 @@ input {
       margin: 0 0 20px; }
     .file-wrapper .file-info p:not(:first-child) {
       margin: 0; }
+
+.popover {
+  top: 15px !important; }
+
+.popover .arrow {
+  left: 65% !important; }
+  .popover .arrow:after, .popover .arrow:before {
+    border-top-color: #424242 !important; }
+
+.bs-popover-auto[x-placement^=top] .arrow::after, .bs-popover-top .arrow::after,
+.bs-popover-auto[x-placement^=top] .arrow::before, .bs-popover-top .arrow::before {
+  border-top-color: #424242 !important;
+  bottom: -5px !important; }
+
+.bs-popover-auto[x-placement^=top] .arrow::after, .bs-popover-auto[x-placement^=top] .arrow::before, .bs-popover-top .arrow::after, .bs-popover-top .arrow::before {
+  border-width: 5px 5px 0; }
+
+.popover-body {
+  background: #424242;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 5px; }
+
+.modal-dialog-design {
+  max-width: 635px;
+  height: auto; }
+
+.design-button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%; }
+  .design-button-wrapper button {
+    width: 24%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+
+.file-properties {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .file-properties > p {
+    padding: 0 15px;
+    border-left: 2px solid #f5f5f5; }
+  .file-properties p {
+    margin: 0; }
+  .file-properties .file-name-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 15px 0 0;
+    vertical-align: middle; }
+  .file-properties i {
+    font-size: 15px !important;
+    cursor: pointer; }
+  .file-properties #fileNameEdit {
+    margin: 0 5px;
+    height: 22px;
+    font-weight: 600;
+    width: auto;
+    border: 0;
+    font-size: 15px; }
+
+.design-file-preview {
+  width: 100%;
+  max-width: 600px;
+  background: #e2e2e2;
+  position: relative;
+  border-radius: 4px; }
+  .design-file-preview:before {
+    content: "";
+    display: block;
+    padding-top: 100%; }
+
+.orders-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: center; }
+  .orders-wrapper .orders {
+    width: calc(100%/3); }
+  .orders-wrapper .orders:not(:first-child) {
+    border-left: 2px solid #f5f5f5; }
+  .orders-wrapper .orders-number {
+    font-size: 32px;
+    margin: 0; }
 
 @media screen and (min-width: 1200px) {
   #selling-price {
@@ -1553,7 +1648,25 @@ input {
   #product-selector-content .content-headline .breadcrumbs {
     text-align: center; }
   .file-wrapper {
-    width: 49%; } }
+    width: 49%; }
+  .design-button-wrapper {
+    -ms-flex-flow: wrap;
+    flex-flow: wrap; }
+    .design-button-wrapper button {
+      width: 48%;
+      margin: 0 auto 10px; }
+  .file-properties {
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .file-properties :nth-child(n) {
+      margin: 0 0 10px; }
+  .orders-wrapper p {
+    font-size: 12px; }
+  .orders-wrapper .orders-number {
+    font-size: 25px; } }
 
 @media only screen and (max-width: 426px) {
   .content-headline .breadcrumbs {
@@ -1662,7 +1775,11 @@ input {
         line-height: 12px !important;
         margin: 0 2px 0 0; }
   .stringcolor-wrapper label {
-    margin: 0 10px 10px 0; } }
+    margin: 0 10px 10px 0; }
+  .orders-wrapper p {
+    font-size: 10px; }
+  .orders-wrapper .orders-number {
+    font-size: 25px; } }
 
 @media only screen and (max-width: 320px) {
   .template-view .template-buttons {

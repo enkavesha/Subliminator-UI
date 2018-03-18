@@ -226,8 +226,39 @@ $(document).ready(function(){
         }
     }
     /////////////search in file library
+    jQuery.expr[':'].icontains = function(a, i, m) {
+      return jQuery(a).text().toUpperCase()
+              .indexOf(m[3].toUpperCase()) >= 0;
+        };
+    
     $('#search-library').on('input', function() { 
-        var search= $(this).value;
-        $('.file-name:not(:contains('+ search +'))').each(function(el) {el.parent().parent().addClass('file-wrapper-hidden'); });                                                                                                         
+       var search = $(this).val(); 
+        $('.file-wrapper').removeClass('file-wrapper-hidden'); 
+        $('.file-name:not(:icontains('+ search +'))').each(function(){
+            $(this).closest('.file-wrapper').addClass('file-wrapper-hidden');
+        })
+    });
+    //////////pop overs
+    $('[data-toggle="popover"]').popover({ trigger: "hover" });
+    var wrapper, newFileName;
+    /////////show design preview modal
+    $('[data-content="Preview"]').click(function(){
+        $('#modalFileLibrary').modal('hide');
+        $('#modalDesignPreview').modal('show');
+        wrapper=$(this).closest('.file-wrapper');
+        //////grab file name
+        newFileName = $('#fileNameEdit').val($(this).closest(wrapper).find('.file-name').text());
+        $('#fileNameEdit').attr('size', $('#fileNameEdit').val().length);
+    });
+    ////////choose file at design preview modal
+    $('[data-content="ChooseFile"]').click(function (){
+        $('#modalDesignPreview').modal('hide');
+        $('#modalFileLibrary').modal('show');
+        $(wrapper).find('.file-name').text(newFileName.val()); 
+    });
+    ///////////close design preview modal without saving
+    $('[data-content="closeDesignPreview"]').click(function (){
+        $('#modalDesignPreview').modal('hide');
+        $('#modalFileLibrary').modal('show');
     });
 });
