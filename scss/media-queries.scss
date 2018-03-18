@@ -57,15 +57,6 @@
             p{
                 font-size: 12px;
             }
-            .upload-wrapper{
-                .upload-svg-wrapper{
-//                    margin: 0 0 50px;
-                    img{
-//                        width: 50%;
-                    }
-                }
-            }
-
         }
     }
     .stringcolor-wrapper{
@@ -195,6 +186,10 @@
           margin: 0 auto;
         padding: 0;
       }
+     ///////file library
+    .file-wrapper .file-icons{
+        width: 80%;
+    }
 }
 ////////
 @media screen and (width: 600px)	
@@ -289,7 +284,6 @@
             font-size: 12px!important;
         }
     }
-    	
 }
 @media screen and (max-width: 606px){
     
@@ -342,6 +336,16 @@
     #product-selector-content .row-width{
         padding: 0 0 0 10px;
     }
+    //////////file library
+    .file-preview-hover{
+        button{
+            font-size: 9px;
+            width: 80%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 @media screen and (max-width: 480px){
     .btn, #btn-review, #btn-publish{
@@ -380,6 +384,10 @@
                 text-align: center;
             }
         }
+    }
+    ////////file library
+    .file-wrapper{
+        width: 49%;
     }
 }
 
@@ -465,15 +473,6 @@
             p{
                 font-size: 12px;
             }
-            .upload-wrapper{
-                .upload-svg-wrapper{
-//                    margin: 0 0 50px;
-                    img{
-//                        width: 50%;
-                    }
-                }
-            }
-
         }
     }
     /////////generator
@@ -491,9 +490,6 @@
         }
     }
     .calc-profit{
-        .input-profit{
-//            margin: 10px auto 0;
-        }
         #selling-price{
             margin: 0 0 10px;
         }
@@ -646,17 +642,17 @@
         }
     }
     #btn-publish{
-    display: flex;
-    align-items: center;
-    vertical-align: middle;
-        font-size: 9px!important;
-    i{
-        margin: 0 0 0 5px;
-        font-size: 12px!important;
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+            font-size: 9px!important;
+        i{
+            margin: 0 0 0 5px;
+            font-size: 12px!important;
+        }
     }
-}
-    
-}
-@media only screen and (max-height: 736px){
-
+    ///////////file-library
+    #uploadDesign{
+        font-size: 8px!important;
+    }
 }

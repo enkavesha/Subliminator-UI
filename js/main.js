@@ -114,7 +114,7 @@ $(document).ready(function(){
     });
     };    
     /////////modal
-   // When the user clicks the publish button, open the modal 
+   // modal for publishing
     let publishButton = $(document.getElementById('modalSubmit'));
     if(publishButton && publishButton.length > 0){
         document.getElementById('modalSubmit').onclick = function() {
@@ -126,6 +126,13 @@ $(document).ready(function(){
             $('#modalPublishLoading').toggleClass('modal-body-visible');
             $('#modalPublishConfirmation').toggleClass('modal-body-visible');
           }, 3000);
+        }
+    }   
+    // modal for file library
+    let btnChooseFile = $('.btn-upload');
+    if(btnChooseFile && btnChooseFile.length > 0){
+        $('.btn-upload').onclick = function() {
+         $('#modalFileLibrary').toggleClass('modal-body-visible');
         }
     }
     ///////////inputmask
@@ -140,7 +147,7 @@ $(document).ready(function(){
         },
         definitions: {
           '*': {
-            validator: "[0-9A-Za-z]",
+            validator: "[0-9A-Za-z-]",
             casing: "lower"
           }
         }
@@ -261,4 +268,9 @@ $(document).ready(function(){
             }
         }
     }
+    /////////////search in file library
+    $('#search-library').on('input', function() { 
+        var search= $(this).value;
+        $('.file-name:not(:contains('+ search +'))').each(function(el) {el.parent().parent().addClass('file-wrapper-hidden'); });                                                                                                         
+    });
 });

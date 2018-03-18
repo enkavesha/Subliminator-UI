@@ -1135,7 +1135,7 @@ input{
 .account-thumb-down,
 .account-thumb-up,
 .account-credit-card,
-.acoount-paypal{
+.account-paypal{
     position: relative;
     padding: 0 0 0 60px;
     &:before{
@@ -1177,9 +1177,15 @@ input{
 }
 .account-paypal{
     &:before{
-        content: '';
+        content: "";
+        display: block;
         background: url(../images/paypal.png) no-repeat;
         background-size: cover;
+        height: 14px;
+        width: 14px;
+        top: 10px;
+        left: 15px;
+        position: absolute;
     }
 }
 .paypal-payments, .credit-payments{
@@ -1193,5 +1199,147 @@ input{
             width: 100%;
         }
     }
+}
+///////////file library
+.library-close{
+    width: 25px;
+    height: 25px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        background: $mediumGrey;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+.modal-dialog-library{
+    max-width: 900px;
+    height: auto;
+}
+.modal-body-library{
+    height: auto;
+    .product-headline{
+        &:before{
+            left: -15px;
+        }
+    }
+}
+.library-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 15px;
+    input{
+        width: 100%;
+        position: relative;
+    }
+    .btn-upload{
+        max-width: 50%;
+    }
+}
+.input-search-library{
+    position: relative;
+    width: 50%;
+    &:after{
+        content: "search";
+        display: block;
+        position: absolute;
+        top: 11px;
+        right: 20px;
+        font-weight: 600;
+        font-size: 20px;
+        color: $grey;
+        font-family: 'Material Icons';
+        height: 20px;
+        width: 20px;
+        line-height: 1;
+    }
+}
+.files-wrapper{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+.file-wrapper{
+    border: 2px solid $mediumGrey;
+    border-radius: 3px;
+    width: 24%;
+    margin: 0 0 15px;
+    transition: all 0.2s linear;
+    display: block;
+    &:hover, &:hover .file-preview{
+        border-color: $blue;
+        transition: all 0.2s linear;
+        .file-preview-hover{
+            display: block;
+        }
+    }
+    &.file-wrapper-hidden{
+        display: none;
+    }
+    p{
+        font-size: 12px;
+    }
+    .file-preview{
+        border-bottom: 2px solid $mediumGrey;
+        width: 100%;
+        background: url(../images/file-bg.png);
+        position: relative;
+        &:before{
+            content: "";
+            display: block;
+            padding-top: 100%;
+        }
+    }
+    .file-preview-hover{
+        position: absolute;
+        display: none;
+        background: rgba(255,255,255,0.3);
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        text-align: center;
+        button{
+            padding: .5rem 2rem;
+            margin: 35% auto 0;
+        }
+    }
+    .file-icons{
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        color: $blue;
+        font-size: 25px;
+        cursor: pointer;
+        i:hover{
+            color: lighten($blue, 15%);
+        }
+    }
+    .file-info{
+        padding: 10px;
+        text-align: left;
+        .file-name{
+            font-weight: 700;
+            margin: 0 0 20px;
+        }
+        p:not(:first-child){
+            margin: 0;
+        }
+    }
+
 }
 @import "media-queries";

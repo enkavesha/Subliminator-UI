@@ -111,17 +111,18 @@
                                             <div class="upload-svg-wrapper">
                                                 <img src="images/leggings.svg">
                                             </div>
-                                            <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
+                                            <button class="btn btn-lg btn-upload btn-blue-effect" data-toggle="modal" data-target="#modalFileLibrary"><i class="material-icons">file_upload</i> Choose file</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="upload-file">
                                     <p>Inside Label <span>(Optional)</span></p>
                                     <div class="upload-wrapper">
-                                        <div class="upload-inner">                       <div class="upload-svg-wrapper">
+                                        <div class="upload-inner">                       
+                                            <div class="upload-svg-wrapper">
                                                 <img src="images/hoodie-label.svg">
                                             </div>
-                                            <button class="btn btn-lg btn-upload btn-blue-effect"><i class="material-icons">file_upload</i> Choose file</button>
+                                            <button class="btn btn-lg btn-upload btn-blue-effect" data-toggle="modal" data-target="#modalFileLibrary"><i class="material-icons">file_upload</i> Choose file</button>
                                         </div>
                                     </div>
                                 </div>
@@ -162,8 +163,177 @@
             </div>
         </section>
         
-        
-        
+        <div id="modalFileLibrary" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-library">
+                <div class="modal-content modal-content-library">
+                    <div class="modal-body modal-body-library modal-body-visible">
+                        <div class="product-headline">
+                            <p><span>Design</span> File Library</p>
+                            <div class="library-close" data-dismiss="modal"></div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="library-header">
+                            <button class="btn btn-lg btn-upload btn-blue-effect"  id="uploadDesign"><i class="material-icons">file_upload</i> Upload new design</button>
+                            <div class="input-search-library"><input type="text" placeholder="Search Files" class="input-style" id="search-library"></div>
+                        </div>
+                        <div class="files-wrapper">
+                            <div class="file-wrapper">
+                                <div class="file-preview">
+                                    <div class="file-preview-hover">
+                                        <div class="file-icons">
+                                            <i class="material-icons">remove_red_eye</i>
+                                            <i class="material-icons">file_download</i>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                        <input id="file1" type="file" style="display:none;">
+                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file1').click();">Choose File</button>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <p class="file-name">Filename1.jpg</p>
+                                    <p>Type: <span class="semibold">Printfile</span></p>
+                                    <p>Size: <span class="semibold">3.4 MB</span></p>
+                                    <p>Resolution: <span class="semibold">1500x1100</span></p>
+                                </div>
+                            </div>
+                            <div class="file-wrapper">
+                                <div class="file-preview">
+                                    <div class="file-preview-hover">
+                                        <div class="file-icons">
+                                            <i class="material-icons">remove_red_eye</i>
+                                            <i class="material-icons">file_download</i>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                        <input id="file2" type="file" style="display:none;">
+                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file2').click();">Choose File</button>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <p class="file-name">Filename2.jpg</p>
+                                    <p>Type: <span class="semibold">Printfile</span></p>
+                                    <p>Size: <span class="semibold">3.4 MB</span></p>
+                                    <p>Resolution: <span class="semibold">1500x1100</span></p>
+                                </div>
+                            </div>
+                            <div class="file-wrapper">
+                                <div class="file-preview">
+                                    <div class="file-preview-hover">
+                                        <div class="file-icons">
+                                            <i class="material-icons">remove_red_eye</i>
+                                            <i class="material-icons">file_download</i>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                        <input id="file3" type="file" style="display:none;">
+                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file3').click();">Choose File</button>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <p class="file-name">Filename3.jpg</p>
+                                    <p>Type: <span class="semibold">Printfile</span></p>
+                                    <p>Size: <span class="semibold">3.4 MB</span></p>
+                                    <p>Resolution: <span class="semibold">1500x1100</span></p>
+                                </div>
+                            </div>
+                            <div class="file-wrapper">
+                                <div class="file-preview">
+                                    <div class="file-preview-hover">
+                                        <div class="file-icons">
+                                            <i class="material-icons">remove_red_eye</i>
+                                            <i class="material-icons">file_download</i>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                        <input id="file4" type="file" style="display:none;">
+                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file4').click();">Choose File</button>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <p class="file-name">Filename4.jpg</p>
+                                    <p>Type: <span class="semibold">Printfile</span></p>
+                                    <p>Size: <span class="semibold">3.4 MB</span></p>
+                                    <p>Resolution: <span class="semibold">1500x1100</span></p>
+                                </div>
+                            </div>
+                            <div class="file-wrapper">
+                                <div class="file-preview">
+                                    <div class="file-preview-hover">
+                                        <div class="file-icons">
+                                            <i class="material-icons">remove_red_eye</i>
+                                            <i class="material-icons">file_download</i>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                        <input id="file5" type="file" style="display:none;">
+                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file5').click();">Choose File</button>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <p class="file-name">Filename5.jpg</p>
+                                    <p>Type: <span class="semibold">Printfile</span></p>
+                                    <p>Size: <span class="semibold">3.4 MB</span></p>
+                                    <p>Resolution: <span class="semibold">1500x1100</span></p>
+                                </div>
+                            </div>
+                            <div class="file-wrapper">
+                                <div class="file-preview">
+                                    <div class="file-preview-hover">
+                                        <div class="file-icons">
+                                            <i class="material-icons">remove_red_eye</i>
+                                            <i class="material-icons">file_download</i>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                        <input id="file6" type="file" style="display:none;">
+                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file6').click();">Choose File</button>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <p class="file-name">Filename6.jpg</p>
+                                    <p>Type: <span class="semibold">Printfile</span></p>
+                                    <p>Size: <span class="semibold">3.4 MB</span></p>
+                                    <p>Resolution: <span class="semibold">1500x1100</span></p>
+                                </div>
+                            </div>
+                            <div class="file-wrapper">
+                                <div class="file-preview">
+                                    <div class="file-preview-hover">
+                                        <div class="file-icons">
+                                            <i class="material-icons">remove_red_eye</i>
+                                            <i class="material-icons">file_download</i>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                        <input id="file7" type="file" style="display:none;">
+                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file7').click();">Choose File</button>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <p class="file-name">Filename7.jpg</p>
+                                    <p>Type: <span class="semibold">Printfile</span></p>
+                                    <p>Size: <span class="semibold">3.4 MB</span></p>
+                                    <p>Resolution: <span class="semibold">1500x1100</span></p>
+                                </div>
+                            </div>
+                            <div class="file-wrapper">
+                                <div class="file-preview">
+                                    <div class="file-preview-hover">
+                                        <div class="file-icons">
+                                            <i class="material-icons">remove_red_eye</i>
+                                            <i class="material-icons">file_download</i>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                        <input id="file8" type="file" style="display:none;">
+                                        <button class="btn btn-lg btn-blue-effect" onclick="document.getElementById('file8').click();">Choose File</button>
+                                    </div>
+                                </div>
+                                <div class="file-info">
+                                    <p class="file-name">Filename8.jpg</p>
+                                    <p>Type: <span class="semibold">Printfile</span></p>
+                                    <p>Size: <span class="semibold">3.4 MB</span></p>
+                                    <p>Resolution: <span class="semibold">1500x1100</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
