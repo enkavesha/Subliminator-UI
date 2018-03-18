@@ -243,8 +243,9 @@ $(document).ready(function(){
     var wrapper, newFileName;
     /////////show design preview modal
     $('[data-content="Preview"]').click(function(){
-        $('#modalFileLibrary').modal('hide');
-        $('#modalDesignPreview').modal('show');
+//        $('#modalFileLibrary').modal('hide');
+        $('.modal-backdrop').css('z-index',1500);
+        $('#modalDesignPreview').modal({backdrop: 'static', keyboard: false});
         wrapper=$(this).closest('.file-wrapper');
         //////grab file name
         newFileName = $('#fileNameEdit').val($(this).closest(wrapper).find('.file-name').text());
@@ -253,12 +254,12 @@ $(document).ready(function(){
     ////////choose file at design preview modal
     $('[data-content="ChooseFile"]').click(function (){
         $('#modalDesignPreview').modal('hide');
-        $('#modalFileLibrary').modal('show');
+        $('.modal-backdrop').css('z-index',500);
         $(wrapper).find('.file-name').text(newFileName.val()); 
     });
     ///////////close design preview modal without saving
     $('[data-content="closeDesignPreview"]').click(function (){
+        $('.modal-backdrop').css('z-index',500);
         $('#modalDesignPreview').modal('hide');
-        $('#modalFileLibrary').modal('show');
     });
 });

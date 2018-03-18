@@ -249,7 +249,7 @@
                 <div class="modal-content modal-content-library">
                     <div class="modal-body modal-body-library modal-body-visible">
                         <div class="product-headline">
-                            <p><span>Design</span> Preview</p>
+                            <p><span>Design</span> File Library</p>
                             <div class="library-close" data-dismiss="modal"></div>
                         </div>
                         <div class="divider"></div>
@@ -419,16 +419,16 @@
                         <div class="divider"></div>
                         <div class="design-button-wrapper">
                             <button class="btn btn-lg btn-upload btn-blue-effect" data-content="ChooseFile"><i class="material-icons">thumb_up</i> Choose file</button>
-                            <button class="btn btn-lg btn-upload grey"><i class="material-icons">file_download</i> Download file</button>
-                            <button class="btn btn-lg btn-upload grey"><i class="material-icons">fullscreen</i> View full size</button>
-                            <button class="btn btn-lg btn-upload grey"><i class="material-icons">delete</i> Delete file</button>
+                            <button class="btn btn-lg btn-upload btn-grey"><i class="material-icons">file_download</i> Download file</button>
+                            <button class="btn btn-lg btn-upload btn-grey"><i class="material-icons">fullscreen</i> View full size</button>
+                            <button class="btn btn-lg btn-upload btn-grey"><i class="material-icons">delete</i> Delete file</button>
                         </div>
                         <div class="divider"></div>
                         <div class="file-properties">
                             <div class="file-name-wrapper">
                                 <p>File name:</p> 
                                 <input type="text" id="fileNameEdit">
-                                <i class="material-icons" onclick="document.getElementById('fileNameEdit').focus()">mode_edit</i>
+                                <i class="material-icons" onclick="document.getElementById('fileNameEdit').focus()"  data-toggle="popover" data-content="Edit file name" data-placement="top">mode_edit</i>
                             </div>
                             <p>3.4 MB</p>
                             <p>Jan. 23 11:40am</p>

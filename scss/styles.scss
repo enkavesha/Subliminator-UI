@@ -103,6 +103,7 @@ button{
 }
 .btn-grey{
     background: $lightGrey;
+    color: $grey;
     &:hover{
         border: 2px solid $blue;
         color: $blue;
@@ -565,7 +566,7 @@ button{
             position: absolute;
             font-size: 25px!important;
             top: -3px;
-            left: 2px;
+            left: 3px;
         }
     }
     #align-h{
@@ -1220,7 +1221,10 @@ input{
         left: 0;
         margin-top: -1px;
         background: $mediumGrey;
-  }
+    }
+    &:hover:before, &:hover:after{
+        background: $grey;
+    }
   &:before {
     transform: rotate(45deg);
   }
@@ -1375,6 +1379,9 @@ input{
     padding: 5px;
 }
 //////////////design preview
+#modalDesignPreview{
+    z-index: 2000;
+}
 .modal-dialog-design{
     max-width: 635px;
     height: auto;
@@ -1412,8 +1419,13 @@ input{
         height: 22px;
         font-weight: 600;
         width: auto;
-        border: 0;
+        border: 2px solid transparent;
         font-size: 15px;
+        &:focus{
+            background: $blue;
+            color: white;
+            border: 2px solid $mediumGrey;
+        }
     }
 }
 .design-file-preview{
