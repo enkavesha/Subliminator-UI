@@ -56,6 +56,9 @@ p {
 .optional {
   color: #e2e2e2; }
 
+.panel-12 {
+  padding-left: 0; }
+
 .left-panel {
   padding: 0;
   max-width: 660px; }
