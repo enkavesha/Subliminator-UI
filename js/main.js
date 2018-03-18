@@ -55,47 +55,18 @@ $(document).ready(function(){
         $('.chosen-container').removeClass('chosen-container-active');
     });
     //////////////text editor
+    ///////////take product name from header for text editor placeholder
+    var productName=$('.product-name').text();
     //////////////hoodie
-    let productDescriptionHoodie = $(document.getElementById('product-description-hoodie'));
-    if(productDescriptionHoodie && productDescriptionHoodie.length > 0){
+    let productDescription = $(document.getElementById('product-description'));
+    if(productDescription && productDescription.length > 0){
         var editor = new Simditor({
-          textarea: $('#product-description-hoodie'),
-            placeholder:'Hoodie All-Over',
+          textarea: $('#product-description'),
+            placeholder: productName,
             toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
             upload: true
         });
     }    
-    //////////////leggings
-    let productDescriptionLeggings = $(document.getElementById('product-description-leggings'));
-    if(productDescriptionLeggings && productDescriptionLeggings.length > 0){
-        var editor = new Simditor({
-          textarea: $('#product-description-leggings'),
-            placeholder:'Leggings All-Over',
-            toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
-            upload: true
-        });
-    }    
-    //////////////sweatshirt
-    let productDescriptionSweatshirt = $(document.getElementById('product-description-sweatshirt'));
-    if(productDescriptionSweatshirt && productDescriptionSweatshirt.length > 0){
-        var editor = new Simditor({
-          textarea: $('#product-description-sweatshirt'),
-            placeholder:'Sweatshirt All-Over',
-            toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
-            upload: true
-        });
-    }    
-    //////////////yoga
-    let productDescriptionYoga = $(document.getElementById('product-description-yoga'));
-    if(productDescriptionYoga && productDescriptionYoga.length > 0){
-        var editor = new Simditor({
-          textarea: $('#product-description-yoga'),
-            placeholder:'Yoga Pants All-Over',
-            toolbar:[ 'bold','italic','underline','strikethrough','link','image','code','ul', 'ol','alignment'],
-            upload: true
-        });
-    }
-
     //////////upload file div resize
     if($('.upload-file')[0]){
         $(function() {
@@ -134,25 +105,7 @@ $(document).ready(function(){
         $('.btn-upload').onclick = function() {
          $('#modalFileLibrary').toggleClass('modal-body-visible');
         }
-    }
-    ///////////inputmask
-    $(":input").inputmask();
-    //email mask
-      $('#accountEmail').inputmask({
-        mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}.*{1,6}[.*{1,3}]",
-        greedy: false,
-        onBeforePaste: function (pastedValue, opts) {
-          pastedValue = pastedValue.toLowerCase();
-          return pastedValue.replace("mailto:", "");
-        },
-        definitions: {
-          '*': {
-            validator: "[0-9A-Za-z-]",
-            casing: "lower"
-          }
-        }
-      });
-    
+    }    
     //////////validate account
     function validateForm() {
       var isValid = true;
@@ -183,28 +136,32 @@ $(document).ready(function(){
         }
     }
     ///////////choose payments
-    document.getElementById('paymentPrimary').onchange = function() {
-        if((this).value=="Paypal"){
-            $('#paypalPaymentsPrimary').show();
-            $('#creditPaymentsPrimary').hide();
-        }
-        else if((this).value=="Credit Card"){
-             $('#paypalPaymentsPrimary').hide();   
-             $('#creditPaymentsPrimary').show();   
-        }
-            
-    };
-    document.getElementById('paymentSecondary').onchange = function() {
-        if((this).value=="Paypal"){
-            $('#paypalPaymentsSecondary').show();
-            $('#creditPaymentsSecondary').hide();
-        }
-        else if((this).value=="Credit Card"){
-             $('#paypalPaymentsSecondary').hide();   
-             $('#creditPaymentsSecondary').show();   
-        }
-            
-    };
+    let paymentPrimary = $(document.getElementById('paymentPrimary'));
+    if(paymentPrimary && paymentPrimary.length > 0){
+        document.getElementById('paymentPrimary').onchange = function() {
+            if((this).value=="Paypal"){
+                $('#paypalPaymentsPrimary').show();
+                $('#creditPaymentsPrimary').hide();
+            }
+            else if((this).value=="Credit Card"){
+                 $('#paypalPaymentsPrimary').hide();   
+                 $('#creditPaymentsPrimary').show();   
+            }
+        };
+    }
+    let paymentSecondary = $(document.getElementById('paymentSecondary'));
+    if(paymentSecondary && paymentSecondary.length > 0){
+        document.getElementById('paymentSecondary').onchange = function() {
+            if((this).value=="Paypal"){
+                $('#paypalPaymentsSecondary').show();
+                $('#creditPaymentsSecondary').hide();
+            }
+            else if((this).value=="Credit Card"){
+                 $('#paypalPaymentsSecondary').hide();   
+                 $('#creditPaymentsSecondary').show();   
+            }
+        };
+    }
 
     ///////////connect primary payment
     let btnPaypalPrimary = $(document.getElementById('btnPaypalPrimary'));
