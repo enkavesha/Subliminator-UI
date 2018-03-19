@@ -22,11 +22,11 @@ $(document).ready(function(){
     var cost=$(document.getElementById('shipping-cost')).text().replace(/[^0-9]/g, '');
     cost=parseFloat(cost);
     
-    $('#selling-price').on('input', function() { 
+    $('#selling-price').not('.account-form').on('input', function() { 
         var sellingPrice= $(this).val().replace(',','.');
         sellingPrice=parseFloat(sellingPrice).toFixed(2); 
         var profit= document.getElementById('product-profit');
-        if (isNaN(sellingPrice)|sellingPrice<cost) { 
+        if (isNaN(sellingPrice)| sellingPrice<cost) { 
             profit.innerHTML = '0.00'; 
         } else { 
             profit.innerHTML = (sellingPrice-cost).toFixed(2); 
@@ -243,9 +243,7 @@ $(document).ready(function(){
     var wrapper, newFileName;
     /////////show design preview modal
     $('[data-content="Preview"]').click(function(){
-//        $('#modalFileLibrary').modal('hide');
-        $('.modal-backdrop').css('z-index',1500);
-        $('#modalDesignPreview').modal({backdrop: 'static', keyboard: false});
+        $('#modalDesignPreview').modal('show');
         wrapper=$(this).closest('.file-wrapper');
         //////grab file name
         newFileName = $('#fileNameEdit').val($(this).closest(wrapper).find('.file-name').text());
@@ -254,12 +252,28 @@ $(document).ready(function(){
     ////////choose file at design preview modal
     $('[data-content="ChooseFile"]').click(function (){
         $('#modalDesignPreview').modal('hide');
-        $('.modal-backdrop').css('z-index',500);
         $(wrapper).find('.file-name').text(newFileName.val()); 
     });
     ///////////close design preview modal without saving
     $('[data-content="closeDesignPreview"]').click(function (){
-        $('.modal-backdrop').css('z-index',500);
         $('#modalDesignPreview').modal('hide');
+    });
+    ////////// stack modals
+    $(document).on('show.bs.modal', '.modal', function () {
+        var zIndex = 1040 + (10 * $('.modal:visible').length);
+        $(this).css('z-index', zIndex);
+        setTimeout(function() {
+            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+        }, 0);
+    });
+    /////////fix scrollbar for modal
+    $(document).on('hidden.bs.modal', '.modal', function () {
+        $('.modal:visible').length && $(document.body).addClass('modal-open');
+    });
+    //////reset inout focus on enter
+    $('#fileNameEdit, #selling-price, input[type=text]').keypress(function(e){
+        if (e.keyCode == 13) {
+            $(this).blur(); 
+        }
     });
 });
