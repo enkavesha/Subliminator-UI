@@ -41,18 +41,19 @@ p{
     padding-left: 0;
 }
 .left-panel{
-    padding: 0;
     max-width: 660px;
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+div[class^="col"]{
+    padding-right: 7.5px;
+    padding-left: 7.5px;
 }
 .right-panel{
     max-width: 555px;
-//    padding-right: 0;
-}
-.left-panel-half, .right-panel-half{
-    max-width: 560px;
-}
-.left-panel-half{
-    padding: 0;
+
+    padding-right: 7.5px;
+    padding-left: 7.5px;
 }
 .row-width{
     max-width: 1125px;
@@ -62,7 +63,6 @@ p{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-//    padding-right: 0;
 }
 .btn{
     border-radius: 2rem;
@@ -978,13 +978,7 @@ input{
 
 }
 .product-select-container{
-    max-width: 282px;
-    &:nth-child(n){
-        padding-left: 0;
-    }
-    &:not(:last-child){
-        padding: 0 15px 0 0;
-    }
+    max-width: 290px;
 }
 .product-select{
     &.white-block{
