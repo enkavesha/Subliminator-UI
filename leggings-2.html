@@ -4,14 +4,14 @@
         <title>Subliminator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
         <link href="css/chosen.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
         <!--    Text editor    -->
-        <link rel="stylesheet" type="text/css" href="css/simditor.css" />
-        
+        <link rel="stylesheet" type="text/css" href="css/simditor.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-tagsinput.css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
@@ -78,7 +78,7 @@
                               <option>Shopify Collection #3</option>
                             </select>
                             <p class="semibold">Add Product Tags <span class="optional">(Optional)</span></p>
-                            <input type="text" placeholder="Separate tags with commas" class="input-style">
+                            <input type="text" placeholder="Separate tags with commas" class="tags-input" data-role="tagsinput">
                         </div>
                         <div class="print-guidelines white-block">
                             <div class="product-headline">
@@ -163,6 +163,7 @@
         <script type="text/javascript" src="js/text-editor/hotkeys.js"></script>
         <script type="text/javascript" src="js/text-editor/uploader.js"></script>
         <script type="text/javascript" src="js/text-editor/simditor.js"></script>
+        <script type="text/javascript" src="js/bootstrap-tagsinput.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

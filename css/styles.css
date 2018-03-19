@@ -56,9 +56,6 @@ p {
 .optional {
   color: #e2e2e2; }
 
-.panel-12 {
-  padding-left: 0; }
-
 .left-panel {
   max-width: 660px;
   padding-right: 7.5px;
@@ -121,16 +118,8 @@ button:focus {
   color: #fff;
   border-color: #0c77f8; }
   .btn-blue-effect:hover, .btn-blue-effect:active, .btn-blue-effect:focus {
-    background: #56a1fa !important;
-    border: 2px solid #56a1fa !important; }
-
-.btn-sub {
-  background: #0c77f8;
-  color: #fff;
-  border-color: #0c77f8; }
-  .btn-sub:hover, .btn-sub:active, .btn-sub:focus {
-    background: #084fd1 !important;
-    border: 2px solid #084fd1 !important; }
+    background: #0357bc !important;
+    border: 2px solid #0357bc !important; }
 
 .btn-grey {
   background: #f5f5f5;
@@ -169,6 +158,51 @@ button:focus {
 .btn-guidelines {
   color: #fff;
   background: #0c77f8; }
+
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; }
+
+.waves-effect .waves-ripple {
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+  background: -webkit-radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  background: -o-radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  -o-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transform: scale(0) translate(0, 0);
+  -ms-transform: scale(0) translate(0, 0);
+  transform: scale(0) translate(0, 0);
+  pointer-events: none; }
+
+.waves-effect.waves-light .waves-ripple {
+  background: rgba(255, 255, 255, 0.4);
+  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  background: -o-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%); }
+
+.waves-effect.waves-classic.waves-light .waves-ripple {
+  background: rgba(255, 255, 255, 0.4); }
 
 .white-block {
   margin: 15px 0;
@@ -1434,6 +1468,56 @@ input {
   .orders-wrapper .orders-number {
     font-size: 32px;
     margin: 0; }
+
+.bootstrap-tagsinput {
+  outline: none;
+  border-color: #e2e2e2;
+  border-radius: 2rem;
+  outline: none;
+  border: 2px solid #e2e2e2;
+  padding: 7px 15px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  color: #424242;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  .bootstrap-tagsinput::-webkit-input-placeholder {
+    color: #e2e2e2; }
+  .bootstrap-tagsinput input {
+    width: 100%;
+    font-weight: 500; }
+    .bootstrap-tagsinput input::-webkit-input-placeholder {
+      color: #e2e2e2;
+      font-weight: 500;
+      font-size: 14px; }
+
+.bootstrap-tagsinput .tag {
+  border: 1px solid #0c77f8;
+  border-radius: 2px;
+  color: #424242;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 0 0 0 5px; }
+  .bootstrap-tagsinput .tag.label .label-info {
+    margin-right: 0;
+    margin: 0 0 5px; }
+
+.focus, .focus .simditor-toolbar {
+  border-color: #0c77f8;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+
+.simditor, .simditor-toolbar {
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
 
 @media screen and (min-width: 1200px) {
   #selling-price {

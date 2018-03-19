@@ -271,9 +271,23 @@ $(document).ready(function(){
         $('.modal:visible').length && $(document.body).addClass('modal-open');
     });
     //////reset inout focus on enter
-    $('#fileNameEdit, #selling-price, input[type=text]').keypress(function(e){
+    $('#fileNameEdit, #selling-price, input[type=text]').not('.bootstrap-tagsinput input').keypress(function(e){
         if (e.keyCode == 13) {
             $(this).blur(); 
         }
     });
+    //////////////add&remove focus to input
+       $('input').blur(function() {
+        $('input').removeClass("focus");
+      })
+      .focus(function() {
+        $(this).addClass("focus")
+      });
+    /////////add&remove focus to tagsinput
+       $('.bootstrap-tagsinput input').blur(function() {
+        $('.bootstrap-tagsinput').removeClass("focus");
+      })
+      .focus(function() {
+        $('.bootstrap-tagsinput').addClass("focus")
+      });
 });
