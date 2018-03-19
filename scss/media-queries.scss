@@ -362,7 +362,7 @@
 //////mobiles
 @media only screen and (max-width: 426px){
     .content-headline .breadcrumbs{
-        margin: 0 0 15px;
+//        margin: 0 0 15px;
     }
     .file-views{
         li{
@@ -606,5 +606,8 @@
     ///////////file-library
     #uploadDesign{
         font-size: 8px!important;
+    }
+    header{
+        height: 100px;
     }
 }

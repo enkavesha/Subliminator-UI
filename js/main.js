@@ -290,4 +290,18 @@ $(document).ready(function(){
       .focus(function() {
         $('.bootstrap-tagsinput').addClass("focus")
       });
+    /////////fixed menu
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y > 175) {
+            $('header').addClass( "header-fixed" );
+              $(".main-content-wrapper").css("margin-top", "80px");
+
+        } else {
+            $('header').removeClass("header-fixed");
+            $(".main-content-wrapper").css("margin-top", "0px");
+
+        }
+
+    });
 });
