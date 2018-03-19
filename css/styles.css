@@ -124,6 +124,14 @@ button:focus {
     background: #56a1fa !important;
     border: 2px solid #56a1fa !important; }
 
+.btn-sub {
+  background: #0c77f8;
+  color: #fff;
+  border-color: #0c77f8; }
+  .btn-sub:hover, .btn-sub:active, .btn-sub:focus {
+    background: #084fd1 !important;
+    border: 2px solid #084fd1 !important; }
+
 .btn-grey {
   background: #f5f5f5;
   color: #424242; }
