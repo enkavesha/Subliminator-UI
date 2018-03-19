@@ -168,7 +168,16 @@ button:focus {
   background: #fff;
   -webkit-box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px; }
+  border-radius: 4px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+  .white-block:hover {
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    -webkit-box-shadow: 0px 3px 20px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 20px 3px rgba(0, 0, 0, 0.2); }
 
 .material-icons {
   font-family: 'Material Icons';
@@ -990,16 +999,7 @@ input {
 .product-select {
   padding: 15px; }
   .product-select.white-block {
-    margin: 15px 0 0 0;
-    -webkit-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear; }
-    .product-select.white-block:hover {
-      -webkit-transition: all 0.2s linear;
-      -o-transition: all 0.2s linear;
-      transition: all 0.2s linear;
-      -webkit-box-shadow: 0px 3px 20px 3px rgba(0, 0, 0, 0.2);
-      box-shadow: 0px 3px 20px 3px rgba(0, 0, 0, 0.2); }
+    margin: 15px 0 0 0; }
   .product-select p {
     margin: 0; }
   .product-select .product-headline:before {
