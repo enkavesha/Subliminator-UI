@@ -228,17 +228,33 @@ div[class^="col"] {
   border: 2px solid transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0); }
 
-button:hover, button:active, button:focus {
-  outline: 0 !important;
-  outline-offset: 0 !important;
-  -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17) !important;
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17) !important; }
-
-button:focus {
-  -webkit-box-shadow: 0 0 0 0 transparent !important;
-  box-shadow: 0 0 0 0 transparent !important; }
+button {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0); }
+  button:hover, button:active, button:focus {
+    outline: 0 !important;
+    outline-offset: 0 !important;
+    -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17) !important;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17) !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0); }
+  button:focus {
+    -webkit-box-shadow: 0 0 0 0 transparent !important;
+    box-shadow: 0 0 0 0 transparent !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0); }
 
 .btn-blue-white {
   background: #0c77f8;
@@ -252,7 +268,7 @@ button:focus {
   background: #0c77f8;
   color: #fff;
   border-color: #0c77f8; }
-  .btn-blue:hover, .btn-blue:active, .btn-blue:focus {
+  .btn-blue:hover, .btn-blue:active {
     background: #0357bc !important;
     border: 2px solid #0357bc !important; }
 
@@ -1291,10 +1307,7 @@ input {
       font-size: 12px;
       line-height: 1;
       font-weight: 600;
-      margin: 0;
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex; }
+      margin: 0; }
     .product-select .price-including-shipping i {
       font-size: 17px !important;
       line-height: 1 !important; }
@@ -1341,7 +1354,7 @@ input {
       line-height: 39px !important;
       position: absolute;
       top: -2px;
-      left: 8px; }
+      left: 7px; }
 
 .input-group {
   padding: 0 0 10px;
@@ -1824,10 +1837,12 @@ input {
     width: 100%; }
   .guidelines-wrapper > :first-child .guide-svg-wrapper {
     border-left: 2px solid transparent;
-    border-right: 2px solid transparent; }
+    border-right: 1px solid #f5f5f5; }
   .guidelines-wrapper > :not(:first-child) .guide-svg-wrapper {
-    border-left: 2px solid #f5f5f5;
-    border-right: 2px solid transparent; }
+    border-left: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5; }
+  .guidelines-wrapper > :last-child .guide-svg-wrapper {
+    border-right: 1px solid transparent; }
   .guidelines-wrapper .guide-wrapper {
     width: 25%;
     -webkit-box-sizing: content-box;
@@ -2171,7 +2186,11 @@ footer {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .guidelines-wrapper > :nth-child(odd) .guide-svg-wrapper {
-      border-color: transparent; }
+      border: 1px solid transparent;
+      border-right-color: #f5f5f5; }
+    .guidelines-wrapper > :nth-child(even) .guide-svg-wrapper {
+      border: 1px solid transparent;
+      border-left-color: #f5f5f5; }
     .guidelines-wrapper p {
       font-size: 12px;
       height: auto; }
@@ -2257,16 +2276,10 @@ footer {
     width: 50%; }
     .modal-body .modal-button-wrapper a button {
       font-size: 10px !important; }
-  .orders-wrapper {
-    -ms-flex-flow: wrap;
-    flex-flow: wrap; }
-    .orders-wrapper .orders {
-      width: calc(100%/2);
-      margin: 0 0 10px; }
-      .orders-wrapper .orders:nth-child(odd) {
-        border-color: transparent; }
-      .orders-wrapper .orders:nth-child(4) {
-        border-color: #f5f5f5; } }
+  .orders-wrapper .orders p:nth-child(2) i {
+    font-size: 15px !important; }
+  .guide-wrapper .btn-upload {
+    font-size: 8px !important; } }
 
 @media only screen and (max-width: 360px) {
   .uploads {
@@ -2382,4 +2395,6 @@ footer {
     font-size: 14px; }
   .payment-warning i {
     font-size: 20px;
-    margin: 0 5px; } }
+    margin: 0 5px; }
+  .orders-wrapper .orders p:nth-child(2) i {
+    margin: 0 2px 0 0; } }

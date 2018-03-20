@@ -72,16 +72,32 @@ div[class^="col"]{
     border: 2px solid transparent;
     box-sizing: border-box;
     cursor: pointer;
+    -webkit-backface-visibility: hidden; 
+    -moz-backface-visibility: hidden; 
+    -webkit-transform: translate3d(0, 0, 0); 
+    -moz-transform: translate3d(0, 0, 0);
 }
 button{
     &:hover, &:active, &:focus{
         outline: 0 !important;
         outline-offset: 0 !important;
         box-shadow: 0 3px 8px 0 rgba(0,0,0,0.17)!important;
+        -webkit-backface-visibility: hidden; 
+        -moz-backface-visibility: hidden; 
+        -webkit-transform: translate3d(0, 0, 0); 
+        -moz-transform: translate3d(0, 0, 0);
     }
     &:focus{
         box-shadow: 0 0 0 0 rgba(0,0,0,0)!important;
+        -webkit-backface-visibility: hidden; 
+        -moz-backface-visibility: hidden; 
+        -webkit-transform: translate3d(0, 0, 0); 
+        -moz-transform: translate3d(0, 0, 0);
     }
+    -webkit-backface-visibility: hidden; 
+    -moz-backface-visibility: hidden; 
+    -webkit-transform: translate3d(0, 0, 0); 
+    -moz-transform: translate3d(0, 0, 0);
 }
 .btn-blue-white{
     background: $blue;
@@ -96,7 +112,7 @@ button{
     background: $blue;
     color: #fff;
     border-color: $blue;
-    &:hover, &:active, &:focus{
+    &:hover, &:active{
         background: $darkBlue!important;
         border: 2px solid $darkBlue!important;
     }
@@ -1216,7 +1232,6 @@ input{
             line-height: 1;
             font-weight: 600;
             margin: 0;
-            display: inline-flex;
         }
         i{
             font-size: 17px!important;
@@ -1265,7 +1280,7 @@ input{
             line-height: 39px!important;
             position: absolute;
             top: -2px;
-            left: 8px;
+            left: 7px;
         }
     }
 }
@@ -1766,13 +1781,18 @@ input{
     >:first-child{
         .guide-svg-wrapper{
             border-left: 2px solid transparent;
-            border-right: 2px solid transparent;
+            border-right: 1px solid $lightGrey;
         }
     }
     >:not(:first-child){
         .guide-svg-wrapper{
-            border-left: 2px solid $lightGrey;
-            border-right: 2px solid transparent;
+            border-left: 1px solid $lightGrey;
+            border-right: 1px solid $lightGrey;
+        }
+    }
+    >:last-child{
+        .guide-svg-wrapper{
+            border-right: 1px solid transparent;
         }
     }
     .guide-wrapper{

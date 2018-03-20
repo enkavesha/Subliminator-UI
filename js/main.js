@@ -353,5 +353,7 @@ $(document).ready(function(){
     let btnBlue = $(".waves-effect");
     if (btnBlue && btnBlue.length > 0) {
         Waves.init();
-    }
+    };
+    //////////remove focus from buttons after click
+//    document.addEventListener('click', function(e) { if(document.activeElement.toString() == '[object HTMLButtonElement]'){ document.activeElement.blur(); } });
 });

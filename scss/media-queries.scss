@@ -391,7 +391,14 @@
         
         >:nth-child(odd){
             .guide-svg-wrapper{
-                border-color: transparent;
+                border: 1px solid transparent;
+                border-right-color: $lightGrey;
+            }
+        }        
+        >:nth-child(even){
+            .guide-svg-wrapper{
+                border: 1px solid transparent;
+                border-left-color: $lightGrey;
             }
         }
         p{
@@ -532,18 +539,11 @@
         }
     }
     ////////home
-    .orders-wrapper {
-        flex-flow: wrap;
-        .orders{
-            width: calc(100%/2);
-            margin: 0 0 10px;
-            &:nth-child(odd){
-                border-color: transparent;
-            }
-            &:nth-child(4){
-                border-color: $lightGrey;
-            }
-        }
+    .orders-wrapper .orders p:nth-child(2) i{
+        font-size: 15px!important;
+    }
+    .guide-wrapper .btn-upload{
+        font-size: 8px!important;
     }
 }
 @media only screen and (max-width: 360px){
@@ -693,5 +693,9 @@
             font-size: 20px;
             margin: 0 5px;
         }
+    }
+    /////home
+    .orders-wrapper .orders p:nth-child(2) i{
+        margin: 0 2px 0 0;
     }
 }
