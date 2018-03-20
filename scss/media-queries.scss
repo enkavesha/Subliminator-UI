@@ -1,4 +1,4 @@
-@import "mixins";
+@import "variables";
 
 @media screen and (min-width: 1200px){
         #selling-price{
@@ -18,7 +18,7 @@
         font-size: 10px!important;
         padding: .3rem 0.6rem!important;
         bottom: 20px;
-        max-width: 140px;
+//        max-width: 140px;
         i{
             font-size: 12px!important;
             line-height: 14px!important;
@@ -152,6 +152,17 @@
      ///////file library
     .file-wrapper .file-icons{
         width: 80%;
+    }
+    ////////home
+    .orders-wrapper {
+        flex-flow: wrap;
+        .orders{
+            width: calc(100%/3);
+            margin: 0 0 10px;
+            &:nth-child(4){
+                border-color: transparent;
+            }
+        }
     }
 }
 ////////
@@ -298,6 +309,23 @@
             justify-content: center;
         }
     }
+    //////account
+    #changesSaved{
+        top: 55px;
+        z-index: 20;
+    }
+    ///////home
+    .guidelines-wrapper p{
+        font-size: 10px;
+        height: 30px;
+    }
+    .guide-wrapper .btn-upload{
+        font-size: 7px!important;
+    }
+    .banner-wrapper {
+        max-width: 300px;
+        margin: 7.5px auto;
+    }
 }
 @media screen and (max-width: 480px){
     .btn, #btn-review, #btn-publish{
@@ -356,6 +384,26 @@
         .orders-number{
             font-size: 25px;
         }
+    }
+    ///////home
+    .guidelines-wrapper {
+        flex-wrap: wrap;
+        >:nth-child(odd){
+            &:before{
+                background: transparent;
+            }
+        }
+        p{
+            font-size: 12px;
+            height: auto;
+        }
+        .guide-wrapper{
+            width: 49%;
+            margin: 0 0 10px;
+        }
+    }
+    .guide-wrapper .btn-upload{
+        font-size: 10px!important;
     }
 }
 
@@ -482,6 +530,20 @@
             font-size: 10px!important;
         }
     }
+    ////////home
+    .orders-wrapper {
+        flex-flow: wrap;
+        .orders{
+            width: calc(100%/2);
+            margin: 0 0 10px;
+            &:nth-child(odd){
+                border-color: transparent;
+            }
+            &:nth-child(4){
+                border-color: $lightGrey;
+            }
+        }
+    }
 }
 @media only screen and (max-width: 360px){
     .uploads{
@@ -516,6 +578,14 @@
         .orders-number{
             font-size: 25px;
         }
+    }
+    ///////home
+    .guidelines-wrapper p{
+        font-size: 10px;
+        height: 30px;
+    }
+    .guide-wrapper .btn-upload{
+        font-size: 8px!important;
     }
 }
 @media only screen and (max-width: 320px){
@@ -607,7 +677,20 @@
     #uploadDesign{
         font-size: 8px!important;
     }
-    header{
-        height: 100px;
+
+    //////account
+    #changesSaved{
+        top: 85px;
+        z-index: 20;
+    }
+    //////warning
+    .payment-warning{
+        p{
+            font-size: 14px;
+        }
+        i{
+            font-size: 20px;
+            margin: 0 5px;
+        }
     }
 }

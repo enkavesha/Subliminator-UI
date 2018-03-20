@@ -7,8 +7,6 @@
         <link href="css/styles.css" rel="stylesheet" type="text/css">
         <link href="css/chosen.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
         <!--    Text editor    -->
         <link rel="stylesheet" type="text/css" href="css/simditor.css" />
@@ -20,7 +18,7 @@
                        <div class="col-6 left-panel">
                            <div class="breadcrumbs">
                                 <p class="product-name semibold">Account Settings</p>
-                                <a href="home.html" class="link-back"><i class="material-icons">arrow_back</i>Back To Home</a>
+                                <a href="index.html"><i class="zmdi zmdi-arrow-left zmdi-margin-right"></i>Back To Home</a>
                             </div>
                        </div>
                        <div class="col-6 vcenter">
@@ -28,16 +26,25 @@
                        </div>
                    </div>
             </div>
+            <div id="changesSaved"><i class="zmdi zmdi-check zmdi-margin-right"></i> Changes succesfully saved</div>
         </header>
         <section class="main-content-wrapper">
             <div class="container-fluid no-gutter">
+                <div class="row row-width payment-warning-show" id="paymentWarning">
+                    <div class="col-12">
+                        <div class="payment-warning">
+                            <p>No Payment Methods Set Up</p> <i class="zmdi zmdi-alert-octagon"></i> <span>Please set up one or more payment methods on your</span> <a href="account.html">Account Settings Page</a>
+                            <i class="zmdi zmdi-close" id="warningClose"></i>
+                        </div>
+                    </div>
+                </div>
                 <div class="row row-width">
                     <div class="col-md-12 col-lg-6">
                         <div class="terms white-block">
                             <div class="product-headline">
                                 <p><span>Account</span> Status: 
-                                    <span class="account-inactive" id="accountInactive">Inactive <i class="material-icons">info</i></span>
-                                    <span class="account-active" id="accountActive">Active <i class="material-icons">check_circle</i></span>
+                                    <span class="account-inactive" id="accountInactive">Inactive <i class="zmdi zmdi-info"></i></span>
+                                    <span class="account-active" id="accountActive">Active <i class="zmdi zmdi-check-circle"></i></span>
                                 </p>
                             </div>
                             <div class="divider"></div>
@@ -54,14 +61,14 @@
                             <p class="semibold">E-mail Address</p>
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <i class="material-icons">email</i>
+                                    <i class="zmdi zmdi-email"></i>
                                 </span>
                                 <input type="text" placeholder="Ex: example@example.com" class="input-margin input-style form-control email account-form" id="accountEmail">
                             </div>
                             <p class="semibold">Contact Phone Number</p>
                             <div class="input-group">
                                 <span class="input-group-addon">
-                                    <i class="material-icons">phone</i>
+                                    <i class="zmdi zmdi-phone"></i>
                                 </span>
                                 <input type="text" placeholder="Ex: +00 (00) 000-00-00" class="input-margin input-style form-control mobile-phone-number account-form" data-inputmask="'mask': '+99 (99) 999-99-99'">
                             </div>
@@ -76,16 +83,16 @@
                                 <div class="paypal-payments" id="paypalPaymentsPrimary">
                                     <p class="semibold">PayPal Payments</p>
                                     <p>Payments through Paypal are 
-                                        <span class="account-inactive">Disabled <i class="material-icons">info</i></span>
-                                        <span class="account-active">Enabled <i class="material-icons">check_circle</i></span>
+                                        <span class="account-inactive">Disabled <i class="zmdi zmdi-info"></i></span>
+                                        <span class="account-active">Enabled <i class="zmdi zmdi-check-circle"></i></span>
                                     </p>
                                     <a href="" onclick="return false;"><button class="btn btn-lg btn-blue-effect" id="btnPaypalPrimary">Connect Paypal</button></a>
                                 </div>
                                 <div class="credit-payments" id="creditPaymentsPrimary">
                                     <p class="semibold">Credit Card Payments</p>
                                     <p>Payments through Credit Card are 
-                                        <span class="account-inactive">Disabled <i class="material-icons">info</i></span>
-                                        <span class="account-active">Enabled <i class="material-icons">check_circle</i></span>
+                                        <span class="account-inactive">Disabled <i class="zmdi zmdi-info"></i></span>
+                                        <span class="account-active">Enabled <i class="zmdi zmdi-check-circle"></i></span>
                                     </p>
                                     <a href="" onclick="return false;"><button class="btn btn-lg btn-blue-effect" id="btnCreditPrimary">Connect Credit Card</button></a>
                                 </div>
@@ -101,16 +108,16 @@
                                 <div class="paypal-payments" id="paypalPaymentsSecondary">
                                     <p class="semibold">PayPal Payments</p>
                                     <p>Payments through Paypal are 
-                                        <span class="account-inactive">Disabled <i class="material-icons">info</i></span>
-                                        <span class="account-active">Enabled <i class="material-icons">check_circle</i></span>
+                                        <span class="account-inactive">Disabled <i class="zmdi zmdi-info"></i></span>
+                                        <span class="account-active">Enabled <i class="zmdi zmdi-check-circle"></i></span>
                                     </p>
                                     <a href="" onclick="return false;"><button class="btn btn-lg btn-blue-effect" id="btnPaypalSecondary">Connect Paypal</button></a>
                                 </div>
                                 <div class="credit-payments" id="creditPaymentsSecondary">
                                     <p class="semibold">Credit Card Payments</p>
                                     <p>Payments through Credit Card are 
-                                        <span class="account-inactive">Disabled <i class="material-icons">info</i></span>
-                                        <span class="account-active">Enabled <i class="material-icons">check_circle</i></span>
+                                        <span class="account-inactive">Disabled <i class="zmdi zmdi-info"></i></span>
+                                        <span class="account-active">Enabled <i class="zmdi zmdi-check-circle"></i></span>
                                     </p>
                                     <a href="" onclick="return false;"><button class="btn btn-lg btn-blue-effect" id="btnCreditSecondary">Connect Credit Card</button></a>
                                 </div>
@@ -160,6 +167,16 @@
                 </div>
             </div>
         </section>
+        <footer>
+            <div class="footer-logo">
+                <img src="images/logo.svg">
+            </div>
+            <p>Copyright © 2018 All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+            </div>
+        </footer> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
@@ -169,7 +186,6 @@
         <script src="js/main.js"></script>
         <script src="js/account-input.js"></script>
 <!--        ///////////////-->
-        <script src="js/bundles/mainscripts.bundle.js"></script>
         <script src="js/bundles/vendorscripts.bundle.js"></script>
         <script src="js/animation.js"></script>
     </body>

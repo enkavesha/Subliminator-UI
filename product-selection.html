@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <link href="css/styles.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     </head>
     <body>
         <header>
@@ -16,7 +15,7 @@
                        <div class="col-12 col-sm-6">
                            <div class="breadcrumbs">
                                 <p class="product-name semibold">Create New Product</p>
-                                <a href="home.html" class="link-back"><i class="material-icons">arrow_back</i>Back To Home</a>
+                                <a href="index.html"><i class="zmdi zmdi-arrow-left zmdi-margin-right"></i>Back To Home</a>
                             </div>
                        </div>
                    </div>
@@ -24,6 +23,14 @@
         </header>
         <section class="main-content-wrapper" id="product-selector-content">
             <div class="container-fluid no-gutter">
+                <div class="row row-width" id="paymentWarning">
+                    <div class="col-12">
+                        <div class="payment-warning">
+                            <p>No Payment Methods Set Up</p> <i class="zmdi zmdi-alert-octagon"></i> <span>Please set up one or more payment methods on your</span> <a href="account.html">Account Settings Page</a>
+                            <i class="zmdi zmdi-close" id="warningClose"></i>
+                        </div>
+                    </div>
+                </div>
                 <div class="row row-width justify-content-center">
                     <div class="col-12 col-sm-6 col-md-6 col-lg-3 product-select-container">
                         <div class="template-view white-block product-select">
@@ -50,7 +57,7 @@
                                     <p class="cost-not-available">N/A</p>
                                 </div>
                             </div>
-                            <div class="price-including-shipping"><p>Price Including Shipping <i class="material-icons">local_shipping</i></p></div>
+                            <div class="price-including-shipping"><p>Price Including Shipping <i class="zmdi zmdi-truck zmdi-margin-left"></i></p></div>
                             <div class="divider"></div>
                             <div class="product-select-size-wrapper">
                                 <img src="images/size-range.svg">
@@ -58,8 +65,8 @@
                             </div>
                             <div class="divider"></div>
                             <div class="product-select-buttons-wrapper">
-                                <a href=""><button class="btn btn-lg btn-blue-effect btn-info"><i class="material-icons">info_outline</i></button></a>
-                                <a href="leggings-1.html"><button class="btn btn-lg btn-blue-effect btn-start-design">Start designing <i class="material-icons">mode_edit</i></button></a>
+                                <a href=""><button class="btn btn-lg btn-blue-effect btn-info"><i class="zmdi zmdi-info-outline"></i></button></a>
+                                <a href="leggings-1.html"><button class="btn btn-lg btn-blue-effect btn-start-design">Start designing <i class="zmdi zmdi-edit"></i></button></a>
                             </div>
                         </div>
                     </div>
@@ -88,7 +95,7 @@
                                     <p class="cost-not-available">N/A</p>
                                 </div>
                             </div>
-                            <div class="price-including-shipping"><p>Price Including Shipping <i class="material-icons">local_shipping</i></p></div>
+                            <div class="price-including-shipping"><p>Price Including Shipping <i class="zmdi zmdi-truck zmdi-margin-left"></i></p></div>
                             <div class="divider"></div>
                             <div class="product-select-size-wrapper">
                                 <img src="images/size-range.svg">
@@ -96,8 +103,8 @@
                             </div>
                             <div class="divider"></div>
                             <div class="product-select-buttons-wrapper">
-                                <a href=""><button class="btn btn-lg btn-blue-effect btn-info"><i class="material-icons">info_outline</i></button></a>
-                                <a href="yoga-1.html"><button class="btn btn-lg btn-blue-effect btn-start-design">Start designing <i class="material-icons">mode_edit</i></button></a>
+                                <a href=""><button class="btn btn-lg btn-blue-effect btn-info"><i class="zmdi zmdi-info-outline"></i></button></a>
+                                <a href="yoga-1.html"><button class="btn btn-lg btn-blue-effect btn-start-design">Start designing <i class="zmdi zmdi-edit"></i></button></a>
                             </div>
                         </div>
                     </div>
@@ -126,7 +133,7 @@
                                     <p class="cost-not-available">N/A</p>
                                 </div>
                             </div>
-                            <div class="price-including-shipping"><p>Price Including Shipping <i class="material-icons">local_shipping</i></p></div>
+                            <div class="price-including-shipping"><p>Price Including Shipping <i class="zmdi zmdi-truck zmdi-margin-left"></i></p></div>
                             <div class="divider"></div>
                             <div class="product-select-size-wrapper">
                                 <img src="images/size-range.svg">
@@ -134,8 +141,8 @@
                             </div>
                             <div class="divider"></div>
                             <div class="product-select-buttons-wrapper">
-                                <a href=""><button class="btn btn-lg btn-blue-effect btn-info"><i class="material-icons">info_outline</i></button></a>
-                                <a href="sweatshirt-1.html"><button class="btn btn-lg btn-blue-effect btn-start-design">Start designing <i class="material-icons">mode_edit</i></button></a>
+                                <a href=""><button class="btn btn-lg btn-blue-effect btn-info"><i class="zmdi zmdi-info-outline"></i></button></a>
+                                <a href="sweatshirt-1.html"><button class="btn btn-lg btn-blue-effect btn-start-design">Start designing <i class="zmdi zmdi-edit"></i></button></a>
                             </div>
                         </div>
                     </div>
@@ -164,7 +171,7 @@
                                     <p class="cost-not-available">N/A</p>
                                 </div>
                             </div>
-                            <div class="price-including-shipping"><p>Price Including Shipping <i class="material-icons">local_shipping</i></p></div>
+                            <div class="price-including-shipping"><p>Price Including Shipping <i class="zmdi zmdi-truck zmdi-margin-left"></i></p></div>
                             <div class="divider"></div>
                             <div class="product-select-size-wrapper">
                                 <img src="images/size-range.svg">
@@ -172,14 +179,24 @@
                             </div>
                             <div class="divider"></div>
                             <div class="product-select-buttons-wrapper">
-                                <a href=""><button class="btn btn-lg btn-blue-effect btn-info"><i class="material-icons">info_outline</i></button></a>
-                                <a href="hoodie-1.html"><button class="btn btn-lg btn-blue-effect btn-start-design">Start designing <i class="material-icons">mode_edit</i></button></a>
+                                <a href=""><button class="btn btn-lg btn-blue-effect btn-info"><i class="zmdi zmdi-info-outline"></i></button></a>
+                                <a href="hoodie-1.html"><button class="btn btn-lg btn-blue-effect btn-start-design">Start designing <i class="zmdi zmdi-edit"></i></button></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <footer>
+            <div class="footer-logo">
+                <img src="images/logo.svg">
+            </div>
+            <p>Copyright © 2018 All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+            </div>
+        </footer> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>

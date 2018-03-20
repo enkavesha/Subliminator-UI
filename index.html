@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subliminator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row content-headline row-width">
+                        <div class="col-6 left-panel">
+                           <div class="breadcrumbs">
+                                <p class="product-name semibold">Dashboard</p>
+                                <span>Welcome to Subliminator</span>
+                            </div>
+                       </div>
+                       <div class="col-6 vcenter" align="right">
+                           <a href="product-selection.html"><button class="btn btn-lg btn-blue-white" id="btn-create">Create product<i class="zmdi zmdi-arrow-right"></i></button></a>
+                       </div>
+                </div>
+            </div>
+        </header>
+        <section class="main-content-wrapper">
+            <div class="container-fluid">
+                <div class="row row-width payment-warning-show" id="paymentWarning">
+                    <div class="col-12">
+                        <div class="payment-warning">
+                            <p>No Payment Methods Set Up</p> <i class="zmdi zmdi-alert-octagon"></i> <span>Please set up one or more payment methods on your</span> <a href="account.html">Account Settings Page</a>
+                            <i class="zmdi zmdi-close" id="warningClose"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-width">
+                    <div class="col-12">
+                        <div class="hoodie-all-over white-block">
+                            <div class="product-headline">
+                                <p><span>Fulfillment</span> Orders</p>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="orders-wrapper">
+                                <div class="orders">
+                                    <p class="orders-number semibold">346</p>
+                                    <p>Total</p>
+                                </div>
+                                <div class="orders orders-pending">
+                                    <p class="orders-number semibold">65</p>
+                                    <p><i class="zmdi zmdi-hourglass-alt"></i>Pending</p>
+                                </div>
+                                <div class="orders orders-hold">
+                                    <p class="orders-number semibold">0</p>
+                                    <p><i class="zmdi zmdi-alert-octagon"></i>On Hold</p>
+                                </div>
+                                <div class="orders orders-production">
+                                    <p class="orders-number semibold">205</p>
+                                    <p><i class="zmdi zmdi-settings"></i>In Production</p>
+                                </div>
+                                <div class="orders orders-shipped">
+                                    <p class="orders-number semibold">76</p>
+                                    <p><i class="zmdi zmdi-truck"></i>Shipped</p>
+                                </div>
+                                <div class="orders orders-error">
+                                    <p class="orders-number semibold">0</p>
+                                    <p><i class="zmdi zmdi-close-circle"></i>Errors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-width">
+                    <div class="col-12 col-sm-4">
+                        <div class="white-block banner-wrapper">
+                            <img src="images/banner-1.svg">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="white-block banner-wrapper">
+                            <img src="images/banner-2.svg">
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="white-block banner-wrapper">
+                            <img src="images/banner-3.svg">
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-width">
+                   <div class="col-12">
+                       <div class="white-block">
+                           <div class="product-headline">
+                                <p><span>Print</span> Guidelines</p>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="guidelines-wrapper">
+                                <div class="guide-wrapper">
+                                    <p>Leggings All-Over</p>
+                                    <img src="images/guide-leggings.svg">
+                                    <a href=""><button class="btn btn-lg btn-blue-effect btn-upload"><i class="zmdi zmdi-download"></i>Download template</button></a>
+                                </div>
+                                <div class="guide-wrapper">
+                                    <p>Yoga Pants All-Over</p>
+                                    <img src="images/guide-yoga.svg">
+                                    <a href=""><button class="btn btn-lg btn-blue-effect btn-upload"><i class="zmdi zmdi-download"></i>Download template</button></a>
+                                </div>
+                                <div class="guide-wrapper">
+                                    <p>Sweatshirt All-Over</p>
+                                    <img src="images/guide-sweatshirt.svg">
+                                    <a href=""><button class="btn btn-lg btn-blue-effect btn-upload"><i class="zmdi zmdi-download"></i>Download template</button></a>
+                                </div>
+                                <div class="guide-wrapper">
+                                    <p>Hoodie All-Over</p>
+                                    <img src="images/guide-hoodie.svg">
+                                    <a href=""><button class="btn btn-lg btn-blue-effect btn-upload"><i class="zmdi zmdi-download"></i>Download template</button></a>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-logo">
+                <img src="images/logo.svg">
+            </div>
+            <p>Copyright © 2018 All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+            </div>
+        </footer>    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
