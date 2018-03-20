@@ -316,6 +316,7 @@ $(document).ready(function(){
     /////////////payment warning close  
     $('#warningClose').click(function (){
         $('#paymentWarning').removeClass('payment-warning-show');
+        $('.whatever').slideUp()
     });
     /////////fixed menu
     var lastScrollTop = 0,
