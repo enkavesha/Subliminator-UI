@@ -1705,17 +1705,18 @@ input {
   font-weight: 700; }
   .guidelines-wrapper p {
     font-size: 12px; }
-  .guidelines-wrapper > :not(:first-child):before {
-    content: "";
-    display: block;
-    background: #f5f5f5;
-    height: 50%;
-    width: 2px;
-    position: absolute;
-    top: 25%;
-    left: 0; }
+  .guidelines-wrapper .guide-svg-wrapper {
+    width: 100%; }
+  .guidelines-wrapper > :first-child .guide-svg-wrapper {
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent; }
+  .guidelines-wrapper > :not(:first-child) .guide-svg-wrapper {
+    border-left: 2px solid #f5f5f5;
+    border-right: 2px solid transparent; }
   .guidelines-wrapper .guide-wrapper {
-    width: 24%;
+    width: 25%;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
     position: relative; }
     .guidelines-wrapper .guide-wrapper img {
       width: 60%;
@@ -1793,6 +1794,7 @@ footer {
   color: #424242;
   font-size: 12px; }
   footer p {
+    font-size: 12px;
     margin: 0;
     font-weight: 600; }
   footer .footer-logo {
@@ -2052,13 +2054,13 @@ footer {
   .guidelines-wrapper {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
-    .guidelines-wrapper > :nth-child(odd):before {
-      background: transparent; }
+    .guidelines-wrapper > :nth-child(odd) .guide-svg-wrapper {
+      border-color: transparent; }
     .guidelines-wrapper p {
       font-size: 12px;
       height: auto; }
     .guidelines-wrapper .guide-wrapper {
-      width: 49%;
+      width: 50%;
       margin: 0 0 10px; }
   .guide-wrapper .btn-upload {
     font-size: 10px !important; } }
@@ -2181,7 +2183,7 @@ footer {
     font-size: 10px;
     height: 30px; }
   .guide-wrapper .btn-upload {
-    font-size: 8px !important; } }
+    font-size: 7px !important; } }
 
 @media only screen and (max-width: 320px) {
   .template-view .template-buttons {

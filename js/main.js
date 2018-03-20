@@ -302,18 +302,6 @@ $(document).ready(function(){
         $('#paymentWarning').removeClass('payment-warning-show');
     });
     /////////fixed menu
-//    $(document).scroll(function () {
-//        var y = $(this).scrollTop();
-//        if (y > 175) {
-//            $('header').addClass( "header-fixed" );
-//              $(".main-content-wrapper").css("margin-top", "84px");
-//
-//        } else {
-//            $('header').removeClass("header-fixed");
-//            $(".main-content-wrapper").css("margin-top", "0px");
-//
-//        }
-//    });
     var lastScrollTop = 0,
         offsetBreakpoint = parseInt(window.getComputedStyle(document.querySelector('body'), ':before').height),
         mainContentWrapper = $('.main-content-wrapper'),

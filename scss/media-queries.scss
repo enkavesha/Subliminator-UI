@@ -388,9 +388,10 @@
     ///////home
     .guidelines-wrapper {
         flex-wrap: wrap;
+        
         >:nth-child(odd){
-            &:before{
-                background: transparent;
+            .guide-svg-wrapper{
+                border-color: transparent;
             }
         }
         p{
@@ -398,7 +399,7 @@
             height: auto;
         }
         .guide-wrapper{
-            width: 49%;
+            width: 50%;
             margin: 0 0 10px;
         }
     }
@@ -585,7 +586,7 @@
         height: 30px;
     }
     .guide-wrapper .btn-upload{
-        font-size: 8px!important;
+        font-size: 7px!important;
     }
 }
 @media only screen and (max-width: 320px){
