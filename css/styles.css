@@ -116,11 +116,11 @@ button:focus {
     background: #fff;
     color: #0c77f8; }
 
-.btn-blue-effect {
+.btn-blue {
   background: #0c77f8;
   color: #fff;
   border-color: #0c77f8; }
-  .btn-blue-effect:hover, .btn-blue-effect:active, .btn-blue-effect:focus {
+  .btn-blue:hover, .btn-blue:active, .btn-blue:focus {
     background: #0357bc !important;
     border: 2px solid #0357bc !important; }
 
@@ -201,7 +201,6 @@ button:focus {
 .waves-effect {
   position: relative;
   cursor: pointer;
-  display: inline-block;
   overflow: hidden;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1689,9 +1688,37 @@ input {
 
 .banner-wrapper {
   width: 100%;
-  padding: 7.5px; }
+  padding: 7.5px;
+  position: relative;
+  overflow: hidden; }
   .banner-wrapper img {
     max-width: 100%; }
+  .banner-wrapper:before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.3)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    -ms-transform: skewX(-25deg);
+    transform: skewX(-25deg); }
+  .banner-wrapper:hover:before {
+    -webkit-animation: shine .75s;
+    animation: shine .75s; }
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%; } }
+
+@keyframes shine {
+  100% {
+    left: 125%; } }
 
 .guidelines-wrapper {
   display: -webkit-box;
@@ -1727,7 +1754,8 @@ input {
     display: inline-flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    bottom: 0; }
   .guidelines-wrapper i {
     font-size: 15px;
     margin: 0 5px 0 0; }

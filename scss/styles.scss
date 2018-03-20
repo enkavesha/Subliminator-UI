@@ -91,7 +91,7 @@ button{
         color: $blue;
     }
 }
-.btn-blue-effect{
+.btn-blue{
     background: $blue;
     color: #fff;
     border-color: $blue;
@@ -173,7 +173,7 @@ button{
 .waves-effect{
     position:relative;
     cursor:pointer;
-    display:inline-block;
+//    display:inline-block;
     overflow:hidden;
     user-select:none;
     -webkit-tap-highlight-color:transparent
@@ -1727,8 +1727,29 @@ input{
 .banner-wrapper{
     width: 100%;
     padding: 7.5px;
+    position: relative; 
+    overflow: hidden;
     img{
         max-width: 100%;
+    }
+    &:before{
+        position: absolute;
+        top: 0;
+        left: -75%;
+        z-index: 2;
+        content: "";
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+        transform: skewX(-25deg);
+    } 
+    &:hover:before{
+        animation: shine .75s;
+    }
+    @keyframes shine { 
+        100% { 
+            left: 125% 
+        } 
     }
 }
 .guidelines-wrapper{
@@ -1765,6 +1786,7 @@ input{
     button{
         display: inline-flex;
         align-items: center;
+        bottom: 0;
     }
     i{
         font-size: 15px;

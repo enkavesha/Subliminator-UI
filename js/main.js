@@ -175,14 +175,18 @@ $(document).ready(function(){
     if(btnPaypalPrimary && btnPaypalPrimary.length > 0){
         document.getElementById('btnPaypalPrimary').onclick = function() {
             if($('#btnPaypalPrimary').text()==='Connect Paypal'){
-                $('#paypalPaymentsPrimary .account-inactive').hide();
-                $('#paypalPaymentsPrimary .account-active').show();
-                $('#btnPaypalPrimary').html('Disconnect Paypal');
+                setTimeout(function() {
+                    $('#paypalPaymentsPrimary .account-inactive').hide();
+                    $('#paypalPaymentsPrimary .account-active').show();
+                    $('#btnPaypalPrimary').html('Disconnect Paypal');
+                }, 500);
             }
             else{
-                $('#paypalPaymentsPrimary .account-inactive').show();
-                $('#paypalPaymentsPrimary .account-active').hide();
-                $('#btnPaypalPrimary').html('Connect Paypal');
+                setTimeout(function() {
+                    $('#paypalPaymentsPrimary .account-inactive').show();
+                    $('#paypalPaymentsPrimary .account-active').hide();
+                    $('#btnPaypalPrimary').html('Connect Paypal');
+                }, 500);
             }
         }
     }
@@ -190,14 +194,18 @@ $(document).ready(function(){
     if(btnCreditPrimary && btnCreditPrimary.length > 0){
         document.getElementById('btnCreditPrimary').onclick = function() {
             if($('#btnCreditPrimary').text()==='Connect Credit Card'){
-                $('#creditPaymentsPrimary .account-inactive').hide();
-                $('#creditPaymentsPrimary .account-active').show();
-                $('#btnCreditPrimary').html('Disconnect Credit Card');
+                setTimeout(function() {
+                    $('#creditPaymentsPrimary .account-inactive').hide();
+                    $('#creditPaymentsPrimary .account-active').show();
+                    $('#btnCreditPrimary').html('Disconnect Credit Card');
+                }, 500);
             }
             else{
-                $('#creditPaymentsPrimary .account-inactive').show();
-                $('#creditPaymentsPrimary .account-active').hide();
-                $('#btnCreditPrimary').html('Connect Credit Card');
+                setTimeout(function() {
+                    $('#creditPaymentsPrimary .account-inactive').show();
+                    $('#creditPaymentsPrimary .account-active').hide();
+                    $('#btnCreditPrimary').html('Connect Credit Card');
+                }, 500);
             }
         }
     }   
@@ -206,14 +214,18 @@ $(document).ready(function(){
     if(btnPaypalSecondary && btnPaypalSecondary.length > 0){
         document.getElementById('btnPaypalSecondary').onclick = function() {
             if($('#btnPaypalSecondary').text()==='Connect Paypal'){
-                $('#paypalPaymentsSecondary .account-inactive').hide();
-                $('#paypalPaymentsSecondary .account-active').show();
-                $('#btnPaypalSecondary').html('Disconnect Paypal');
+                setTimeout(function() {
+                    $('#paypalPaymentsSecondary .account-inactive').hide();
+                    $('#paypalPaymentsSecondary .account-active').show();
+                    $('#btnPaypalSecondary').html('Disconnect Paypal');
+                }, 500);
             }
             else{
-                $('#paypalPaymentsSecondary .account-inactive').show();
-                $('#paypalPaymentsSecondary .account-active').hide();
-                $('#btnPaypalSecondary').html('Connect Paypal');
+                setTimeout(function() {
+                    $('#paypalPaymentsSecondary .account-inactive').show();
+                    $('#paypalPaymentsSecondary .account-active').hide();
+                    $('#btnPaypalSecondary').html('Connect Paypal');
+                }, 500);
             }
         }
     }
@@ -221,14 +233,18 @@ $(document).ready(function(){
     if(btnCreditSecondary && btnCreditSecondary.length > 0){
         document.getElementById('btnCreditSecondary').onclick = function() {
             if($('#btnCreditSecondary').text()==='Connect Credit Card'){
-                $('#creditPaymentsSecondary .account-inactive').hide();
-                $('#creditPaymentsSecondary .account-active').show();
-                $('#btnCreditSecondary').html('Disconnect Credit Card');
+                setTimeout(function() {
+                    $('#creditPaymentsSecondary .account-inactive').hide();
+                    $('#creditPaymentsSecondary .account-active').show();
+                    $('#btnCreditSecondary').html('Disconnect Credit Card');
+                }, 500);
             }
             else{
-                $('#creditPaymentsSecondary .account-inactive').show();
-                $('#creditPaymentsSecondary .account-active').hide();
-                $('#btnCreditSecondary').html('Connect Credit Card');
+                setTimeout(function() {
+                    $('#creditPaymentsSecondary .account-inactive').show();
+                    $('#creditPaymentsSecondary .account-active').hide();
+                    $('#btnCreditSecondary').html('Connect Credit Card');
+                }, 500);
             }
         }
     }
@@ -332,4 +348,9 @@ $(document).ready(function(){
         }
         lastScrollTop = st;
     });
+    //////button animation
+    let btnBlue = $(".waves-effect");
+    if (btnBlue && btnBlue.length > 0) {
+        Waves.init();
+    }
 });
