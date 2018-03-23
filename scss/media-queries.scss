@@ -158,11 +158,55 @@
         flex-flow: wrap;
         .orders{
             width: calc(100%/3);
-            margin: 0 0 10px;
+            &:nth-child(3){
+                div,>p{
+                    border-right: 1px solid transparent;
+                }
+            }
             &:nth-child(4){
-                border-color: transparent;
+                div, >p{
+                    border-left: 1px solid transparent;
+                }
             }
         }
+    }
+    ////////orders
+    .orders-table-row,.orders-table-header{
+        font-size: 12px;
+        i{
+            font-size: 15px!important;
+        }
+        button{
+            font-size: 9px!important;
+            i{
+                font-size: 10px!important;
+            }
+        }
+        >div{
+            &:nth-child(n){
+                width: 13.5%;
+            }
+            &:nth-child(5){
+                width: 25%;
+            }
+            &:nth-child(6){
+                width: 20%;
+            }
+            i{
+                margin: 0 0 0 -5px!important;
+                display: inline-flex;
+                align-items: center;
+            }
+            i:nth-child(2){
+                margin: 0 0 0 2px!important;
+            }
+            button i{
+                margin: 0 3px 0 0!important;
+            }
+        }
+    }
+    .orders-table-header{
+        font-size: 11px;
     }
 }
 ////////
@@ -326,6 +370,44 @@
         max-width: 300px;
         margin: 7.5px auto;
     }
+    ////////orders
+    .orders-table-row,.orders-table-header{
+        font-size: 10px;
+        i{
+            font-size: 12px!important;
+        }
+        button{
+            font-size: 9px;
+            i{
+                font-size: 10px!important;
+            }
+        }
+        >div{
+            &:nth-child(n){
+                width: 13.5%;
+            }
+            &:nth-child(5){
+                width: 25%;
+            }
+            &:nth-child(6){
+                width: 20%;
+            }
+            i{
+                margin: 0 0 0 -5px!important;
+                display: inline-flex;
+                align-items: center;
+            }
+            i:nth-child(2){
+                margin: 0 0 0 2px!important;
+            }
+            button i{
+                margin: 0 3px 0 0!important;
+            }
+        }
+    }
+    .orders-table-header{
+        font-size: 9px;
+    }
 }
 @media screen and (max-width: 480px){
     .btn, #btn-review, #btn-publish{
@@ -412,6 +494,45 @@
     }
     .guide-wrapper .btn-upload{
         font-size: 10px!important;
+    }
+    ////////orders
+    .orders-table-row,.orders-table-header{
+        font-size: 10px;
+        i{
+            font-size: 15px!important;
+        }
+        button{
+            font-size: 7px!important;
+            i{
+                font-size: 8px!important;
+            }
+        }
+        >div{
+            line-height: 12px;
+            &:nth-child(n){
+                width: 10%;
+            }
+            &:nth-child(5){
+                width: 25%;
+            }
+            &:nth-child(6){
+                width: 20%;
+            }
+            i{
+                margin: 0 0 0 -5px!important;
+                display: inline-flex;
+                align-items: center;
+            }
+            i:nth-child(2){
+                margin: 0 0 0 2px!important;
+            }
+            button i{
+                margin: 0 3px 0 0!important;
+            }
+        }
+    }
+    .orders-table-header{
+        font-size: 9px;
     }
 }
 
@@ -545,6 +666,44 @@
     .guide-wrapper .btn-upload{
         font-size: 8px!important;
     }
+        ////////orders
+    .orders-table-row,.orders-table-header{
+        font-size: 9px;
+        i{
+            font-size: 12px!important;
+        }
+        button{
+            font-size: 7px!important;
+            i{
+                font-size: 8px!important;
+            }
+        }
+        >div{
+            &:nth-child(n){
+                width: 10%;
+            }
+            &:nth-child(5){
+                width: 23%;
+            }
+            &:nth-child(6){
+                width: 27%;
+            }
+            i{
+                margin: 0 0 0 -5px!important;
+                display: inline-flex;
+                align-items: center;
+            }
+            i:nth-child(2){
+                margin: 0 0 0 2px!important;
+            }
+            button i{
+                margin: 0 3px 0 0!important;
+            }
+        }
+    }
+    .orders-table-header{
+        font-size: 7px;
+    }
 }
 @media only screen and (max-width: 360px){
     .uploads{
@@ -587,6 +746,16 @@
     }
     .guide-wrapper .btn-upload{
         font-size: 7px!important;
+    }
+    ////////orders
+    .orders-table-row,.orders-table-header{
+        font-size: 8px;
+        i{
+            font-size: 12px!important;
+        }
+    }
+    .orders-table-header{
+        font-size: 7px;
     }
 }
 @media only screen and (max-width: 320px){
@@ -697,5 +866,19 @@
     /////home
     .orders-wrapper .orders p:nth-child(2) i{
         margin: 0 2px 0 0;
+    }
+    .orders-wrapper .orders .orders-status p i{
+        font-size: 15px!important;
+        margin: 0 2px 0 0;
+    }
+    ////////orders
+    .orders-table-row,.orders-table-header{
+        font-size: 7px;
+        i{
+            font-size: 12px!important;
+        }
+    }
+    .orders-table-header{
+        font-size: 6px;
     }
 }

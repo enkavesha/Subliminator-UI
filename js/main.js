@@ -262,9 +262,51 @@ $(document).ready(function(){
         })
     });
     //////////pop overs
-    $('[data-toggle="popover"]').popover({ trigger: "hover" });
-    var wrapper, newFileName;
+    $('[data-toggle="popover"]').popover({ 
+        trigger: "hover"
+    });
+    $('[data-toggle="popover"]').on('shown.bs.popover', function () {
+      $('.popover').css('top','15px');
+      $('.popover').css('left','2px');
+      $('.popover .arrow').css('left','60%');
+    })
+    $('[data-toggle="popover-pending"]').popover({ 
+        trigger: "hover",
+        html: true,
+        content: "<div class='popover-order'><p>The order is well received but has not been charged by us yet.</p><p>You will be charged in batches twice daily for seller payments of unpaid orders.</p></div>",
+        placement: "top"
+    });
+    $('[data-toggle^="popover-"]').on('shown.bs.popover', function () {
+      $('.popover').css('top','7px');
+      $('.popover').css('left','8px');
+      $('.popover .arrow').css('left','50%');
+    })
+    $('[data-toggle="popover-hold"]').popover({ 
+        trigger: "hover",
+        html: true,
+        content: "<div class='popover-order'><p>OOPS! There’s an issue with this order.</p><p>Please contact us with the ORDER ID so we can update you on the status of your order.</p></div>",
+        placement: "top"
+    });
+    $('[data-toggle="popover-production"]').popover({ 
+        trigger: "hover",
+        html: true,
+        content: "<div class='popover-order'><p>Good news! Your customer’s order is currently in production.</p><p>What do you have to do next? Absolutely nothing! We’ll automatically notify your customer when the order is shipped.</p></div>",
+        placement: "top"
+    });
+    $('[data-toggle="popover-shipped"]').popover({ 
+        trigger: "hover",
+        html: true,
+        content: "<div class='popover-order'><p>The order has been shipped to your customer.</p><p>And your customer will automatically receive an email coming from your store with the tracking details.</p></div>",
+        placement: "top"
+    });
+    $('[data-toggle="popover-error"]').popover({ 
+        trigger: "hover",
+        html: true,
+        content: "<div class='popover-order'><p>OOPS! Looks like something went wrong authorizing your payment. This could be due to various reasons.</p><p>Please retry the payment, and if it still doesn’t come through please contact your bank. </p></div>",
+        placement: "top"
+    });
     /////////show design preview modal
+    var wrapper, newFileName;
     $('[data-content="Preview"]').click(function(){
         $('#modalDesignPreview').modal('show');
         wrapper=$(this).closest('.file-wrapper');
@@ -354,6 +396,159 @@ $(document).ready(function(){
     if (btnBlue && btnBlue.length > 0) {
         Waves.init();
     };
-    //////////remove focus from buttons after click
-//    document.addEventListener('click', function(e) { if(document.activeElement.toString() == '[object HTMLButtonElement]'){ document.activeElement.blur(); } });
+    /////////////// Read a page's GET URL variables and return them as an associative array.
+    function getUrlVars()
+    {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    var filter = getUrlVars()["filter"];
+    
+    /////////filtering orders
+    let orderFilter = $(".orders-table");
+    if (orderFilter && orderFilter.length > 0) {
+        /////////getting active filter after page loading
+        if(filter=='total'){
+            $('.orders-table-row').addClass('orders-unfiltered');
+        };
+        if(filter=='pending'){
+            $('.orders-table-row:not(".order-pending")').toggleClass('orders-table-row-hidden');
+            $('.order-pending').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        if(filter=='hold'){
+            $('.orders-table-row:not(".order-hold")').toggleClass('orders-table-row-hidden');
+            $('.order-hold').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        if(filter=='production'){
+            $('.orders-table-row:not(".order-production")').toggleClass('orders-table-row-hidden');
+            $('.order-production').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        if(filter=='shipped'){
+            $('.orders-table-row:not(".order-shipped")').toggleClass('orders-table-row-hidden');
+            $('.order-shipped').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        if(filter=='error'){
+            $('.orders-table-row:not(".order-error")').toggleClass('orders-table-row-hidden');
+            $('.order-error').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        $("[class*='" + filter + "']").addClass('filter-active');
+        /////resetting filter after last filter unchecked
+        function checkFilter(){
+            if($('.orders-wrapper').find('.filter-active').length === 0){
+                $('#filterTotal').addClass('filter-active');
+                $('.orders-table-row').removeClass('orders-table-row-hidden');
+                $('.orders-table-row').removeClass('orders-filtered');
+                $('.orders-table-row').addClass('orders-unfiltered');
+            }
+        };
+        $('.orders-wrapper .orders').click(function(){
+            $(this).toggleClass('filter-active');
+        });
+        //////////filtering
+        $('#filterTotal').click(function(){
+            $('.orders').removeClass('filter-active');
+            $(this).addClass('filter-active');
+            $('.orders-table-row').removeClass('orders-table-row-hidden');
+            $('.orders-table-row').removeClass('orders-filtered');
+            $('.orders-table-row').addClass('orders-unfiltered');
+            searchCheck();
+        });
+        $('#filterPending').click(function(){
+            $('.orders-table-row').removeClass('orders-unfiltered');
+            $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
+            $('.order-pending').toggleClass('orders-filtered');
+            $('.order-pending').toggleClass('orders-table-row-hidden');
+           $('.search-hidden').addClass('orders-table-row-hidden');
+            $('#filterTotal').removeClass('filter-active'); 
+            checkFilter();
+            searchCheck();            
+        });
+        $('#filterHold').click(function(){
+            $('.orders-table-row').removeClass('orders-unfiltered');
+            $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
+            $('.order-hold').toggleClass('orders-filtered');
+            $('.order-hold').toggleClass('orders-table-row-hidden');
+           $('.search-hidden').addClass('orders-table-row-hidden');
+            $('#filterTotal').removeClass('filter-active'); 
+            checkFilter();
+            searchCheck();
+        });
+        $('#filterProduction').click(function(){
+            $('.orders-table-row').removeClass('orders-unfiltered');
+           $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
+           $('.order-production').toggleClass('orders-filtered');
+           $('.order-production').toggleClass('orders-table-row-hidden');
+           $('.search-hidden').addClass('orders-table-row-hidden');
+           $('#filterTotal').removeClass('filter-active'); 
+            checkFilter();
+            searchCheck();
+        });
+        $('#filterShipped').click(function(){
+            $('.orders-table-row').removeClass('orders-unfiltered');
+           $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
+           $('.order-shipped').toggleClass('orders-filtered');
+           $('.order-shipped').toggleClass('orders-table-row-hidden');
+           $('.search-hidden').addClass('orders-table-row-hidden');
+           $('#filterTotal').removeClass('filter-active'); 
+            checkFilter();
+            searchCheck();
+        });
+        $('#filterError').click(function(){
+            $('.orders-table-row').removeClass('orders-unfiltered');
+           $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
+           $('.order-error').toggleClass('orders-filtered');
+           $('.order-error').toggleClass('orders-table-row-hidden');
+           $('.search-hidden').addClass('orders-table-row-hidden');
+           $('#filterTotal').removeClass('filter-active'); 
+            checkFilter();
+            searchCheck();
+        });
+    }
+    /////////////search function
+    var searchInput = $('#searchOrders');
+    function searchCheck() { 
+        var search = searchInput.val().toUpperCase();
+        function searchValidate(){
+            var tableRow = $(this).find('div:not([class^="order-color-"],.orders-row-button)');
+            var tableRowText;
+            ///////adding delimiter between rows
+            tableRow.text(function(i, t){
+                tableRowText += i == 0 ? t : '&&' + t;
+            });
+            tableRowText.toUpperCase();
+            if(tableRowText.includes(search)==false){
+                $(tableRow).closest('.orders-table-row').addClass('orders-table-row-hidden');
+                $(tableRow).closest('.orders-table-row').addClass('search-hidden');
+            }        
+        };
+        if($('#filterTotal').hasClass('filter-active')){
+            $('.orders-unfiltered').removeClass('orders-table-row-hidden'); 
+            $('.orders-unfiltered').each(searchValidate);
+        } else{
+            $('.orders-filtered').removeClass('orders-table-row-hidden'); 
+            $('.orders-filtered').each(searchValidate);
+        }
+        /////////////////show no orders found
+        if($('.orders-table-row').length==$('.orders-table-row-hidden').length){
+            $('.orders-not-found').css('display','block');
+            $('.orders-table-header').css('display','none');
+        } else{
+            $('.orders-not-found').css('display','none');
+            $('.orders-table-header').css('display','inline-flex');
+        }
+    }
+    /////////////searching orders on input
+    $('#searchOrders').on('input', searchCheck);
 });

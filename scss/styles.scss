@@ -171,9 +171,11 @@ button{
     cursor: default;
     opacity: 0;
     justify-content: center;
-    position: absolute;
+    position: fixed;
+    z-index: 200;
     padding: .5rem 1rem;
     width: 260px;
+    top: 20px;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -186,41 +188,9 @@ button{
     color: #fff;
     background: $blue;
 }
-/////////////////////////button animation
-//.waves-effect{
-//    position:relative;
-//    cursor:pointer;
-////    display:inline-block;
-//    overflow:hidden;
-//    user-select:none;
-//    -webkit-tap-highlight-color:transparent
-//}
-//.waves-effect .waves-ripple{
-//    position:absolute;
-//    border-radius:50%;
-//    width:100px;
-//    height:100px;
-//    margin-top:-50px;
-//    margin-left:-50px;
-//    opacity:0;
-//    background:rgba(0,0,0,0.2);
-//    background:radial-gradient(rgba(0,0,0,0.2) 0, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.5) 60%, rgba(255,255,255,0) 70%);
-//    transition:all 0.5s ease-out;
-//    transition-property:transform, opacity;
-//    transform:scale(0) translate(0, 0);
-//    pointer-events:none
-//}
-//.waves-effect.waves-light .waves-ripple{
-//    background:rgba(255,255,255,0.4);
-//    background:radial-gradient(rgba(255,255,255,0.2) 0, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0) 70%)
-//}
-//.waves-effect.waves-classic.waves-light .waves-ripple{
-//    background:rgba(255,255,255,0.4)
-//}
-///////////////////////end of button animation
 .white-block{
     margin: 15px 0;
-    padding: 20px;
+    padding: 15px 20px;
     background: #fff;
     box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.2);
     border-radius: 4px;
@@ -451,8 +421,8 @@ header.header-collapsing {
     position: fixed;
     -webkit-transform: translateY(-100px);
     transform: translateY(-100px);
-    -webkit-animation: headerAnimationBackwards .1s ease-out;
-    animation: headerAnimationBackwards .1s ease-out;
+    -webkit-animation: headerAnimationBackwards .3s ease-out;
+    animation: headerAnimationBackwards .3s ease-out;
     -webkit-box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 3px 10px -1px rgba(0, 0, 0, 0.2);
 }
@@ -1463,7 +1433,6 @@ input{
 .files-wrapper{
     display: flex;
     flex-flow: wrap;
-//    justify-content: space-between;
 }
 .file-wrapper{
     border: 2px solid $mediumGrey;
@@ -1472,10 +1441,6 @@ input{
     margin: 0 1% 15px 0;
     transition: all 0.2s linear;
     display: block;
-//    :after {
-//      content: "";
-//      flex: auto;
-//    }
     &:hover, &:hover .file-preview{
         border-color: $blue;
         transition: all 0.2s linear;
@@ -1540,10 +1505,10 @@ input{
 }
 ///////////popover at file library
 .popover{
-    top: 15px!important;
+    font-family: 'Montserrat', sans-serif;
+    border: 0;
 }
 .popover .arrow{
-    left: 65%!important;
     &:after, &:before{
         border-top-color: $grey!important;
     }
@@ -1627,46 +1592,86 @@ input{
     }
 }
 /////////fulfillment orders
+#fullfilmentWrapper{
+    padding: 15px 20px 0 20px;
+    .orders-wrapper{
+        border-bottom: none;
+        margin: 10px 0 0 0;
+    }
+}
 .orders-wrapper{
     display: flex;
     justify-content: space-between;
     text-align: center;
+    margin: 10px 0 15px 0;
+    border-top: 2px solid $lightGrey;
+    border-bottom: 2px solid $lightGrey;
     .orders{
+        position: relative;
+        a span{
+            position:absolute; 
+            width:100%;
+            height:100%;
+            top:0;
+            left: 0;
+            z-index: 1;
+            cursor: pointer;
+        }
         width: calc(100%/6);
-        p:nth-child(2){
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            i{
-                font-size: 20px!important;
-                margin: 0 5px 0 0;
+        padding: 15px 0;
+        &:hover{
+            background: $lightGrey;
+            .orders-status p{
+                border-bottom: 4px solid;
+            }
+        }
+        &.filter-active{
+            .orders-status p{
+                border-bottom: 4px solid;
+            }
+        }
+        .orders-status{
+            width: auto;
+            p{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 4px solid transparent;
+                margin: 0 0 8px;
+                i{
+                    font-size: 20px!important;
+                    margin: 0 5px 0 0;
+                }
             }
         }
     }
     .orders:not(:first-child){
-        border-left: 2px solid $lightGrey;
+        >p, div{
+            border-left: 1px solid $lightGrey;
+            border-right: 1px solid $lightGrey;
+        }
+    }
+    .orders:first-child{
+        >p, div{
+            border-left: 1px solid transparent;
+            border-right: 1px solid $lightGrey;
+        }
+    }
+    .orders:last-child{
+        >p, div{
+            border-left: 1px solid $lightGrey;
+            border-right: 1px solid transparent;
+        }
     }
     .orders-number{
         font-size: 32px;
         margin: 0;
     }
-    .orders-pending{
-        color: $ordersGrey;
-    }
-    .orders-hold{
-        color: $yellow;
-    }
-    .orders-production{
-        color: $blue;
-    }
-    .orders-shipped{
-        color: $ordersGreen;
-    }
-    .orders-error{
-        color: $ordersRed;
-    }
 }
+.input-search-orders{
+    width: 100%;
+}
+
 ///////////////tagsinput
 
 .bootstrap-tagsinput {
@@ -1893,5 +1898,136 @@ footer{
             margin: 0 20px 0 0;
         }
     }
+}
+///////////////orders table
+.orders-table{
+    border-top: 2px solid $lightGrey;
+    margin: 10px 0 0 0;
+}
+.orders-table-header{
+    font-weight: 700;
+    text-transform: uppercase; 
+    &.product-headline{
+        &:before{
+            top: 5px;
+        }
+    }
+}
+
+.orders-table-row, .orders-table-header{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    font-size: 15px;
+    border-bottom: 2px solid $lightGrey;
+    padding: 5px;
+    &.orders-table-row-hidden{
+        display: none;
+    }
+    >div{
+        display: inline-flex;
+        align-items: center;
+        line-height: 20px;
+        &:nth-child(1){
+            width: 15%;
+        }
+        &:nth-child(2){
+            width: 15%;
+        }
+        &:nth-child(3){
+            width: 15%;
+        }
+        &:nth-child(4){
+            width: 15%;
+        }
+        &:nth-child(5){
+            width: 25%;
+        }
+        &:last-child{
+            width: 15%;
+        }
+        div{
+            display: inline-flex;
+            align-items: center;
+            width: auto;
+            i{
+                margin: 0 0 0 3px!important;
+            }
+        }
+    }    
+    i{
+        font-size: 20px!important;
+        margin: 0 5px 0 -5px;
+    }
+}
+.orders-row-button{
+    display: inline-flex;
+    align-items: center;
+}
+.popover-order{
+    max-width: 200px;
+    p{
+        font-size: 10px;
+        font-weight: 500;
+        &:first-child{
+            margin: 0 0 10px;
+        }
+        &:last-child{
+            margin: 0;
+        }
+    }
+}
+.btn-order{
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0;
+    max-height: 20px;
+    i{
+        font-size: 15px!important;
+    }
+    &.btn-order-hold{
+        background: $yellow;
+    }
+    &.btn-order-shipped{
+        background: $ordersGreen;
+    }
+    &.btn-order-error{
+        background: $ordersRed;
+    }
+}
+.orders-not-found{
+    display: none;
+    text-align: center;
+    i{
+        color: $mediumGrey;
+        font-size: 170px!important;
+        margin: 0 0 -15px;
+    }
+    p:first-of-type{
+        font-size: 28px;
+        margin: 0;
+    }
+}
+.order-color-pending{
+    color: $ordersGrey;
+}
+.order-color-hold{
+    color: $yellow;
+}
+.order-color-production{
+    color: $blue;
+}
+.order-color-shipped{
+    color: $ordersGreen;
+}
+.order-color-error{
+    color: $ordersRed;
+}
+.zmdi-order-help{
+    color: $mediumGrey;
+    margin: 0 0 0 5px;
 }
 @import "media-queries";

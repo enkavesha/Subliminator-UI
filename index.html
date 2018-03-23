@@ -36,35 +36,52 @@
                 </div>
                 <div class="row row-width">
                     <div class="col-12">
-                        <div class="hoodie-all-over white-block">
+                        <div class="hoodie-all-over white-block" id="fullfilmentWrapper">
                             <div class="product-headline">
                                 <p><span>Fulfillment</span> Orders</p>
                             </div>
-                            <div class="divider"></div>
                             <div class="orders-wrapper">
                                 <div class="orders">
+                                   <a href="orders.html?filter=total"><span></span></a>
                                     <p class="orders-number semibold">346</p>
-                                    <p>Total</p>
+                                    <div class="orders-status">
+                                        <p>Total</p>
+                                    </div>
                                 </div>
-                                <div class="orders orders-pending">
+                                <div class="orders order-color-pending">
+                                   <a href="orders.html?filter=pending"><span></span></a>
                                     <p class="orders-number semibold">65</p>
-                                    <p><i class="zmdi zmdi-hourglass-alt"></i>Pending</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-hourglass-alt"></i>Pending</p>
+                                    </div>
                                 </div>
-                                <div class="orders orders-hold">
+                                <div class="orders order-color-hold">
+                                   <a href="orders.html?filter=hold"><span></span></a>
                                     <p class="orders-number semibold">0</p>
-                                    <p><i class="zmdi zmdi-alert-octagon"></i>On Hold</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-alert-octagon"></i>On Hold</p>
+                                    </div>
                                 </div>
-                                <div class="orders orders-production">
+                                <div class="orders order-color-production">
+                                   <a href="orders.html?filter=production"><span></span></a>
                                     <p class="orders-number semibold">205</p>
-                                    <p><i class="zmdi zmdi-settings"></i>In Production</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-settings"></i>In Production</p>
+                                    </div>
                                 </div>
-                                <div class="orders orders-shipped">
+                                <div class="orders order-color-shipped">
+                                   <a href="orders.html?filter=shipped"><span></span></a>
                                     <p class="orders-number semibold">76</p>
-                                    <p><i class="zmdi zmdi-truck"></i>Shipped</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-truck"></i>Shipped</p>
+                                    </div>
                                 </div>
-                                <div class="orders orders-error">
+                                <div class="orders order-color-error">
+                                   <a href="orders.html?filter=error"><span></span></a>
                                     <p class="orders-number semibold">0</p>
-                                    <p><i class="zmdi zmdi-close-circle"></i>Errors</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-close-circle"></i>Errors</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
