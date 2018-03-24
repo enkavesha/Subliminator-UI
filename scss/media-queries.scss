@@ -501,22 +501,19 @@
         i{
             font-size: 15px!important;
         }
-        button{
-            font-size: 7px!important;
-            i{
-                font-size: 8px!important;
-            }
-        }
         >div{
             line-height: 12px;
             &:nth-child(n){
+                width: 12.5%;
+            }
+            &:nth-child(1){
                 width: 10%;
             }
             &:nth-child(5){
-                width: 25%;
+                width: 37.5%;
             }
             &:nth-child(6){
-                width: 20%;
+                width: 10%;
             }
             i{
                 margin: 0 0 0 -5px!important;
@@ -527,7 +524,23 @@
                 margin: 0 0 0 2px!important;
             }
             button i{
+                position: absolute;
+                top:-2px;
+                left:0;
+                right: 0;
+                height: 17px;
+                width: 8px;
+                text-indent: 0;
                 margin: 0 3px 0 0!important;
+                font-size: 10px!important;
+                line-height: 10px!important;
+                margin: 0 auto!important;
+            }
+            button{
+                position: relative;
+                display: block;
+                text-align: left;
+                text-indent: -9999px;
             }
         }
     }
@@ -672,37 +685,24 @@
         i{
             font-size: 12px!important;
         }
-        button{
-            font-size: 7px!important;
-            i{
-                font-size: 8px!important;
-            }
-        }
         >div{
+            line-height: 12px;
             &:nth-child(n){
+                width: 12.5%;
+            }
+            &:nth-child(1){
                 width: 10%;
             }
             &:nth-child(5){
-                width: 23%;
+                width: 37.5%;
             }
             &:nth-child(6){
-                width: 27%;
-            }
-            i{
-                margin: 0 0 0 -5px!important;
-                display: inline-flex;
-                align-items: center;
-            }
-            i:nth-child(2){
-                margin: 0 0 0 2px!important;
-            }
-            button i{
-                margin: 0 3px 0 0!important;
+                width: 10%;
             }
         }
     }
     .orders-table-header{
-        font-size: 7px;
+        font-size: 8px;
     }
 }
 @media only screen and (max-width: 360px){
@@ -756,6 +756,9 @@
     }
     .orders-table-header{
         font-size: 7px;
+    }
+    .orders-wrapper .orders .orders-status p{
+        font-size: 9px;
     }
 }
 @media only screen and (max-width: 320px){
@@ -881,4 +884,21 @@
     .orders-table-header{
         font-size: 6px;
     }
+    ////////orders
+//    .orders-table-row,.orders-table-header{
+//        >div{
+//            button i{
+//                position: absolute;
+//                top:-2px;
+//                left:35%;
+//                height: 17px;
+//                width: 8px;
+//                text-indent: 0;
+//                margin: 0 3px 0 0!important;
+//                font-size: 10px!important;
+//                line-height: 10px!important;
+//                margin: 0!important;
+//            }
+//        }
+//    }
 }

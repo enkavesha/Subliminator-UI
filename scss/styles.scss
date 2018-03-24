@@ -46,7 +46,7 @@ p{
     padding-right: 7.5px;
     padding-left: 7.5px;
 }
-div[class^="col"]{
+div[class^="col"]:not(.collapse):not(.collapsing):not(.collapsed){
     padding-right: 7.5px;
     padding-left: 7.5px;
 }
@@ -190,7 +190,7 @@ button{
 }
 .white-block{
     margin: 15px 0;
-    padding: 15px 20px;
+    padding: 10px 20px;
     background: #fff;
     box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.2);
     border-radius: 4px;
@@ -1151,7 +1151,7 @@ input{
     p{
         margin: 0;
     }
-    padding: 15px;
+    padding: 10px 15px;
     .product-headline{
         &:before{
             left: -15px;
@@ -1593,7 +1593,7 @@ input{
 }
 /////////fulfillment orders
 #fullfilmentWrapper{
-    padding: 15px 20px 0 20px;
+    padding: 10px 20px 0 20px;
     .orders-wrapper{
         border-bottom: none;
         margin: 10px 0 0 0;
@@ -1621,9 +1621,9 @@ input{
         padding: 15px 0;
         &:hover{
             background: $lightGrey;
-            .orders-status p{
-                border-bottom: 4px solid;
-            }
+//            .orders-status p{
+//                border-bottom: 4px solid;
+//            }
         }
         &.filter-active{
             .orders-status p{
@@ -1990,12 +1990,21 @@ footer{
     }
     &.btn-order-hold{
         background: $yellow;
+        &:hover, &:active{
+            background: #d3912b;
+        }
     }
     &.btn-order-shipped{
         background: $ordersGreen;
+        &:hover, &:active{
+            background: #16a04a;
+        }
     }
     &.btn-order-error{
         background: $ordersRed;
+        &:hover, &:active{
+            background: #dc353b;
+        }
     }
 }
 .orders-not-found{
@@ -2029,5 +2038,106 @@ footer{
 .zmdi-order-help{
     color: $mediumGrey;
     margin: 0 0 0 5px;
+}
+////////////////////faq
+.faq-block{
+    display: none;
+}
+.faq-block-show{
+    display: block;
+}
+.faq-question{
+    line-height: 15px;
+    .faq-question-wrapper{
+        margin: 0 0 30px;
+        width: 90%;
+        p{
+            margin: 0 0 15px;
+        }
+    }
+    .faq-question-title{
+        color: $blue;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1;        
+    }
+    ul li{
+        padding: 0 0 0 20px;
+        position: relative;
+        font-size: 15px;
+        &:before{
+            content: '•';
+            display: block;
+            position: absolute;
+            font-size: 15px;
+            line-height: 15px;
+            top: 0;
+            left: 10px;
+        }
+    }
+    ol {
+        padding: 0 0 0 20px;
+        li{
+            font-size: 15px;
+            list-style-type: decimal;
+        }
+    }
+    ul, ol{
+        margin: 0 0 15px;
+    }
+}
+.faq-question-link{
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 12px;
+    &.question-link-active{
+        color: $blue;
+    }
+}
+.card{
+    border: 0;
+    .show{
+        border-bottom: 2px solid $lightGrey;
+    }
+}
+.card-header{
+    background: #fff;
+    border-bottom: 2px solid $lightGrey;
+    padding: 10px 0;
+    text-align: left;
+    &.product-headline{
+        &:before{
+            top: 10px;
+        }
+    }
+    &:after{
+        content:"";
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 0px;
+        width: 0; 
+        height: 0;  
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #424242; 
+        border-top: 5px solid transparent; 
+    }
+    &.collapsed:after{
+        content:"";
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 0px;
+        width: 0; 
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #424242; 
+        border-bottom: 5px solid transparent;
+    }
+}
+.card-body{
+    padding: 0;
 }
 @import "media-queries";

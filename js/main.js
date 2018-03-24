@@ -551,4 +551,49 @@ $(document).ready(function(){
     }
     /////////////searching orders on input
     $('#searchOrders').on('input', searchCheck);
+    ///////faq show needed questions block
+    $('.card-header').click(function(){
+        var faqBlockLink = $(this).data('faq-block');
+        $('.faq-block').each(function(){
+            var faqBlock = $(this).data('faq-block');
+            if(faqBlockLink==faqBlock){
+                $(this).addClass('faq-block-show');
+            } else{
+                $(this).removeClass('faq-block-show');
+            }
+        });
+    });
+    ///////faq collapse questions all but one
+    $('.faq-question-link').click(function(){
+        var faqLink=$(this).data('faq-link');
+        var clickedLink=$(this);
+        
+        function hideOtherQuestions(){
+            $('.faq-block-show').find('.faq-question').each(function(){
+                var faqQuestion=$(this).data('faq-question');
+//                window.location=window.location+'?question='+faqQuestion;
+//                window.history.pushState("object or string", "Title", window.location+'?question='+faqQuestion);
+                if (faqLink==faqQuestion){
+                    $(this).collapse('show');
+                    clickedLink.addClass('question-link-active');
+                } else{
+                    $(this).collapse('hide');
+                };
+            });
+        };
+        
+        if($('.faq-block-show').find('.show').length!=1){
+            hideOtherQuestions();
+        } else{
+            if(clickedLink.hasClass('question-link-active')){
+                $('.faq-block-show .faq-question').collapse('show');
+                clickedLink.removeClass('question-link-active');
+            } else{
+                $('.faq-question-link').removeClass('question-link-active');
+                clickedLink.addClass('question-link-active');
+                hideOtherQuestions();
+            }
+        }
+        
+    });
 });
