@@ -679,7 +679,13 @@
     .guide-wrapper .btn-upload{
         font-size: 8px!important;
     }
-        ////////orders
+    ///fulfillment orders
+    .orders-wrapper {
+        p{
+            font-size: 11px;
+        }
+    }
+    ////////orders
     .orders-table-row,.orders-table-header{
         font-size: 9px;
         i{
