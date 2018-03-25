@@ -596,4 +596,16 @@ $(document).ready(function(){
         }
         
     });
+    //////////stop playing video after closing faq modal
+        var url1 = $('#faqVideoHowTo iframe').attr('src');
+        var url2 = $('#faqVideoDelivery iframe').attr('src');
+        $('.faq-video').on('hidden.bs.modal', function(){
+            $(this).find('iframe').attr('src', '');
+        });
+        $('#faqVideoHowTo').on('show.bs.modal', function(){
+            $(this).find('iframe').attr('src', url1+'?autoplay=1');
+        });
+        $('#faqVideoDelivery').on('show.bs.modal', function(){
+            $(this).find('iframe').attr('src', url2+'?autoplay=1');
+        });
 });

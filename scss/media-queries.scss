@@ -208,6 +208,18 @@
     .orders-table-header{
         font-size: 11px;
     }
+    /////////faq
+    #accordionFAQ{
+        .card-header p{
+            font-size: 12px;
+        }
+    }
+    .card-header:after{
+        top: 12px;
+    }
+    .card-header.collapsed:after{
+        top: 16px;
+    }
 }
 ////////
 @media screen and (width: 600px)	
@@ -299,9 +311,6 @@
             font-size: 12px!important;
         }
     }
-}
-@media screen and (max-width: 606px){
-    
 }
 ////////
 @media screen and (max-width: 576px){   
@@ -407,6 +416,30 @@
     }
     .orders-table-header{
         font-size: 9px;
+    }
+    ////////faq
+    .faq-question-link{
+        font-size: 10px;
+    }
+    .faq-question .faq-question-wrapper{
+        margin: 0 0 15px;
+        p, ul, ol, li{
+            font-size: 12px;
+        }
+        p{
+            margin: 0 0 10px;
+        }
+        .faq-question-title{
+            font-size: 15px;
+        }
+    }
+    .faq-video-white-block{
+        p{
+            font-size: 12px;
+        }
+    }
+    .faq-white-block{
+        margin: 0px;
     }
 }
 @media screen and (max-width: 480px){
@@ -583,6 +616,16 @@
     ////////product selector
     .product-select .product-shipping-wrapper .product-shipping-country p{
         font-size: 12px!important;
+    }
+    /////////faq
+    .faq-videos{
+        flex-flow: wrap;
+        >*{
+            width: 100%;
+        }
+        >:nth-child(2){
+            margin: 0;
+        }
     }
  
 }
@@ -890,21 +933,4 @@
     .orders-table-header{
         font-size: 6px;
     }
-    ////////orders
-//    .orders-table-row,.orders-table-header{
-//        >div{
-//            button i{
-//                position: absolute;
-//                top:-2px;
-//                left:35%;
-//                height: 17px;
-//                width: 8px;
-//                text-indent: 0;
-//                margin: 0 3px 0 0!important;
-//                font-size: 10px!important;
-//                line-height: 10px!important;
-//                margin: 0!important;
-//            }
-//        }
-//    }
 }

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subliminator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row content-headline row-width">
+                        <div class="col-6 left-panel">
+                           <div class="breadcrumbs">
+                                <p class="product-name semibold">Frequently Asked Questions</p>
+                                <a href="index.html"><i class="zmdi zmdi-hc-fw zmdi-arrow-left zmdi-margin-right"></i>Back To Home</a>
+                            </div>
+                       </div>
+                </div>
+            </div>
+        </header>
+        <section class="main-content-wrapper">
+            <div class="container-fluid">
+                <div class="row row-width" id="paymentWarning">
+                    <div class="col-12">
+                        <div class="payment-warning">
+                            <p>No Payment Methods Set Up</p> <i class="zmdi zmdi-hc-fw zmdi-alert-octagon"></i> <span>Please set up one or more payment methods on your</span> <a href="account.html">Account Settings Page</a>
+                            <i class="zmdi zmdi-hc-fw zmdi-close" id="warningClose"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-width">
+                    <div class="col-12">
+                        <div class="white-block faq-video-white-block">
+                            <div class="product-headline">
+                                <p><span>Explanatory</span> Videos</p>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="faq-videos">
+                                <div>
+                                    <p>Short, fun clips showing you  the process from creating a product to delivering it to your customer.</p>
+                                </div>
+                                <div class="faq-video-wrapper">
+                                    <div class="faq-video-embed">
+                                        <a href="#faqVideoHowTo" data-toggle="modal"><span></span></a>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/kRaZVwoDG4g?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                    <p><i class="zmdi zmdi-youtube-play"></i>How it works</p>
+                                </div>
+                                <div class="faq-video-wrapper">
+                                    <div class="faq-video-embed">
+                                        <a href="#faqVideoDelivery" data-toggle="modal"><span></span></a>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PuT-bKLM-t8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                    <p><i class="zmdi zmdi-youtube-play"></i>Delivery time</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-width">
+                    <div class="col-12 col-xs-3 col-sm-3">
+                        <div class="white-block">
+                            <div id="accordionFAQ">
+                                <div class="card">
+                                    <div class="card-header product-headline" id="heading1" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1" data-parent="#accordionFAQ" data-faq-block="1">
+                                        <p><span>General</span> Questions</p>
+                                    </div>
+                                    <div id="collapse1" class="collapse show" aria-labelledby="heading1">
+                                        <div class="card-body">
+                                            <p class="faq-question-link" data-faq-link="101">What eCommerce platforms do you integrate with?</p>
+                                            <p class="faq-question-link" data-faq-link="102">Which countries do you deliver to?</p>
+                                            <p class="faq-question-link" data-faq-link="103">What are the estimated delivery times?</p>
+                                            <p class="faq-question-link" data-faq-link="104">When will my customers receive tracking information?</p>
+                                            <p class="faq-question-link" data-faq-link="105">What is the minimum number of sales I need to make?</p>
+                                            <p class="faq-question-link" data-faq-link="106">Is there a monthly fee to use the Sublminator App?</p>
+                                            <p class="faq-question-link" data-faq-link="107">Can I add my own branding?</p>
+                                            <p class="faq-question-link" data-faq-link="108">How do I order a sample?</p>
+                                            <p class="faq-question-link" data-faq-link="109">Common mistakes</p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                                <div class="card">
+                                    <div class="card-header product-headline collapsed" id="heading2" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2" data-parent="#accordionFAQ" data-faq-block="2">
+                                        <p><span>Order</span> Delivery</p>
+                                    </div>
+                                    <div id="collapse2" class="collapse" aria-labelledby="heading2">
+                                        <div class="card-body">
+                                            <p class="faq-question-link" data-faq-link="201">Customer received the wrong size?</p>
+                                            <p class="faq-question-link" data-faq-link="202">Product(s) came damaged or broken? </p>
+                                            <p class="faq-question-link" data-faq-link="203">Order was missing items? </p>
+                                            <p class="faq-question-link" data-faq-link="204">Customer received the wrong design?</p>
+                                            <p class="faq-question-link" data-faq-link="205">What if an order hasn’t arrived?</p>
+                                            <p class="faq-question-link" data-faq-link="206">Do you accept returns?</p>
+                                        </div>
+                                    </div>
+                                </div>                             
+                                <div class="card">
+                                    <div class="card-header product-headline collapsed" id="heading3" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3" data-parent="#accordionFAQ" data-faq-block="3">
+                                        <p><span>Order</span> Shipping</p>
+                                    </div>
+                                    <div id="collapse3" class="collapse" aria-labelledby="heading3">
+                                        <div class="card-body">
+                                            <p class="faq-question-link" data-faq-link="301">Which countries do you deliver to? </p>
+                                            <p class="faq-question-link" data-faq-link="302">What are the estimated delivery times on my orders?</p>
+                                            <p class="faq-question-link" data-faq-link="303">How much does shipping cost?</p>
+                                            <p class="faq-question-link" data-faq-link="304">Do you offer tracked delivery?</p>
+                                            <p class="faq-question-link" data-faq-link="305">How do I track my customers order?</p>
+                                            <p class="faq-question-link" data-faq-link="306">Duties, tax and charges</p>
+                                            <p class="faq-question-link" data-faq-link="307">Where do your products ship from?</p>
+                                        </div>
+                                    </div>
+                                </div>                             
+                                <div class="card">
+                                    <div class="card-header product-headline collapsed" id="heading4" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4" data-parent="#accordionFAQ" data-faq-block="4">
+                                        <p><span>Order</span> Payments</p>
+                                    </div>
+                                    <div id="collapse4" class="collapse" aria-labelledby="heading4">
+                                        <div class="card-body">
+                                            <p class="faq-question-link" data-faq-link="401">What payments do you accept?</p>
+                                            <p class="faq-question-link" data-faq-link="402">When will I be charged?</p>
+                                            <p class="faq-question-link" data-faq-link="403">How do I view my billing statements?</p>
+                                            <p class="faq-question-link" data-faq-link="404">What do your products cost? </p>
+                                            <p class="faq-question-link" data-faq-link="405">How do I mark a product as fulfilled in my store?</p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                                <div class="card">
+                                    <div class="card-header product-headline collapsed" id="heading5" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5" data-parent="#accordionFAQ" data-faq-block="5">
+                                        <p><span>Order</span> Processing</p>
+                                    </div>
+                                    <div id="collapse5" class="collapse" aria-labelledby="heading5">
+                                        <div class="card-body">
+                                            <p class="faq-question-link" data-faq-link="501">What happens when a customer places an order?</p>
+                                            <p class="faq-question-link" data-faq-link="502">Will my customers know that you fulfill my orders?</p>
+                                            <p class="faq-question-link" data-faq-link="503">How do I cancel an order?</p>
+                                            <p class="faq-question-link" data-faq-link="504">How do I edit an order? </p>
+                                            <p class="faq-question-link" data-faq-link="505">Why is my order status still ‘pending’?</p>
+                                            <p class="faq-question-link" data-faq-link="506">Can I sell offline?</p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                                <div class="card">
+                                    <div class="card-header product-headline collapsed" id="heading6" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6" data-parent="#accordionFAQ" data-faq-block="6">
+                                        <p><span>Mockup</span> Generator</p>
+                                    </div>
+                                    <div id="collapse6" class="collapse" aria-labelledby="heading6">
+                                        <div class="card-body">
+                                            <p class="faq-question-link" data-faq-link="601">Which file formats are accepted in the Mockup Generator?</p>
+                                            <p class="faq-question-link" data-faq-link="602">Are there any color restrictions on my design files?</p>
+                                            <p class="faq-question-link" data-faq-link="603">What image size should I use?</p>
+                                            <p class="faq-question-link" data-faq-link="604">What DPI should I use?</p>
+                                            <p class="faq-question-link" data-faq-link="605">I do not have Photoshop, what can I do?</p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                                <div class="card">
+                                    <div class="card-header product-headline collapsed" id="heading7" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse7" data-parent="#accordionFAQ" data-faq-block="7">
+                                        <p><span>Product</span> Questions</p>
+                                    </div>
+                                    <div id="collapse7" class="collapse" aria-labelledby="heading7">
+                                        <div class="card-body">
+                                            <p class="faq-question-link" data-faq-link="701">How can I make a product or feature request?</p>
+                                            <p class="faq-question-link" data-faq-link="702">Can I sell other products together with my Subliminator products?</p>
+                                            <p class="faq-question-link" data-faq-link="703">How do I hide a published product from my store?</p>
+                                            <p class="faq-question-link" data-faq-link="704">Can I change the photos for my products?</p>
+                                        </div>
+                                    </div>
+                                </div>                              
+                                <div class="card">
+                                    <div class="card-header product-headline collapsed" id="heading8" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8" data-parent="#accordionFAQ" data-faq-block="8">
+                                        <p><span>Customer</span> Support</p>
+                                    </div>
+                                    <div id="collapse8" class="collapse" aria-labelledby="heading8">
+                                        <div class="card-body">
+                                            <p class="faq-question-link" data-faq-link="801">Will my customer receive the tracking number for their order?</p>
+                                            <p class="faq-question-link" data-faq-link="802">My customers are getting impatient. What should I do?</p>
+                                            <p class="faq-question-link" data-faq-link="803">I need help with a customer’s order. Who should I contact?</p>
+                                        </div>
+                                    </div>
+                                </div>                             
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xs-9 col-sm-9">
+                        <div class="white-block faq-white-block">
+                            <div class="faq-block faq-block-show" data-faq-block="1">
+                                <div class="product-headline">
+                                    <p><span>General</span> Questions</p>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="faq-wrapper">
+                                    <div class="faq-question collapse show" data-faq-question="101">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What eCommerce platforms do you integrate with?</p>
+                                            <p>Currently we only integrate with Shopify.</p>
+                                            <p>We will be planning to roll out for other platforms such as WooCommerce and Big Commerce. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="102">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Which countries do you deliver to? </p>
+                                            <p>Currently we can only deliver to the United States. We will be adding Europe and Australia to our delivering countries very soon. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="103">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What are the estimated delivery times? </p>
+                                            <p>Orders take approximately 8 to 14 working days to deliver. </p>
+                                            <p>We’ll break down each process:</p>
+                                            <ul>
+                                                <li>3-5 working days production in our China factory</li>
+                                                <li>2-4 working days FedEx® delivery from China to our USA fulfillment center</li>
+                                                <li>3-5 working days USPS® First Class Mail shipping</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="104">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">When will my customers receive tracking information?</p>
+                                            <p>Once your order has landed in our USA fulfillment center and is sent out by USPS your customers are automatically notified with a USPS tracking number on the email they provided in their order. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="105">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What is the minimum number of sales I need to make?</p>
+                                            <p>You can sell as little as 1 unit. And you only pay when an order has been submitted to Subliminator.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="106">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Is there a monthly fee to use the Sublminator App?</p>
+                                            <p>No, our app is completely free to use. You only pay when an order has been submitted to Subliminator.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="107">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Can I add my own branding?</p>
+                                            <p>Yes, you can upload your own branding in the Subliminator App for each of our products. Your branding gets printed inside the product.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="108">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How do I order a sample? </p>
+                                            <p>Once you’ve created and published a product in the Subliminator App, you can create a manual order for that product inside Shopify: </p>
+                                            <ul>
+                                                <li>Go to <i>Shopify > Orders > Create Order</i></li>
+                                                <li>Select the product(s) you want to receive and add your address in the <i>‘Find or create a customer’</i> section. </li>
+                                                <li>Mark the order as paid after entering the address. If an order is marked as paid with an incomplete address, our system will ignore the order. </li>
+                                                <li>Subliminator will then bill you for the base cost + shipping and send you your sample. </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="109">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Common mistakes</p>
+                                            <ul>
+                                                <li>Do <i>NOT</i> change the vendor, “subliminator”</li>
+                                                <li>Do <i>NOT</i> edit the variants/SKU’s</li>
+                                                <li>Do <i>NOT</i> duplicate a product</li>
+                                                <li>Do <i>NOT</i> remove product tags</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-block" data-faq-block="2">
+                                <div class="product-headline">
+                                    <p><span>Order</span> Delivery</p>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="faq-wrapper">
+                                    <div class="faq-question collapse show" data-faq-question="201">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Customer received the wrong size?</p>
+                                            <p>If your customer received the wrong size, you should first <a href="">pre-qualify</a> your customer and ask them for a picture as proof showing the product as well as the size label of the product. Then ask if they would like a replacement. </p>
+                                            <p>Once you have come to a resolution with your customer, please <a href="">contact us</a> and we can assist you with sending a replacement order. </p>
+                                            <p>We also have a <a href="">customer support script</a> on how to handle this exact situation.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="202">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Product(s) came damaged or broken?</p>
+                                            <p>First, you should <a href="">pre-qualify</a> your customer and ask them for a picture as proof and then ask if they would like a replacement sent. </p>
+                                            <p>Once you have come to a resolution with your customer, please <a href="">contact us</a> and we can assist you with sending a replacement order. </p>
+                                            <p>We have provided a <a href="">customer support script</a> on how to handle this exact situation. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="203">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Order was missing items?</p>
+                                            <p>First, you should <a href="">pre-qualify</a> your customer and ask them for a picture as proof and then ask if they would like a replacement sent. </p>
+                                            <p>Once you have come to a resolution with your customer, please <a href="">contact us</a> and we can assist you with sending a replacement order. </p>
+                                            <p>We have provided a <a href="">customer support script</a> on how to handle this exact situation. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="204">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Customer received the wrong design?</p>
+                                            <p>First, you should <a href="">pre-qualify</a> your customer and ask them for a picture as proof and then ask if they would like a replacement sent. </p>
+                                            <p>Once you have come to a resolution with your customer, please <a href="">contact us</a> and we can assist you with sending a replacement order. </p>
+                                            <p>We have provided a <a href="">customer support script</a> on how to handle this exact situation. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="205">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What if an order hasn’t arrived?</p>
+                                            <p class="semibold">IF TRACKING SHOWS DELIVERED</p>
+                                            <p>Have your customers check with their local post office and/or neighbours, as often this is where ‘lost’ orders seem to end up. </p>
+                                            <p>At peak times (like Christmas and other holidays), please do allow a little longer time for your order to arrive.</p>
+                                            <p class="semibold">IF TRACKING SHOWS RETURNED TO SENDER - INCORRECT ADDRESS</p>
+                                            <p>We will not refund nor assume liability for orders that are lost due to the incorrect shipping address provided. Sellers may request a reshipment attempt but will be responsible for fees associated with additional delivery attempts. </p>
+                                            <p class="semibold">IF TRACKING SHOWS NO INFO</p>
+                                            <p>If an order has not been successfully delivered and it has been <u class="semibold">more than 60</u> days since the order was processed, the seller may request a refund or have the order resent free of charge. </p>
+                                            <p class="semibold">ORDERS SEIZED BY CUSTOMS DUE TO COPYRIGHT</p>
+                                            <p>We will not refund nor assume liability for orders that are lost due to copyright and trademark claims. </p>
+                                            <p>By uploading or saving a design in the Subliminator App you agree that: </p>
+                                            <ul>
+                                                <li>You hold the rights to commercially reproduce this design.</li>
+                                                <li>You also release Subliminator from any claims made as a result of any property right infringement.</li>
+                                                <li>You understand that infringement of property rights is illegal. If you have any doubt as to the legal ownership of a design you should check with the rightful owner that you are able to use the design before uploading. </li>
+                                                <li>You understand that Subliminator acts under your instructions and are not obligated in any way to check or confirm the legal use of reproducing any designs. </li>
+                                                <li>You agree to indemnify and defend Subliminator for any claims made as a result of alleged infringements including copyrights, trademark, rights of publicity, or other intellectual property claims, including any payments for damages sustained by a claimant and attorneys’ fees incurred by you to defend against any claims made. </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="206">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Do you accept returns?</p>
+                                            <p>Unfortunately, we are not able to accept returns for any reason. This is because our products are custom made, printed on demand items. </p>
+                                            <p>Because of the way Subliminator works, there is an infinite number of designs that could be produced. As such, it would be impossible to sort, store and resell unwanted returns on behalf of all our partners. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-block" data-faq-block="3">
+                                <div class="product-headline">
+                                    <p><span>Order</span> Shipping</p>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="faq-wrapper">
+                                    <div class="faq-question collapse show" data-faq-question="301">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Which countries do you deliver to? </p>
+                                            <p>Currently we can only deliver to the United States. We will be adding Europe and Australia to our delivery countries very soon. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="302">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What are the estimated delivery times on my orders? </p>
+                                            <p>Orders take approximately 8 to 14 days to deliver.</p>
+                                            <p>We’ll break down each process: </p>
+                                            <ul>
+                                                <li>3-5 days production in our China factory</li>
+                                                <li>2-4 days FedEx® delivery from China to our USA fulfillment center</li>
+                                                <li>3-5 days USPS® First Class Mail shipping</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="303">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How much does shipping cost?</p>
+                                            <p>There are no shipping fees. Our product base cost is including shipping to the United States. So there are no hidden or additional costs you need to worry about. </p>
+                                            <p>To get a more detailed guide on how much each product costs, you can visit our <a href="">products & pricing page</a>.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="304">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Do you offer tracked delivery?</p>
+                                            <p>Yes we do. Once your order has arrived in our fulfillment center in the USA, we send it out using USPS First Class Mail that comes with a tracking number. This tracking number is automatically sent to your customer. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="305">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How do I track my customers order?</p>
+                                            <p>All tracking numbers are automatically sent to your customers. But you may also find the tracking for each of your orders in the Subliminator App in the ‘Orders’ page. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="306">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Duties, tax and charges</p>
+                                            <p>Custom duties, tax, and charges are not included in our base cost. This is the responsibility of the customer. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="307">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Where do your products ship from?</p>
+                                            <p>We have our own manufacturing facility in China, from where we ship all orders by FedEx®  to our fulfillment center in the United States. And from there they are individually sent by USPS® First Class Mail with tracking.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-block" data-faq-block="4">
+                                <div class="product-headline">
+                                    <p><span>Order</span> Payments</p>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="faq-wrapper">
+                                    <div class="faq-question collapse show" data-faq-question="401">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What payments do you accept?</p>
+                                            <p>We accept all major credit cards as well as PayPal for payments of your products. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="402">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">When will I be charged?</p>
+                                            <p>You will be charged every 6 hours when you make a sale on one of our products. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="403">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How do I view my billing statements?</p>
+                                            <p>You will be sent a billing statement by email every 24 hours if you have made a sale on one of our products. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="404">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What do your products cost? </p>
+                                            <p>Visit our <a href="">products & pricing</a> page to see all details. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="405">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How do I mark a product as fulfilled in my store?</p>
+                                            <p>We mark orders as fulfilled on Shopify automatically for you after an order is shipped. If you have set Shopify to automatically mark orders as fulfilled, we can not forward tracking information to your end customer via Shopify’s built-in shipping notification system. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-block" data-faq-block="5">
+                                <div class="product-headline">
+                                    <p><span>Order</span> Processing</p>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="faq-wrapper">
+                                    <div class="faq-question collapse show" data-faq-question="501">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What happens when a customer places an order?</p>
+                                            <ul>
+                                                <li>When one of your customers purchases an item that you have published using the Subliminator app, the order is automatically synced with our system. </li>
+                                                <li>We print, cut and sew your custom print-on-demand product according to your and your customer’s specifications within 3 to 5 days. </li>
+                                                <li>The item is then packed and shipped by FedEx® to our fulfillment center in the United States which takes approximately 2 to 4 days to arrive. </li>
+                                                <li>From there it is sent by USPS® First Class Mail to your customer which takes approximately 3 to 5 days to arrive. When it has been dispatched, the order status in your account will automatically update to ‘Fulfilled’.</li>
+                                                <li>You take the entire payment through Shopify, and we bill you separately for the base cost + shipping. </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="502">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Will my customers know that you fulfill my orders?</p>
+                                            <p>No, your customers will not know that Subliminator fulfills your orders. We ship all our products in blank poly bags with no Subliminator branding. And you even have the option to add your own branding inside the products. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="503">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How do I cancel an order?</p>
+                                            <p>Contact our support team through <a href="mailto:support@subliminator.com">support@subliminator.com</a> as soon as you know you want to cancel an order. </p>
+                                            <p><span class="semibold">You have 24 hours to cancel your order before it’s too late.</span> We will cancel it and refund you, no questions asked within the first 24 hours. After that, all orders will be processed and shipped. </p>
+                                            <p class="semibold">Please note that cancelling an order in your Shopify account will ONLY work BEFORE we mark an order as in production. After we mark as in production, it will NOT override the status in our app, and the order will still process. </p>
+                                            <p>We will not be notified of changes you make within your Shopify account and the order will still be shipped (and charged to your account) if you don’t reach out to us. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="504">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How do I edit an order? </p>
+                                            <p class="semibold">You have maximum 24 hours to change or cancel an order after it has been placed. </p>
+                                            <p>If changes need to be made to the order please email <a href="mailto:support@subliminator.com">support@subliminator.com</a> and give them the following details: </p>
+                                            <ol>
+                                                <li>Name and email on the order</li>
+                                                <li>Order number</li>
+                                                <li>The changes that need to be made</li>
+                                            </ol>
+                                            <p>It is important that you act swiftly, however, because you only have <span class="semibold">24 hours to change or cancel an order.</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="505">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Why is my order status still ‘pending’?</p>
+                                            <p>If an order has been processing for more than 2 days there might be a problem. Get in touch with our support team and we’ll look into what the issue could be. </p>
+                                            <p>In most cases it could be one of the following:</p>
+                                            <ul>
+                                                <li>Connectivity issues. If Shopify goes down around the time the order was placed, it may not be transmitted to us correctly. </li>
+                                                <li>Billing problems. If a card charge fails, your account will be temporarily placed on hold until the payment is successful. Make sure that your credit card and/or PayPal information is up to date in the Subliminator App. </li>
+                                            </ul>
+                                            <p><span class="semibold">Please NOTE:</span> We are not liable for losses due to delays caused by delinquent payments. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="506">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Can I sell offline?</p>
+                                            <p>Yes you can! Follow the instructions below to manually create an order. </p>
+                                            <p>Once you’ve published a product using the Subliminator App, you can create a manual order for that product inside Shopify: </p>
+                                            <ol>
+                                                <li>Come out of the Subliminator App and go to <i>Shopify > Orders > Create Order</i></li>
+                                                <li>Select the product(s) you want to receive and add your address in the ‘Find or create a customer’ section.</li>
+                                                <li>Then simply mark the order as paid - but you must <span class="semibold">only do this after entering the address.</span> If an order is marked as ‘Paid’ with an incomplete address, our system will ignore the order.</li>
+                                                <li>We then bill you for the basecost + shipping.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-block" data-faq-block="6">
+                                <div class="product-headline">
+                                    <p><span>Mockup</span> Generator</p>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="faq-wrapper">
+                                    <div class="faq-question collapse show" data-faq-question="601">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Which file formats are accepted in the Mockup Generator?</p>
+                                            <p>Please submit your files in .JPG format in at least 150 DPI</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="602">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Are there any color restrictions on my design files?</p>
+                                            <p>We can print as many colors as you want on your product designs as well as complex images. However, you must make sure you submit your  files in .JPG format in at least 150 DPI for accurate and sharp printing results. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="603">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What image size should I use?</p>
+                                            <p>Please download our design templates from our <a href="">products & pricing</a> page, or you can download them inside the Subliminator App when you click on one of our products. </p>
+                                            <p>Make sure you do not adjust the image size of the design templates, and remove the guidelines when saving to .JPG format. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="604">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">What DPI should I use?</p>
+                                            <p>Designs should use our design templates from our <a href="">products & pricing</a>, or you can download them inside the Subliminator App when you click on one of our products. The DPI for all our templates is set at 150 DPI. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="605">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">I do not have Photoshop, what can I do?</p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-block" data-faq-block="7">
+                                <div class="product-headline">
+                                    <p><span>General</span> Questions</p>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="faq-wrapper">
+                                    <div class="faq-question collapse show" data-faq-question="701">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How can I make a product or feature request?</p>
+                                            <p>We’d love to hear what features or products you want Subliminator to add! Let us know by sending us a message on our <a href="">contact page.</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="702">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Can I sell other products together with my Subliminator products?</p>
+                                            <p>Yes. Our products are designed to integrate seamlessly with your existing store. </p>
+                                            <p>They act just like normal products, so you can edit them, categorize them, and place them in collections with other products.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="703">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">How do I hide a published product from my store?</p>
+                                            <p>Inside your Shopify dashboard go to <i>Shopify > Products</i> and click on the product you wish to hide. On the right hand side of the screen you will see a panel titled ‘Visibility’. Uncheck the ‘Online Store’ and click ‘Save’ in the top right corner. </p>
+                                            <p>Or click the calendar icon next to ‘Online Store’ and set a publish date to automatically publish the product at a set time in the future. </p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="704">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Can I change the photos for my products?</p>
+                                            <p>Yes you can. Follow the instructions below to do so:</p>
+                                            <ul>
+                                                <li>Inside your Shopify dashboard go to <i>Shopify > Products</i></li>
+                                                <li>Click on the product you’d like to edit/add the photos for. </li>
+                                                <li>In the images section, you can click and drag the photos around to change the order</li>
+                                                <li>Hover over an image to be given the option to <i>Preview / Edit / Edit Text / Delete</i> an image. </li>
+                                                <li>You can also add new images to the existing ones. </li>
+                                                <li>When you’re finished click ‘Save’ in the top right corner, and you’re all set. </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="faq-block" data-faq-block="8">
+                                <div class="product-headline">
+                                    <p><span>Customer</span> Support</p>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="faq-wrapper">
+                                    <div class="faq-question collapse show" data-faq-question="801">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">Will my customer receive the tracking number for their order?</p>
+                                            <p>Yes, your customers will automatically receive the tracking number by email for their placed order. Please note that tracking is sent to your customer once it arrives in our USA fulfillment center to ensure that the tracking number works and shows the correct info.</p>
+                                            <p>You are also able to see all the tracking details for all your orders inside the Subliminator App under the “Orders” tab.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="802">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">My customers are getting impatient. What should I do?</p>
+                                            <p>If your customers are getting impatient while waiting for their order to arrive, don’t worry. Most of the time your customer just wants to know somebody in your company cares and is there to let them know their item(s) are on their way. </p>
+                                            <p>We provide customer support scripts you can use to keep your customers calm until their goods arrive. You can download the script <a href="">HERE</a>.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-question collapse show" data-faq-question="803">
+                                        <div class="faq-question-wrapper">
+                                            <p class="faq-question-title">I need help with a customer’s order. Who should I contact?</p>
+                                            <p>You can always reach us from our <a href="">contact page</a>.</p>
+                                            <p>Or via our Live Chat support located at the bottom of every page on our website and inside the Subliminator App. </p>
+                                            <p>Please provide customer order number, customer email, and reason for support. We will either reply LIVE or within 6-12 hours. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="faqVideoHowTo" class="modal fade faq-video">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="video-container">
+                            <iframe id="faqVideo1" width="800" height="450" src="//www.youtube.com/embed/kRaZVwoDG4g" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="faqVideoDelivery" class="modal fade faq-video">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="video-container">
+                            <iframe id="faqVideo2" width="800" height="450" src="//www.youtube.com/embed/PuT-bKLM-t8" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-logo">
+                <img src="images/logo.svg">
+            </div>
+            <p>Copyright © 2018 All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+            </div>
+        </footer>    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/waves.min.js"></script>
+    </body>
+</html>

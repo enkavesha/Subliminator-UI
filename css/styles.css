@@ -2101,23 +2101,72 @@ footer {
   color: #e2e2e2;
   margin: 0 0 0 5px; }
 
-#faqVideo .modal-content {
+.faq-video-white-block {
+  margin: 15px 0 0 0; }
+
+.faq-videos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .faq-videos > * {
+    width: calc(100%/3); }
+  .faq-videos > :nth-child(2) {
+    margin: 0 15px; }
+
+.faq-video .modal-dialog {
+  width: 100%;
+  max-width: 800px; }
+
+.faq-video .modal-header {
+  display: none; }
+
+.faq-video .modal-body {
+  padding: 0;
+  display: block;
   height: auto; }
 
-#faqVideo .modal-body {
-  display: block; }
-  #faqVideo .modal-body iframe {
-    width: 100%;
-    height: 100%; }
+.video-container.single {
+  width: 98% !important; }
 
-.modal-content iframe {
-  margin: 0 auto;
-  display: block; }
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
 
-.faq-video {
+.video-container embed, .video-container iframe, .video-container object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.faq-video-wrapper p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase; }
+  .faq-video-wrapper p i {
+    font-size: 19px;
+    margin: 0 3px 0 0; }
+
+.faq-video-embed {
   width: 100%;
   position: relative; }
-  .faq-video a span {
+  .faq-video-embed a span {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2125,7 +2174,7 @@ footer {
     left: 0;
     z-index: 1;
     cursor: pointer; }
-  .faq-video iframe {
+  .faq-video-embed iframe {
     width: 100%;
     height: 100%; }
 
@@ -2328,7 +2377,13 @@ footer {
     .orders-table-row > div button i, .orders-table-header > div button i {
       margin: 0 3px 0 0 !important; }
   .orders-table-header {
-    font-size: 11px; } }
+    font-size: 11px; }
+  #accordionFAQ .card-header p {
+    font-size: 12px; }
+  .card-header:after {
+    top: 12px; }
+  .card-header.collapsed:after {
+    top: 16px; } }
 
 @media screen and (width: 600px) and (height: 960px) {
   .view-controls {
@@ -2478,7 +2533,21 @@ footer {
     .orders-table-row > div button i, .orders-table-header > div button i {
       margin: 0 3px 0 0 !important; }
   .orders-table-header {
-    font-size: 9px; } }
+    font-size: 9px; }
+  .faq-question-link {
+    font-size: 10px; }
+  .faq-question .faq-question-wrapper {
+    margin: 0 0 15px; }
+    .faq-question .faq-question-wrapper p, .faq-question .faq-question-wrapper ul, .faq-question .faq-question-wrapper ol, .faq-question .faq-question-wrapper li {
+      font-size: 12px; }
+    .faq-question .faq-question-wrapper p {
+      margin: 0 0 10px; }
+    .faq-question .faq-question-wrapper .faq-question-title {
+      font-size: 15px; }
+  .faq-video-white-block p {
+    font-size: 12px; }
+  .faq-white-block {
+    margin: 0px; } }
 
 @media screen and (max-width: 480px) {
   .btn, #btn-review, #btn-publish {
@@ -2600,7 +2669,14 @@ footer {
     .view-controls .btn-view-align {
       margin: 0 0 0 0; }
   .product-select .product-shipping-wrapper .product-shipping-country p {
-    font-size: 12px !important; } }
+    font-size: 12px !important; }
+  .faq-videos {
+    -ms-flex-flow: wrap;
+    flex-flow: wrap; }
+    .faq-videos > * {
+      width: 100%; }
+    .faq-videos > :nth-child(2) {
+      margin: 0; } }
 
 @media only screen and (max-width: 384px) {
   .file-views li {

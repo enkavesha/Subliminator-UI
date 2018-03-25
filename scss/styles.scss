@@ -2036,24 +2036,67 @@ footer{
     color: $mediumGrey;
     margin: 0 0 0 5px;
 }
-////////////////////faq
-#faqVideo {
-    .modal-content{
-        height:auto;
+//////////////////////faq
+.faq-video-white-block{
+    margin: 15px 0 0 0;
+}
+.faq-videos{
+    display: flex;
+    justify-content: space-between;
+    >*{
+        width: calc(100%/3);
     }
-    .modal-body{
-        display: block;
-        iframe{
-            width: 100%;
-            height: 100%;
+    >:nth-child(2){
+        margin: 0 15px;
+    }
+}
+.faq-video .modal-dialog{
+    width:100%;
+    max-width:800px
+}
+.faq-video .modal-header{
+    display:none
+}
+.faq-video .modal-body{
+    padding:0;
+    display: block;
+    height: auto;
+}
+.video-container.single{
+    width:98%!important
+}
+.video-container{
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden
+}
+.video-container embed,.video-container iframe,.video-container object{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%
+}
+
+////////////////
+.faq-video-wrapper{
+    p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 18px;
+        text-transform: uppercase;
+        i{
+            font-size: 19px;
+            margin: 0 3px 0 0;
         }
     }
 }
-.modal-content iframe{
-        margin: 0 auto;
-        display: block;
-    }
-.faq-video{
+.faq-video-embed{
     width: 100%;
     position: relative;
     a span{
