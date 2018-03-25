@@ -1603,7 +1603,6 @@ input{
     display: flex;
     justify-content: space-between;
     text-align: center;
-    margin: 10px 0 15px 0;
     border-top: 2px solid $lightGrey;
     border-bottom: 2px solid $lightGrey;
     .orders{
@@ -1897,32 +1896,143 @@ footer{
     }
 }
 ///////////////orders table
+#ordersTable_wrapper{
+    padding: 0 7.5px;
+}
 .orders-table{
     border-top: 2px solid $lightGrey;
     margin: 10px 0 0 0;
 }
 .orders-table-header{
     font-weight: 700;
-    text-transform: uppercase; 
-    &.product-headline{
-        &:before{
-            top: 5px;
+    text-transform: uppercase;
+    position: relative;
+    th:first-of-type span:before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: -20px;
+        height: 20px;
+        width: 2px;
+        background: $blue;
+    }
+        
+}
+#ordersTable_wrapper{
+    .dataTables_filter{
+        text-align: left;
+        label{
+            height: 40px;
+            width: 100%;
+            font-size: 0;
+            position: relative;
+            input{
+                position: absolute;
+                font-weight: 600;
+                color: #424242;
+                width: 100%;
+                top: 0;
+                margin-left: 0;
+                &:focus{
+                    box-shadow: none!important;
+                }
+            }
         }
     }
 }
-
-.orders-table-row, .orders-table-header{
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    font-size: 15px;
-    border-bottom: 2px solid $lightGrey;
+table.dataTable{
+    border-collapse: collapse !important;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+    border-collapse: collapse !important;
+  th,
+  td {
     padding: 5px;
-    &.orders-table-row-hidden{
-        display: none;
+    vertical-align: top;
+    border-top: none;
+  }
+    thead{
+        border-top: 2px solid $lightGrey;
     }
-    >div{
-        display: inline-flex;
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $lightGrey!important;
+  }
+
+  tbody + tbody {
+    border-top: 2px solid $lightGrey;
+  }
+}
+table.dataTable thead .sorting:before, table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+  position: absolute;
+    top:5px;
+}
+tr:hover{
+    background: $lightGrey;
+}
+th{
+    font-size: 15px;
+}
+ul .pagination{
+    li a{
+        border-width: 2px;
+    }
+}
+.page-link{
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+}
+.page-item {
+  &:first-child {
+    .page-link {
+      margin-left: 0;
+      border-right-color: transparent;  
+    }
+  }
+  &:last-child {
+    .page-link {
+        border-left-width: 1px;  
+    }
+  }
+
+  &.active .page-link {
+    z-index: 2;
+    background-color: $blue;
+  }
+
+  &.disabled .page-link {
+    color: $mediumGrey;
+    pointer-events: none;
+    border-color: $lightGrey;
+  }
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  color: $grey;
+  border: 2px solid $mediumGrey;
+
+  &:hover, &:focus{
+    color: $grey;
+    text-decoration: none;
+    background-color: $lightGrey;
+  }
+}
+tr td{
         align-items: center;
         line-height: 20px;
         &:nth-child(1){
@@ -1943,23 +2053,39 @@ footer{
         &:last-child{
             width: 15%;
         }
-        div{
-            display: inline-flex;
-            align-items: center;
-            width: auto;
-            i{
-                margin: 0 0 0 3px!important;
-            }
+}
+.orders-table-row{
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    border-bottom: 2px solid $lightGrey;
+    padding: 5px;
+    &.orders-table-row-hidden{
+        display: none;
+    }
+    div{
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        i{
+            margin: 0 0 0 3px!important;
         }
-    }    
+    }
     i{
         font-size: 20px!important;
-        margin: 0 5px 0 -5px;
+        margin: 0 0 0 -5px;
     }
+}
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+  padding-right: 0px;
 }
 .orders-row-button{
     display: inline-flex;
     align-items: center;
+    width: 100%!important;
 }
 .popover-order{
     max-width: 200px;
@@ -1976,14 +2102,15 @@ footer{
 }
 .btn-order{
     display: inline-flex;
-    width: 100%;
+    width: 97%;
     align-items: center;
     justify-content: center;
     color: #fff;
     padding: 0;
-    max-height: 20px;
+    max-height: 22px;
     i{
         font-size: 15px!important;
+        margin: 0 5px 0 -5px!important;
     }
     &.btn-order-hold{
         background: $yellow;
@@ -2004,8 +2131,7 @@ footer{
         }
     }
 }
-.orders-not-found{
-    display: none;
+.dataTables_empty{
     text-align: center;
     i{
         color: $mediumGrey;
@@ -2014,7 +2140,7 @@ footer{
     }
     p:first-of-type{
         font-size: 28px;
-        margin: 0;
+        margin: 0 0 5px;
     }
 }
 .order-color-pending{
@@ -2166,6 +2292,9 @@ footer{
     cursor: pointer;
     margin: 10px 0;
     font-size: 12px;
+    &:hover{
+        color: $blue;
+    }
     &.question-link-active{
         color: $blue;
     }

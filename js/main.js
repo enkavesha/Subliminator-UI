@@ -412,7 +412,7 @@ $(document).ready(function(){
     var filter = getUrlVars()["filter"];
     
     /////////filtering orders
-    let orderFilter = $(".orders-table");
+    let orderFilter = $("#ordersTable");
     if (orderFilter && orderFilter.length > 0) {
         /////////getting active filter after page loading
         if(filter=='total'){
@@ -517,11 +517,11 @@ $(document).ready(function(){
         });
     }
     /////////////search function
-    var searchInput = $('#searchOrders');
+    var searchInput = $('#ordersTable_filter input');
     function searchCheck() { 
         var search = searchInput.val().toUpperCase();
         function searchValidate(){
-            var tableRow = $(this).find('div:not([class^="order-color-"],.orders-row-button)');
+            var tableRow = $(this).find('td:not([class^="order-color-"],.orders-row-button)');
             var tableRowText;
             ///////adding delimiter between rows
             tableRow.text(function(i, t){
@@ -539,14 +539,6 @@ $(document).ready(function(){
         } else{
             $('.orders-filtered').removeClass('orders-table-row-hidden'); 
             $('.orders-filtered').each(searchValidate);
-        }
-        /////////////////show no orders found
-        if($('.orders-table-row').length==$('.orders-table-row-hidden').length){
-            $('.orders-not-found').css('display','block');
-            $('.orders-table-header').css('display','none');
-        } else{
-            $('.orders-not-found').css('display','none');
-            $('.orders-table-header').css('display','inline-flex');
         }
     }
     /////////////searching orders on input
@@ -571,8 +563,6 @@ $(document).ready(function(){
         function hideOtherQuestions(){
             $('.faq-block-show').find('.faq-question').each(function(){
                 var faqQuestion=$(this).data('faq-question');
-//                window.location=window.location+'?question='+faqQuestion;
-//                window.history.pushState("object or string", "Title", window.location+'?question='+faqQuestion);
                 if (faqLink==faqQuestion){
                     $(this).collapse('show');
                     clickedLink.addClass('question-link-active');
@@ -608,4 +598,30 @@ $(document).ready(function(){
         $('#faqVideoDelivery').on('show.bs.modal', function(){
             $(this).find('iframe').attr('src', url2+'?autoplay=1');
         });
+    /////////orders table
+     $('#ordersTable').DataTable({
+         "info": false,
+         "lengthChange": false,
+         "columnDefs": [
+            { "orderable": false, "targets": 5 }
+          ],
+         "pageLength": 10,
+         "language": {
+            "zeroRecords":  '<i class="zmdi zmdi-search"></i><p>No orders found</p><p>You can find orders by changing your search or filtering options</p>'
+        }
+     });
+    $('.table').each(function(){
+        $('#ordersTable_filter').parent().removeClass('col-md-6');
+        $('#ordersTable_filter').parent().addClass('col-md-12');
+        $('#ordersTable_filter').parent().parent().find('.col-md-6').remove();
+        $('#ordersTable_filter label').addClass('input-search-library');
+        $('#ordersTable_filter label input').addClass('input-style');
+        $('#ordersTable_filter label input').attr('placeholder','Search Orders');
+    });
+    ////resetting focus on search orders input at enter press
+     $('div.dataTables_filter input').keypress(function(e){
+        if (e.keyCode == 13) {
+            $(this).blur(); 
+        }
+    });
 });

@@ -4,11 +4,12 @@
         <title>Subliminator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
@@ -76,78 +77,153 @@
                                         <p><i class="zmdi zmdi-hc-fw zmdi-close-circle"></i>Errors</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="input-search-library input-search-orders"><input type="text" placeholder="Search Orders" class="input-style" id="searchOrders"></div>
-                            <div class="orders-table">
-                                <div class="orders-table-header product-headline">
-                                    <div>Order ID</div>
-                                    <div>Order #</div>
-                                    <div>Order Date</div>
-                                    <div>Amount</div>
-                                    <div>Status</div>
-                                    <div></div>
-                                </div>
-                                <div class="orders-table-row orders-unfiltered order-pending">
-                                    <div>12345</div>
-                                    <div>SHP405</div>
-                                    <div>5/1/2018</div>
-                                    <div>$22</div>
-                                    <div class="order-color-pending">
-                                        <i class="zmdi zmdi-hc-fw zmdi-hourglass-alt"></i>
-                                        <div>Pending<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-pending"></i></div>
-                                    </div>
-                                    <div></div>
-                                </div>
-                                <div class="orders-table-row orders-unfiltered order-hold">
-                                    <div>23456</div>
-                                    <div>SHP407</div>
-                                    <div>4/1/2018</div>
-                                    <div>$38</div>
-                                    <div class="order-color-hold">
-                                        <i class="zmdi zmdi-hc-fw zmdi-alert-octagon"></i>
-                                        <div>Please Contact Us<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-hold"></i></div>
-                                    </div>
-                                    <div class="orders-row-button"><button class="btn btn-order btn-order-hold waves-effect waves-light"><i class="zmdi zmdi-comments"></i>Contact us</button></div>
-                                </div>
-                                <div class="orders-table-row orders-unfiltered order-production">
-                                    <div>34567</div>
-                                    <div>SHP409</div>
-                                    <div>4/1/2018</div>
-                                    <div>$36</div>
-                                    <div class="order-color-production">
-                                        <i class="zmdi zmdi-hc-fw zmdi-settings"></i>
-                                        <div>In Production<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-production"></i></div>
-                                    </div>
-                                    <div></div>
-                                </div>
-                                <div class="orders-table-row orders-unfiltered order-shipped">
-                                    <div>45678</div>
-                                    <div>SHP411</div>
-                                    <div>5/1/2018</div>
-                                    <div>$28</div>
-                                    <div class="order-color-shipped">
-                                        <i class="zmdi zmdi-hc-fw zmdi-truck"></i>
-                                        <div>Shipped<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-shipped"></i></div>
-                                    </div>
-                                    <div class="orders-row-button"><button class="btn btn-order btn-order-shipped waves-effect waves-light"><i class="zmdi zmdi-pin"></i>View tracking</button></div>
-                                </div>
-                                <div class="orders-table-row orders-unfiltered order-error">
-                                    <div>56789</div>
-                                    <div>SHP413</div>
-                                    <div>5/1/2018</div>
-                                    <div>$44</div>
-                                    <div class="order-color-error">
-                                        <i class="zmdi zmdi-hc-fw zmdi-close-circle"></i>
-                                        <div>Payment Declined<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-error"></i></div>
-                                    </div>
-                                    <div class="orders-row-button"><button class="btn btn-order btn-order-error waves-effect waves-light"><i class="zmdi zmdi-replay"></i>Retry Payment</button></div>
-                                </div>
-                                <div class="orders-not-found">
-                                    <i class="zmdi zmdi-search"></i>
-                                    <p>No orders found</p>
-                                    <p>You can find orders by changing your search or filtering options</p>
-                                </div>
-                            </div>
+                            </div>                            
+                            <table id="ordersTable" class="table-nowrap table-row-border table-hover table" data-order='[[ 2, "desc" ]]'>
+                                <thead>
+                                    <tr class="orders-table-header">
+                                        <th><span>Order ID</span></th>
+                                        <th>Order #</th>
+                                        <th>Order Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="orders-table-row orders-unfiltered order-pending">
+                                        <td>12345</td>
+                                        <td>SHP405</td>
+                                        <td>5/1/2018</td>
+                                        <td>$22</td>
+                                        <td class="order-color-pending">
+                                            <i class="zmdi zmdi-hc-fw zmdi-hourglass-alt"></i>
+                                            <div>Pending<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-pending"></i></div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-hold">
+                                        <td>23456</td>
+                                        <td>SHP407</td>
+                                        <td>4/1/2018</td>
+                                        <td>$38</td>
+                                        <td class="order-color-hold">
+                                            <i class="zmdi zmdi-hc-fw zmdi-alert-octagon"></i>
+                                            <div>Please Contact Us<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-hold"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-hold waves-effect waves-light"><i class="zmdi zmdi-comments"></i>Contact us</button></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-production">
+                                        <td>34567</td>
+                                        <td>SHP409</td>
+                                        <td>4/1/2018</td>
+                                        <td>$36</td>
+                                        <td class="order-color-production">
+                                            <i class="zmdi zmdi-hc-fw zmdi-settings"></i>
+                                            <div>In Production<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-production"></i></div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-shipped">
+                                        <td>45678</td>
+                                        <td>SHP411</td>
+                                        <td>5/1/2018</td>
+                                        <td>$28</td>
+                                        <td class="order-color-shipped">
+                                            <i class="zmdi zmdi-hc-fw zmdi-truck"></i>
+                                            <div>Shipped<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-shipped"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-shipped waves-effect waves-light"><i class="zmdi zmdi-pin"></i>View tracking</button></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-error">
+                                        <td>42367</td>
+                                        <td>SHP264</td>
+                                        <td>8/27/2018</td>
+                                        <td>$92</td>
+                                        <td class="order-color-error">
+                                            <i class="zmdi zmdi-hc-fw zmdi-close-circle"></i>
+                                            <div>Payment Declined<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-error"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-error waves-effect waves-light"><i class="zmdi zmdi-replay"></i>Retry Payment</button></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-pending">
+                                        <td>86524</td>
+                                        <td>SHP629</td>
+                                        <td>6/10/2018</td>
+                                        <td>$36</td>
+                                        <td class="order-color-pending">
+                                            <i class="zmdi zmdi-hc-fw zmdi-hourglass-alt"></i>
+                                            <div>Pending<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-pending"></i></div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-shipped">
+                                        <td>45678</td>
+                                        <td>SHP378</td>
+                                        <td>12/8/2018</td>
+                                        <td>$108</td>
+                                        <td class="order-color-shipped">
+                                            <i class="zmdi zmdi-hc-fw zmdi-truck"></i>
+                                            <div>Shipped<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-shipped"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-shipped waves-effect waves-light"><i class="zmdi zmdi-pin"></i>View tracking</button></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-production">
+                                        <td>23764</td>
+                                        <td>SHP301</td>
+                                        <td>6/6/2018</td>
+                                        <td>$78</td>
+                                        <td class="order-color-production">
+                                            <i class="zmdi zmdi-hc-fw zmdi-settings"></i>
+                                            <div>In Production<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-production"></i></div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-hold">
+                                        <td>32978</td>
+                                        <td>SHP205</td>
+                                        <td>10/9/2018</td>
+                                        <td>$54</td>
+                                        <td class="order-color-hold">
+                                            <i class="zmdi zmdi-hc-fw zmdi-alert-octagon"></i>
+                                            <div>Please Contact Us<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-hold"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-hold waves-effect waves-light"><i class="zmdi zmdi-comments"></i>Contact us</button></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-pending">
+                                        <td>23468</td>
+                                        <td>SHP321</td>
+                                        <td>5/12/2018</td>
+                                        <td>$72</td>
+                                        <td class="order-color-pending">
+                                            <i class="zmdi zmdi-hc-fw zmdi-hourglass-alt"></i>
+                                            <div>Pending<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-pending"></i></div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-production">
+                                        <td>62379</td>
+                                        <td>SHP723</td>
+                                        <td>9/5/2018</td>
+                                        <td>$28</td>
+                                        <td class="order-color-production">
+                                            <i class="zmdi zmdi-hc-fw zmdi-settings"></i>
+                                            <div>In Production<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-production"></i></div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-error">
+                                        <td>75682</td>
+                                        <td>SHP666</td>
+                                        <td>8/1/2018</td>
+                                        <td>$32</td>
+                                        <td class="order-color-error">
+                                            <i class="zmdi zmdi-hc-fw zmdi-close-circle"></i>
+                                            <div>Payment Declined<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-error"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-error waves-effect waves-light"><i class="zmdi zmdi-replay"></i>Retry Payment</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -166,6 +242,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/waves.min.js"></script>
     </body>
