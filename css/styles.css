@@ -2731,7 +2731,7 @@ table.dataTable thead > tr > td.sorting {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    line-height: 20px; }
+    line-height: 15px; }
   .orders-table-header th:first-of-type span:before {
     height: 12px; }
   th {
@@ -2780,15 +2780,14 @@ table.dataTable thead > tr > td.sorting {
       width: 100%; }
     .faq-videos > :nth-child(2) {
       margin: 0; }
-  th {
-    font-size: 8px; }
+  .table thead th {
+    height: 20px !important; }
   tr td {
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
-    line-height: 20px; }
+    align-items: center; }
   th {
-    font-size: 8px; }
+    font-size: 7px; }
     th:nth-child(1) {
       width: 12% !important; }
     th:nth-child(2) {
@@ -2874,16 +2873,15 @@ table.dataTable thead > tr > td.sorting {
     font-size: 11px; }
   .orders-table-row {
     font-size: 9px; }
-  th {
-    font-size: 7px; }
   tr td {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center; }
   th {
-    font-size: 8px; }
+    height: 20px;
+    font-size: 6px; }
     th:nth-child(1) {
-      width: 12% !important; }
+      width: 12.5% !important; }
     th:nth-child(2) {
       width: 14% !important; }
     th:nth-child(3) {
@@ -2891,7 +2889,7 @@ table.dataTable thead > tr > td.sorting {
     th:nth-child(4) {
       width: 15% !important; }
     th:nth-child(5) {
-      width: 34% !important; }
+      width: 30% !important; }
     th:last-child {
       width: 8% !important; }
   .orders-table-row button {
@@ -2899,6 +2897,8 @@ table.dataTable thead > tr > td.sorting {
   tr td {
     font-size: 9px;
     line-height: 12px; }
+    tr td:last-child {
+      padding: 5px 0 0 0; }
   .orders-table-header th:first-of-type span:before {
     height: 20px; } }
 
@@ -2942,8 +2942,6 @@ table.dataTable thead > tr > td.sorting {
     font-size: 7px; }
   .orders-wrapper .orders .orders-status p {
     font-size: 9px; }
-  table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
-    padding: 10px 2px 5px 2px; }
   .orders-table-header th:first-of-type span:before {
     height: 20px; } }
 
@@ -3039,7 +3037,7 @@ table.dataTable thead > tr > td.sorting {
   .table td {
     padding: 5px 0 5px 5px;
     line-height: 10px; }
-  th {
+  .table thead th {
     font-size: 6px; }
   tr td {
     padding: 5px 5px 5px 0 !important; }
@@ -3050,4 +3048,20 @@ table.dataTable thead > tr > td.sorting {
     .orders-table-row button i {
       font-size: 8px !important; }
   .orders-table-header th:first-of-type span:before {
-    height: 25px; } }
+    height: 20px; }
+  .table th {
+    padding: 5px 0; }
+  th {
+    padding: 5px 0; }
+    th:nth-child(1) {
+      width: 13% !important; }
+    th:nth-child(2) {
+      width: 14% !important; }
+    th:nth-child(3) {
+      width: 17% !important; }
+    th:nth-child(4) {
+      width: 15% !important; }
+    th:nth-child(5) {
+      width: 30% !important; }
+    th:last-child {
+      width: 8% !important; } }

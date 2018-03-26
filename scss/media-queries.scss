@@ -552,7 +552,7 @@
     }
     tr td{
         align-items: center;
-        line-height: 20px;
+        line-height: 15px;
     }
     .orders-table-header{
         th:first-of-type span:before{
@@ -585,9 +585,6 @@
 
 //////mobiles
 @media only screen and (max-width: 426px){
-    .content-headline .breadcrumbs{
-//        margin: 0 0 15px;
-    }
     .file-views{
         li{
             &:nth-child(5){
@@ -629,15 +626,14 @@
         }
     }
     ////////orders
-    th{
-        font-size: 8px;
+   .table thead th{
+        height: 20px!important;
     }
     tr td{
         align-items: center;
-        line-height: 20px;
     }
     th{
-        font-size: 8px;
+        font-size: 7px;
         &:nth-child(1){
             width: 12%!important;
         }
@@ -781,16 +777,14 @@
     .orders-table-row{
         font-size: 9px;
     }
-    th{
-        font-size: 7px;
-    }
     tr td{
         align-items: center;
     }
         th{
-        font-size: 8px;
+        height: 20px;
+        font-size: 6px;
         &:nth-child(1){
-            width: 12%!important;
+            width: 12.5%!important;
         }
         &:nth-child(2){
             width: 14%!important;
@@ -802,7 +796,7 @@
             width: 15%!important;
         }
         &:nth-child(5){
-            width: 34%!important;
+            width: 30%!important;
         }
         &:last-child{
             width: 8%!important;
@@ -814,6 +808,9 @@
     tr td{
        font-size: 9px;
         line-height: 12px;
+        &:last-child{
+            padding: 5px 0 0 0;
+        }
     }
     .orders-table-header{
         th:first-of-type span:before{
@@ -877,7 +874,7 @@
         font-size: 9px;
     }
     table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting{
-        padding: 10px 2px 5px 2px;
+//        padding: 10px 2px 5px 2px;
     }
     .orders-table-header{
         th:first-of-type span:before{
@@ -1006,8 +1003,9 @@
         padding: 5px 0 5px 5px;
         line-height: 10px;
     }
-    th{
+    .table thead th{
         font-size: 6px;
+//        height: 25px!important;
     }
     tr td{
         padding: 5px 5px 5px 0!important;
@@ -1023,7 +1021,31 @@
     }
     .orders-table-header{
         th:first-of-type span:before{
-            height: 25px;
+            height: 20px;
+        }
+    }
+    .table th{
+        padding: 5px 0;
+    }
+    th{
+        padding: 5px 0;
+        &:nth-child(1){
+            width: 13%!important;
+        }
+        &:nth-child(2){
+            width: 14%!important;
+        }
+        &:nth-child(3){
+            width: 17%!important;
+        }
+        &:nth-child(4){
+            width: 15%!important;
+        }
+        &:nth-child(5){
+            width: 30%!important;
+        }
+        &:last-child{
+            width: 8%!important;
         }
     }
 }
