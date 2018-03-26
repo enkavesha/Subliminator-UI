@@ -600,6 +600,7 @@ $(document).ready(function(){
         });
     /////////orders table
      $('#ordersTable').DataTable({
+         sDom: 'fr<"fixed-table-height"t>p',
          "info": false,
          "lengthChange": false,
          "columnDefs": [
@@ -607,7 +608,7 @@ $(document).ready(function(){
           ],
          "pageLength": 10,
          "language": {
-            "zeroRecords":  '<i class="zmdi zmdi-search"></i><p>No orders found</p><p>You can find orders by changing your search or filtering options</p>'
+         "zeroRecords":  '<i class="zmdi zmdi-search"></i><p>No orders found</p><p>You can find orders by changing your search or filtering options</p>'             
         }
      });
     $('.table').each(function(){
