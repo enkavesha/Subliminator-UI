@@ -2945,7 +2945,7 @@ table.dataTable thead > tr > td.sorting {
   table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
     padding: 10px 2px 5px 2px; }
   .orders-table-header th:first-of-type span:before {
-    height: 30px; } }
+    height: 20px; } }
 
 @media only screen and (max-width: 320px) {
   .template-view .template-buttons {
