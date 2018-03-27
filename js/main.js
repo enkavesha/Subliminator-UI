@@ -594,8 +594,10 @@ $(document).ready(function(){
         $('#faqVideoDelivery').on('show.bs.modal', function(){
             $(this).find('iframe').attr('src', url2+'?autoplay=1');
         });
-    /////////orders table
+    //////////orders table
+    $.fn.dataTable.moment( 'M/D/YYYY' );
      $('#ordersTable').DataTable({
+         
          sDom: 'fr<"fixed-table-height"t>p',
          "info": false,
          "lengthChange": false,

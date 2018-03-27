@@ -9,7 +9,6 @@ body{
     color: $grey;
     font-size: 12px;
     background: url(../images/bg-noise.png);
-    
     background-color: #ececec;
     &:before{
         content: "";
@@ -386,7 +385,6 @@ button{
         }
 }
 .main-content-wrapper{
-    margin: 0 0 0 0;
 }
 
 //////////////
@@ -397,6 +395,7 @@ header {
     background: #0c77f8;
     width: 100%;
     height: auto;
+    max-height: 100px;
     padding: 15px 0 ;
     margin: 0 auto -15px;
     display: -webkit-box;
@@ -1871,7 +1870,24 @@ input{
     }
 }
 /////////////footer
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.main-content-wrapper, header {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}
 footer{
+//    position: absolute;
+//    bottom: 0;
+//    left: 0;
+//    right: 0;
     margin: 80px auto 10px;
     text-align: center;
     color: $grey;
@@ -1990,6 +2006,13 @@ table.dataTable thead .sorting_desc_disabled:before,
 table.dataTable thead .sorting_desc_disabled:after {
   position: absolute;
     top:5px;
+}
+.table-hover {
+  tbody tr {
+    &:hover {
+      background: $lightGrey;
+    }
+  }
 }
 tr:hover{
     background: $lightGrey;
