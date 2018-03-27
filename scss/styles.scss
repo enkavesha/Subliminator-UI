@@ -1896,6 +1896,9 @@ footer{
     }
 }
 ///////////////orders table
+.order-status-hidden{
+    display: none;
+}
 .fixed-table-height{
     min-height: 370px
 }

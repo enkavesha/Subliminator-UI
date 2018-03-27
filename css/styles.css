@@ -1966,6 +1966,9 @@ footer {
     footer a:first-child, footer a:focus:first-child, footer a:active:first-child, footer a:hover:first-child {
       margin: 0 20px 0 0; }
 
+.order-status-hidden {
+  display: none; }
+
 .fixed-table-height {
   min-height: 370px; }
 

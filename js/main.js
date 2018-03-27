@@ -457,73 +457,69 @@ $(document).ready(function(){
             $(this).toggleClass('filter-active');
         });
         //////////filtering
-        $('#filterTotal').click(function(){
+        var filterString = '';
+        function filterClick(status){
+            $('#filterTotal').removeClass('filter-active');
+            var filters = [];
+            tableAPI = tableAPI ? tableAPI : $('#ordersTable').dataTable().api();
+            if (filterString.length) {
+                filters = filterString.slice(1, -1).split('|');
+            }
+            var index = filters.indexOf(status);
+            if (index >= 0) {
+                filters.splice(index, 1);
+            } else {
+                filters.push(status);
+            }
+            if (filters.length > 0) {
+                filterString = '(' + filters.join('|') + ')';
+            } else {
+                filterString = '';
+            }
+            tableAPI.column(6).search(filterString, true).draw();
+        }
+        $('#filterTotal').click(function () {
             $('.orders').removeClass('filter-active');
-            $(this).addClass('filter-active');
-            $('.orders-table-row').removeClass('orders-table-row-hidden');
-            $('.orders-table-row').removeClass('orders-filtered');
-            $('.orders-table-row').addClass('orders-unfiltered');
-            searchCheck();
+            $('#filterTotal').addClass('filter-active');
+            tableAPI = tableAPI ? tableAPI : $('#ordersTable').dataTable().api();
+            filterString = '';
+            tableAPI.column(6).search(filterString, true).draw();
         });
-        $('#filterPending').click(function(){
-            $('.orders-table-row').removeClass('orders-unfiltered');
-            $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
-            $('.order-pending').toggleClass('orders-filtered');
-            $('.order-pending').toggleClass('orders-table-row-hidden');
-           $('.search-hidden').addClass('orders-table-row-hidden');
-            $('#filterTotal').removeClass('filter-active'); 
-            checkFilter();
-            searchCheck();            
+        
+        $('#filterPending').click(function () {
+            var status='pending';
+            filterClick(status);
         });
-        $('#filterHold').click(function(){
-            $('.orders-table-row').removeClass('orders-unfiltered');
-            $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
-            $('.order-hold').toggleClass('orders-filtered');
-            $('.order-hold').toggleClass('orders-table-row-hidden');
-           $('.search-hidden').addClass('orders-table-row-hidden');
-            $('#filterTotal').removeClass('filter-active'); 
-            checkFilter();
-            searchCheck();
+
+        $('#filterHold').click(function () {
+            var status='hold';
+            filterClick(status);
         });
-        $('#filterProduction').click(function(){
-            $('.orders-table-row').removeClass('orders-unfiltered');
-           $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
-           $('.order-production').toggleClass('orders-filtered');
-           $('.order-production').toggleClass('orders-table-row-hidden');
-           $('.search-hidden').addClass('orders-table-row-hidden');
-           $('#filterTotal').removeClass('filter-active'); 
-            checkFilter();
-            searchCheck();
+
+        $('#filterProduction').click(function () {
+            var status='production';
+            filterClick(status);
         });
-        $('#filterShipped').click(function(){
-            $('.orders-table-row').removeClass('orders-unfiltered');
-           $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
-           $('.order-shipped').toggleClass('orders-filtered');
-           $('.order-shipped').toggleClass('orders-table-row-hidden');
-           $('.search-hidden').addClass('orders-table-row-hidden');
-           $('#filterTotal').removeClass('filter-active'); 
-            checkFilter();
-            searchCheck();
+
+        $('#filterShipped').click(function () {
+            var status='shipped';
+            filterClick(status);
         });
-        $('#filterError').click(function(){
-            $('.orders-table-row').removeClass('orders-unfiltered');
-           $('.orders-table-row:not(".orders-filtered")').addClass('orders-table-row-hidden');
-           $('.order-error').toggleClass('orders-filtered');
-           $('.order-error').toggleClass('orders-table-row-hidden');
-           $('.search-hidden').addClass('orders-table-row-hidden');
-           $('#filterTotal').removeClass('filter-active'); 
-            checkFilter();
-            searchCheck();
+
+        $('#filterError').click(function () {
+            var status='error';
+            filterClick(status);
         });
+        
     }
     /////////////search function
     var searchInput = $('#ordersTable_filter input');
     function searchCheck() { 
-        var search = searchInput.val().toUpperCase();
+        var search = searchInput.val() ? searchInput.val().toUpperCase() : "";
         function searchValidate(){
             var tableRow = $(this).find('td:not([class^="order-color-"],.orders-row-button)');
             var tableRowText;
-            ///////adding delimiter between rows
+            ///////adding delimiter between cols
             tableRow.text(function(i, t){
                 tableRowText += i == 0 ? t : '&&' + t;
             });
@@ -611,6 +607,7 @@ $(document).ready(function(){
          "zeroRecords":  '<i class="zmdi zmdi-search"></i><p>No orders found</p><p>You can find orders by changing your search or filtering options</p>'             
         }
      });
+     var tableAPI = $('#ordersTable').dataTable().api();
     $('.table').each(function(){
         $('#ordersTable_filter').parent().removeClass('col-md-6');
         $('#ordersTable_filter').parent().addClass('col-md-12');
