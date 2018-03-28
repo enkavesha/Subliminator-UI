@@ -553,6 +553,15 @@ $(document).ready(function(){
                  e.preventDefault();
              }
          });
+        adminTable.on('draw', function () {
+            $('.order-status-hidden').each(function () {
+                var status = this.textContent;
+                if (status) {
+                    var row = this.closest('tr');
+                    $(row).find('button').addClass('btn-order btn-order-' + status);
+                }
+            })
+        });
     function format(d){
         
          // `d` is the original data object for the row

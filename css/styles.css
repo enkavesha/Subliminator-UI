@@ -484,10 +484,24 @@ button {
   max-width: 80%;
   margin: 0 auto; }
 
+.popover-pocket {
+  max-width: 140px; }
+
+[data-toggle="popover-pocket"] {
+  font-size: 20px !important;
+  margin: 0 5px 0 0 !important;
+  z-index: 100; }
+
 .checkbox-pocket-wrapper {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   top: 3px;
-  right: 13px;
+  right: 4px;
   width: auto; }
   .checkbox-pocket-wrapper .pocket-checkmark {
     margin: 0;
@@ -2203,9 +2217,6 @@ table.dataTable thead > tr > td.sorting {
     .popover-order p:last-child {
       margin: 0; }
 
-.popover-pocket {
-  max-width: 140px; }
-
 .btn-disabled {
   opacity: 0.65; }
   .btn-disabled:hover {
@@ -2213,11 +2224,6 @@ table.dataTable thead > tr > td.sorting {
     border-color: #0c77f8 !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
-
-[data-toggle="popover-pocket"] {
-  float: right;
-  font-size: 15px !important;
-  margin: 0 5px 0 0 !important; }
 
 .btn-order {
   display: -webkit-inline-box;
