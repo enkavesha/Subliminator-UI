@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     </head>
     <body>
         <header>
@@ -165,12 +166,19 @@
                                     </div>
                                 </div>
                                 <div class="upload-file">
-                                    <p>Pocket</p>
+                                    <p>Pocket<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-pocket"></i></p>
                                     <div class="upload-wrapper">
-                                        <div class="upload-inner">                     <div class="upload-svg-wrapper">
+                                        <div class="upload-inner">
+                                           <div class="checkbox-pocket-wrapper">
+                                                <label class="checkbox-label size-range-label">
+                                                    <input type="checkbox" name="checkbox-pocket" value="XS" class="checkbox-input checkbox-pocket">
+                                                    <span class="checkbox-checkmark pocket-checkmark" id="ckeckboxPocket"></span>
+                                                </label>
+                                            </div>
+                                            <div class="upload-svg-wrapper">
                                                 <img src="images/hoodie-pocket.svg">
                                             </div>
-                                            <button class="btn btn-lg btn-upload btn-blue waves-effect waves-light" data-toggle="modal" data-target="#modalFileLibrary"><i class="material-icons">file_upload</i> Choose file</button>
+                                            <button id="btnPocket" class="btn btn-lg btn-upload btn-blue waves-effect waves-light" data-toggle="modal" data-target="#modalFileLibrary"><i class="material-icons">file_upload</i> Choose file</button>
                                         </div>
                                     </div>
                                 </div>

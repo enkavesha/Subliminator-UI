@@ -305,6 +305,28 @@ $(document).ready(function(){
         content: "<div class='popover-order'><p>OOPS! Looks like something went wrong authorizing your payment. This could be due to various reasons.</p><p>Please retry the payment, and if it still doesn’t come through please contact your bank. </p></div>",
         placement: "top"
     });
+    $('[data-toggle="popover-pocket"]').popover({ 
+        trigger: "hover",
+        html: true,
+        content: "<div class='popover-order popover-pocket'><p>When you check the box you will link the pocket with the frontside.</p><p>This way you only have to upload the frontside design to have it projected on both the frontside <i>and</i> the pocket.</p></div>",
+        placement: "top"
+    });
+    
+    $('#ckeckboxPocket').click(function() {
+        if($('#btnPocket').hasClass('btn-disabled')){
+            $('#btnPocket').removeClass('btn-disabled');
+            $('#btnPocket').addClass('waves-effect');
+            $('#btnPocket').css('cursor','pointer');
+            $('#btnPocket').attr('data-toggle','modal');
+            
+        } else{
+            $('#btnPocket').removeClass('waves-effect');
+            $('#btnPocket').css('cursor','default');
+            $('#btnPocket').addClass('btn-disabled');
+            $('#btnPocket').attr('data-toggle', '');
+        }
+    });
+
     /////////show design preview modal
     var wrapper, newFileName;
     $('[data-content="Preview"]').click(function(){
@@ -391,155 +413,7 @@ $(document).ready(function(){
         }
         lastScrollTop = st;
     });
-    //////button animation
-    let btnBlue = $(".waves-effect");
-    if (btnBlue && btnBlue.length > 0) {
-        Waves.init();
-    };
-    /////////////// Read a page's GET URL variables and return them as an associative array.
-    function getUrlVars()
-    {
-        var vars = [], hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-        for(var i = 0; i < hashes.length; i++)
-        {
-            hash = hashes[i].split('=');
-            vars.push(hash[0]);
-            vars[hash[0]] = hash[1];
-        }
-        return vars;
-    }
-    var filter = getUrlVars()["filter"];
-    
-    /////////filtering orders
-    let orderFilter = $("#ordersTable");
-    if (orderFilter && orderFilter.length > 0) {
-        /////////getting active filter after page loading
-        if(filter=='total'){
-            $('.orders-table-row').addClass('orders-unfiltered');
-        };
-        if(filter=='pending'){
-            $('.orders-table-row:not(".order-pending")').toggleClass('orders-table-row-hidden');
-            $('.order-pending').addClass('orders-filtered');
-            $('#filterTotal').removeClass('filter-active'); 
-        };
-        if(filter=='hold'){
-            $('.orders-table-row:not(".order-hold")').toggleClass('orders-table-row-hidden');
-            $('.order-hold').addClass('orders-filtered');
-            $('#filterTotal').removeClass('filter-active'); 
-        };
-        if(filter=='production'){
-            $('.orders-table-row:not(".order-production")').toggleClass('orders-table-row-hidden');
-            $('.order-production').addClass('orders-filtered');
-            $('#filterTotal').removeClass('filter-active'); 
-        };
-        if(filter=='shipped'){
-            $('.orders-table-row:not(".order-shipped")').toggleClass('orders-table-row-hidden');
-            $('.order-shipped').addClass('orders-filtered');
-            $('#filterTotal').removeClass('filter-active'); 
-        };
-        if(filter=='error'){
-            $('.orders-table-row:not(".order-error")').toggleClass('orders-table-row-hidden');
-            $('.order-error').addClass('orders-filtered');
-            $('#filterTotal').removeClass('filter-active'); 
-        };
-        $("[class*='" + filter + "']").addClass('filter-active');
-        /////resetting filter after last filter unchecked
-        function checkFilter(){
-            if($('.orders-wrapper').find('.filter-active').length === 0){
-                $('#filterTotal').addClass('filter-active');
-                $('.orders-table-row').removeClass('orders-table-row-hidden');
-                $('.orders-table-row').removeClass('orders-filtered');
-                $('.orders-table-row').addClass('orders-unfiltered');
-            }
-        };
-        $('.orders-wrapper .orders').click(function(){
-            $(this).toggleClass('filter-active');
-        });
-        //////////filtering
-        var filterString = '';
-        function filterClick(status){
-            $('#filterTotal').removeClass('filter-active');
-            var filters = [];
-            tableAPI = tableAPI ? tableAPI : $('#ordersTable').dataTable().api();
-            if (filterString.length) {
-                filters = filterString.slice(1, -1).split('|');
-            }
-            var index = filters.indexOf(status);
-            if (index >= 0) {
-                filters.splice(index, 1);
-            } else {
-                filters.push(status);
-            }
-            if (filters.length > 0) {
-                filterString = '(' + filters.join('|') + ')';
-            } else {
-                filterString = '';
-            }
-            tableAPI.column(6).search(filterString, true).draw();
-        }
-        $('#filterTotal').click(function () {
-            $('.orders').removeClass('filter-active');
-            $('#filterTotal').addClass('filter-active');
-            tableAPI = tableAPI ? tableAPI : $('#ordersTable').dataTable().api();
-            filterString = '';
-            tableAPI.column(6).search(filterString, true).draw();
-        });
-        
-        $('#filterPending').click(function () {
-            var status='pending';
-            filterClick(status);
-        });
-
-        $('#filterHold').click(function () {
-            var status='hold';
-            filterClick(status);
-        });
-
-        $('#filterProduction').click(function () {
-            var status='production';
-            filterClick(status);
-        });
-
-        $('#filterShipped').click(function () {
-            var status='shipped';
-            filterClick(status);
-        });
-
-        $('#filterError').click(function () {
-            var status='error';
-            filterClick(status);
-        });
-        
-    }
-    /////////////search function
-    var searchInput = $('#ordersTable_filter input');
-    function searchCheck() { 
-        var search = searchInput.val() ? searchInput.val().toUpperCase() : "";
-        function searchValidate(){
-            var tableRow = $(this).find('td:not([class^="order-color-"],.orders-row-button)');
-            var tableRowText;
-            ///////adding delimiter between cols
-            tableRow.text(function(i, t){
-                tableRowText += i == 0 ? t : '&&' + t;
-            });
-            tableRowText.toUpperCase();
-            if(tableRowText.includes(search)==false){
-                $(tableRow).closest('.orders-table-row').addClass('orders-table-row-hidden');
-                $(tableRow).closest('.orders-table-row').addClass('search-hidden');
-            }        
-        };
-        if($('#filterTotal').hasClass('filter-active')){
-            $('.orders-unfiltered').removeClass('orders-table-row-hidden'); 
-            $('.orders-unfiltered').each(searchValidate);
-        } else{
-            $('.orders-filtered').removeClass('orders-table-row-hidden'); 
-            $('.orders-filtered').each(searchValidate);
-        }
-    }
-    /////////////searching orders on input
-    $('#searchOrders').on('input', searchCheck);
-    ///////faq show needed questions block
+     ///////faq show needed questions block
     $('.card-header').click(function(){
         var faqBlockLink = $(this).data('faq-block');
         $('.faq-block').each(function(){
@@ -594,10 +468,14 @@ $(document).ready(function(){
         $('#faqVideoDelivery').on('show.bs.modal', function(){
             $(this).find('iframe').attr('src', url2+'?autoplay=1');
         });
-    //////////orders table
+    //////button animation
+    let btnBlue = $(".waves-effect");
+    if (btnBlue && btnBlue.length > 0) {
+        Waves.init();
+    };
+    //////////TABLES/////////////////
     $.fn.dataTable.moment( 'M/D/YYYY' );
      $('#ordersTable').DataTable({
-         
          sDom: 'fr<"fixed-table-height"t>p',
          "info": false,
          "lengthChange": false,
@@ -609,15 +487,346 @@ $(document).ready(function(){
          "zeroRecords":  '<i class="zmdi zmdi-search"></i><p>No orders found</p><p>You can find orders by changing your search or filtering options</p>'             
         }
      });
-     var tableAPI = $('#ordersTable').dataTable().api();
-    $('.table').each(function(){
-        $('#ordersTable_filter').parent().removeClass('col-md-6');
-        $('#ordersTable_filter').parent().addClass('col-md-12');
-        $('#ordersTable_filter').parent().parent().find('.col-md-6').remove();
-        $('#ordersTable_filter label').addClass('input-search-library');
-        $('#ordersTable_filter label input').addClass('input-style');
-        $('#ordersTable_filter label input').attr('placeholder','Search Orders');
-    });
+     var adminTable = $('#adminTable').DataTable({
+         "ajax": "../ajax/adminTable.txt",
+         "sDom": 'fr<"fixed-table-height"t>p',
+         "info": false,
+         "lengthChange": false,
+         "columnDefs": [
+            { "orderable": false, "targets": 6 },
+             {"createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData == 'hold' ) {
+                $(td).css('color', 'red')
+              }}}
+          ],
+         "columns": [
+                 { "data": "orderID" },
+                 { "data": "orderNumber" },
+                 { "data": "shop" },
+                 { "data": "orderDate" },
+                 { "data": "amount" },
+                 { "data": "status"},
+                {
+                     "className": 'details-control',
+                     "orderable": false,
+                     "data": null,
+                     "defaultContent": '',
+                     "render": function () {
+//                         return '<i class="fa fa-plus-square" aria-hidden="true"></i>';
+                         return '<button class="btn btn-blue">Order details</button>';
+                     },
+                     width:"15px"
+                 },
+                {"data":'statusFilter',
+                "className": 'order-status-hidden'}
+             ],
+         "pageLength": 10,
+         "language": {
+         "zeroRecords":  '<i class="zmdi zmdi-search"></i><p>No orders found</p><p>You can find orders by changing your search or filtering options</p>'             
+        }
+     });
+
+    // Add event listener for opening and closing details
+         $('#adminTable tbody').on('click', 'td.details-control', function () {
+             var tr = $(this).closest('tr');
+//             var tdi = tr.find("button");
+             var row = adminTable.row(tr);
+
+             if (row.child.isShown()) {
+                 // This row is already open - close it
+                 row.child.hide();
+                 tr.removeClass('shown');
+//                 tdi.first().removeClass('fa-minus-square');
+//                 tdi.first().addClass('fa-plus-square');
+             }
+             else {
+                 // Open this row
+                 row.child(format(row.data())).show();
+                 tr.addClass('shown');
+//                 tdi.first().removeClass('fa-plus-square');
+//                 tdi.first().addClass('fa-minus-square');
+             }
+         });
+
+         adminTable.on("user-select", function (e, dt, type, cell, originalEvent) {
+             if ($(cell.node()).hasClass("details-control")) {
+                 e.preventDefault();
+             }
+         });
+    function format(d){
+        
+         // `d` is the original data object for the row
+         return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+             '<tr>' +
+                 '<td class="semibold">Shipping address</td>' +
+                 '<td>Billing address</td>' +
+                 '<td>Customer note</td>' +
+             '</tr>' +
+             '<tr>' +
+                 '<td><p class="semibold">'+d.shippingName+'</p><p>'+d.shippingAddress+'</p></td>' +
+                 '<td><p class="semibold">'+d.billingName+'</p><p>'+d.billingAddress+'</p></td>' +
+                 '<td>'+d.customerNote+'</td>' +
+             '</tr>' +
+         '</table>'+
+             
+             
+        '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+             '<tr>' +
+                 '<td class="semibold">Product type</td>' +
+                 '<td>SKU</td>' +
+                 '<td>Stitching color</td>' +
+                 '<td>Drawstring color</td>' +
+                 '<td>Size</td>' +
+                 '<td>QTY</td>' +
+                 '<td>Design Files</td>' +
+             '</tr>' +
+             '<tr>' +
+                 '<td>Hoodie All-Over</td>' +
+                 '<td>'+d.skuHoodie+'</td>' +
+                 '<td>'+d.stitchingHoodie+'</td>' +
+                 '<td>'+d.drawstringHoodie+'</td>' +
+                 '<td>'+d.sizeHoodie+'</td>' +
+                 '<td>'+d.qtyHoodie+'</td>' +
+                 '<td><button>Download</button></td>' +
+             '</tr>' +
+             '<tr>' +
+                 '<td>Sweatshirt All-Over</td>' +
+                 '<td>'+d.skuSweatshirt+'</td>' +
+                 '<td>'+d.stitchingSweatshirt+'</td>' +
+                 '<td>'+d.drawstringSweatshirt+'</td>' +
+                 '<td>'+d.sizeSweatshirt+'</td>' +
+                 '<td>'+d.qtySweatshirt+'</td>' +
+                 '<td><button>Download</button></td>' +
+             '</tr>' +
+             '<tr>' +
+                 '<td>Leggings All-Over</td>' +
+                 '<td>'+d.skuLeggings+'</td>' +
+                 '<td>'+d.stitchingLeggings+'</td>' +
+                 '<td>'+d.drawstringLeggings+'</td>' +
+                 '<td>'+d.sizeLeggings+'</td>' +
+                 '<td>'+d.qtyLeggings+'</td>' +
+                 '<td><button>Download</button></td>' +
+             '</tr>' +
+             '<tr>' +
+                 '<td>Yoga All-Over</td>' +
+                 '<td>'+d.skuYoga+'</td>' +
+                 '<td>'+d.stitchingYoga+'</td>' +
+                 '<td>'+d.drawstringYoga+'</td>' +
+                 '<td>'+d.sizeYoga+'</td>' +
+                 '<td>'+d.qtyYoga+'</td>' +
+                 '<td><button>Download</button></td>' +
+             '</tr>' +
+         '</table>'+
+             '<button>Put on Hold</button><button>Mark as fulfilled</button>';  
+    }
+    ///////////////////
+     //////////filtering
+        var filterString = '';
+        function filterClick(status, tableID, lastColumn, tableAPI){
+            $('#filterTotal').removeClass('filter-active');
+            var filters = [];
+            tableAPI = tableAPI ? tableAPI : $(tableID).dataTable().api();
+            if (filterString.length) {
+                filters = filterString.slice(1, -1).split('|');
+            }
+            var index = filters.indexOf(status);
+            if (index >= 0) {
+                filters.splice(index, 1);
+            } else {
+                filters.push(status);
+            }
+            if (filters.length > 0) {
+                filterString = '(' + filters.join('|') + ')';
+            } else {
+                filterString = '';
+            }
+            tableAPI.column(lastColumn).search(filterString, true).draw();
+        }
+    /////////////// Read a page's GET URL variables and return them as an associative array.
+    function getUrlVars()
+    {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    var filter = getUrlVars()["filter"];
+    
+    /////////filtering orders
+    let orderFilter = $("#ordersTable");
+    if (orderFilter && orderFilter.length > 0) {
+        var tableID="#ordersTable";
+        var lastColumn=6;
+        var tableAPI = $('#ordersTable').dataTable().api();
+        tableView('#ordersTable_filter');
+        /////////getting active filter after page loading
+        if(filter=='total'){
+            $('.orders-table-row').addClass('orders-unfiltered');
+        };
+        if(filter=='pending'){
+            $('.orders-table-row:not(".order-pending")').toggleClass('orders-table-row-hidden');
+            $('.order-pending').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        if(filter=='hold'){
+            $('.orders-table-row:not(".order-hold")').toggleClass('orders-table-row-hidden');
+            $('.order-hold').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        if(filter=='production'){
+            $('.orders-table-row:not(".order-production")').toggleClass('orders-table-row-hidden');
+            $('.order-production').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        if(filter=='shipped'){
+            $('.orders-table-row:not(".order-shipped")').toggleClass('orders-table-row-hidden');
+            $('.order-shipped').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        if(filter=='error'){
+            $('.orders-table-row:not(".order-error")').toggleClass('orders-table-row-hidden');
+            $('.order-error').addClass('orders-filtered');
+            $('#filterTotal').removeClass('filter-active'); 
+        };
+        $("[class*='" + filter + "']").addClass('filter-active');
+        /////resetting filter after last filter unchecked
+        function checkFilter(){
+            if($('.orders-wrapper').find('.filter-active').length === 0){
+                $('#filterTotal').addClass('filter-active');
+                $('.orders-table-row').removeClass('orders-table-row-hidden');
+                $('.orders-table-row').removeClass('orders-filtered');
+                $('.orders-table-row').addClass('orders-unfiltered');
+            }
+        };
+        $('.orders-wrapper .orders').click(function(){
+            $(this).toggleClass('filter-active');
+        });
+        $('#filterTotal').click(function () {
+            $('.orders').removeClass('filter-active');
+            $('#filterTotal').addClass('filter-active');
+            tableAPI = tableAPI ? tableAPI : $('#ordersTable').dataTable().api();
+            filterString = '';
+            tableAPI.column(6).search(filterString, true).draw();
+        });
+        $('#filterPending').click(function () {
+            var status='pending';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+
+        $('#filterHold').click(function () {
+            var status='hold';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+
+        $('#filterProduction').click(function () {
+            var status='production';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+
+        $('#filterShipped').click(function () {
+            var status='shipped';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+
+        $('#filterError').click(function () {
+            var status='error';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+        
+    }
+    let adminFilter = $("#adminTable");
+    if (adminFilter && adminFilter.length > 0) {
+        var tableID="#adminTable";
+        var lastColumn=7;
+        var tableAPI = $('#adminTable').dataTable().api();
+        tableView('#adminTable_filter');
+        $("[class*='" + filter + "']").addClass('filter-active');
+        /////resetting filter after last filter unchecked
+        function checkFilter(){
+            if($('.orders-wrapper').find('.filter-active').length === 0){
+                $('#filterTotal').addClass('filter-active');
+                $('.orders-table-row').removeClass('orders-table-row-hidden');
+                $('.orders-table-row').removeClass('orders-filtered');
+                $('.orders-table-row').addClass('orders-unfiltered');
+            }
+        };
+        $('.orders-wrapper .orders').click(function(){
+            $(this).toggleClass('filter-active');
+        });
+        $('#filterTotal').click(function () {
+            $('.orders').removeClass('filter-active');
+            $('#filterTotal').addClass('filter-active');
+            tableAPI = tableAPI ? tableAPI : $('#adminTable').dataTable().api();
+            filterString = '';
+            tableAPI.column(7).search(filterString, true).draw();
+        });
+        $('#filterPending').click(function () {
+            var status='pending';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+
+        $('#filterHold').click(function () {
+            var status='hold';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+
+        $('#filterProduction').click(function () {
+            var status='production';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+
+        $('#filterShipped').click(function () {
+            var status='shipped';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+
+        $('#filterError').click(function () {
+            var status='error';
+            filterClick(status, tableID, lastColumn, tableAPI);
+        });
+        
+    }
+    /////////////search function
+    var searchInput = $('#ordersTable_filter input','#adminTable_filter input');
+    function searchCheck() { 
+        var search = searchInput.val() ? searchInput.val().toUpperCase() : "";
+        function searchValidate(){
+            var tableRow = $(this).find('td:not([class^="order-color-"],.orders-row-button)');
+            var tableRowText;
+            ///////adding delimiter between cols
+            tableRow.text(function(i, t){
+                tableRowText += i == 0 ? t : '&&' + t;
+            });
+            tableRowText.toUpperCase();
+            if(tableRowText.includes(search)==false){
+                $(tableRow).closest('.orders-table-row').addClass('orders-table-row-hidden');
+                $(tableRow).closest('.orders-table-row').addClass('search-hidden');
+            }        
+        };
+        if($('#filterTotal').hasClass('filter-active')){
+            $('.orders-unfiltered').removeClass('orders-table-row-hidden'); 
+            $('.orders-unfiltered').each(searchValidate);
+        } else{
+            $('.orders-filtered').removeClass('orders-table-row-hidden'); 
+            $('.orders-filtered').each(searchValidate);
+        }
+    }
+    /////////////searching orders on input
+    $('#searchOrders').on('input', searchCheck);
+    ///////changing tables search bar
+    function tableView(tableID){
+        $(tableID).parent().removeClass('col-md-6');
+        $(tableID).parent().addClass('col-md-12');
+        $(tableID).parent().parent().find('.col-md-6').remove();
+        $(tableID + ' label').addClass('input-search-library');
+        $(tableID + ' label input').addClass('input-style');
+        $(tableID + ' label input').attr('placeholder','Search Orders');
+    };
     ////resetting focus on search orders input at enter press
      $('div.dataTables_filter input').keypress(function(e){
         if (e.keyCode == 13) {

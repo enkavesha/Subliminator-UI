@@ -484,6 +484,16 @@ button {
   max-width: 80%;
   margin: 0 auto; }
 
+.checkbox-pocket-wrapper {
+  position: absolute;
+  top: 3px;
+  right: 13px;
+  width: auto; }
+  .checkbox-pocket-wrapper .pocket-checkmark {
+    margin: 0;
+    margin-left: 0 !important;
+    z-index: 5; }
+
 .checkbox-label {
   font-weight: 600;
   width: 100%;
@@ -1021,7 +1031,8 @@ header .review-button {
       flex-flow: column;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
-      justify-content: center; }
+      justify-content: center;
+      position: relative; }
 
 .stringcolor-wrapper {
   display: -webkit-box;
@@ -1991,9 +2002,6 @@ footer {
 .fixed-table-height {
   min-height: 370px; }
 
-#ordersTable_wrapper {
-  padding: 0; }
-
 #ordersTable {
   width: 100%; }
 
@@ -2016,23 +2024,25 @@ footer {
     width: 2px;
     background: #0c77f8; }
 
-#ordersTable_wrapper .dataTables_filter {
-  text-align: left; }
-  #ordersTable_wrapper .dataTables_filter label {
-    height: 40px;
-    width: 100%;
-    font-size: 0;
-    position: relative; }
-    #ordersTable_wrapper .dataTables_filter label input {
-      position: absolute;
-      font-weight: 600;
-      color: #424242;
+#ordersTable_wrapper, #adminTable_wrapper {
+  padding: 0; }
+  #ordersTable_wrapper .dataTables_filter, #adminTable_wrapper .dataTables_filter {
+    text-align: left; }
+    #ordersTable_wrapper .dataTables_filter label, #adminTable_wrapper .dataTables_filter label {
+      height: 40px;
       width: 100%;
-      top: 0;
-      margin-left: 0; }
-      #ordersTable_wrapper .dataTables_filter label input:focus {
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important; }
+      font-size: 0;
+      position: relative; }
+      #ordersTable_wrapper .dataTables_filter label input, #adminTable_wrapper .dataTables_filter label input {
+        position: absolute;
+        font-weight: 600;
+        color: #424242;
+        width: 100%;
+        top: 0;
+        margin-left: 0; }
+        #ordersTable_wrapper .dataTables_filter label input:focus, #adminTable_wrapper .dataTables_filter label input:focus {
+          -webkit-box-shadow: none !important;
+          box-shadow: none !important; }
 
 table.dataTable {
   border-collapse: collapse !important; }
@@ -2192,6 +2202,22 @@ table.dataTable thead > tr > td.sorting {
       margin: 0 0 10px; }
     .popover-order p:last-child {
       margin: 0; }
+
+.popover-pocket {
+  max-width: 140px; }
+
+.btn-disabled {
+  opacity: 0.65; }
+  .btn-disabled:hover {
+    background: #0c77f8 !important;
+    border-color: #0c77f8 !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important; }
+
+[data-toggle="popover-pocket"] {
+  float: right;
+  font-size: 15px !important;
+  margin: 0 5px 0 0 !important; }
 
 .btn-order {
   display: -webkit-inline-box;

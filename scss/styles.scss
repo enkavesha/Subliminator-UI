@@ -316,8 +316,24 @@ button{
         margin: 0 auto;
     }    
 }
-
 ///////////end of modal
+.checkbox-pocket-wrapper{
+    position: absolute;
+    top: 3px;
+    right: 13px;
+    width: auto;
+    .pocket-checkmark{
+        margin: 0;
+        margin-left: 0!important;
+        z-index: 5;
+    }
+}
+#checkboxPocket .checkbox-label{
+//    position: absolute;
+//    top: 0;
+//    right: 0;
+//    z-index: 2;
+}
 .checkbox-label{
         font-weight: 600;
         width: 100%;
@@ -879,6 +895,7 @@ header{
             display: flex;
             flex-flow: column;
             justify-content: center;
+            position: relative;
             
         }
 //        &:last-child{
@@ -1884,10 +1901,6 @@ footer {
   flex-shrink: 0;
 }
 footer{
-//    position: absolute;
-//    bottom: 0;
-//    left: 0;
-//    right: 0;
     margin: 80px auto 10px;
     text-align: center;
     color: $grey;
@@ -1918,9 +1931,6 @@ footer{
 .fixed-table-height{
     min-height: 370px
 }
-#ordersTable_wrapper{
-    padding: 0;
-}
 #ordersTable{
     width: 100%;
 }
@@ -1945,7 +1955,8 @@ footer{
     }
         
 }
-#ordersTable_wrapper{
+#ordersTable_wrapper, #adminTable_wrapper{
+    padding: 0;
     .dataTables_filter{
         text-align: left;
         label{
@@ -2152,6 +2163,22 @@ table.dataTable thead > tr > td.sorting {
             margin: 0;
         }
     }
+}
+.popover-pocket{
+    max-width: 140px;
+}
+.btn-disabled{
+    opacity: 0.65;
+    &:hover{
+        background: $blue!important;
+        border-color: $blue!important;
+        box-shadow: none!important;
+    }
+}
+[data-toggle="popover-pocket"]{
+    float: right;
+    font-size: 15px!important;
+    margin: 0 5px 0 0!important;
 }
 .btn-order{
     display: inline-flex;
