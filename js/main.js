@@ -493,11 +493,7 @@ $(document).ready(function(){
          "info": false,
          "lengthChange": false,
          "columnDefs": [
-            { "orderable": false, "targets": 6 },
-             {"createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData == 'hold' ) {
-                $(td).css('color', 'red')
-              }}}
+            { "orderable": false, "targets": 6 }
           ],
          "columns": [
                  { "data": "orderID" },
@@ -512,7 +508,6 @@ $(document).ready(function(){
                      "data": null,
                      "defaultContent": '',
                      "render": function () {
-//                         return '<i class="fa fa-plus-square" aria-hidden="true"></i>';
                          return '<button class="btn btn-order waves-effect waves-light btn-details">Order details</button>';
                      },
                      width:"15px"

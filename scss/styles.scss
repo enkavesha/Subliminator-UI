@@ -356,6 +356,7 @@ button{
         transition:opacity 0.2s linear;
         span:nth-child(2){
             margin: 0 0 0 30px;
+            cursor: pointer;
         }
         /////checkmark on hover
         &:hover input ~ .checkbox-checkmark{
@@ -838,6 +839,7 @@ header{
             position: absolute;
             top: 15px;
             left: 0;
+            cursor: pointer;
         }
         input{
             ///////label color when checked
@@ -948,6 +950,7 @@ header{
             background: #fff;
             border-radius: 50%;
             border: 2px solid $mediumGrey;
+            cursor: pointer;
             &:after{
                 content: "";
                 position: absolute;
@@ -2686,6 +2689,9 @@ textarea[name="modalHoldReason"]{
     width: 100%;
     .checkbox-label span:nth-child(2){
         margin: 0;
+    }
+    tr{
+        border-bottom-color: $lightGrey;
     }
 }
 .usps-modal-wrapper{

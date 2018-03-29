@@ -534,7 +534,8 @@ button {
   -o-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear; }
   .checkbox-label span:nth-child(2) {
-    margin: 0 0 0 30px; }
+    margin: 0 0 0 30px;
+    cursor: pointer; }
   .checkbox-label:hover input ~ .checkbox-checkmark {
     background: #0c77f8;
     border: 2px solid #0c77f8; }
@@ -969,7 +970,8 @@ header .review-button {
   .size-range .size-range-label .size-checkmark {
     position: absolute;
     top: 15px;
-    left: 0; }
+    left: 0;
+    cursor: pointer; }
   .size-range .size-range-label input:checked ~ span {
     color: #0c77f8; }
 
@@ -1095,7 +1097,8 @@ header .review-button {
     width: 20px;
     background: #fff;
     border-radius: 50%;
-    border: 2px solid #e2e2e2; }
+    border: 2px solid #e2e2e2;
+    cursor: pointer; }
     .stringcolor-wrapper .checkmark:after {
       content: "";
       position: absolute;
@@ -2675,6 +2678,8 @@ textarea[name="modalHoldReason"] {
   width: 100%; }
   #modalTable .checkbox-label span:nth-child(2) {
     margin: 0; }
+  #modalTable tr {
+    border-bottom-color: #f5f5f5; }
 
 .usps-modal-wrapper {
   display: -webkit-box;
