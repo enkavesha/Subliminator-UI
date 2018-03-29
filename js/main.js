@@ -642,27 +642,28 @@ $(document).ready(function(){
          '</table>'+
              '<div class="btn-details-wrapper">'+
              '<button class="btn waves-effect waves-light btn-order btn-order-hold" data-toggle="modal" data-target="#modalPutOnHold"><i class="zmdi zmdi-info"></i>Put on Hold</button>' +
-            '<button class="btn btn-blue waves-effect waves-light" data-toggle="modal" data-target="#modalFulfillOrder" id="#detailsFulfill">Mark as fulfilled<i class="zmdi zmdi-arrow-right"></i></button>'+
+            '<button class="btn btn-blue waves-effect waves-light" id="#detailsFulfill">Mark as fulfilled<i class="zmdi zmdi-arrow-right"></i></button>'+
              '</div>';  
     };
     
-//    $("#detailsFulfill").on("click", function() { 
-//      $('#modalFulfillOrder').modal('show');
-//      $('#modalFulfillOrder').on('show.bs.modal', function() {
-//        $('#modalFulfillOrder').find('#modalFulfillTable').append('<p>append some html here</p>');
-//      });
-//    });
-    
-    $('#modalFulfillOrder').on('show.bs.modal', function() { 
-        $('#detailsFulfill').click(function(){         
-//            $(this).parent().parent().find('#detailsTableBottom').clone().appendTo('#modalFulfillTable');
-            $('<div id="lel"/>').appendTo('#modalFulfillTable');
-        });
-    }) ;
-//    $('#detailsFulfill').click(function(){
-//        var modalTable= $(this).parent().parent().find('#detailsTableBottom').clone();
-//         modalTable.appendTo('#modalFulfillTable');
-//    });
+            var showTable; 
+
+            $('#detailsFulfill').on('click', function() { 
+                $('#modalFulfillOrder').modal('show');
+                showTable=$(this).parent().parent().find('#detailsTableBottom').clone();
+            });
+
+            $('#modalFulfillOrder').on('shown.bs.modal', function() {
+                if (showTable) {
+                    showTable.appendTo('#modalFulfillTable');
+                }
+            });
+ 
+//    $('#modalFulfillOrder').on('show.bs.modal', function() {         
+//            $('#detailsTableBottom').clone().appendTo('#modalFulfillTable');
+//
+//    }) ;
+
     ///////////////////
      //////////filtering
         var filterString = '';
