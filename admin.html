@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subliminator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="row content-headline row-width">
+                        <div class="col-6 left-panel">
+                           <div class="breadcrumbs">
+                                <p class="product-name semibold">Admin</p>
+                                <a href="index.html"><i class="zmdi zmdi-hc-fw zmdi-arrow-left zmdi-margin-right"></i>Back To Home</a>
+                            </div>
+                       </div>
+                </div>
+            </div>
+        </header>
+        <section class="main-content-wrapper">
+            <div class="container-fluid">
+                <div class="row row-width" id="paymentWarning">
+                    <div class="col-12">
+                        <div class="payment-warning">
+                            <p>No Payment Methods Set Up</p> <i class="zmdi zmdi-hc-fw zmdi-alert-octagon"></i> <span>Please set up one or more payment methods on your</span> <a href="account.html">Account Settings Page</a>
+                            <i class="zmdi zmdi-hc-fw zmdi-close" id="warningClose"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-width">
+                    <div class="col-12">
+                        <div class="white-block">
+                            <div class="product-headline">
+                                <p><span>Admin</span></p>
+                            </div>
+                            <div class="orders-wrapper orders-admin">
+                                <div class="orders order-color-total filter-active" id="filterTotal">
+                                    <p class="orders-number semibold">346</p>
+                                    <div class="orders-status">
+                                        <p>Total</p>
+                                    </div>
+                                </div>
+                                <div class="orders order-color-hold" id="filterHold">
+                                    <p class="orders-number semibold">0</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-hc-fw zmdi-alert-octagon"></i>On Hold</p>
+                                    </div>
+                                </div>
+                                <div class="orders order-color-production" id="filterProduction">
+                                    <p class="orders-number semibold">205</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-hc-fw zmdi-settings"></i>In Production</p>
+                                    </div>
+                                </div>
+                                <div class="orders order-color-shipped" id="filterShipped">
+                                    <p class="orders-number semibold">76</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-hc-fw zmdi-truck"></i>Fulfilled</p>
+                                    </div>
+                                </div>
+                                <div class="orders order-color-error" id="filterError">
+                                    <p class="orders-number semibold">0</p>
+                                    <div class="orders-status">
+                                        <p><i class="zmdi zmdi-hc-fw zmdi-close-circle"></i>Errors</p>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <table id="adminTable" class="table-nowrap table-row-border table-hover table" data-order='[[ 2, "desc" ]]'>
+                                <thead>
+                                    <tr class="orders-table-header">
+                                        <th><span>Order ID</span></th>
+                                        <th>Order #</th>
+                                        <th>Shop</th>
+                                        <th>Order Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                        <th class="order-status-hidden"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="orders-table-row orders-unfiltered order-pending">
+                                        <td>12345</td>
+                                        <td>SHP405</td>
+                                        <td>storename123</td>
+                                        <td>5/12/2018</td>
+                                        <td>$22</td>
+                                        <td class="order-color-pending">
+                                            
+                                            <div>Pending<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-pending"></i></div>
+                                        </td>
+                                        <td></td>
+                                        <td class="order-status-hidden">pending</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-hold">
+                                        <td>23456</td>
+                                        <td>SHP407</td>
+                                        <td>anotherstore</td>
+                                        <td>4/10/2018</td>
+                                        <td>$38</td>
+                                        <td class="order-color-hold">
+                                            
+                                            <div>Please Contact Us<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-hold"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-hold waves-effect waves-light"><i class="zmdi zmdi-comments"></i>Contact us</button></td>
+                                        <td class="order-status-hidden">hold</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-production">
+                                        <td>34567</td>
+                                        <td>SHP409</td>
+                                        <td>fabulousstore</td>
+                                        <td>4/1/2017</td>
+                                        <td>$36</td>
+                                        <td class="order-color-production">
+                                            
+                                            <div>In Production<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-production"></i></div>
+                                        </td>
+                                        <td></td>
+                                        <td class="order-status-hidden">production</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-shipped">
+                                        <td>45678</td>
+                                        <td>SHP411</td>
+                                        <td>knowyourstore</td>
+                                        <td>4/5/2019</td>
+                                        <td>$28</td>
+                                        <td class="order-color-shipped">
+                                            
+                                            <div>Fulfilled<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-shipped"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-shipped waves-effect waves-light"><i class="zmdi zmdi-pin"></i>View tracking</button></td>
+                                        <td class="order-status-hidden">shipped</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-error">
+                                        <td>42367</td>
+                                        <td>SHP264</td>
+                                        <td>rickroll</td>
+                                        <td>8/27/2018</td>
+                                        <td>$92</td>
+                                        <td class="order-color-error">
+                                            
+                                            <div>Payment Declined<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-error"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-error waves-effect waves-light"><i class="zmdi zmdi-replay"></i>Retry Payment</button></td>
+                                        <td class="order-status-hidden">error</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-pending">
+                                        <td>86524</td>
+                                        <td>SHP629</td>
+                                        <td>thankyou</td>
+                                        <td>8/10/2018</td>
+                                        <td>$36</td>
+                                        <td class="order-color-pending">
+                                            
+                                            <div>Pending<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-pending"></i></div>
+                                        </td>
+                                        <td></td>
+                                        <td class="order-status-hidden">pending</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-shipped">
+                                        <td>45678</td>
+                                        <td>SHP378</td>
+                                        <td>itstoohard</td>
+                                        <td>12/8/2019</td>
+                                        <td>$108</td>
+                                        <td class="order-color-shipped">
+                                            
+                                            <div>Fulfilled<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-shipped"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-shipped waves-effect waves-light"><i class="zmdi zmdi-pin"></i>View tracking</button></td>
+                                        <td class="order-status-hidden">shipped</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-production">
+                                        <td>23764</td>
+                                        <td>SHP301</td>
+                                        <td>haveaniceday</td>
+                                        <td>4/3/2018</td>
+                                        <td>$78</td>
+                                        <td class="order-color-production">
+                                            
+                                            <div>In Production<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-production"></i></div>
+                                        </td>
+                                        <td></td>
+                                        <td class="order-status-hidden">production</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-hold">
+                                        <td>32978</td>
+                                        <td>SHP205</td>
+                                        <td>momsspaghetti</td>
+                                        <td>10/9/2018</td>
+                                        <td>$54</td>
+                                        <td class="order-color-hold">
+                                            
+                                            <div>Please Contact Us<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-hold"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-hold waves-effect waves-light"><i class="zmdi zmdi-comments"></i>Contact us</button></td>
+                                        <td class="order-status-hidden">hold</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-pending">
+                                        <td>23468</td>
+                                        <td>SHP321</td>
+                                        <td>seeyoulater</td>
+                                        <td>6/10/2018</td>
+                                        <td>$72</td>
+                                        <td class="order-color-pending">
+                                            
+                                            <div>Pending<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-pending"></i></div>
+                                        </td>
+                                        <td></td>
+                                        <td class="order-status-hidden">pending</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-production">
+                                        <td>62379</td>
+                                        <td>SHP723</td>
+                                        <td>fiveminuteslater</td>
+                                        <td>9/5/2018</td>
+                                        <td>$28</td>
+                                        <td class="order-color-production">
+                                            
+                                            <div>In Production<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-production"></i></div>
+                                        </td>
+                                        <td></td>
+                                        <td class="order-status-hidden">production</td>
+                                    </tr>
+                                    <tr class="orders-table-row orders-unfiltered order-error">
+                                        <td>75682</td>
+                                        <td>SHP666</td>
+                                        <td>devilwearsprada</td>
+                                        <td>8/1/2018</td>
+                                        <td>$32</td>
+                                        <td class="order-color-error">
+                                            
+                                            <div>Payment Declined<i class="zmdi zmdi-hc-fw zmdi-help zmdi-order-help" data-toggle="popover-error"></i></div>
+                                        </td>
+                                        <td class="orders-row-button"><button class="btn btn-order btn-order-error waves-effect waves-light"><i class="zmdi zmdi-replay"></i>Retry Payment</button></td>
+                                        <td class="order-status-hidden">error</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-logo">
+                <img src="images/logo.svg">
+            </div>
+            <p>Copyright © 2018 All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+            </div>
+        </footer>   
+        <div id="modalPutOnHold" class="modal modal-lg fade" role="dialog">
+            <div class="modal-dialog modal-lg modal-hold">
+                <div class="modal-content modal-content-hold">
+                    <div class="modal-body modal-body-hold modal-body-visible">
+                        <div class="product-headline">
+                            <p><span>Order</span> On Hold</p>
+                            <div class="library-close" data-content="closeDesignPreview"  data-dismiss="modal"></div>
+                        </div>
+                        <div class="divider"></div>
+                        <p class="semibold">Reason:</p>
+                        <p>Please specify reason to put this order on hold. This way our customer service can follow up with the customer to inform them and resolve the issue. </p>
+                        <textarea type="text" class="input-style" placeholder="Explain reason to put order on hold" name="modalHold"></textarea>
+                        <div class="divider"></div>
+                        <div class="btn-details-wrapper btn-modal-hold">
+                            <button class="btn btn-lg btn-upload btn-grey" data-dismiss="modal">Cancel</button>
+                            <button class="btn waves-effect waves-light btn-order btn-order-hold" data-dismiss="modal"><i class="zmdi zmdi-info"></i>Put on Hold</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div id="modalFulfillOrder" class="modal modal-lg fade" role="dialog">
+            <div class="modal-dialog modal-lg modal-fulfill">
+                <div class="modal-content modal-content-fulfill">
+                    <div class="modal-body modal-body-fulfill modal-body-visible">
+                        <div class="product-headline">
+                            <p><span>Fulfill</span> Order</p>
+                            <div class="library-close" data-content="closeDesignPreview"  data-dismiss="modal"></div>
+                        </div>
+                        <div class="divider"></div>
+                        <div id="modalFulfillTable">
+                        </div>
+                        <div class="usps-wrapper">
+                            <div class="product-headline">
+                                <p><span>USPS</span> Tracking Number</p>
+                                <input type="text" class="input-style" placeholder="Enter USPS Tracking Number" name="uspsTrack">
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="btn-details-wrapper btn-modal-hold">
+                            <button class="btn btn-lg btn-upload btn-grey" data-dismiss="modal">Cancel</button>
+                            <button class="btn waves-effect waves-light btn-blue" data-dismiss="modal">Fulfill order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/datatables.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/datetime-moment.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/waves.min.js"></script>
+    </body>
+</html>

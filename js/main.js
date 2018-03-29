@@ -513,7 +513,7 @@ $(document).ready(function(){
                      "defaultContent": '',
                      "render": function () {
 //                         return '<i class="fa fa-plus-square" aria-hidden="true"></i>';
-                         return '<button class="btn btn-blue">Order details</button>';
+                         return '<button class="btn btn-order waves-effect waves-light btn-details">Order details</button>';
                      },
                      width:"15px"
                  },
@@ -529,22 +529,25 @@ $(document).ready(function(){
     // Add event listener for opening and closing details
          $('#adminTable tbody').on('click', 'td.details-control', function () {
              var tr = $(this).closest('tr');
-//             var tdi = tr.find("button");
+             var tdButton = tr.find("button");
              var row = adminTable.row(tr);
 
              if (row.child.isShown()) {
                  // This row is already open - close it
                  row.child.hide();
                  tr.removeClass('shown');
-//                 tdi.first().removeClass('fa-minus-square');
-//                 tdi.first().addClass('fa-plus-square');
+//                 tdi.first().removeClass('btn-details');
+                 tr.find('td:first-child').removeClass('details-active-order');
+                 tdButton.first().removeClass('btn-details-collapsed');
              }
              else {
                  // Open this row
-                 row.child(format(row.data())).show();
+//                 row.child(format(row.data())).show();
+                 row.child(format(row.data()),'details-wrapper').show();
                  tr.addClass('shown');
-//                 tdi.first().removeClass('fa-plus-square');
-//                 tdi.first().addClass('fa-minus-square');
+                 tr.find('td:first-child').addClass('details-active-order');
+                 tdButton.first().addClass('btn-details-collapsed');
+//                 tdi.first().addClass('btn-details');
              }
          });
 
@@ -558,18 +561,24 @@ $(document).ready(function(){
                 var status = this.textContent;
                 if (status) {
                     var row = this.closest('tr');
-                    $(row).find('button').addClass('btn-order btn-order-' + status);
+                    $(row).find('button').addClass('btn-order-' + status);
+                    $(row).find('td:nth-child(6)').addClass('order-color-' + status);
+                };
+                if(status=='error'){
+                    var row = this.closest('tr');
+                    $(row).find('.details-control').removeClass('details-control');
+                    $(row).find('button').css('display','none');
                 }
-            })
+            });
         });
     function format(d){
         
          // `d` is the original data object for the row
-         return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+         return '<table cellpadding="5" cellspacing="0" border="0" class="details-table" id="detailsTableTop">' +
              '<tr>' +
-                 '<td class="semibold">Shipping address</td>' +
-                 '<td>Billing address</td>' +
-                 '<td>Customer note</td>' +
+                 '<th>Shipping address</th>' +
+                 '<th>Billing address</th>' +
+                 '<th>Customer note</th>' +
              '</tr>' +
              '<tr>' +
                  '<td><p class="semibold">'+d.shippingName+'</p><p>'+d.shippingAddress+'</p></td>' +
@@ -579,55 +588,81 @@ $(document).ready(function(){
          '</table>'+
              
              
-        '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+        '<table cellpadding="5" cellspacing="0" border="0" class="details-table" id="detailsTableBottom">' +
              '<tr>' +
-                 '<td class="semibold">Product type</td>' +
-                 '<td>SKU</td>' +
-                 '<td>Stitching color</td>' +
-                 '<td>Drawstring color</td>' +
-                 '<td>Size</td>' +
-                 '<td>QTY</td>' +
-                 '<td>Design Files</td>' +
+                 '<th class="details-eye-icon"></th>' +
+                 '<th>Product type</th>' +
+                 '<th>SKU</th>' +
+                 '<th class="details-stitching"></th>' +
+                 '<th class="details-drawstring"></th>' +
+                 '<th>Size</th>' +
+                 '<th>QTY</th>' +
+                 '<th>Design Files</th>' +
              '</tr>' +
              '<tr>' +
+                 '<td class="details-eye-icon"><i class="zmdi zmdi-eye"></i></td>' +
                  '<td>Hoodie All-Over</td>' +
                  '<td>'+d.skuHoodie+'</td>' +
                  '<td>'+d.stitchingHoodie+'</td>' +
                  '<td>'+d.drawstringHoodie+'</td>' +
                  '<td>'+d.sizeHoodie+'</td>' +
                  '<td>'+d.qtyHoodie+'</td>' +
-                 '<td><button>Download</button></td>' +
+                 '<td><button class="btn btn-blue waves-effect waves-light btn-upload">Download<i class="zmdi zmdi-download"></i></button></td>' +
              '</tr>' +
              '<tr>' +
+                 '<td class="details-eye-icon"><i class="zmdi zmdi-eye"></i></td>' +
                  '<td>Sweatshirt All-Over</td>' +
                  '<td>'+d.skuSweatshirt+'</td>' +
                  '<td>'+d.stitchingSweatshirt+'</td>' +
-                 '<td>'+d.drawstringSweatshirt+'</td>' +
+                 '<td class="details-not-available">N/A</td>' +
                  '<td>'+d.sizeSweatshirt+'</td>' +
                  '<td>'+d.qtySweatshirt+'</td>' +
-                 '<td><button>Download</button></td>' +
+                 '<td><button class="btn btn-blue waves-effect waves-light btn-upload">Download<i class="zmdi zmdi-download"></i></button></td>' +
              '</tr>' +
              '<tr>' +
+                 '<td class="details-eye-icon"><i class="zmdi zmdi-eye"></i></td>' +
                  '<td>Leggings All-Over</td>' +
                  '<td>'+d.skuLeggings+'</td>' +
                  '<td>'+d.stitchingLeggings+'</td>' +
-                 '<td>'+d.drawstringLeggings+'</td>' +
+                 '<td class="details-not-available">N/A</td>' +
                  '<td>'+d.sizeLeggings+'</td>' +
                  '<td>'+d.qtyLeggings+'</td>' +
-                 '<td><button>Download</button></td>' +
+                 '<td><button class="btn btn-blue waves-effect waves-light btn-upload">Download<i class="zmdi zmdi-download"></i></button></td>' +
              '</tr>' +
              '<tr>' +
+                 '<td class="details-eye-icon"><i class="zmdi zmdi-eye"></i></td>' +
                  '<td>Yoga All-Over</td>' +
                  '<td>'+d.skuYoga+'</td>' +
                  '<td>'+d.stitchingYoga+'</td>' +
-                 '<td>'+d.drawstringYoga+'</td>' +
+                 '<td class="details-not-available">N/A</td>' +
                  '<td>'+d.sizeYoga+'</td>' +
                  '<td>'+d.qtyYoga+'</td>' +
-                 '<td><button>Download</button></td>' +
+                 '<td><button class="btn btn-blue waves-effect waves-light btn-upload">Download<i class="zmdi zmdi-download"></i></button></td>' +
              '</tr>' +
          '</table>'+
-             '<button>Put on Hold</button><button>Mark as fulfilled</button>';  
-    }
+             '<div class="btn-details-wrapper">'+
+             '<button class="btn waves-effect waves-light btn-order btn-order-hold" data-toggle="modal" data-target="#modalPutOnHold"><i class="zmdi zmdi-info"></i>Put on Hold</button>' +
+            '<button class="btn btn-blue waves-effect waves-light" data-toggle="modal" data-target="#modalFulfillOrder" id="#detailsFulfill">Mark as fulfilled<i class="zmdi zmdi-arrow-right"></i></button>'+
+             '</div>';  
+    };
+    
+//    $("#detailsFulfill").on("click", function() { 
+//      $('#modalFulfillOrder').modal('show');
+//      $('#modalFulfillOrder').on('show.bs.modal', function() {
+//        $('#modalFulfillOrder').find('#modalFulfillTable').append('<p>append some html here</p>');
+//      });
+//    });
+    
+    $('#modalFulfillOrder').on('show.bs.modal', function() { 
+        $('#detailsFulfill').click(function(){         
+//            $(this).parent().parent().find('#detailsTableBottom').clone().appendTo('#modalFulfillTable');
+            $('<div id="lel"/>').appendTo('#modalFulfillTable');
+        });
+    }) ;
+//    $('#detailsFulfill').click(function(){
+//        var modalTable= $(this).parent().parent().find('#detailsTableBottom').clone();
+//         modalTable.appendTo('#modalFulfillTable');
+//    });
     ///////////////////
      //////////filtering
         var filterString = '';

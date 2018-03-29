@@ -903,18 +903,12 @@ header{
             position: relative;
             
         }
-//        &:last-child{
-//            img{
-//                width: 40%!important;
-//            }
-//        }
     }
 }
 
 .stringcolor-wrapper{
         display: flex;
         flex-flow: wrap;
-//        margin: 0 20px 0 0;
         transition: opacity 0.5s linear;
         label{
             margin: 0 25px 0 0;
@@ -1626,6 +1620,9 @@ input{
     text-align: center;
     border-top: 2px solid $lightGrey;
     border-bottom: 2px solid $lightGrey;
+    &.orders-admin .orders{
+        width: calc(100%/5);
+    }
     .orders{
         position: relative;
         a span{
@@ -2033,7 +2030,17 @@ table.dataTable thead .sorting_desc_disabled:after {
 tr:hover{
     background: $lightGrey;
 }
-th{
+.details-active-order:before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: -20px;
+        height: 20px;
+        width: 2px;
+        background: $blue;
+}
+#ordersTable th{
     font-size: 15px;
     &:nth-child(1){
         width: 15%!important;
@@ -2054,8 +2061,33 @@ th{
         width: 17%!important;
     }
 }
+#adminTable th{
+    font-size: 15px;
+    &:nth-child(1){
+        width: 12%!important;
+    }
+    &:nth-child(2){
+        width: 12%!important;
+    }
+    &:nth-child(3){
+        width: 12%!important;
+    }
+    &:nth-child(4){
+        width: 16%!important;
+    }
+    &:nth-child(5){
+        width: 12%!important;
+    }
+    &:nth-child(6){
+        width: 21%!important;
+    }
+    &:nth-child(7){
+        width: 15%!important;
+    }
+}
 .table td{
     vertical-align: middle;
+    position: relative;
 }
 ul .pagination{
     li a{
@@ -2069,7 +2101,6 @@ ul .pagination{
     border-radius: 2rem;
     margin: 0 2.5px;
     &:focus, &:hover{
-//        box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.2);
         box-shadow: none;
         outline: none;
     }
@@ -2123,7 +2154,7 @@ tr td{
         align-items: center;
         line-height: 20px;
 }
-.orders-table-row{
+.orders-table-row, tr{
     width: 100%;
     text-align: left;
     font-size: 15px;
@@ -2151,6 +2182,123 @@ table.dataTable thead > tr > td.sorting_desc,
 table.dataTable thead > tr > td.sorting {
   padding-right: 0px;
 }
+
+
+//////////////////details block
+.details-wrapper{
+    background: $lightGrey;
+}
+.details-table{
+    th{
+        color: $blue;
+        text-transform: uppercase;
+        font-size: 12px!important;
+        position: relative;
+        &.details-stitching:after, &.details-drawstring:after{
+            display: block;
+            height: 12px;
+            width: 20px;
+            position: absolute;
+            top:7px;
+            left: 7px;
+        }
+        &.details-stitching:after{
+            content: url(../images/stitching.svg);
+            width: 15px;
+        }
+        &.details-drawstring:after{
+            content: url(../images/drawstring.svg);
+            width: 15px;
+        }
+    }
+    tr{
+        border-bottom: 2px solid #fff;
+    }
+    .details-not-available{
+        color: $mediumGrey;
+        font-style: italic;
+    }
+}
+#detailsTableTop{
+    border-collapse: separate;
+    border-spacing: 25px 0;
+    margin: 0 0 0 -25px;
+    width: 70%;
+    p{
+        margin: 0;
+    }
+    tr{
+        border-bottom: none;
+    }
+    td{
+        vertical-align: top;
+        line-height: 1;
+    }
+    th{
+        border-bottom: 2px solid #fff;
+        &:nth-child(1){
+            width: calc(100%/3)!important;
+        }
+        &:nth-child(2){
+            width: calc(100%/3)!important;
+        }
+        &:nth-child(3){
+            width: calc(100%/3)!important;
+        }
+    }
+}
+#detailsTableBottom{
+    margin: 20px 0 30px 0;
+    border-top: 2px solid #fff;
+    width: 100%;
+    td{
+        font-weight: 600;
+    }
+    th{
+        &:nth-child(1){
+            width: 2%!important;
+        }
+        &:nth-child(2){
+            width: 20%!important;
+        }
+        &:nth-child(3){
+            width: 15%!important;
+        }
+        &:nth-child(4){
+            width: 10%!important;
+        }
+        &:nth-child(5){
+            width: 10%!important;
+        }
+        &:nth-child(6){
+            width: 8%!important;
+        }
+        &:nth-child(7){
+            width: 8%!important;
+        }
+        &:nth-child(8){
+            width: 10%!important;
+        }
+    }
+    .details-eye-icon{
+        position: relative;
+        padding: 5px 0;
+        i{
+            vertical-align: middle;
+            margin: 0 0 0 5px;
+        }
+    }
+    .btn-upload{
+        width: 100%;
+        justify-content: center;
+        height: 25px;
+        padding: 0;
+        i{
+            margin: 0 0 0 5px;
+        }
+    }
+}
+//////////////////
 .orders-row-button{
     display: inline-flex;
     align-items: center;
@@ -2177,6 +2325,7 @@ table.dataTable thead > tr > td.sorting {
         box-shadow: none!important;
     }
 }
+
 .btn-order{
     display: inline-flex;
     width: 97%;
@@ -2205,6 +2354,64 @@ table.dataTable thead > tr > td.sorting {
         background: $ordersRed;
         &:hover, &:active{
             background: #dc353b;
+        }
+    }
+    &.btn-order-production{
+        background: $blue;
+        &:hover, &:active{
+            background: $darkBlue;
+        }
+    }
+}
+.btn-details{
+    height: 25px;
+    max-height: 25px;
+    padding: 0 10px 0 0;
+    width: 100%;
+    &:after{
+        content:"";
+        display: block;
+        position: absolute;
+        top: 9px;
+        right: 10px;
+        width: 0; 
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #fff; 
+        border-bottom: 4px solid transparent;
+    }
+    &.btn-details-collapsed:after{
+        content:"";
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: 10px;
+        width: 0; 
+        height: 0;  
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid #fff; 
+        border-top: 4px solid transparent; 
+    }
+}
+.btn-details-wrapper{
+    margin: 0 auto 20px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    button{
+        display: inline-flex;
+        vertical-align: middle;
+        justify-content: center;
+        font-size: 12px;
+        padding: 7px 0;
+        max-height: 35px;
+        width: 18%;
+        margin: 0 5px;
+        line-height: 15px;
+        i{
+            font-size: 15px!important;
         }
     }
 }
@@ -2424,5 +2631,30 @@ table.dataTable thead > tr > td.sorting {
 }
 .card-body{
     padding: 0;
+}
+/////////////modals admin page
+/////////////modal on hold
+#modalPutOnHold, #modalFulfillOrder{
+    margin: 0 auto;
+    .product-headline{
+        align-items: center;
+    }
+}
+.modal-body-hold, .modal-body-fulfill{
+    text-align: left;
+    padding: 10px 20px;
+    p{
+        margin: 0;
+        line-height: 1;
+    }
+    height: auto;
+}
+.btn-modal-hold{
+    margin: 15px auto;
+}
+textarea[name="modalHold"]{
+    margin: 10px 0 0 0;
+    resize: none;
+    min-height: 200px;
 }
 @import "media-queries";
