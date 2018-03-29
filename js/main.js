@@ -488,7 +488,7 @@ $(document).ready(function(){
         }
      });
      var adminTable = $('#adminTable').DataTable({
-         "ajax": "../ajax/adminTable.txt",
+         "ajax": "adminTable.txt",
          "sDom": 'fr<"fixed-table-height"t>p',
          "info": false,
          "lengthChange": false,
