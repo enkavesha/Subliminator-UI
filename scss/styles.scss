@@ -40,6 +40,9 @@ p{
 .optional{
     color: $mediumGrey;
 }
+.display-none{
+    display: none!important;
+}
 .left-panel{
     max-width: 660px;
     padding-right: 7.5px;
@@ -2219,6 +2222,22 @@ table.dataTable thead > tr > td.sorting {
         font-style: italic;
     }
 }
+.hold-reason-wrapper{
+    width: 100%;
+    #detailsTableHold{
+        width: 100%;
+        td{
+            font-size: 15px;
+            line-height: 1;
+        }
+        tr{
+            border-bottom: none;
+        }
+        th{
+            border-bottom: 2px solid #fff;
+        }
+    }
+}
 #detailsTableTop{
     border-collapse: separate;
     border-spacing: 25px 0;
@@ -2323,6 +2342,10 @@ table.dataTable thead > tr > td.sorting {
         background: $blue!important;
         border-color: $blue!important;
         box-shadow: none!important;
+    }
+    &.btn-disabled-yellow{
+        background: $yellow!important;
+        border-color: $yellow!important;
     }
 }
 
@@ -2635,7 +2658,6 @@ table.dataTable thead > tr > td.sorting {
 /////////////modals admin page
 /////////////modal on hold
 #modalPutOnHold, #modalFulfillOrder{
-    margin: 0 auto;
     .product-headline{
         align-items: center;
     }
@@ -2649,6 +2671,9 @@ table.dataTable thead > tr > td.sorting {
     }
     height: auto;
 }
+.modal-dialog-fulfill{
+    max-width: 800px;
+}
 .btn-modal-hold{
     margin: 15px auto;
 }
@@ -2656,5 +2681,61 @@ textarea[name="modalHold"]{
     margin: 10px 0 0 0;
     resize: none;
     min-height: 200px;
+}
+#modalTable{
+    width: 100%;
+    .checkbox-label span:nth-child(2){
+        margin: 0;
+    }
+}
+.usps-modal-wrapper{
+    display: flex;
+    margin: 10px 0 0 0;
+    >div{
+        width: 35%;
+        &:before{
+            top: 5px;
+        }
+    }
+    input{
+        height: 35px;
+        width: 100%;
+    }
+}
+.usps-wrapper{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    margin: 0 0 15px;
+    line-height: 50px;
+    position: relative;
+    p{
+        margin: 0;
+    }
+    #uspsNumber, #fulfillDate{
+        color: $ordersGreen;
+    }
+    i{
+        color: $ordersGreen;
+    }
+    div{
+        padding: 0 15px;
+        height: 100%;
+    }
+    div:first-child{
+        i{
+            font-size: 50px!important;            
+            margin: 0 7px 0 0!important;
+        }
+        border-right:2px solid #fff;
+    }
+    div:last-child{
+        display: flex;
+        align-items: center;
+        i{
+            font-size: 27px!important;
+            margin: 0 0 0 10px!important;
+        }
+    }
 }
 @import "media-queries";

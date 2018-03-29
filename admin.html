@@ -259,7 +259,7 @@
                 <a href="">Privacy Policy</a>
             </div>
         </footer>   
-        <div id="modalPutOnHold" class="modal modal-lg fade" role="dialog">
+        <div id="modalPutOnHold" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg modal-hold">
                 <div class="modal-content modal-content-hold">
                     <div class="modal-body modal-body-hold modal-body-visible">
@@ -280,8 +280,8 @@
                 </div>
             </div>
         </div>  
-        <div id="modalFulfillOrder" class="modal modal-lg fade" role="dialog">
-            <div class="modal-dialog modal-lg modal-fulfill">
+        <div id="modalFulfillOrder" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content modal-content-fulfill">
                     <div class="modal-body modal-body-fulfill modal-body-visible">
                         <div class="product-headline">
@@ -291,16 +291,17 @@
                         <div class="divider"></div>
                         <div id="modalFulfillTable">
                         </div>
-                        <div class="usps-wrapper">
+                        <div class="usps-modal-wrapper">
                             <div class="product-headline">
                                 <p><span>USPS</span> Tracking Number</p>
-                                <input type="text" class="input-style" placeholder="Enter USPS Tracking Number" name="uspsTrack">
+                                
                             </div>
+                            <input type="text" class="input-style" placeholder="Enter USPS Tracking Number" name="uspsTrack">
                         </div>
                         <div class="divider"></div>
                         <div class="btn-details-wrapper btn-modal-hold">
                             <button class="btn btn-lg btn-upload btn-grey" data-dismiss="modal">Cancel</button>
-                            <button class="btn waves-effect waves-light btn-blue" data-dismiss="modal">Fulfill order</button>
+                            <button class="btn waves-effect waves-light btn-blue" id="btnFulfillOrder">Fulfill order</button>
                         </div>
                     </div>
                 </div>

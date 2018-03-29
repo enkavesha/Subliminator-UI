@@ -192,6 +192,9 @@ p {
 .optional {
   color: #e2e2e2; }
 
+.display-none {
+  display: none !important; }
+
 .left-panel {
   max-width: 660px;
   padding-right: 7.5px;
@@ -2257,6 +2260,18 @@ table.dataTable thead > tr > td.sorting {
   color: #e2e2e2;
   font-style: italic; }
 
+.hold-reason-wrapper {
+  width: 100%; }
+  .hold-reason-wrapper #detailsTableHold {
+    width: 100%; }
+    .hold-reason-wrapper #detailsTableHold td {
+      font-size: 15px;
+      line-height: 1; }
+    .hold-reason-wrapper #detailsTableHold tr {
+      border-bottom: none; }
+    .hold-reason-wrapper #detailsTableHold th {
+      border-bottom: 2px solid #fff; }
+
 #detailsTableTop {
   border-collapse: separate;
   border-spacing: 25px 0;
@@ -2342,6 +2357,9 @@ table.dataTable thead > tr > td.sorting {
     border-color: #0c77f8 !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
+  .btn-disabled.btn-disabled-yellow {
+    background: #ffbc48 !important;
+    border-color: #ffbc48 !important; }
 
 .btn-order {
   display: -webkit-inline-box;
@@ -2629,12 +2647,10 @@ table.dataTable thead > tr > td.sorting {
 .card-body {
   padding: 0; }
 
-#modalPutOnHold, #modalFulfillOrder {
-  margin: 0 auto; }
-  #modalPutOnHold .product-headline, #modalFulfillOrder .product-headline {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
+#modalPutOnHold .product-headline, #modalFulfillOrder .product-headline {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .modal-body-hold, .modal-body-fulfill {
   text-align: left;
@@ -2644,6 +2660,9 @@ table.dataTable thead > tr > td.sorting {
     margin: 0;
     line-height: 1; }
 
+.modal-dialog-fulfill {
+  max-width: 800px; }
+
 .btn-modal-hold {
   margin: 15px auto; }
 
@@ -2651,6 +2670,60 @@ textarea[name="modalHold"] {
   margin: 10px 0 0 0;
   resize: none;
   min-height: 200px; }
+
+#modalTable {
+  width: 100%; }
+  #modalTable .checkbox-label span:nth-child(2) {
+    margin: 0; }
+
+.usps-modal-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0 0 0; }
+  .usps-modal-wrapper > div {
+    width: 35%; }
+    .usps-modal-wrapper > div:before {
+      top: 5px; }
+  .usps-modal-wrapper input {
+    height: 35px;
+    width: 100%; }
+
+.usps-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-weight: 600;
+  margin: 0 0 15px;
+  line-height: 50px;
+  position: relative; }
+  .usps-wrapper p {
+    margin: 0; }
+  .usps-wrapper #uspsNumber, .usps-wrapper #fulfillDate {
+    color: #20ce66; }
+  .usps-wrapper i {
+    color: #20ce66; }
+  .usps-wrapper div {
+    padding: 0 15px;
+    height: 100%; }
+  .usps-wrapper div:first-child {
+    border-right: 2px solid #fff; }
+    .usps-wrapper div:first-child i {
+      font-size: 50px !important;
+      margin: 0 7px 0 0 !important; }
+  .usps-wrapper div:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .usps-wrapper div:last-child i {
+      font-size: 27px !important;
+      margin: 0 0 0 10px !important; }
 
 @media screen and (min-width: 1200px) {
   #selling-price {

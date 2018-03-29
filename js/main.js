@@ -531,44 +531,58 @@ $(document).ready(function(){
              var tr = $(this).closest('tr');
              var tdButton = tr.find("button");
              var row = adminTable.row(tr);
-
+             var status = $(this).parent().find('.order-status-hidden').text();
+             
              if (row.child.isShown()) {
                  // This row is already open - close it
                  row.child.hide();
                  tr.removeClass('shown');
-//                 tdi.first().removeClass('btn-details');
                  tr.find('td:first-child').removeClass('details-active-order');
                  tdButton.first().removeClass('btn-details-collapsed');
              }
              else {
                  // Open this row
-//                 row.child(format(row.data())).show();
                  row.child(format(row.data()),'details-wrapper').show();
                  tr.addClass('shown');
                  tr.find('td:first-child').addClass('details-active-order');
                  tdButton.first().addClass('btn-details-collapsed');
-//                 tdi.first().addClass('btn-details');
+                ////////show fulfilled data
+                if(status=='shipped'){
+                    $(this).parent().parent().find('.usps-wrapper').removeClass('display-none');
+                    $(this).parent().parent().find('.btn-details-wrapper').addClass('display-none');
+                }
+                 ///////disable hold button and show hold reason
+                 if(status=='hold'){
+                     var btnHold=$(this).parent().parent().find('.btn-details-wrapper button:first-child');
+                     btnHold.addClass('btn-disabled');
+                     btnHold.addClass('btn-disabled-yellow');
+                     btnHold.removeClass('waves-effect');
+                     btnHold.css('cursor','default');
+                     btnHold.attr('data-toggle', '');
+                     $(this).parent().parent().find('.hold-reason-wrapper').removeClass('display-none');
+                 }
+
              }
          });
 
          adminTable.on("user-select", function (e, dt, type, cell, originalEvent) {
-             if ($(cell.node()).hasClass("details-control")) {
+             if ($(cell.node()).hasClass('details-control')) {
                  e.preventDefault();
              }
          });
+        ////////////////adding classes to table
         adminTable.on('draw', function () {
             $('.order-status-hidden').each(function () {
                 var status = this.textContent;
+                var row = this.closest('tr');
                 if (status) {
-                    var row = this.closest('tr');
                     $(row).find('button').addClass('btn-order-' + status);
                     $(row).find('td:nth-child(6)').addClass('order-color-' + status);
                 };
                 if(status=='error'){
-                    var row = this.closest('tr');
                     $(row).find('.details-control').removeClass('details-control');
                     $(row).find('button').css('display','none');
-                }
+                };
             });
         });
     function format(d){
@@ -598,6 +612,7 @@ $(document).ready(function(){
                  '<th>Size</th>' +
                  '<th>QTY</th>' +
                  '<th>Design Files</th>' +
+                 '<th class="order-status-hidden">Ready</th>' +
              '</tr>' +
              '<tr>' +
                  '<td class="details-eye-icon"><i class="zmdi zmdi-eye"></i></td>' +
@@ -608,6 +623,10 @@ $(document).ready(function(){
                  '<td>'+d.sizeHoodie+'</td>' +
                  '<td>'+d.qtyHoodie+'</td>' +
                  '<td><button class="btn btn-blue waves-effect waves-light btn-upload">Download<i class="zmdi zmdi-download"></i></button></td>' +
+                 '<td class="order-status-hidden"><label class="checkbox-label">'+
+                    '<input type="checkbox" class="checkbox-input">'+
+                    '<span class="checkbox-checkmark"></span>'+
+                    '</label></td>' +
              '</tr>' +
              '<tr>' +
                  '<td class="details-eye-icon"><i class="zmdi zmdi-eye"></i></td>' +
@@ -618,6 +637,10 @@ $(document).ready(function(){
                  '<td>'+d.sizeSweatshirt+'</td>' +
                  '<td>'+d.qtySweatshirt+'</td>' +
                  '<td><button class="btn btn-blue waves-effect waves-light btn-upload">Download<i class="zmdi zmdi-download"></i></button></td>' +
+                 '<td class="order-status-hidden"><label class="checkbox-label">'+
+                    '<input type="checkbox" class="checkbox-input">'+
+                    '<span class="checkbox-checkmark"></span>'+
+                    '</label></td>' +
              '</tr>' +
              '<tr>' +
                  '<td class="details-eye-icon"><i class="zmdi zmdi-eye"></i></td>' +
@@ -628,6 +651,10 @@ $(document).ready(function(){
                  '<td>'+d.sizeLeggings+'</td>' +
                  '<td>'+d.qtyLeggings+'</td>' +
                  '<td><button class="btn btn-blue waves-effect waves-light btn-upload">Download<i class="zmdi zmdi-download"></i></button></td>' +
+                 '<td class="order-status-hidden"><label class="checkbox-label">'+
+                    '<input type="checkbox" class="checkbox-input">'+
+                    '<span class="checkbox-checkmark"></span>'+
+                    '</label></td>' +
              '</tr>' +
              '<tr>' +
                  '<td class="details-eye-icon"><i class="zmdi zmdi-eye"></i></td>' +
@@ -638,32 +665,101 @@ $(document).ready(function(){
                  '<td>'+d.sizeYoga+'</td>' +
                  '<td>'+d.qtyYoga+'</td>' +
                  '<td><button class="btn btn-blue waves-effect waves-light btn-upload">Download<i class="zmdi zmdi-download"></i></button></td>' +
+                 '<td class="order-status-hidden"><label class="checkbox-label">'+
+                    '<input type="checkbox" class="checkbox-input">'+
+                    '<span class="checkbox-checkmark"></span>'+
+                    '</label></td>' +
              '</tr>' +
          '</table>'+
-             '<div class="btn-details-wrapper">'+
+        '<div class="btn-details-wrapper">'+
              '<button class="btn waves-effect waves-light btn-order btn-order-hold" data-toggle="modal" data-target="#modalPutOnHold"><i class="zmdi zmdi-info"></i>Put on Hold</button>' +
-            '<button class="btn btn-blue waves-effect waves-light" id="#detailsFulfill">Mark as fulfilled<i class="zmdi zmdi-arrow-right"></i></button>'+
-             '</div>';  
+            '<button class="btn btn-blue waves-effect waves-light" id="detailsMarkFulfilled">Mark as fulfilled<i class="zmdi zmdi-arrow-right"></i></button>'+
+        '</div>'+
+        '<div class="hold-reason-wrapper display-none">'+
+            '<table cellpadding="5" cellspacing="0" border="0" class="details-table" id="detailsTableHold">' +
+                 '<tr>' +
+                     '<th>Reason for putting order on hold:</th>' +
+                 '</tr>' +
+                 '<tr>' +
+                     '<td>'+d.holdReason+'</td>' +
+                 '</tr>' +
+            '</table>'+
+        '</div>' +
+        '<div class="usps-wrapper display-none">'+
+             '<div>'+
+                '<i class="zmdi zmdi-pin"></i>'+
+                '<p>USPS Tracking Number: <span id="uspsNumber">'+d.uspsTrack+
+                '</span></p>'+
+             '</div>'+    
+             '<div>'+    
+                '<p>Order Fulfilled On: <span id="fulfillDate">'+d.fulfillDate+'</span><i class="zmdi zmdi-check"></i></p>'
+             '</div>'+    
+        '</div>';  
     };
     
+    //////////cloning details table to fulfill modal
+            var showTableOrigin; 
             var showTable; 
 
-            $('#detailsFulfill').on('click', function() { 
+            $(document).on('click', '#detailsMarkFulfilled', function(){
+                showTableOrigin=$(this).parent().parent().find('#detailsTableBottom');
+                showTable=showTableOrigin.clone();
                 $('#modalFulfillOrder').modal('show');
-                showTable=$(this).parent().parent().find('#detailsTableBottom').clone();
             });
 
-            $('#modalFulfillOrder').on('shown.bs.modal', function() {
+            $('#modalFulfillOrder').on('show.bs.modal', function() {
                 if (showTable) {
+                    showTable.attr('id','modalTable');
+                    ////////clearing modal
+                    $('#modalFulfillTable').find('#modalTable').remove();
+                    $('#modalFulfillOrder').find('.usps-modal-wrapper input').val("");
+                    //////hiding download buttons
+                    showTable.find('th:nth-child(8)').addClass('order-status-hidden');
+                    showTable.find('td:nth-child(8)').addClass('order-status-hidden');
+                    ////////showing checkbox column
+                    showTable.find('th:nth-child(9)').removeClass('order-status-hidden');
+                    showTable.find('td:nth-child(9)').removeClass('order-status-hidden');
                     showTable.appendTo('#modalFulfillTable');
                 }
             });
- 
-//    $('#modalFulfillOrder').on('show.bs.modal', function() {         
-//            $('#detailsTableBottom').clone().appendTo('#modalFulfillTable');
-//
-//    }) ;
-
+    ///////////adding usps track number and fulfill date
+    $('#btnFulfillOrder').click(function(){
+        var uspsTrack = $('#modalFulfillOrder').find('.usps-modal-wrapper input').val();
+        var chkReady = $('#modalTable').find('input:checked').length;
+        //////fulfill validate
+        if(uspsTrack.length>0 && chkReady==4){
+            var parentRow = showTableOrigin.parent().parent().parent().find('.shown');
+            var d = new Date();
+            var month = d.getMonth()+1;
+            var day = d.getDate();
+            var fulfillDate =  
+                ((''+month).length<2 ? '0' : '') + month + '/' +
+                ((''+day).length<2 ? '0' : '') + day + '/' +
+                d.getFullYear();
+            //////adding data
+            showTableOrigin.parent().find('#uspsNumber').text(uspsTrack);            
+            showTableOrigin.parent().find('#fulfillDate').text(fulfillDate);
+            showTableOrigin.parent().find('.usps-wrapper').removeClass('display-none');
+            showTableOrigin.parent().find('.btn-details-wrapper').addClass('display-none');
+            /////changing status
+            parentRow.find(':nth-child(8)').text('shipped');
+            parentRow.find(':nth-child(6)').text('Fulfilled');
+            parentRow.find(':nth-child(6)').addClass('order-color-shipped');
+            parentRow.find('button').removeClass('btn-order-production');
+            parentRow.find('button').removeClass('btn-order-hold');
+            parentRow.find('button').addClass('btn-order-shipped');
+            ////////removing hold message & enabling button
+            var btnHold = showTableOrigin.parent().find('.btn-details-wrapper button:first-child');
+            btnHold.removeClass('btn-disabled');
+            btnHold.removeClass('btn-disabled-yellow');
+            btnHold.addClass('waves-effect');
+            btnHold.css('cursor','pointer');
+            btnHold.attr('data-toggle', 'modal');
+            showTableOrigin.parent().find('.hold-reason-wrapper').addClass('display-none');
+            
+            $('#modalFulfillOrder').modal('hide');
+        }
+    });
     ///////////////////
      //////////filtering
         var filterString = '';
