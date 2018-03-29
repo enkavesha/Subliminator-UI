@@ -760,6 +760,33 @@ $(document).ready(function(){
             $('#modalFulfillOrder').modal('hide');
         }
     });
+    ///////////putting order on hold
+     $('#btnPutOnHold').click(function(){
+        var holdReason = $('#modalPutOnHold').find('textarea').val();
+        //////fulfill validate
+        if(holdReason.length>0){
+            var parentRow = $('#adminTable').find('tbody .shown');
+            //////adding data
+            parentRow.parent().find('#detailsTableHold td').text(holdReason);
+            /////changing status
+            parentRow.find(':nth-child(8)').text('hold');
+            parentRow.find(':nth-child(6)').text('Order On Hold');
+            parentRow.find(':nth-child(6)').removeClass('order-color-production');
+            parentRow.find(':nth-child(6)').addClass('order-color-hold');
+            parentRow.find('button').removeClass('btn-order-production');
+            parentRow.find('button').addClass('btn-order-hold');
+            ////////adding hold message & disabling button
+            var btnHold = parentRow.parent().find('.btn-details-wrapper button:first-child');
+            btnHold.addClass('btn-disabled');
+            btnHold.addClass('btn-disabled-yellow');
+            btnHold.removeClass('waves-effect');
+            btnHold.css('cursor','default');
+            btnHold.attr('data-toggle', '');
+            parentRow.parent().find('.hold-reason-wrapper').removeClass('display-none');
+            
+            $('#modalFulfillOrder').modal('hide');
+        }
+     });
     ///////////////////
      //////////filtering
         var filterString = '';

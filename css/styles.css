@@ -2666,7 +2666,7 @@ table.dataTable thead > tr > td.sorting {
 .btn-modal-hold {
   margin: 15px auto; }
 
-textarea[name="modalHold"] {
+textarea[name="modalHoldReason"] {
   margin: 10px 0 0 0;
   resize: none;
   min-height: 200px; }
