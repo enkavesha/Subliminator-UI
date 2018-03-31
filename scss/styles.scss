@@ -1939,8 +1939,8 @@ footer{
 .fixed-table-height{
     min-height: 370px
 }
-#ordersTable{
-    width: 100%;
+#ordersTable, #adminTable{
+    width: 100%!important;
 }
 .orders-table{
     border-top: 2px solid $lightGrey;
@@ -2201,7 +2201,7 @@ table.dataTable thead > tr > td.sorting {
         font-size: 12px!important;
         position: relative;
         &.details-stitching:after, &.details-drawstring:after{
-            display: block;
+            display: none;
             height: 12px;
             width: 20px;
             position: absolute;
@@ -2209,11 +2209,11 @@ table.dataTable thead > tr > td.sorting {
             left: 7px;
         }
         &.details-stitching:after{
-            content: url(../images/stitching.svg);
+            content: url(../images/stitching-blue.svg);
             width: 15px;
         }
         &.details-drawstring:after{
-            content: url(../images/drawstring.svg);
+            content: url(../images/drawstring-blue.svg);
             width: 15px;
         }
     }
@@ -2281,16 +2281,16 @@ table.dataTable thead > tr > td.sorting {
             width: 2%!important;
         }
         &:nth-child(2){
-            width: 20%!important;
+            width: 15%!important;
         }
         &:nth-child(3){
             width: 15%!important;
         }
         &:nth-child(4){
-            width: 10%!important;
+            width: 12.5%!important;
         }
         &:nth-child(5){
-            width: 10%!important;
+            width: 12.5%!important;
         }
         &:nth-child(6){
             width: 8%!important;

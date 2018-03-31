@@ -2024,8 +2024,8 @@ footer {
 .fixed-table-height {
   min-height: 370px; }
 
-#ordersTable {
-  width: 100%; }
+#ordersTable, #adminTable {
+  width: 100% !important; }
 
 .orders-table {
   border-top: 2px solid #f5f5f5;
@@ -2243,17 +2243,17 @@ table.dataTable thead > tr > td.sorting {
   font-size: 12px !important;
   position: relative; }
   .details-table th.details-stitching:after, .details-table th.details-drawstring:after {
-    display: block;
+    display: none;
     height: 12px;
     width: 20px;
     position: absolute;
     top: 7px;
     left: 7px; }
   .details-table th.details-stitching:after {
-    content: url(../images/stitching.svg);
+    content: url(../images/stitching-blue.svg);
     width: 15px; }
   .details-table th.details-drawstring:after {
-    content: url(../images/drawstring.svg);
+    content: url(../images/drawstring-blue.svg);
     width: 15px; }
 
 .details-table tr {
@@ -2305,13 +2305,13 @@ table.dataTable thead > tr > td.sorting {
   #detailsTableBottom th:nth-child(1) {
     width: 2% !important; }
   #detailsTableBottom th:nth-child(2) {
-    width: 20% !important; }
+    width: 15% !important; }
   #detailsTableBottom th:nth-child(3) {
     width: 15% !important; }
   #detailsTableBottom th:nth-child(4) {
-    width: 10% !important; }
+    width: 12.5% !important; }
   #detailsTableBottom th:nth-child(5) {
-    width: 10% !important; }
+    width: 12.5% !important; }
   #detailsTableBottom th:nth-child(6) {
     width: 8% !important; }
   #detailsTableBottom th:nth-child(7) {
@@ -2741,8 +2741,7 @@ textarea[name="modalHoldReason"] {
     margin: 0 10px 0 0; }
   .btn-upload {
     font-size: 10px !important;
-    padding: 0.3rem 0.6rem !important;
-    bottom: 20px; }
+    padding: 0.3rem 0.6rem !important; }
     .btn-upload i {
       font-size: 12px !important;
       line-height: 14px !important; }
@@ -2757,8 +2756,7 @@ textarea[name="modalHoldReason"] {
 @media screen and (max-width: 992px) {
   .btn-upload {
     font-size: 9px !important;
-    padding: 0.3rem 0.6rem !important;
-    bottom: 20px; }
+    padding: 0.3rem 0.6rem !important; }
     .btn-upload i {
       font-size: 12px !important;
       line-height: 14px !important; }
@@ -2771,7 +2769,11 @@ textarea[name="modalHoldReason"] {
   .chosen-container-single .chosen-single {
     font-size: 13px !important; }
   .btn-order {
-    font-size: 10px; } }
+    font-size: 10px; }
+  .orders-table-row, tr {
+    font-size: 14px; }
+  .details-table th {
+    font-size: 11px !important; } }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   .calc-profit #selling-price {
@@ -2817,6 +2819,57 @@ textarea[name="modalHoldReason"] {
         border-right: 1px solid transparent; }
       .orders-wrapper .orders:nth-child(4) div, .orders-wrapper .orders:nth-child(4) > p {
         border-left: 1px solid transparent; }
+  .orders-admin {
+    -ms-flex-flow: nowrap;
+    flex-flow: nowrap; }
+    .orders-admin .orders {
+      width: calc(100%/5); }
+      .orders-admin .orders:nth-child(3) div, .orders-admin .orders:nth-child(3) > p {
+        border-right: 1px solid #f5f5f5; }
+      .orders-admin .orders:nth-child(4) div, .orders-admin .orders:nth-child(4) > p {
+        border-left: 1px solid #f5f5f5; }
+  .orders-admin .orders .orders-status p {
+    font-size: 14px; }
+  #adminTable th {
+    font-size: 13px !important;
+    padding: 20px 0 5px 5px; }
+  #adminTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before {
+    top: 0;
+    left: 4px; }
+  #adminTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
+    top: 0;
+    left: 8px; }
+  #adminTable .orders-table-header th:first-of-type span:before {
+    height: 35px; }
+  #adminTable th:nth-child(5) {
+    width: 11% !important; }
+  #adminTable .orders-table-row, #adminTable tr, #detailsTableTop p {
+    font-size: 13px; }
+  #detailsTableTop, #detailsTableBottom {
+    width: 100%; }
+    #detailsTableTop th, #detailsTableBottom th {
+      padding: 5px 0 5px 5px; }
+  #detailsTableBottom .details-stitching,
+  #detailsTableBottom .details-drawstring,
+  #modalTable .details-stitching,
+  #modalTable .details-drawstring {
+    font-size: 0 !important; }
+    #detailsTableBottom .details-stitching:after,
+    #detailsTableBottom .details-drawstring:after,
+    #modalTable .details-stitching:after,
+    #modalTable .details-drawstring:after {
+      display: block; }
+  #detailsTableBottom th:nth-child(5), #detailsTableBottom th:nth-child(4) {
+    width: 8% !important; }
+  #modalTable tr {
+    font-size: 11px; }
+  .usps-modal-wrapper > div {
+    width: 75%; }
+  .btn-details-wrapper button {
+    font-size: 9px;
+    width: 30%; }
+  #adminTable .btn-order {
+    font-size: 7px; }
   tr td {
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -3000,7 +3053,57 @@ textarea[name="modalHoldReason"] {
   .faq-video-white-block p {
     font-size: 12px; }
   .faq-white-block {
-    margin: 0px; } }
+    margin: 0px; }
+  .orders-wrapper.orders-admin {
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .orders-wrapper.orders-admin .orders {
+      width: calc(100%/3); }
+      .orders-wrapper.orders-admin .orders:nth-child(3) div, .orders-wrapper.orders-admin .orders:nth-child(3) > p {
+        border-right: 1px solid transparent; }
+      .orders-wrapper.orders-admin .orders:nth-child(4) div, .orders-wrapper.orders-admin .orders:nth-child(4) > p {
+        border-left: 1px solid transparent; }
+  #adminTable th {
+    font-size: 9px !important; }
+  #adminTable .orders-table-row, #adminTable tr, #detailsTableTop p {
+    font-size: 10px; }
+  #adminTable .orders-table-header th:first-of-type span:before {
+    height: 30px; }
+  .usps-wrapper {
+    line-height: 30px; }
+    .usps-wrapper p {
+      font-size: 12px; }
+    .usps-wrapper div:first-child {
+      padding: 0 10px 0 0; }
+      .usps-wrapper div:first-child i {
+        font-size: 30px !important; }
+    .usps-wrapper div:last-child {
+      padding: 0 0 0 10px; }
+      .usps-wrapper div:last-child i {
+        font-size: 20px !important; }
+  #detailsTableBottom th:nth-child(6), #detailsTableBottom th:nth-child(7), #modalTable th:nth-child(6), #modalTable th:nth-child(7) {
+    width: 5% !important; }
+  #modalTable th {
+    font-size: 9px !important; }
+    #modalTable th:nth-child(1) {
+      width: 5% !important; }
+    #modalTable th:nth-child(4), #modalTable th:nth-child(5) {
+      width: 10% !important; }
+    #modalTable th.details-stitching:after, #modalTable th.details-drawstring:after {
+      top: 3px; }
+  #adminTable .btn-details {
+    font-size: 0 !important; }
+    #adminTable .btn-details:after, #adminTable .btn-details:before {
+      right: 0;
+      left: 0;
+      margin: 0 auto; }
+  .btn-details.btn-details-collapsed:after {
+    right: 0;
+    left: 0;
+    margin: 0 auto; } }
 
 @media screen and (max-width: 480px) {
   .btn, #btn-review, #btn-publish {
@@ -3081,7 +3184,31 @@ textarea[name="modalHoldReason"] {
     th:nth-child(5) {
       width: 32% !important; }
     th:last-child {
-      width: 8% !important; } }
+      width: 8% !important; }
+  #adminTable th {
+    font-size: 7px !important; }
+  #detailsTableBottom .btn-upload {
+    font-size: 7px !important; }
+    #detailsTableBottom .btn-upload i {
+      font-size: 7px !important;
+      line-height: 10px !important; }
+  #adminTable .orders-table-row, #adminTable tr, #detailsTableTop p,
+  .hold-reason-wrapper #detailsTableHold td {
+    font-size: 9px; }
+  .usps-wrapper {
+    text-align: center;
+    font-size: 10px;
+    line-height: 22px; }
+    .usps-wrapper div {
+      padding: 0; }
+  .btn-details-wrapper button {
+    font-size: 7px !important; }
+  .usps-modal-wrapper p {
+    font-size: 12px; }
+  #modalTable th {
+    font-size: 8px !important; }
+  #detailsTableBottom .details-stitching:after, #detailsTableBottom .details-drawstring:after, #modalTable .details-stitching:after, #modalTable .details-drawstring:after {
+    width: 12px; } }
 
 @media only screen and (max-width: 426px) {
   .file-views li:nth-child(5) {
@@ -3146,7 +3273,37 @@ textarea[name="modalHoldReason"] {
     top: 0;
     left: 8px; }
   .orders-table-header th:first-of-type span:before {
-    height: 25px; } }
+    height: 25px; }
+  .orders-admin .orders .orders-status p {
+    font-size: 12px; }
+  #adminTable th {
+    padding: 15px 0 5px 5px; }
+  #adminTable .btn-details {
+    font-size: 0 !important; }
+    #adminTable .btn-details:after, #adminTable .btn-details:before {
+      right: 0;
+      left: 0;
+      margin: 0 auto; }
+  .btn-details.btn-details-collapsed:after {
+    right: 0;
+    left: 0;
+    margin: 0 auto; }
+  #detailsTableBottom .btn-upload {
+    font-size: 0 !important;
+    position: relative; }
+    #detailsTableBottom .btn-upload i {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      font-size: 12px !important; }
+  .details-wrapper th, #modalTable th {
+    padding: 5px 0 5px 5px !important;
+    vertical-align: middle;
+    line-height: 8px; }
+  .usps-modal-wrapper input {
+    font-size: 11px; } }
 
 @media only screen and (max-width: 384px) {
   .file-views li {
@@ -3155,8 +3312,7 @@ textarea[name="modalHoldReason"] {
       border-left: 2px solid #f5f5f5 !important; }
   .btn-upload, #btn-review, #btn-publish {
     font-size: 10px !important;
-    padding: 0.3rem 0.6rem !important;
-    bottom: 25px; }
+    padding: 0.3rem 0.6rem !important; }
     .btn-upload i, #btn-review i, #btn-publish i {
       font-size: 12px !important;
       line-height: 14px !important; }
@@ -3234,7 +3390,13 @@ textarea[name="modalHoldReason"] {
     tr td:last-child {
       padding: 5px 0 0 0; }
   .orders-table-header th:first-of-type span:before {
-    height: 20px; } }
+    height: 20px; }
+  .usps-wrapper div p {
+    font-size: 9px; }
+  .usps-modal-wrapper input {
+    font-size: 10px; }
+  .orders-admin .orders .orders-status p {
+    font-size: 10px; } }
 
 @media only screen and (max-width: 360px) {
   .uploads {
@@ -3277,7 +3439,13 @@ textarea[name="modalHoldReason"] {
   .orders-wrapper .orders .orders-status p {
     font-size: 9px; }
   .orders-table-header th:first-of-type span:before {
-    height: 20px; } }
+    height: 20px; }
+  #adminTable .orders-table-row, #adminTable tr, #adminTable td, #detailsTableTop p {
+    font-size: 8px; }
+  .btn-details-wrapper button {
+    width: 35%; }
+  .usps-modal-wrapper input {
+    font-size: 9px; } }
 
 @media only screen and (max-width: 320px) {
   .template-view .template-buttons {
@@ -3289,8 +3457,6 @@ textarea[name="modalHoldReason"] {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-    .template-view .template-buttons button:nth-child(1) {
-      margin: 0 10px 10px; }
     .template-view .template-buttons button, .template-view .template-buttons .btn {
       padding: .3rem 0.7rem; }
   .template-view .file-views ul li a {
@@ -3398,4 +3564,10 @@ textarea[name="modalHoldReason"] {
     th:nth-child(5) {
       width: 30% !important; }
     th:last-child {
-      width: 8% !important; } }
+      width: 8% !important; }
+  .details-wrapper {
+    padding: 5px !important; }
+  #adminTable tr td {
+    padding: 5px 0 5px 5px !important; }
+  .usps-modal-wrapper input {
+    font-size: 8px; } }

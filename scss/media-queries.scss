@@ -17,7 +17,7 @@
     .btn-upload{
         font-size: 10px!important;
         padding: .3rem 0.6rem!important;
-        bottom: 20px;
+//        bottom: 20px;
 //        max-width: 140px;
         i{
             font-size: 12px!important;
@@ -46,7 +46,6 @@
     .btn-upload{
         font-size: 9px!important;
         padding: .3rem 0.6rem!important;
-        bottom: 20px;
         i{
             font-size: 12px!important;
             line-height: 14px!important;
@@ -77,6 +76,13 @@
     ////////orders
     .btn-order{
         font-size: 10px;
+    }
+    ////////admin
+    .orders-table-row, tr{
+        font-size: 14px;
+    }
+    .details-table th{
+        font-size: 11px!important;
     }
 }
 /////////tablets
@@ -174,19 +180,86 @@
             }
         }
     }
+    .orders-admin{
+        flex-flow: nowrap;
+        .orders{
+            width: calc(100%/5);
+            &:nth-child(3){
+                div,>p{
+                    border-right: 1px solid $lightGrey;
+                }
+            }
+            &:nth-child(4){
+                div, >p{
+                    border-left: 1px solid $lightGrey;
+                }
+            }
+        }
+    }
+    .orders-admin .orders .orders-status p{
+        font-size: 14px;
+    }
+    #adminTable th{
+        font-size: 13px!important;
+        padding: 20px 0 5px 5px;
+    }
+    #adminTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before{
+        top: 0;
+        left: 4px;
+    }
+    #adminTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after{
+        top: 0;
+        left: 8px;
+    }
+    #adminTable .orders-table-header th:first-of-type span:before{
+        height: 35px;
+    }
+    #adminTable th:nth-child(5){
+        width: 11%!important;
+    }
+    #adminTable .orders-table-row, #adminTable tr, #detailsTableTop p{
+        font-size: 13px;
+    }
+    #detailsTableTop, #detailsTableBottom{
+        width: 100%;
+        th{
+            padding: 5px 0 5px 5px;
+        }
+    }
+    #detailsTableBottom .details-stitching, 
+    #detailsTableBottom .details-drawstring,
+    #modalTable .details-stitching, 
+    #modalTable .details-drawstring{
+        font-size: 0!important;
+        &:after{
+            display: block;
+        }
+    }
+    #detailsTableBottom {
+        th{
+            &:nth-child(5),&:nth-child(4){
+                width: 8%!important;
+            }
+        }
+    }
+    #modalTable tr{
+        font-size: 11px;
+    }
+    .usps-modal-wrapper > div{
+        width: 75%;
+    }
+    .btn-details-wrapper button{
+        font-size: 9px;
+        width: 30%;
+    }
+    #adminTable .btn-order{
+        font-size: 7px;
+    }
+    
     ////////orders
     tr td{
         align-items: center;
         line-height: 20px;
-//        &:nth-child(n){
-//            width: 13.5%;
-//        }
-//        &:nth-child(5){
-//            width: 25%;
-//        }
-//        &:last-child{
-//            width: 15%;
-//        }
     }
     .orders-table-row,.orders-table-header{
         font-size: 12px;
@@ -199,19 +272,6 @@
                 font-size: 10px!important;
             }
         }
-//        >td{
-//            i{
-//                margin: 0 0 0 -5px!important;
-//                display: inline-flex;
-//                align-items: center;
-//            }
-//            i:nth-child(2){
-//                margin: 0 0 0 2px!important;
-//            }
-//            button i{
-//                margin: 0 3px 0 0!important;
-//            }
-//        }
     }
     th{
         font-size: 11px;
@@ -453,6 +513,81 @@
     .faq-white-block{
         margin: 0px;
     }
+    ////////admin
+    .orders-wrapper.orders-admin{
+        flex-flow: wrap;
+        justify-content: center;
+        .orders{
+            width: calc(100%/3);
+            &:nth-child(3){
+                div,>p{
+                    border-right: 1px solid transparent;
+                }
+            }
+            &:nth-child(4){
+                div, >p{
+                    border-left: 1px solid transparent;
+                }
+            }
+        }
+    }
+    #adminTable th{
+        font-size: 9px!important;
+    }
+    #adminTable .orders-table-row, #adminTable tr, #detailsTableTop p{
+        font-size: 10px;
+    }
+    #adminTable .orders-table-header th:first-of-type span:before{
+        height: 30px;
+    }
+    .usps-wrapper{
+        line-height: 30px;
+        p{
+            font-size: 12px;
+        }
+        div:first-child{
+            padding: 0 10px 0 0;
+            i{
+                font-size: 30px!important;
+            }
+        }
+        div:last-child{
+            padding: 0 0 0 10px;
+            i{
+                font-size: 20px!important;
+            }
+        }
+    }
+    #detailsTableBottom th, #modalTable th{
+        &:nth-child(6), &:nth-child(7){
+            width: 5%!important;
+        }
+    }
+    #modalTable th{
+        font-size: 9px!important;
+        &:nth-child(1){
+            width: 5%!important;
+        }
+        &:nth-child(4), &:nth-child(5){
+            width: 10%!important;
+        }
+        &.details-stitching:after, &.details-drawstring:after{
+            top: 3px;
+        }
+    }
+    #adminTable .btn-details{
+        font-size: 0!important;
+        &:after, &:before{
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+    }
+    .btn-details.btn-details-collapsed:after{
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
 }
 @media screen and (max-width: 480px){
     .btn, #btn-review, #btn-publish{
@@ -581,6 +716,43 @@
             width: 8%!important;
         }
     }
+    /////////admin
+    #adminTable th{
+        font-size: 7px!important;
+    }
+    #detailsTableBottom .btn-upload{
+        font-size: 7px!important;
+        i{
+            font-size: 7px!important;
+            line-height: 10px!important;
+        }
+    }
+    #adminTable .orders-table-row, #adminTable tr, #detailsTableTop p,
+    .hold-reason-wrapper #detailsTableHold td{
+        font-size: 9px;
+    }
+    .usps-wrapper{
+        text-align: center;
+        font-size: 10px;
+        line-height: 22px;
+        div{
+            padding: 0;
+        }
+    }
+    .btn-details-wrapper button{
+        font-size: 7px!important;
+    }
+    .usps-modal-wrapper p{
+        font-size: 12px;
+    }
+    #modalTable th{
+        font-size: 8px!important;
+    }
+    #detailsTableBottom, #modalTable{
+        .details-stitching:after, .details-drawstring:after{
+            width: 12px;
+        }
+    }
 }
 
 //////mobiles
@@ -673,6 +845,46 @@
             height: 25px;
         }
     }
+    ////admin
+    .orders-admin .orders .orders-status p{
+        font-size: 12px;
+    }
+    #adminTable th{
+        padding: 15px 0 5px 5px;
+    }
+    #adminTable .btn-details{
+        font-size: 0!important;
+        &:after, &:before{
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+        }
+    }
+    .btn-details.btn-details-collapsed:after{
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+    #detailsTableBottom .btn-upload{
+        font-size: 0!important;
+        position: relative;
+        i{
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            font-size: 12px!important;
+        }
+    }
+    .details-wrapper th, #modalTable th{
+        padding: 5px 0 5px 5px!important;
+        vertical-align: middle;
+        line-height: 8px;
+    }
+    .usps-modal-wrapper input{
+        font-size: 11px;
+    }
 }
 @media only screen and (max-width: 384px){
     .file-views{
@@ -686,7 +898,7 @@
     .btn-upload, #btn-review, #btn-publish{
         font-size: 10px!important;
         padding: .3rem .6rem!important;
-        bottom: 25px;
+//        bottom: 25px;
         i{
             font-size: 12px!important;
             line-height: 14px!important;
@@ -817,6 +1029,16 @@
             height: 20px;
         }
     }
+    //admin
+    .usps-wrapper div p{
+        font-size: 9px;
+    }
+    .usps-modal-wrapper input{
+        font-size: 10px;
+    }
+    .orders-admin .orders .orders-status p{
+        font-size: 10px;
+    }
 }
 @media only screen and (max-width: 360px){
     .uploads{
@@ -873,13 +1095,20 @@
     .orders-wrapper .orders .orders-status p{
         font-size: 9px;
     }
-    table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting{
-//        padding: 10px 2px 5px 2px;
-    }
     .orders-table-header{
         th:first-of-type span:before{
             height: 20px;
         }
+    }
+    ////////admin
+    #adminTable .orders-table-row, #adminTable tr, #adminTable td, #detailsTableTop p{
+        font-size: 8px;
+    }
+    .btn-details-wrapper button{
+        width: 35%;
+    }
+    .usps-modal-wrapper input{
+        font-size: 9px;
     }
 }
 @media only screen and (max-width: 320px){
@@ -889,7 +1118,7 @@
             flex-flow: wrap;
             justify-content: center;
             button:nth-child(1){
-                margin: 0 10px 10px;
+//                margin: 0 10px 10px;
             }
             button, .btn{
                 padding: .3rem 0.7rem;
@@ -1047,5 +1276,15 @@
         &:last-child{
             width: 8%!important;
         }
+    }
+    ///admin
+    .details-wrapper{
+        padding: 5px!important;
+    }
+    #adminTable tr td{
+        padding: 5px 0 5px 5px!important;
+    }    
+    .usps-modal-wrapper input{
+        font-size: 8px;
     }
 }
