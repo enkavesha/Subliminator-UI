@@ -1448,7 +1448,6 @@ input {
     font-weight: normal;
     font-style: normal;
     font-size: 14px;
-    /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -2730,6 +2729,65 @@ textarea[name="modalHoldReason"] {
       font-size: 27px !important;
       margin: 0 0 0 10px !important; }
 
+.tos .tos-title {
+  color: #0c77f8;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 30px; }
+
+.tos .tos-list-title {
+  font-size: 20px;
+  font-weight: 600;
+  display: inline-block; }
+
+.tos .tos-sublist {
+  display: inline-block; }
+
+.tos ol {
+  margin: 30px 0 0 0; }
+  .tos ol li {
+    list-style-type: none;
+    font-size: 20px;
+    margin: 0 0 30px 0;
+    font-size: 15px; }
+    .tos ol li p {
+      font-weight: 500;
+      margin: 0 0 15px;
+      display: inline-block; }
+
+.tos ol {
+  counter-reset: item;
+  list-style: none; }
+
+.tos ol li::before {
+  color: #424242;
+  counter-increment: item;
+  position: absolute;
+  text-align: right;
+  font-weight: 600;
+  margin: 0 0 0 -3em;
+  width: 2rem; }
+
+.tos ol ol li:before {
+  content: counter(item, decimal) "."; }
+
+.tos ol ol ol li:before {
+  content: counter(item, lower-alpha) "."; }
+
+.tos ol ol ol ol li:before {
+  content: counter(item, lower-roman) "."; }
+
+.tos [class^=tos-sublist-] {
+  margin: 0 0 0 3em; }
+  .tos [class^=tos-sublist-] li {
+    margin: 0; }
+
+.tos .tos-sublist-2 {
+  margin: 10px 0 10px 2em; }
+
+.tos .tos-sublist-3 li:before {
+  color: #777; }
+
 @media screen and (min-width: 1200px) {
   #selling-price {
     margin: 0 10px 0 0; } }
@@ -3208,7 +3266,24 @@ textarea[name="modalHoldReason"] {
   #modalTable th {
     font-size: 8px !important; }
   #detailsTableBottom .details-stitching:after, #detailsTableBottom .details-drawstring:after, #modalTable .details-stitching:after, #modalTable .details-drawstring:after {
-    width: 12px; } }
+    width: 12px; }
+  .tos .tos-title {
+    font-size: 20px;
+    margin: 0 0 15px; }
+  .tos .tos-list-title {
+    font-size: 15px; }
+  .tos [class^=tos-sublist-] {
+    margin: 0 0 0 2em; }
+  .tos p, .tos ol li {
+    font-size: 12px; }
+  .tos ol {
+    margin: 10px 0 0 0; }
+  .tos ol li {
+    margin: 0 0 10px; }
+  .tos ol li p {
+    margin: 0 0 5px; }
+  .tos .tos-sublist-2 {
+    margin: 5px 0 5px 2em; } }
 
 @media only screen and (max-width: 426px) {
   .file-views li:nth-child(5) {

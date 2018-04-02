@@ -213,9 +213,6 @@ button{
 .modal{
     text-align: center;
 }
-.modal.show .modal-dialog{
-//    top: 8vh;
-}
 .modal-body{
     height: 290px;
     display: none;
@@ -324,7 +321,6 @@ button{
     max-width: 140px;
 }
 [data-toggle="popover-pocket"]{
-//    float: right;
     font-size: 20px!important;
     margin: 0 5px 0 0!important;
     z-index: 100;
@@ -495,27 +491,6 @@ header.header-collapsing {
 ////////////////
 
 header{
-//    position: static;
-//    &.header-fixed{
-//        position: fixed;
-//        padding: 15px 0;
-//        animation: smoothScroll 1s forwards;
-//        box-shadow: 0px 3px 10px -1px rgba(0,0,0,0.2);
-//    }
-//    transition: all 0.5s ease;
-//      -webkit-transition: all 0.5s ease;
-//  -moz-transition: position 10s;
-//  -ms-transition: position 10s;
-//  -o-transition: position 10s;
-//    top: 0;
-//    margin: 0 auto;
-//    z-index: 100;
-//    background: $blue;
-//    width: 100%;
-//    height: auto;
-//    padding: 15px 0 0 0;
-//    display: flex;
-//    align-items: center;
     .breadcrumbs{
         color: #fff;
         p{
@@ -1329,7 +1304,7 @@ input{
         left: 15px;
         font-weight: normal;
           font-style: normal;
-          font-size: 14px;  /* Preferred icon size */
+          font-size: 14px;
           display: inline-block;
           line-height: 1;
           text-transform: none;
@@ -2741,6 +2716,86 @@ textarea[name="modalHoldReason"]{
         i{
             font-size: 27px!important;
             margin: 0 0 0 10px!important;
+        }
+    }
+}
+/////////////TOS
+.tos{
+    .tos-title{
+        color: $blue;
+        font-size: 30px;
+        font-weight: 600;
+        margin: 0 0 30px;
+    }
+    .tos-list-title{
+        font-size: 20px;
+        font-weight: 600;
+        display: inline-block;
+    }
+    .tos-sublist{
+        display: inline-block;
+    }
+    ol{
+        margin: 30px 0 0 0;
+        li{
+            list-style-type: none;
+            font-size: 20px;
+            margin: 0 0 30px 0;
+            font-size: 15px;
+            
+            p{
+                font-weight: 500;
+                margin: 0 0 15px;
+                display: inline-block;
+            }
+        }
+    }
+    ol{
+        counter-reset:item;
+        list-style:none;
+    }
+    ol li::before {
+        color: $grey;
+        counter-increment: item;
+        position: absolute;
+        text-align: right;
+        font-weight: 600;
+        margin: 0 0 0 -3em;
+        width: 2rem;
+    }
+    ol ol li:before{
+        content: counter(item, decimal) ".";
+    }
+    ol ol ol li:before{
+        content: counter(item, lower-alpha) ".";
+    }
+    ol ol ol ol li:before{
+        content: counter(item, lower-roman) ".";
+    }
+    [class^=tos-sublist-]{
+        margin: 0 0 0 3em;
+        li{
+            margin: 0;
+        }
+    }
+    .tos-sublist-1{
+        li{
+//            list-style-type: decimal;
+        }
+    }
+    .tos-sublist-2{
+        margin: 10px 0 10px 2em;
+        li{
+//            list-style-type: lower-alpha;
+        }
+    }
+    .tos-sublist-3{
+        li{
+//            list-style-type: lower-roman;
+//            padding: 0 0 0 1em;
+        }
+        li:before{
+            color: #777;
         }
     }
 }
